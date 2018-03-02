@@ -54,6 +54,10 @@ cnpm install vue-resource better-scroll --save
 ```
 cnpm install stylus stylus-loader --save-dev
 ```
+## 或者安装sass sass-loader，替代上面的stylus
+```
+npm install node-sass sass-loader --save-dev
+```
 ## 查看数据
 http://localhost:8080/api/goods
 ## 3.设置缩略路径
