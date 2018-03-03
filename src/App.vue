@@ -36,6 +36,8 @@
       }
     },
     created () {
+      // vue-resource
+      // ajax request
       this.$http
         .get('/api/seller?id=' + this.seller.id)
         .then((response) => {
