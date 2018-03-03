@@ -6,7 +6,11 @@
 
 <script type="text/ecmascript-6">
   export default {
-
+    props: {
+      seller: {
+        type: Object
+      }
+    }
   }
 </script>
 

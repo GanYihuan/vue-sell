@@ -19,7 +19,26 @@
 <script type="text/ecmascript-6">
   import header from './components/header/header.vue'
 
+  const ERR_OK = 0
+
   export default {
+    data () {
+      return {
+        seller: {}
+      }
+    },
+    created () {
+      this.$http
+        .get('/api/seller')
+        .then((response) => {
+          console.log(response)
+          if (response.body.error === ERR_OK) {
+            // 展开数组内容: ...
+            // Object.assign -> ...
+            this.seller = Object.assign({}, this.seller, response.data);
+          }
+        })
+    },
     components: {
       'v-header': header
     }

@@ -156,7 +156,9 @@ add Files, extension 'vue'
 
 ## 5-3:
 ## router
+```
 npm install vue-router
+```
 
 
 ## 5-4: --- 5-5:
@@ -172,7 +174,9 @@ npm install vue-router
 ifconfig
 ```
 ## 2.open in browser
+```
 npm run dev
+```
 ## 3.url
 localhost:8080/#/goods
 ## 4.url change
@@ -186,3 +190,15 @@ localhost:8080/#/goods
 > mixin.scss
 ## 2x3x图
 > mixin.scss
+
+
+## 6-1: --- 6-2:
+## 前后端交互: vue-resource
+```
+npm install vue-resource --save
+```
+## 发送数据
+
+
+## 6-3: 
+## header component
