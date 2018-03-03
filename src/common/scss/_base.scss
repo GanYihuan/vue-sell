@@ -11,10 +11,10 @@ body, html {
 
   &:after {
     display: block;
-    clear: both;
-    visibility: hidden;
     height: 0;
     line-height: 0;
+    visibility: hidden;
+    clear: both;
     content: ".";
   }
 }
