@@ -28,6 +28,7 @@
               <li
                 v-for="food in item.foods"
                 class="food-item border-1px"
+                @click="selectFood(food,$event)"
               >
                 <div class="icon">
                   <img width="57" height="57" :src="food.icon">
@@ -58,6 +59,12 @@
         :minPrice="seller.minPrice"
       ></shopCart>
     </div>
+    <food
+      @add="addFood"
+      :food="selectedFood"
+      ref="food"
+    >
+    </food>
   </div>
 </template>
 
@@ -65,6 +72,7 @@
   import BScroll from 'better-scroll'
   import shopCart from '../shopCart/shopCart.vue'
   import cartControl from '../cartControl/cartControl.vue'
+  import food from '../food/food.vue'
 
   const ERR_OK = 0
 
@@ -178,6 +186,13 @@
         // 300: 持续时间
         this.foodsScroll.scrollToElement(el, 300)
       },
+      selectFood (food, event) {
+        if (!event._constructed) {
+          return
+        }
+        this.selectedFood = food
+        this.$refs.food.show()
+      },
       addFood (target) {
         this._drop(target)
       },
@@ -193,6 +208,7 @@
     },
     components: {
       shopCart,
+      food,
       cartControl
     }
   }

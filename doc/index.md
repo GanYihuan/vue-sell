@@ -241,3 +241,7 @@ npm install vue-resource --save
 
 
 ## 球体动画不懂
+
+
+## 8-1
+
