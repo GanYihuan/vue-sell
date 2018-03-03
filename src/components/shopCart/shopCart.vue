@@ -200,9 +200,12 @@
       addFood (target) {
         this.drop(target)
       },
-      // balls
+      // 球体运动，选择性放弃
       // <transition
       // name="drop"
+      // @before-enter="beforeDrop"
+      // @enter="dropping"
+      // @after-enter="afterDrop"
       drop (el) {
         for (let i = 0; i < this.balls.length; i++) {
           // single item
@@ -215,6 +218,11 @@
           }
         }
       },
+      // <transition
+      // name="drop"
+      // @before-enter="beforeDrop"
+      // @enter="dropping"
+      // @after-enter="afterDrop"
       beforeDrop (el) {
         let count = this.balls.length
         while (count--) {
@@ -235,6 +243,11 @@
           }
         }
       },
+      // <transition
+      // name="drop"
+      // @before-enter="beforeDrop"
+      // @enter="dropping"
+      // @after-enter="afterDrop"
       dropping (el, done) {
         // 触发浏览器重构
         /* eslint-disable no-unused-vars */
@@ -249,6 +262,11 @@
           el.addEventListener('transitionend', done)
         })
       },
+      // <transition
+      // name="drop"
+      // @before-enter="beforeDrop"
+      // @enter="dropping"
+      // @after-enter="afterDrop"
       afterDrop (el) {
         let ball = this.dropBalls.shift()
         if (ball) {

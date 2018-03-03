@@ -64,7 +64,7 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
   import shopCart from '../shopCart/shopCart.vue'
-  import cartControl from '../cartcontrol/cartcontrol.vue'
+  import cartControl from '../cartControl/cartControl.vue'
 
   const ERR_OK = 0
 
@@ -181,12 +181,13 @@
       addFood (target) {
         this._drop(target)
       },
-      _drop () {
+      _drop (target) {
         // 体验优化,异步执行下落动画
         // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
         // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
-//          this.$refs.shopcart.drop(target)
+          // 调用shopCart组件里面的drop方法，触发球运动动画
+          this.$refs.shopCart.drop(target)
         })
       }
     },
