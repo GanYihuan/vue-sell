@@ -190,15 +190,3 @@ localhost:8080/#/goods
 > mixin.scss
 ## 2x3x图
 > mixin.scss
-
-
-## 6-1: --- 6-2:
-## 前后端交互: vue-resource
-```
-npm install vue-resource --save
-```
-## 发送数据
-
-
-## 6-3: 
-## header component
