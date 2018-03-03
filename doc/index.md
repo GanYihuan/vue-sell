@@ -225,3 +225,7 @@ npm install vue-resource --save
 
 ## 7-2: 
 ## 左边栏styles
+
+
+## 7-3: --- 7-4:
+## 右边栏styles
