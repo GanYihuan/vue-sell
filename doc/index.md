@@ -200,5 +200,5 @@ npm install vue-resource --save
 ## 发送数据
 
 
-## 6-3: 
-## header component
+## 6-3: --- 6-8: header css
+## add resource img
