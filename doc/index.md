@@ -217,3 +217,7 @@ npm install vue-resource --save
 ## 6-14 --- 6-16
 ## flex实现行线+字符+行线
 ## 动画
+
+
+## 7-1: goods.vue
+## async 数据传入
