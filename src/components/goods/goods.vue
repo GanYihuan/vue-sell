@@ -3,7 +3,7 @@
     <div class="goods">
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
-          <!-- currentIndex由计算属性产生，判断index是否等于currentIndex,等于的话current类名生效 -->
+          <!-- currentIndex由计算属性产生，判断index是否等于currentIndex,等于的话current类名生效. -->
           <li
             v-for="(item,index) in goods"
             class="menu-item"
