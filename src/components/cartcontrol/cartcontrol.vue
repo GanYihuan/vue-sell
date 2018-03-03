@@ -7,13 +7,13 @@
         v-show="food.count>0"
         @click.stop.prevent="decreaseCart"
       >
-        <span class="inner iconfont icon-remove_circle_outline"></span>
+        <span class="inner icon-remove_circle_outline"></span>
       </div>
     </transition>
     <!-- 数量 -->
     <span class="cart-count" v-show="food.count>0">{{food.count}}</span>
     <!-- 点击"+"时，防止点击中整个item-food事件 -->
-    <span class="cart-add iconfont icon-add_circle" @click.stop.prevent="addCart"></span>
+    <span class="cart-add icon-add_circle" @click.stop.prevent="addCart"></span>
   </div>
 </template>
 

@@ -234,4 +234,7 @@ npm install vue-resource --save
 ## 左侧边栏的选择，右侧滚动到指定菜品
 
 
-## cartcontrol.vue, 数量加减控制
+## cartControl.vue, 数量加减控制
+
+
+## goods 底部的购物车

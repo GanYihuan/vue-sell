@@ -42,8 +42,8 @@
                     <span class="now">￥{{food.price}}</span>
                     <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
-                  <div class="cartcontrol-wrapper">
-                    <cartcontrol @add="addFood" :food="food"></cartcontrol>
+                  <div class="cartControl-wrapper">
+                    <cartControl @add="addFood" :food="food"></cartControl>
                   </div>
                 </div>
               </li>
@@ -51,19 +51,27 @@
           </li>
         </ul>
       </div>
+      <shopCart
+        ref="shopCart"
+        :selectFoods="selectFoods"
+        :deliveryPrice="seller.deliveryPrice"
+        :minPrice="seller.minPrice"
+      ></shopCart>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
-  import cartcontrol from '../cartcontrol/cartcontrol.vue'
+  import shopCart from '../shopCart/shopCart.vue'
+  import cartControl from '../cartcontrol/cartcontrol.vue'
 
   const ERR_OK = 0
 
   export default {
     // 接收外界传入的数据
     props: {
+      // 异步请求的数据
       seller: {
         type: Object
       }
@@ -95,8 +103,20 @@
         }
         return 0
       },
+      // 全部单个菜品的集合
       selectFoods () {
-
+        let foods = []
+        // http://ustbhuangyi.com/sell/api/goods
+        // good -> 左侧栏的单个项目
+        this.goods.forEach((good) => {
+          // food -> 项目里的单个菜品
+          good.foods.forEach((food) => {
+            if (food.count) {
+              foods.push(food)
+            }
+          })
+        })
+        return foods
       }
     },
     created () {
@@ -171,7 +191,8 @@
       }
     },
     components: {
-      cartcontrol
+      shopCart,
+      cartControl
     }
   }
 </script>
