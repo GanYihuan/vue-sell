@@ -97,7 +97,7 @@
         this.detailShow = false
       }
     },
-    // 组件
+    // 外界组件注册
     components: {
       star
     }

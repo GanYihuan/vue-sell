@@ -1,12 +1,13 @@
 <template>
-  <!-- starType:不同尺寸星星，对应不同class -->
+  <!-- :class 绑定，computed里面的starType -->
+  <!-- starType: 不同尺寸星星，对应不同class -->
   <div class="star" :class="starType">
-    <!-- $1 -->
+    <!-- v-for: 遍历, key是必须的 -->
     <span
-      class="star-item"
       v-for="itemClass in itemClasses"
-      :class="itemClass"
       :key="itemClass.id"
+      class="star-item"
+      :class="itemClass"
     >
       <!-- :key替代track-by="$index" -->
       <!--
@@ -19,13 +20,16 @@
 </template>
 
 <script type="text/ecmascript-6">
-  const LENGTH = 5;
-  const CLS_ON = 'on';  //  星星状态
-  const CLS_HALF = 'half';  // 半星
-  const CLS_OFF = 'off';  // 没星
+  const LENGTH = 5
+  // 有星星
+  const CLS_ON = 'on'
+  // 半星
+  const CLS_HALF = 'half'
+  // 没星
+  const CLS_OFF = 'off'
 
   export default {
-//    $2
+    // 接收外界传来的数据
     props: {
       // 尺寸
       size: {
@@ -36,34 +40,39 @@
         type: Number
       }
     },
-
     // 计算属性
     computed: {
-      starType() {
-        return 'star-' + this.size;
+      starType () {
+        return 'star-' + this.size
       },
-//      $3
-      itemClasses() {
-        let result = [];
+      itemClasses () {
+        let result = []
         // 4.2 -> 4;  4.8 -> 4.5
-        let score = Math.floor(this.score * 2) / 2;
-        let hasDecimal = score % 1 !== 0; // true false 有小数?, true 就半星
-        let integer = Math.floor(score);  // 星星部分,不计半星
+        // Math.floor: 4.9 -> 4
+        // Math.ceil: 4.1 -> 5
+        let score = Math.floor(this.score * 2) / 2
+        // 是否有半星, true false 有小数?, true 就半星
+        let hasDecimal = score % 1 !== 0
+        // 全星部分
+        let integer = Math.floor(score)
 
         for (let i = 0; i < integer; i++) {
-          result.push(CLS_ON);  // 全星星
+          // 全星
+          result.push(CLS_ON)
         }
         if (hasDecimal) {
-          result.push(CLS_HALF);  // 半星星
+          // 半星
+          result.push(CLS_HALF)
         }
         while (result.length < LENGTH) {
-          result.push(CLS_OFF); // 空星星
+          // 空星
+          result.push(CLS_OFF)
         }
 
-        return result;
+        return result
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss" rel="stylesheet/scss">

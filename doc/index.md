@@ -210,5 +210,5 @@ npm install vue-resource --save
 ## stickylayout布局
 
 
-## 6-11:
-## 星星
+## 6-11 --- 6-13
+## 星星组件 star.vue

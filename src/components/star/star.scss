@@ -4,6 +4,7 @@
   font-size: 0;
 
   .star-item {
+    // 横向排布
     display: inline-block;
     background-repeat: no-repeat;
   }
@@ -33,7 +34,7 @@
     }
   }
 
-  // 相同
+  // 与.star-48相同
   &.star-36 {
     .star-item {
       width: 15px;
@@ -59,7 +60,7 @@
     }
   }
 
-  // 相同
+  // 与.star-48相同
   &.star-24 {
     .star-item {
       width: 10px;
