@@ -184,6 +184,7 @@
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
+  // 动画的过渡时间
   transition: all 0.5s;
   // ios模糊
   backdrop-filter: blur(10px);
@@ -261,6 +262,7 @@
             margin-right: 6px;
             width: 16px;
             height: 16px;
+            // 垂直方向居中
             vertical-align: top;
             background-size: 16px 16px;
             background-repeat: no-repeat;

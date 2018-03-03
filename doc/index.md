@@ -212,3 +212,8 @@ npm install vue-resource --save
 
 ## 6-11 --- 6-13
 ## 星星组件 star.vue
+
+
+## 6-14 --- 6-16
+## flex实现行线+字符+行线
+## 动画
