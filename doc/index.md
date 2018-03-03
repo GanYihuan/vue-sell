@@ -202,3 +202,9 @@ npm install vue-resource --save
 
 ## 6-3: --- 6-8: header css
 ## add resource img
+
+
+## 6-9: --- 6-16: 
+## 弹层
+## stickylayout布局
+## 星星
