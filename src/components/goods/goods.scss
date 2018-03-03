@@ -17,7 +17,7 @@
     background: #f3f5f7;
 
     .menu-item {
-      // 多行垂直居中
+      // 多行文本，垂直方向居中
       display: table;
       padding: 0 12px;
       width: 56px;
@@ -69,9 +69,11 @@
       }
 
       .text {
+        // 父文本 display: table
         display: table-cell;
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
+        // 垂直方向居中
         vertical-align: middle;
         font-size: 12px;
       }

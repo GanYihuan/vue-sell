@@ -221,3 +221,7 @@ npm install vue-resource --save
 
 ## 7-1: goods.vue
 ## async 数据传入
+
+
+## 7-2: 
+## 左边栏styles
