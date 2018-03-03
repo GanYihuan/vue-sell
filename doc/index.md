@@ -72,7 +72,7 @@ http://localhost:8080/api/goods
 ## 4.修改.eslintrc.js 添加规则
 > /.eslintrc.js
 ```
-    'semi': ['error', 'always'],
+    'semi': ['error', 'never'],
     'no-tabs': 0,
     'indent': 0,
     'space-before-function-paren': 0
@@ -141,3 +141,48 @@ export default new Router({
     routes
 });
 ```
+
+
+## 5-1.修改.eslintrc.js 添加规则
+> /.eslintrc.js
+
+
+## 5-2: 
+## intellij ide
+Editor -> File and code template
+add Files, extension 'vue'
+## 
+
+
+## 5-3:
+## router
+npm install vue-router
+
+
+## 5-4: --- 5-5:
+## styles
+## router
+
+
+## 5-6:
+## 一像素横线
+## 手机预览
+## 1.查看IP,copy
+```
+ifconfig
+```
+## 2.open in browser
+npm run dev
+## 3.url
+localhost:8080/#/goods
+## 4.url change
+(ip):8080/#/goods
+## 5.草料 [https://cli.im/], copy in  
+(ip):8080/#/goods 
+## 6.微信扫描打开
+## 适配不同dip屏幕
+> base.scss
+## 清除浮动
+> mixin.scss
+## 2x3x图
+> mixin.scss
