@@ -1,11 +1,14 @@
 <template id="ratings">
   <div>
     <div class="goods">
-      <div class="menu-wrapper">
+      <div class="menu-wrapper" ref="menuWrapper">
         <ul>
+          <!-- currentIndex由计算属性产生，判断index是否等于currentIndex,等于的话current类名生效 -->
           <li
             v-for="(item,index) in goods"
             class="menu-item"
+            :class="{'current':currentIndex===index}"
+            @click="selectMenu(index,$event)"
           >
           <span class="text border-1px">
             <span
@@ -17,7 +20,7 @@
           </li>
         </ul>
       </div>
-      <div class="foods-wrapper">
+      <div class="foods-wrapper" ref="foodsWrapper">
         <ul>
           <li v-for="item in goods" class="food-list food-list-hook">
             <h1 class="title">{{item.name}}</h1>
@@ -50,6 +53,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
+
   const ERR_OK = 0
 
   export default {
@@ -62,7 +67,32 @@
     data () {
       return {
         // 异步传入的数据
-        goods: []
+        goods: [],
+        // 菜品的高度形成的数组
+        listHeight: [],
+        // foodsScroll 滚动的位置
+        scrollY: 0,
+        selectedFood: {}
+      }
+    },
+    // 计算属性
+    computed: {
+      currentIndex () {
+        for (let i = 0; i < this.listHeight.length; i++) {
+          // 任意一样菜
+          let height1 = this.listHeight[i]
+          // 下一道菜
+          let height2 = this.listHeight[i + 1]
+          // 如果没有下一道菜,即当前的菜为最后一道菜
+          // 如果当前这道菜距离父组件的高度位于本来位置至下一道菜位置之间，返回该菜的下标
+          if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+            return i
+          }
+        }
+        return 0
+      },
+      selectFoods () {
+
       }
     },
     created () {
@@ -73,8 +103,57 @@
           response = response.body
           if (response.errno === ERR_OK) {
             this.goods = response.data
+            // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+            // 修改数据后立即使用这个方法，获取更新后的 DOM
+            this.$nextTick(() => {
+              this._initScroll()
+              this._calculateHeight()
+            })
           }
         })
+    },
+    methods: {
+      // 点击事件，滚动事件
+      _initScroll () {
+        this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+          click: true
+        })
+        this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
+          click: true,
+          // 3除了实时派发scroll事件，在swipe的情况下仍然能实时派发scroll事件
+          // 实时滚动的位置
+          probeType: 3
+        })
+        this.foodsScroll.on('scroll', (pos) => {
+          this.scrollY = Math.abs(Math.round(pos.y))
+        })
+      },
+      // 每样菜的高度的数组
+      _calculateHeight () {
+        // 目标元素
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
+        let height = 0
+        // listHeight 每样菜的高度的数组
+        this.listHeight.push(height)
+        for (let i = 0; i < foodList.length; i++) {
+          // 单一菜品
+          let item = foodList[i]
+          // 菜品的高度
+          height += item.clientHeight
+          this.listHeight.push(height)
+        }
+      },
+      selectMenu (index, event) {
+        // 去掉自带click事件的点击
+        if (!event._constructed) {
+          return
+        }
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
+        // 当前菜品
+        let el = foodList[index]
+        // 300: 持续时间
+        this.foodsScroll.scrollToElement(el, 300)
+      },
     }
   }
 </script>
