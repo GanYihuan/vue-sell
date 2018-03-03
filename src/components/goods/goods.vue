@@ -42,6 +42,9 @@
                     <span class="now">￥{{food.price}}</span>
                     <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
+                  <div class="cartcontrol-wrapper">
+                    <cartcontrol @add="addFood" :food="food"></cartcontrol>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -54,6 +57,7 @@
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
+  import cartcontrol from '../cartcontrol/cartcontrol.vue'
 
   const ERR_OK = 0
 
@@ -154,6 +158,20 @@
         // 300: 持续时间
         this.foodsScroll.scrollToElement(el, 300)
       },
+      addFood (target) {
+        this._drop(target)
+      },
+      _drop () {
+        // 体验优化,异步执行下落动画
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
+        this.$nextTick(() => {
+//          this.$refs.shopcart.drop(target)
+        })
+      }
+    },
+    components: {
+      cartcontrol
     }
   }
 </script>
