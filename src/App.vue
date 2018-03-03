@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!-- :seller -> v-bind 绑定数据 -->
+    <!-- seller 对象里面塞了异步数据 -->
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
@@ -35,9 +37,10 @@
         }
       }
     },
+    // 生命周期
     created () {
       // vue-resource
-      // ajax request
+      // ajax request, 请求数据塞入seller对象
       this.$http
         .get('/api/seller?id=' + this.seller.id)
         .then((response) => {

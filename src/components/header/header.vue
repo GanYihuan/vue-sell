@@ -12,6 +12,8 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分支送达
         </div>
+        <!-- v-if : 如果有数据就解析 -->
+        <!-- 因为是异步过程，需要判断是否要解析 -->
         <div v-if="seller.supports" class="support">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
@@ -67,22 +69,26 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import star from '../star/star.vue';
+  import star from '../star/star.vue'
 
   export default {
+    // 接收外界传来的数据
     props: {
       seller: {
         type: Object
       }
     },
+    // 内部数据
     data () {
       return {
         detailShow: false
       }
     },
+    // 生命周期
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
+    // 方法
     methods: {
       showDetail () {
         this.detailShow = true
@@ -91,6 +97,7 @@
         this.detailShow = false
       }
     },
+    // 组件
     components: {
       star
     }
