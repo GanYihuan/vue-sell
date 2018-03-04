@@ -65,13 +65,12 @@
                 </div>
                 <div class="time">{{rating.rateTime | formatDate}}</div>
                 <p class="text">
-                  <i :class="rating.rateType === 0 ? 'icon-thumb_up' : rating.rateType === 1 ? 'icon-thumb_down' : ''"></i>
+                  <i :class="{'icon-thumb_up':rating.rateType===0,'icon-thumb_down':rating.rateType===1}"></i>
                   {{rating.text}}
                 </p>
               </li>
             </ul>
-            <div class="no-rating" v-show="!food.ratings || food.ratings.length === 0">
-            </div>
+            <div class="no-rating" v-show="!food.ratings || food.ratings.length === 0"></div>
           </div>
         </div>
       </div>
@@ -147,7 +146,7 @@
         this.$emit('add', event.target)
       },
       needShow (type, text) {
-        // text: 评价的语言
+        // text: 评价的内容
         if (this.onlyContent && !text) {
           return false
         }
@@ -176,6 +175,7 @@
         })
       }
     },
+    // {{rating.rateTime | formatDate}}过滤条件
     filters: {
       formatDate (time) {
         let date = new Date(time)

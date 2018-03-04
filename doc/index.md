@@ -258,4 +258,9 @@ npm install vue-resource --save
 
 
 ## 8-7 --- 8-11
-## ratingselect 组件
+## ratingSelect 组件
+
+
+## 8-12 --- 8-17
+## 评价列表
+## 时间过滤条件formatDate
