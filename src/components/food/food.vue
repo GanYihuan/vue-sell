@@ -119,6 +119,8 @@
         this.selectType = ALL
         this.onlyContent = true
         // async 处理
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           if (!this.scroll) {
             // $el    Vue 实例使用的根 DOM 元素。
@@ -164,18 +166,24 @@
       },
       selectRating (type) {
         this.selectType = type
+        // async 处理
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       },
       toggleContent () {
         this.onlyContent = !this.onlyContent
+        // async 处理
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       }
     },
-    // {{rating.rateTime | formatDate}}过滤条件
+    //
     filters: {
       formatDate (time) {
         let date = new Date(time)
