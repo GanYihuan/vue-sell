@@ -270,3 +270,6 @@ npm install vue-resource --save
 
 
 ## seller 界面
+## saveToLocal ?
+## loadFromLocal ?
+## 滚动轮播图

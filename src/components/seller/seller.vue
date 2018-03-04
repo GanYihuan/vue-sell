@@ -8,9 +8,7 @@
           <span class="text">({{seller.ratingCount}})</span>
           <span class="text">月售{{seller.sellCount}}单</span>
         </div>
-        <div class="favorite"
-             @click="toggleFavorite"
-        >
+        <div class="favorite" @click="toggleFavorite">
           <span class="icon-favorite" :class="{'active':favorite}"></span>
           <span class="text">{{favoriteText}}</span>
         </div>
@@ -41,12 +39,8 @@
         <div class="content-wrapper border-1px">
           <p class="content">{{seller.bulletin}}</p>
         </div>
-        <ul class="supports"
-            v-if="seller.supports"
-        >
-          <li class="support-item border-1px"
-              v-for="(item, index) in seller.supports"
-          >
+        <ul class="supports" v-if="seller.supports">
+          <li class="support-item border-1px" v-for="(item, index) in seller.supports">
             <span class="icon" :class="classMap[seller.supports[index].type]"></span>
             <span class="text">{{seller.supports[index].description}}</span>
           </li>
@@ -75,10 +69,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import BScroll from 'better-scroll';
-  import {saveToLocal, loadFromLocal} from '../../common/js/store';
-  import star from '../star/star';
-  import split from '../split/split';
+  import BScroll from 'better-scroll'
+  import star from '../star/star'
+  import split from '../split/split'
+  import { saveToLocal, loadFromLocal } from '../../common/js/store'
 
   export default {
     props: {
@@ -86,86 +80,89 @@
         type: Object
       }
     },
-
-    data() {
+    data () {
       return {
         favorite: (() => {
-          return loadFromLocal(this.seller.id, 'favorite', false);
+          return loadFromLocal(this.seller.id, 'favorite', false)
         })()
       }
     },
-
-    // caculate attribute
+    // calculate attribute
     computed: {
-      favoriteText() {
-        return this.favorite ? '已收藏' : '收藏';
+      favoriteText () {
+        return this.favorite ? '已收藏' : '收藏'
       }
     },
-
-    created() {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+    // 生命周期
+    created () {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
-
+    // 监听
     watch: {
-      'seller'() {
+      'seller' () {
         this.$nextTick(() => {
-          this._initScroll();
-          this._initPics();
-        });
+          this._initScroll()
+          this._initPics()
+        })
       }
     },
-
-    mounted() {
-      // dom finish
-      // ready(){}  vue1.0
+    // dom finish
+    // ready() {}  vue1.0
+    mounted () {
+      // async 处理
+      // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+      // 修改数据后立即使用这个方法，获取更新后的 DOM
       this.$nextTick(() => {
-        this._initScroll();
-        this._initPics();
-      });
+        this._initScroll()
+        this._initPics()
+      })
     },
-
     methods: {
-      toggleFavorite(event) {
+      toggleFavorite (event) {
         if (!event._constructed) {
-          return;
+          return
         }
-        this.favorite = !this.favorite;
-        saveToLocal(this.seller.id, 'favorite', this.favorite);
+        this.favorite = !this.favorite
+        saveToLocal(this.seller.id, 'favorite', this.favorite)
       },
-      _initScroll() {
+      _initScroll () {
         if (!this.scroll) {
+          // 实时派发scroll事件
           this.scroll = new BScroll(this.$refs.seller, {
             click: true
-          });
+          })
         } else {
-          this.scroll.refresh();
+          this.scroll.refresh()
         }
       },
-      _initPics() {
+      // 滚动轮播图
+      _initPics () {
         if (this.seller.pics) {
-          let picWidth = 120;
-          let margin = 6;
-          let width = (picWidth + margin) * this.seller.pics.length - margin;
-          this.$refs.picList.style.width = width + 'px';
+          let picWidth = 120
+          let margin = 6
+          let width = (picWidth + margin) * this.seller.pics.length - margin
+          this.$refs.picList.style.width = width + 'px'
           this.$nextTick(() => {
             if (!this.picScroll) {
               this.picScroll = new BScroll(this.$refs.picWrapper, {
-                scrollX: true,  // horizontal scroll
-                eventPassthrough: 'vertical'  // ignore vertical scroll
-              });
+                // horizontal scroll
+                scrollX: true,
+                // ignore vertical scroll
+                eventPassthrough: 'vertical'
+              })
             } else {
-              this.picScroll.refresh();
+              this.picScroll.refresh()
             }
-          });
+          })
         }
       }
     },
-
+    // 组件注册
     components: {
       star,
       split
     }
-  };
+  }
 </script>
 
 <style rel="stylesheet/scss" lang="scss">

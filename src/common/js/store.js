@@ -1,30 +1,29 @@
 // localstorage
-
-export function saveToLocal(id, key, value) {
-  let seller = window.localStorage.__seller__;
+export function saveToLocal (id, key, value) {
+  let seller = window.localStorage.__seller__
   if (!seller) {
-    seller = {};
-    seller[id] = {};
+    seller = {}
+    seller[id] = {}
   } else {
-    // parse -> json string
-    seller = JSON.parse(seller);
+    // parse -> obj transform to json
+    seller = JSON.parse(seller)
     if (!seller[id]) {
-      seller[id] = {};
+      seller[id] = {}
     }
   }
-  seller[id][key] = value;
-  window.localStorage.__seller__ = JSON.stringify(seller);
-};
+  seller[id][key] = value
+  window.localStorage.__seller__ = JSON.stringify(seller)
+}
 
-export function loadFromLocal(id, key, def) {
-  let seller = window.localStorage.__seller__;
+export function loadFromLocal (id, key, def) {
+  let seller = window.localStorage.__seller__
   if (!seller) {
-    return def;
+    return def
   }
-  seller = JSON.parse(seller)[id];
+  seller = JSON.parse(seller)[id]
   if (!seller) {
-    return def;
+    return def
   }
-  let ret = seller[key];
-  return ret || def;
-};
+  let ret = seller[key]
+  return ret || def
+}

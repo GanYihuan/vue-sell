@@ -123,7 +123,7 @@
         // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           if (!this.scroll) {
-            // $el    Vue 实例使用的根 DOM 元素。
+            // 实时派发scroll事件
             this.scroll = new BScroll(this.$refs.food, {
               click: true
             })
@@ -183,7 +183,8 @@
         })
       }
     },
-    //
+    // 过滤
+    // {{rating.rateTime | formatDate}}
     filters: {
       formatDate (time) {
         let date = new Date(time)
