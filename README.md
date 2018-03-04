@@ -90,6 +90,7 @@ npm run dev
 
 
 ## 4-1: introduce project
+## 设备像素比
 
 
 ## 4-2: add img
@@ -99,6 +100,7 @@ npm run dev
 
 
 ## 4-4: 目录结构设计
+## common/fonts : 放置IconMoon下载好的图标
 
 
 ## 4-5: mock 假数据
@@ -116,24 +118,24 @@ cnpm install stylus stylus-loader --save-dev
 ```
 npm install node-sass sass-loader --save-dev
 ```
-## 查看数据
+## 查看数据in browser
 http://localhost:8080/api/goods
 ## 3.设置缩略路径
 > build/webapck.base.conf.js
 ```
-    {
-        'src': path.resolve(__dirname, '../src'),
-        'common': path.resolve(__dirname, '../src/common'),
-        'components': path.resolve(__dirname, '../src/components')
-    }
+{
+  'src': path.resolve(__dirname, '../src'),
+  'common': path.resolve(__dirname, '../src/common'),
+  'components': path.resolve(__dirname, '../src/components')
+}
 ```
 ## 4.修改.eslintrc.js 添加规则
 > /.eslintrc.js
 ```
-    'semi': ['error', 'never'],
-    'no-tabs': 0,
-    'indent': 0,
-    'space-before-function-paren': 0
+'semi': ['error', 'never'],
+'no-tabs': 0,
+'indent': 0,
+'space-before-function-paren': 0
 ```
 ## 5.修改config目录下的index.js文件
 ## 修改host
@@ -145,28 +147,26 @@ host: '0.0.0.0',
 > /build/webpack.dev.conf.js
 ```
 devServer: {
-    before(app) {
-      app.get('/api/seller', function(req, res) {
-        res.json({
-          errno: 0,
-          data: seller
-        })
-      });
-      app.get('/api/goods', function(req, res) {
-        res.json({
-          errno: 0,
-          data: goods
-        })
-      });
-      app.get('/api/ratings', function(req, res) {
-        res.json({
-          errno: 0,
-          data: ratings
-        })
-      });
-    },
-    ```````
-    ```````
+  before(app) {
+    app.get('/api/seller', function(req, res) {
+      res.json({
+        errno: 0,
+        data: seller
+      })
+    });
+    app.get('/api/goods', function(req, res) {
+      res.json({
+        errno: 0,
+        data: goods
+      })
+    });
+    app.get('/api/ratings', function(req, res) {
+      res.json({
+        errno: 0,
+        data: ratings
+      })
+    });
+  },
 }
 ```
 ## 7.在单独的 router.js 路由文件中编写路由
