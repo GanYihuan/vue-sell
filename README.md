@@ -201,8 +201,14 @@ export default new Router({
 ```
 
 
-## 5-1.修改.eslintrc.js 添加规则
+## 5-1
+## 修改.eslintrc.js 添加规则
 > /.eslintrc.js
+## 跳过eslint校验规则
+/* eslint-disable no-new */
+## 基本设备设置
+> index.html
+<meta/>
 
 
 ## 5-2: 
