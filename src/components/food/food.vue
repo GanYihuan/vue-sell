@@ -43,14 +43,15 @@
         <split></split>
         <div class="rating">
           <h1 class="title">商品评价</h1>
-          <!--<ratingselect-->
-            <!--@increment="incrementTotal"-->
-            <!--:select-type="selectType"-->
-            <!--:only-content="onlyContent"-->
-            <!--:desc="desc"-->
-            <!--:ratings="food.ratings"-->
-          <!--&gt;-->
-          <!--</ratingselect>-->
+          <ratingSelect
+            @select="selectRating"
+            @toggle="toggleContent"
+            :selectType="selectType"
+            :onlyContent="onlyContent"
+            :desc="desc"
+            :ratings="food.ratings"
+          >
+          </ratingSelect>
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
               <li
@@ -84,7 +85,7 @@
   // 灰色间隔
   import split from '../split/split.vue'
   // 评价组件
-  // import ratingselect from '../ratingselect/ratingselect.vue'
+  import ratingSelect from '../ratingSelect/ratingSelect.vue'
   // Vue set()
   import Vue from 'vue'
   import { formatDate } from '../../common/js/date'
@@ -104,7 +105,7 @@
         showFlag: false,
         // 商品评价初始化
         selectType: ALL,
-        // 是否打开 -> '只看有内容的评价'
+        // 是否打开 '只看有内容的评价'
         onlyContent: true,
         desc: {
           all: '全部',
@@ -133,12 +134,6 @@
       hide () {
         this.showFlag = false
       },
-      incrementTotal (type, data) {
-        this[type] = data
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      },
       addFirst (event) {
         // 去掉自带click事件的点击
         if (!event._constructed) {
@@ -149,7 +144,7 @@
         // 触发当前实例上的事件
         // 子组件通过$emit触发父组件的方法
         // <food @add="addFood" :food="selectedFood" ref="food">
-        this.$emit('add', event.target);
+        this.$emit('add', event.target)
       },
       needShow (type, text) {
         // text: 评价的语言
@@ -162,14 +157,20 @@
           return type === this.selectType
         }
       },
-      addFood(target) {
+      addFood (target) {
         // 触发当前实例上的事件
         // 子组件通过$emit触发父组件的方法
         // <food @add="addFood" :food="selectedFood" ref="food">
-        this.$emit('add', target);
+        this.$emit('add', target)
       },
       selectRating (type) {
         this.selectType = type
+        this.$nextTick(() => {
+          this.scroll.refresh()
+        })
+      },
+      toggleContent () {
+        this.onlyContent = !this.onlyContent
         this.$nextTick(() => {
           this.scroll.refresh()
         })
@@ -183,7 +184,7 @@
     },
     components: {
       cartControl,
-      // ratingselect,
+      ratingSelect,
       split
     }
   }

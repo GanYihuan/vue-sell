@@ -255,3 +255,7 @@ npm install vue-resource --save
     height: 0;
 ```
 ## split 组件
+
+
+## 8-7 --- 8-11
+## ratingselect 组件
