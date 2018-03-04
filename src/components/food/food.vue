@@ -146,7 +146,7 @@
         this.$emit('add', event.target)
       },
       needShow (type, text) {
-        // text: 评价的内容
+        // text: 评价的内容.
         if (this.onlyContent && !text) {
           return false
         }
