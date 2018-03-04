@@ -121,7 +121,7 @@
         // async 处理
         this.$nextTick(() => {
           if (!this.scroll) {
-            // $el    Vue 实例使用的根 DOM 元素。
+            // 实时派发scroll事件
             this.scroll = new BScroll(this.$refs.food, {
               click: true
             })
@@ -164,12 +164,18 @@
       },
       selectRating (type) {
         this.selectType = type
+        // 体验优化,异步执行下落动画
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       },
       toggleContent () {
         this.onlyContent = !this.onlyContent
+        // 体验优化,异步执行下落动画
+        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
+        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
