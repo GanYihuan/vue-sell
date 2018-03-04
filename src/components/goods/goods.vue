@@ -92,6 +92,7 @@
         listHeight: [],
         // foodsScroll 滚动的位置
         scrollY: 0,
+        // 被选中food
         selectedFood: {}
       }
     },
@@ -187,10 +188,12 @@
         this.foodsScroll.scrollToElement(el, 300)
       },
       selectFood (food, event) {
+        // 去掉自带click事件的点击
         if (!event._constructed) {
           return
         }
         this.selectedFood = food
+        // 调用food的show方法
         this.$refs.food.show()
       },
       addFood (target) {

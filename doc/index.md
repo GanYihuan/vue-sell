@@ -243,5 +243,15 @@ npm install vue-resource --save
 ## 球体动画不懂
 
 
-## 8-1
-
+## 8-1 --- 8-6
+## 宽高相等容器
+```
+  .image-header {
+    // 子元素 img position: absolute, 父元素position: relative
+    position: relative;
+    // 宽高相等容器
+    padding-top: 100%;
+    width: 100%;
+    height: 0;
+```
+## split 组件

@@ -9,7 +9,7 @@
         <div class="image-header">
           <img :src="food.image" alt="food.image"/>
           <div class="back" @click="hide">
-            <i class="iconfont icon-arrow_lift"></i>
+            <i class="icon-arrow_lift"></i>
           </div>
         </div>
         <div class="content">
@@ -23,7 +23,7 @@
             <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
           </div>
           <div class="cartControl-wrapper">
-            <cartControl :food="food"></cartControl>
+            <cartControl @add="addFood" :food="food"></cartControl>
           </div>
           <transition name="fade">
             <div
@@ -118,7 +118,7 @@
         this.showFlag = true
         this.selectType = ALL
         this.onlyContent = true
-        // asynchronous
+        // async 处理
         this.$nextTick(() => {
           if (!this.scroll) {
             // $el    Vue 实例使用的根 DOM 元素。
@@ -140,11 +140,16 @@
         })
       },
       addFirst (event) {
+        // 去掉自带click事件的点击
         if (!event._constructed) {
           return
         }
+        // 为food创建一个属性count,值为1
         Vue.set(this.food, 'count', 1)
-//        this.$emit('add', event.target);
+        // 触发当前实例上的事件
+        // 子组件通过$emit触发父组件的方法
+        // <food @add="addFood" :food="selectedFood" ref="food">
+        this.$emit('add', event.target);
       },
       needShow (type, text) {
         // text: 评价的语言
@@ -156,6 +161,12 @@
         } else {
           return type === this.selectType
         }
+      },
+      addFood(target) {
+        // 触发当前实例上的事件
+        // 子组件通过$emit触发父组件的方法
+        // <food @add="addFood" :food="selectedFood" ref="food">
+        this.$emit('add', target);
       },
       selectRating (type) {
         this.selectType = type
