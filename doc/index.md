@@ -267,3 +267,6 @@ npm install vue-resource --save
 
 
 ## ratings 界面
+
+
+## seller 界面
