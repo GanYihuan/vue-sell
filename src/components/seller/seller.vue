@@ -135,7 +135,7 @@
           this.scroll.refresh()
         }
       },
-      // 滚动轮播图
+      // 滚动轮播图.
       _initPics () {
         if (this.seller.pics) {
           let picWidth = 120
