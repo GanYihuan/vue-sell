@@ -5,22 +5,52 @@
 
 
 ## 3-2: begin vue develop
+## Node > 4
+```
+node -v
+```
 ## 安装脚手架
+```
 npm install -g vue-cli
-## 查看脚手架框架
+```
+## 查看脚手架模板
+```
 vue list
+```
 ## 初始化项目
+```
 vue init webpack imooc-sell
-## 查看目录
+```
+## ESLint -> Yes
+## Standard
+## karma + mocha -> No
+## e2e tests -> No
+## 查看目录结构
+```
 ll -a
+```
 ## package.json
+```
 npm install
+```
 ## run in browser
+```
 npm run dev
-(http://localhost:8080/#/)
+```
+## open in browser (http://localhost:8080/#/)
 
 
 ## 3-3: introduce vue-project structure
+## build -> webpack config
+## config -> webpack config
+## node_modules -> npm install
+## src -> code
+## static -> 第三方静态资源
+## .gitkeep -> 当目录为空也可以提交到仓库里
+## .babelrc -> es6 编译成 es5
+## .editorconfig -> 编译器配置
+## .eslintignore -> 忽略语法检测的目录文件
+## .eslintrc.js -> eslint语法检测配置
 
 
 ## 3-4: introduce vue-project structure

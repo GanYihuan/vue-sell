@@ -22,23 +22,28 @@
   const ERR_OK = 0
 
   export default {
+    // internal data initialization
     data () {
       return {
         seller: {}
       }
     },
+    // life circle
     created () {
+      // async request data
       this.$http
         .get('/api/seller')
         .then((response) => {
           console.log(response)
           if (response.body.error === ERR_OK) {
-            // 展开数组内容: ...
-            // Object.assign -> ...
-            this.seller = Object.assign({}, this.seller, response.data);
+            // 展开数组内容:
+            // es6-> ...
+            // es5-> Object.assign
+            this.seller = Object.assign({}, this.seller, response.data)
           }
         })
     },
+    // component registration
     components: {
       'v-header': header
     }
