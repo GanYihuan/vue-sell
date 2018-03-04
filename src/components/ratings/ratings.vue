@@ -83,7 +83,7 @@
   const ERR_OK = 0
 
   export default {
-    // 接收外界传入的数据
+    // 接收外界传入的数据。
     props: {
       seller: {
         type: Object
