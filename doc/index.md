@@ -266,4 +266,4 @@ npm install vue-resource --save
 ## 时间过滤条件formatDate
 
 
-## ratings 界面.
+## ratings 界面
