@@ -41,7 +41,11 @@
           </div>
           <div class="list-content" ref="listContent">
             <ul>
-              <li class="shopCart-food" v-for="(food,index) in selectFoods" :key="index">
+              <li
+                class="shopCart-food"
+                v-for="(food,index) in selectFoods"
+                :key="index"
+              >
                 <span class="name">{{food.name}}</span>
                 <div class="price">
                   <span>￥{{food.price * food.count}}</span>
@@ -71,7 +75,7 @@
   import cartControl from '../cartControl/cartControl.vue'
 
   export default {
-    // 接收外界传入的数据
+    // Receive incoming data from outside
     props: {
       selectFoods: {
         type: Array,
@@ -112,9 +116,9 @@
             show: false
           }
         ],
-        // 正在下落的球体
+        // A set of falling spheres
         dropBalls: [],
-        // 是否折叠
+        // Whether to collapse
         fold: true
       }
     },
@@ -122,7 +126,8 @@
       totalCount () {
         // 点菜的总价
         let count = 0
-        // selectFoods -> 全部单个菜品的集合
+        // 带有count的菜品集合
+        // count由cartControl设置
         this.selectFoods.forEach((food) => {
           count += food.count
         })
@@ -153,18 +158,22 @@
         }
       },
       listShow () {
+        let that = this
         if (!this.totalCount) {
-          this.fold = true
+          // fold: Whether to collapse
+          that.fold = true
           return false
         }
+        // if collapse, show === false
         let show = !this.fold
         if (show) {
           // $nextTick在下次 DOM 更新循环结束之后执行延迟回调。
           // 修改数据后立即使用这个方法，获取更新后的 DOM。
           this.$nextTick(() => {
+            let that = this
             if (!this.scroll) {
               // 派发scroll事件
-              this.scroll = new BScroll(this.$refs.listContent, {
+              that.scroll = new BScroll(this.$refs.listContent, {
                 click: true
               })
             } else {
@@ -186,7 +195,8 @@
         this.fold = true
       },
       empty () {
-        // selectFoods -> 全部单个菜品的集合
+        // 带有count的菜品集合
+        // count由cartControl设置
         this.selectFoods.forEach((food) => {
           food.count = 0
         })

@@ -3,7 +3,7 @@
     <div class="goods">
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
-          <!-- currentIndex由计算属性产生，判断index是否等于currentIndex,等于的话current类名生效 -->
+          <!-- if index ==== currentIndex, current className active -->
           <li
             v-for="(item,index) in goods"
             :key="index"
@@ -23,7 +23,11 @@
       </div>
       <div class="foods-wrapper" ref="foodsWrapper">
         <ul>
-          <li v-for="(item,index) in goods" :key="index" class="food-list food-list-hook">
+          <li
+            v-for="(item,index) in goods"
+            :key="index"
+            class="food-list food-list-hook"
+          >
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <li
@@ -71,48 +75,50 @@
   const ERR_OK = 0
 
   export default {
-    // 接收外界传入的数据
+    // Receive incoming data from outside
     props: {
-      // 异步请求的数据
+      // Asynchronous requested data
       seller: {
         type: Object
       }
     },
     data () {
       return {
-        // 异步传入的数据
+        // Plug in asynchronous incoming data
         goods: [],
-        // 菜品的高度形成的数组
+        // 菜的高度形成的数组
         listHeight: [],
-        // foodsScroll 滚动的位置
+        // foodsScroll 滚动的高度
         scrollY: 0,
         selectedFood: {}
       }
     },
-    // 计算属性
+    // Calculation properties
     computed: {
       currentIndex () {
         for (let i = 0; i < this.listHeight.length; i++) {
-          // 任意一样菜
+          // 任意一道菜
           let height1 = this.listHeight[i]
           // 下一道菜
           let height2 = this.listHeight[i + 1]
-          // 如果没有下一道菜,即当前的菜为最后一道菜
-          // 如果当前这道菜距离父组件的高度位于本来位置至下一道菜位置之间，返回该菜的下标
+          // 如果没有下一道菜,即当前的菜是最后一道菜
+          // 滚动距离处于该菜位置至下一道菜位置之间，返回该菜的下标
           if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
             return i
           }
         }
         return 0
       },
-      // 全部单个菜品的集合
+      // 带有count的菜品集合
+      // count由cartControl设置
       selectFoods () {
         let foods = []
-        // http://ustbhuangyi.com/sell/api/goods
-        // good -> 左侧栏的单个项目
+        // http://localhost:8080/api/goods
+        // good: 左侧栏的单个项目
         this.goods.forEach((good) => {
           // food -> 项目里的单个菜品
           good.foods.forEach((food) => {
+            // count由cartControl设置
             if (food.count) {
               foods.push(food)
             }
@@ -121,6 +127,7 @@
         return foods
       }
     },
+    // life circle
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
       this.$http
@@ -139,8 +146,9 @@
         })
     },
     methods: {
-      // 点击事件，滚动事件
+      // 初始化滚动事件
       _initScroll () {
+        // 派发scroll事件
         this.meunScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
         })
@@ -150,6 +158,7 @@
           // 实时滚动的位置
           probeType: 3
         })
+        // scrollY: foodsScroll 滚动的高度
         this.foodsScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y))
         })
@@ -159,12 +168,12 @@
         // 目标元素
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
         let height = 0
-        // listHeight 每样菜的高度的数组
+        // listHeight 菜的高度的数组
         this.listHeight.push(height)
         for (let i = 0; i < foodList.length; i++) {
-          // 单一菜品
+          // 任意一道菜
           let item = foodList[i]
-          // 菜品的高度
+          // 菜的高度
           height += item.clientHeight
           this.listHeight.push(height)
         }
@@ -177,7 +186,7 @@
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
         // 当前菜品
         let el = foodList[index]
-        // 300: 持续时间
+        // 300: duration time
         this.foodsScroll.scrollToElement(el, 300)
       },
       addFood (target) {

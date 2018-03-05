@@ -335,5 +335,5 @@ npm install vue-resource --save
 ## goods 底部的购物车
 
 
-## 球体动画不懂
+## 球体动画不懂?
 
