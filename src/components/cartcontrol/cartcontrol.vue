@@ -34,7 +34,7 @@
           return
         }
         if (!this.food.count) {
-          // 添加一个food属性count=1
+          // 设置this.food,添加属性count,值等于1
           Vue.set(this.food, 'count', 1)
         } else {
           this.food.count++
