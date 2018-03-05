@@ -18,7 +18,10 @@
         </div>
       </div>
       <div class="ball-container">
-        <div v-for="ball in balls">
+        <div
+          v-for="(ball,index) in balls"
+          :key="index"
+        >
           <!-- drop is a methods -->
           <!-- beforeDrop is a methods -->
           <transition
@@ -41,7 +44,11 @@
           </div>
           <div class="list-content" ref="listContent">
             <ul>
-              <li class="shopCart-food" v-for="food in selectFoods">
+              <li
+                class="shopCart-food"
+                v-for="(food,index) in selectFoods"
+                :key="index"
+              >
                 <span class="name">{{food.name}}</span>
                 <div class="price">
                   <span>￥{{food.price * food.count}}</span>
@@ -153,8 +160,9 @@
         }
       },
       listShow () {
+        let that = this
         if (!this.totalCount) {
-          this.fold = true
+          that.fold = true
           return false
         }
         let show = !this.fold
@@ -162,9 +170,10 @@
           // $nextTick在下次 DOM 更新循环结束之后执行延迟回调。
           // 修改数据后立即使用这个方法，获取更新后的 DOM。
           this.$nextTick(() => {
+            let that = this
             if (!this.scroll) {
               // 派发scroll事件
-              this.scroll = new BScroll(this.$refs.listContent, {
+              that.scroll = new BScroll(this.$refs.listContent, {
                 click: true
               })
             } else {

@@ -57,7 +57,8 @@
               <li
                 class="rating-item border-1px"
                 v-show="needShow(rating.rateType, rating.text)"
-                v-for="rating in food.ratings"
+                v-for="(rating,index) in food.ratings"
+                :key="index"
               >
                 <div class="user">
                   <span class="name">{{rating.username}}</span>
