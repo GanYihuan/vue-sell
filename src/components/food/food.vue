@@ -93,7 +93,7 @@
   const ALL = 2
 
   export default {
-    // 接收外界传入的数据
+    // Receive incoming data from outside
     props: {
       food: {
         type: Object
