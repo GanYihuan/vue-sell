@@ -29,8 +29,8 @@
     <ratingSelect
       @select="selectRating"
       @toggle="toggleContent"
-      :select-type="selectType"
-      :only-content="onlyContent"
+      :selectType="selectType"
+      :onlyContent="onlyContent"
       :ratings="ratings"
     >
     </ratingSelect>
@@ -83,13 +83,13 @@
   const ERR_OK = 0
 
   export default {
-    // 接收外界传入的数据。
+    // Receive incoming data from outside。
     props: {
       seller: {
         type: Object
       }
     },
-    // 内部数据初始化
+    // Internal data initialization
     data () {
       return {
         // 评价数据集合
@@ -100,9 +100,9 @@
         onlyContent: true
       }
     },
-    // 生命周期
+    // Life cycle
     created () {
-      // 异步数据
+      // Asynchronous data
       this.$http
         .get('/api/ratings')
         .then((response) => {
