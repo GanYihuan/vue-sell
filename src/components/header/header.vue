@@ -15,6 +15,7 @@
         <!-- v-if : 如果有数据就解析 -->
         <!-- 因为是异步过程，需要判断是否要解析 -->
         <div v-if="seller.supports" class="support">
+          <!-- seller.supports[0].type: 0,1,2,3,4 -->
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
@@ -33,6 +34,8 @@
     </div>
     <transition name="fade">
       <div v-show="detailShow" class="detail">
+        <!--stickylayout布局-->
+        <!-- 1:清浮动,包装层,内容层 -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>
@@ -45,7 +48,7 @@
               <div class="line"></div>
             </div>
             <ul v-if="seller.supports" class="supports">
-              <li class="support-item" v-for="(item,index) in seller.supports">
+              <li class="support-item" v-for="(item,index) in seller.supports" :key="index">
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -60,6 +63,7 @@
             </div>
           </div>
         </div>
+        <!-- 2:关闭按钮层 -->
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>
@@ -72,23 +76,22 @@
   import star from '../star/star.vue'
 
   export default {
-    // 接收外界传来的数据
+    // Receive data from outside
     props: {
       seller: {
         type: Object
       }
     },
-    // 内部数据
+    // Internal data
     data () {
       return {
         detailShow: false
       }
     },
-    // 生命周期
+    // Life cycle
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
-    // 方法
     methods: {
       showDetail () {
         this.detailShow = true
@@ -97,7 +100,7 @@
         this.detailShow = false
       }
     },
-    // 外界组件注册
+    // External component Registration
     components: {
       star
     }

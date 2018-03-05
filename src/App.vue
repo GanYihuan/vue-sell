@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- :seller -> v-bind 绑定数据 -->
-    <!-- seller 对象里面塞了异步数据 -->
+    <!-- :seller: v-bind Binding Data -->
+    <!-- The Seller object is stuffed with asynchronous data. -->
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
@@ -37,22 +37,24 @@
         }
       }
     },
-    // 生命周期
+    // life circle
     created () {
       // vue-resource
-      // ajax request, 请求数据塞入seller对象
+      // ajax request, Request data to plug in the seller object
       this.$http
         .get('/api/seller?id=' + this.seller.id)
         .then((response) => {
           console.log(response)
           response = response.body
           if (response.errno === ERR_OK) {
-            // 展开数组内容: ...
-            // Object.assign -> ...
+            // Expand the contents of an array
+            // es6: ...
+            // es5: Object.assign
             this.seller = Object.assign({}, this.seller, response.data)
           }
         })
     },
+    // component register
     components: {
       'v-header': header
     }

@@ -202,13 +202,13 @@
   // animate end
 
   .detail-wrapper {
-    // 填充空间
+    // 3:填充空间
     min-height: 100%;
     width: 100%;
 
     .detail-main {
       margin-top: 64px;
-      // C:给关闭按钮的空间
+      // 4:预设关闭按钮的空间
       padding-bottom: 64px;
 
       .name {
@@ -312,10 +312,10 @@
     position: relative;
     width: 32px;
     height: 32px;
-    // D:margin嵌入了main里的padding
+    // 5:关闭按钮层嵌入了包装层
     margin: -64px auto 0;
     font-size: 32px;
-    // E:clearfix
+    // 6:关闭按钮层清浮动
     clear: both;
   }
 }

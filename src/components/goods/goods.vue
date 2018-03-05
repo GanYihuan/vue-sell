@@ -6,6 +6,7 @@
           <!-- currentIndex由计算属性产生，判断index是否等于currentIndex,等于的话current类名生效 -->
           <li
             v-for="(item,index) in goods"
+            :key="index"
             class="menu-item"
             :class="{'current':currentIndex===index}"
             @click="selectMenu(index,$event)"
@@ -22,11 +23,12 @@
       </div>
       <div class="foods-wrapper" ref="foodsWrapper">
         <ul>
-          <li v-for="item in goods" class="food-list food-list-hook">
+          <li v-for="(item,index) in goods" :key="index" class="food-list food-list-hook">
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <li
-                v-for="food in item.foods"
+                v-for="(food,index) in item.foods"
+                :key="index"
                 class="food-item border-1px"
               >
                 <div class="icon">

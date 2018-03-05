@@ -21,26 +21,24 @@
 
 <script type="text/ecmascript-6">
   const LENGTH = 5
-  // 有星星
+  // full star
   const CLS_ON = 'on'
-  // 半星
+  // half star
   const CLS_HALF = 'half'
-  // 没星
+  // empty star
   const CLS_OFF = 'off'
 
   export default {
-    // 接收外界传来的数据
+    // Receive data from outside
     props: {
-      // 尺寸
       size: {
         type: Number
       },
-      // 分数
       score: {
         type: Number
       }
     },
-    // 计算属性
+    // calculate property
     computed: {
       starType () {
         return 'star-' + this.size
@@ -51,21 +49,21 @@
         // Math.floor: 4.9 -> 4
         // Math.ceil: 4.1 -> 5
         let score = Math.floor(this.score * 2) / 2
-        // 是否有半星, true false 有小数?, true 就半星
+        // Is there a half star ? if true have half star
         let hasDecimal = score % 1 !== 0
-        // 全星部分
+        // full star
         let integer = Math.floor(score)
 
         for (let i = 0; i < integer; i++) {
-          // 全星
+          // full star
           result.push(CLS_ON)
         }
         if (hasDecimal) {
-          // 半星
+          // half star
           result.push(CLS_HALF)
         }
         while (result.length < LENGTH) {
-          // 空星
+          // empty star
           result.push(CLS_OFF)
         }
 
