@@ -9,11 +9,11 @@ body, html {
   display: inline-block;
   &:after {
     display: block;
-    content: ".";
+    visibility: hidden;
     height: 0;
     line-height: 0;
     clear: both;
-    visibility: hidden;
+    content: ".";
   }
 }
 

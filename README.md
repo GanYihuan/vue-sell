@@ -215,24 +215,23 @@ export default new Router({
 ## intellij ide
 Editor -> File and code template
 add Files, extension 'vue'
-## 
+## header component
 
 
 ## 5-3:
+## header styles
+
+
+## 5-4: --- 5-5:
+## styles
 ## router
 ```
 npm install vue-router
 ```
 
 
-## 5-4: --- 5-5:
-## styles
-## router
-
-
 ## 5-6:
-## 一像素横线
-## 手机预览
+## 手机预览,草料二维码
 ## 1.查看IP,copy
 ```
 ifconfig
@@ -250,6 +249,8 @@ localhost:8080/#/goods
 ## 6.微信扫描打开
 ## 适配不同dip屏幕
 > base.scss
+## 一像素横线
+> mixin.scss
 ## 清除浮动
 > mixin.scss
 ## 2x3x图
