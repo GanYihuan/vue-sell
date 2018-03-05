@@ -93,11 +93,11 @@
         return this.favorite ? '已收藏' : '收藏'
       }
     },
-    // 生命周期
+    // Life cycle
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
-    // 监听
+    // Listening
     watch: {
       'seller' () {
         this.$nextTick(() => {
@@ -135,7 +135,7 @@
           this.scroll.refresh()
         }
       },
-      // 滚动轮播图.
+      // Rolling Carousel Diagram.
       _initPics () {
         if (this.seller.pics) {
           let picWidth = 120
@@ -157,7 +157,7 @@
         }
       }
     },
-    // 组件注册
+    // Component Registration
     components: {
       star,
       split
