@@ -74,12 +74,12 @@ npm run dev
 ## config -> webpack config
 ## node_modules -> npm install
 ## src -> code
-## static -> 第三方静态资源
-## .gitkeep -> 当目录为空也可以提交到仓库里
-## .babelrc -> es6 编译成 es5
-## .editorconfig -> 编译器配置
-## .eslintignore -> 忽略语法检测的目录文件
-## .eslintrc.js -> eslint语法检测配置
+## static -> Third party static resources.
+## .gitkeep -> When the directory is empty, it can also be submitted to the repository.
+## .babelrc -> babel config es6 Compiled into es5
+## .editorconfig -> Compiler configuration
+## .eslintignore -> Ignore the directory files for syntax checking.
+## .eslintrc.js -> eslint Syntax detection configuration
 
 
 ## 3-4: introduce vue-project structure
