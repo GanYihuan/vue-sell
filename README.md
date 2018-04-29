@@ -38,15 +38,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ```
 node -v
 ```
-## 安装脚手架
+## install vue-cli
 ```
 npm install -g vue-cli
 ```
-## 查看脚手架模板
+## check project
 ```
 vue list
 ```
-## 初始化项目
+## init project
 ```
 vue init webpack imooc-sell
 ```
@@ -54,7 +54,7 @@ vue init webpack imooc-sell
 ## Standard
 ## karma + mocha -> No
 ## e2e tests -> No
-## 查看目录结构
+## check dialog
 ```
 ll -a
 ```
