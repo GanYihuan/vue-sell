@@ -12,8 +12,8 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分支送达
         </div>
-        <!-- v-if : 如果有数据就解析 -->
-        <!-- 因为是异步过程，需要判断是否要解析 -->
+        <!-- v-if : If you have data, you parse it. -->
+        <!-- Because it's an asynchronous process, you need to decide if you want to parse it. -->
         <div v-if="seller.supports" class="support">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>

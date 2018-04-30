@@ -201,8 +201,7 @@ npm install vue-resource --save
 ```
 
 
-## 6-3: --- 6-8: 
-## header styles
+## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
 
 
 ## 6-9: --- 6-10: 
