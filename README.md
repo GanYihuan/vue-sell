@@ -226,8 +226,9 @@ _goods.vue_
 ##### goods.vue styles
 
 
-## 7-2: 
-## 左边栏styles
+## 7-2: The left column styles
+_✨✨✨_
+_goods.vue_
 
 
 ## 7-3: --- 7-4:
