@@ -33,6 +33,7 @@
     </div>
     <transition name="fade">
       <div v-show="detailShow" class="detail">
+        <!-- A: clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>

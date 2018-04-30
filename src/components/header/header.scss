@@ -2,26 +2,25 @@
 @import "../../common/scss/mixin";
 
 .header {
-  // 里面的子元素.background 的position:absolute,所以要加相对定位给父元素.header
+  // 里面的子元素 .background 的position:absolute,所以要加相对定位给父元素.header
   position: relative;
-  // 超出隐藏
   overflow: hidden;
   color: #fff;
   background: rgba(7, 17, 27, 0.5);
 }
 
 .content-wrapper {
-  // 写相对定位的理由，下面元素有绝对定位
+  // For reasons of relative positioning, the following elements have absolute positioning.
   // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  // 消除空白
+  // Eliminate the gap
   font-size: 0;
 
   .avatar {
-    // 一行显示
+    // Row shows
     display: inline-block;
-    // 顶部对齐
+    // At the top of the alignment
     vertical-align: top;
 
     img {
@@ -37,13 +36,15 @@
       margin: 2px 0 8px 0;
 
       .brand {
-        // 行内元素变成块状元素,否则宽高设置无效，行内元素靠内容撑开
+        // The inner element becomes a block element,
+        // otherwise the width and height is invalid,
+        // and the element is supported by the content.
         display: inline-block;
-        // 对齐方式,顶部对齐
+        // Alignment, top alignment.
         vertical-align: top;
         width: 30px;
         height: 18px;
-        // 2x3x图
+        // 2x3x image
         @include bg-image('brand');
         background-size: 30px 18px;
         background-repeat: no-repeat;
@@ -124,15 +125,15 @@
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  // 垂直方向居中
+  // The vertical direction is centered.
   height: 28px;
   line-height: 28px;
-  // 超出显示 ...
-  // 不换行
+  // overdisplay ...
+  // Don't wrap
   white-space: nowrap;
-  // 超出父元素隐藏
+  // Hiding from the parent element.
   overflow: hidden;
-  // 超出部分显示 ...
+  // overdisplay ...
   text-overflow: ellipsis;
   background: rgba(7, 17, 27, 0.2);
 
@@ -167,9 +168,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // 藏着底下一层
+  // Hide the bottom layer.
   z-index: -1;
-  // 模糊背景图片
+  // Fuzzy background picture
   filter: blur(10px);
 }
 
@@ -177,14 +178,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  // 置顶层级
+  // Placed at the top level
   z-index: 100;
-  // 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容
+  // If the content is pruned, the browser displays the scroll bar to see the rest of the content.
   overflow: auto;
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
-  // 动画的过渡时间
   transition: all 0.5s;
   // ios模糊
   backdrop-filter: blur(10px);
@@ -202,18 +202,18 @@
   // animate end
 
   .detail-wrapper {
-    // 填充空间
+    // Fill the space
     min-height: 100%;
     width: 100%;
 
     .detail-main {
       margin-top: 64px;
-      // C:给关闭按钮的空间
+      // B:The space to close the button.
       padding-bottom: 64px;
 
       .name {
         line-height: 16px;
-        // 水平居中
+        // Horizontal center
         text-align: center;
         font-size: 16px;
         font-weight: 700;
@@ -262,7 +262,7 @@
             margin-right: 6px;
             width: 16px;
             height: 16px;
-            // 垂直方向居中
+            // The vertical direction is centered.
             vertical-align: top;
             background-size: 16px 16px;
             background-repeat: no-repeat;
@@ -312,10 +312,10 @@
     position: relative;
     width: 32px;
     height: 32px;
-    // D:margin嵌入了main里的padding
+    // C:margin embed the padding in main.
     margin: -64px auto 0;
     font-size: 32px;
-    // E:clearfix
+    // D:clearfix
     clear: both;
   }
 }

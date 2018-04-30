@@ -204,10 +204,8 @@ npm install vue-resource --save
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
 
 
-## 6-9: --- 6-10: 
-## 弹层styles
-## clearfix 样式固定套路
-## stickylayout布局
+## 6-9, 6-10: Layer thickness styles
+##### sticky layout
 
 
 ## 6-11 --- 6-13
