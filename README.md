@@ -34,52 +34,52 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 3-2: begin vue develop
-## Node > 4
+##### Node > 4
 ```
 node -v
 ```
-## install vue-cli
+##### install vue-cli
 ```
 npm install -g vue-cli
 ```
-## check project
+##### check project
 ```
 vue list
 ```
-## init project
+##### init project
 ```
 vue init webpack imooc-sell
 ```
-## ESLint -> Yes
-## Standard
-## karma + mocha -> No
-## e2e tests -> No
-## check dialog
+##### ESLint -> Yes
+##### Standard
+##### karma + mocha -> No
+##### e2e tests -> No
+##### check dialog
 ```
 ll -a
 ```
-## package.json
+##### package.json
 ```
 npm install
 ```
-## run in browser
+##### run in browser
 ```
 npm run dev
 ```
-## open in browser (http://localhost:8080/#/)
+##### open in browser (http://localhost:8080/#/)
 
 
 ## 3-3: introduce vue-project structure
-## build -> webpack config
-## config -> webpack config
-## node_modules -> npm install
-## src -> code
-## static -> Third party static resources.
-## .gitkeep -> When the directory is empty, it can also be submitted to the repository.
-## .babelrc -> babel config es6 Compiled into es5
-## .editorconfig -> Compiler configuration
-## .eslintignore -> Ignore the directory files for syntax checking.
-## .eslintrc.js -> eslint Syntax detection configuration
+##### build -> webpack config
+##### config -> webpack config
+##### node_modules -> npm install
+##### src -> code
+##### static -> Third party static resources.
+##### .gitkeep -> When the directory is empty, it can also be submitted to the repository.
+##### .babelrc -> babel config es6 Compiled into es5
+##### .editorconfig -> Compiler configuration
+##### .eslintignore -> Ignore the directory files for syntax checking.
+##### .eslintrc.js -> eslint Syntax detection configuration
 
 
 ## 3-4: introduce vue-project structure
@@ -91,7 +91,6 @@ npm run dev
 
 
 ## 4-1: introduce project
-## 设备像素比
 
 
 ## 4-2: add img
@@ -100,106 +99,33 @@ npm run dev
 ## 4-3: IconMoon create SVG
 
 
-## 4-4: 目录结构设计
-## common/fonts : 放置IconMoon下载好的图标
+## 4-4: Directory structure design
+##### common/fonts : place IconMoon down load icon
 
 
-## 4-5: mock 假数据
-## 1.add data.json
-> data.json
-## 2.安装 vue-resource better-scroll
+## 4-5: mock data
+##### 1.add data.json
+*data.json*
+##### 2.install vue-resource better-scroll sass stylus
 ```
 cnpm install vue-resource better-scroll --save
-```
-## 安装stylus stylus-loader
-```
 cnpm install stylus stylus-loader --save-dev
+cnpm install node-sass sass-loader --save-dev
 ```
-## 或者安装sass sass-loader，替代上面的stylus
-```
-npm install node-sass sass-loader --save-dev
-```
-## 查看数据in browser
-http://localhost:8080/api/goods
-## 3.设置缩略路径
-> build/webapck.base.conf.js
-```
-{
-  'src': path.resolve(__dirname, '../src'),
-  'common': path.resolve(__dirname, '../src/common'),
-  'components': path.resolve(__dirname, '../src/components')
-}
-```
-## 4.修改.eslintrc.js 添加规则
-> /.eslintrc.js
-```
-'semi': ['error', 'never'],
-'no-tabs': 0,
-'indent': 0,
-'space-before-function-paren': 0
-```
-## 5.修改config目录下的index.js文件
-## 修改host
-> /config/index.js
-```
-host: '0.0.0.0',
-```
-## 6.使用webpack内置的devServer，设置before()
-> /build/webpack.dev.conf.js
-```
-devServer: {
-  before(app) {
-    app.get('/api/seller', function(req, res) {
-      res.json({
-        errno: 0,
-        data: seller
-      })
-    });
-    app.get('/api/goods', function(req, res) {
-      res.json({
-        errno: 0,
-        data: goods
-      })
-    });
-    app.get('/api/ratings', function(req, res) {
-      res.json({
-        errno: 0,
-        data: ratings
-      })
-    });
-  },
-}
-```
-## 7.在单独的 router.js 路由文件中编写路由
-> /src/router/index.js
-```
-import Vue from 'vue';
-import Router from 'vue-router';
-import goods from 'components/goods/goods';
-import ratings from 'components/ratings/ratings';
-import seller from 'components/seller/seller';
+##### check data in browser
+[http://localhost:8080/api/goods](data)
+##### 3. set alias path
+*build/webapck.base.conf.js*
+## 4. modify .eslintrc.js add rules
+_/.eslintrc.js_
+## 5.modify config dialog index.js files
+## modify host
+_/config/index.js_
+## 6. use webpack inside devServer，set before()
+_/build/webpack.dev.conf.js_
+## 7. router.js
+_/src/router/index.js_
 
-Vue.use(Router);
-
-const routes = [{
-  path: '/',
-  redirect: '/goods'
-}, {
-  path: '/goods',
-  component: goods
-}, {
-  path: '/ratings',
-  component: ratings
-}, {
-  path: '/seller',
-  component: seller
-}];
-
-export default new Router({
-    linkActiveClass: 'active',
-    routes
-});
-```
 
 
 ## 5-1

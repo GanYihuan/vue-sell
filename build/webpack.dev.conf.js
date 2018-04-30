@@ -52,6 +52,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       });
     },
     // self
+
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
