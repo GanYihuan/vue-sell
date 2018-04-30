@@ -37,7 +37,7 @@
                 @click="selectFood(food,$event)"
               >
                 <div class="icon">
-                  <img width="57" height="57" :src="food.icon">
+                  <img width="57" height="57" :src="food.icon"/>
                 </div>
                 <div class="content">
                   <h2 class="name">{{food.name}}</h2>
@@ -83,9 +83,7 @@
   const ERR_OK = 0
 
   export default {
-    // 接收外界传入的数据
     props: {
-      // 异步请求的数据
       seller: {
         type: Object
       }

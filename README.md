@@ -231,8 +231,9 @@ _✨✨✨_
 _goods.vue_
 
 
-## 7-3: --- 7-4:
-## 右边栏styles
+## 7-3, 7-4: The right column styles
+_✨✨✨_
+_goods.vue_
 
 
 ## 左侧边栏的选择，右侧滚动到指定菜品
