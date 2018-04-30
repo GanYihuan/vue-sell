@@ -208,12 +208,11 @@ npm install vue-resource --save
 ##### sticky layout
 
 
-## 6-11 --- 6-13
-## 填充弹出层
-## 星星组件 star.vue
+## 6-11, 6-12, 6-13: star component
+_star.vue_
 
 
-## 6-14 --- 6-16
+## 6-14, 6-15, 6-16
 ## flex实现行线+字符+行线
 ## 动画
 

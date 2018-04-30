@@ -1,12 +1,12 @@
 <template>
-  <!-- :class 绑定，computed里面的starType -->
-  <!-- starType: 不同尺寸星星，对应不同class -->
+  <!-- :class bind，computed inside starType -->
+  <!-- starType: Different sizes of stars correspond to different stars. class -->
   <div class="star" :class="starType">
-    <!-- v-for: 遍历, key是必须的 -->
+    <!-- v-for: Traversal, key is necessary. -->
     <span
+      class="star-item"
       v-for="itemClass in itemClasses"
       :key="itemClass.id"
-      class="star-item"
       :class="itemClass"
     >
       <!-- :key替代track-by="$index" -->
@@ -21,26 +21,19 @@
 
 <script type="text/ecmascript-6">
   const LENGTH = 5
-  // 有星星
   const CLS_ON = 'on'
-  // 半星
   const CLS_HALF = 'half'
-  // 没星
   const CLS_OFF = 'off'
 
   export default {
-    // 接收外界传来的数据
     props: {
-      // 尺寸
       size: {
         type: Number
       },
-      // 分数
       score: {
         type: Number
       }
     },
-    // 计算属性
     computed: {
       starType () {
         return 'star-' + this.size
@@ -51,21 +44,21 @@
         // Math.floor: 4.9 -> 4
         // Math.ceil: 4.1 -> 5
         let score = Math.floor(this.score * 2) / 2
-        // 是否有半星, true false 有小数?, true 就半星
+        // Is there a half star, Have a decimal ? true half star
         let hasDecimal = score % 1 !== 0
-        // 全星部分
+        // All star part
         let integer = Math.floor(score)
 
         for (let i = 0; i < integer; i++) {
-          // 全星
+          // All star part
           result.push(CLS_ON)
         }
         if (hasDecimal) {
-          // 半星
+          // half star
           result.push(CLS_HALF)
         }
         while (result.length < LENGTH) {
-          // 空星
+          // Empty star
           result.push(CLS_OFF)
         }
 
