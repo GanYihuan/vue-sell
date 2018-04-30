@@ -105,7 +105,7 @@ npm run dev
 
 ## 4-5: mock data
 ##### 1.add data.json
-*data.json*
+_data.json_
 ##### 2.install vue-resource better-scroll sass stylus
 ```
 cnpm install vue-resource better-scroll --save
@@ -115,15 +115,14 @@ cnpm install node-sass sass-loader --save-dev
 ##### check data in browser
 [http://localhost:8080/api/goods](data)
 ##### 3. set alias path
-*build/webapck.base.conf.js*
-## 4. modify .eslintrc.js add rules
+_build/webapck.base.conf.js_
+##### 4. modify .eslintrc.js add rules
 _/.eslintrc.js_
-## 5.modify config dialog index.js files
-## modify host
+##### 5.modify config dialog index.js files, modify host
 _/config/index.js_
-## 6. use webpack inside devServer，set before()
+##### 6. use webpack inside devServer，set before()
 _/build/webpack.dev.conf.js_
-## 7. router.js
+##### 7. router.js
 _/src/router/index.js_
 
 
