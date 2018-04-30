@@ -196,29 +196,33 @@ _mixin.scss_
 
 
 ## 6-1, 6-2: Front end interaction: jsonp, xmlhttprequest
+_✨✨✨_
 ```
 npm install vue-resource --save
 ```
 
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
+_✨✨✨_
 
 
 ## 6-9, 6-10: Layer thickness styles
 ##### sticky layout
+_✨✨✨_
 
 
 ## 6-11, 6-12, 6-13: star component
+_✨✨✨_
 _star.vue_
 
 
-## 6-14, 6-15, 6-16
-## flex实现行线+字符+行线
-## 动画
+## 6-14, 6-15, 6-16: flex Implement line + character + line, animate
+_✨✨✨_
 
 
-## 7-1: goods.vue
-## async 数据传入
+## 7-1: async The incoming data
+_✨✨✨_
+_goods.vue_
 
 
 ## 7-2: 
