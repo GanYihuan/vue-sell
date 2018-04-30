@@ -72,23 +72,19 @@
   import star from '../star/star.vue'
 
   export default {
-    // 接收外界传来的数据
     props: {
       seller: {
         type: Object
       }
     },
-    // 内部数据
     data () {
       return {
         detailShow: false
       }
     },
-    // 生命周期
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
-    // 方法
     methods: {
       showDetail () {
         this.detailShow = true
@@ -97,7 +93,6 @@
         this.detailShow = false
       }
     },
-    // 外界组件注册
     components: {
       star
     }

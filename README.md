@@ -128,29 +128,26 @@ _/src/router/index.js_
 
 
 ## 5-1
-## 修改.eslintrc.js 添加规则
-> /.eslintrc.js
-## 跳过eslint校验规则
+##### css reset
+_static/css/reset.css_
+##### index.html viewport config
+##### modify .eslintrc.js add rules
+_/.eslintrc.js_
+##### skip eslint check
 /* eslint-disable no-new */
-## 基本设备设置
-> index.html
-<meta/>
 
 
 ## 5-2: 
-## intellij ide
-Editor -> File and code template
-add Files, extension 'vue'
-## header component
+##### intellij ide
+> Editor -> File and code template > add Files, extension 'vue'
+##### header component
 
 
-## 5-3:
-## header styles
+## 5-3:  header styles
 
 
-## 5-4: --- 5-5:
-## styles
-## router
+## 5-4, 5-5: router config
+##### router
 ```
 npm install vue-router
 ```

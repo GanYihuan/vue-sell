@@ -14,6 +14,12 @@
         <router-link to="/seller">商家</router-link>
       </div>
     </div>
+    <!--
+      keep-alive: The content is cached after the route is loaded,
+      and the cache is read when loaded to prevent continuous loading.
+    -->
+    <!--  <keep-alive exclude="Detail"> -->
+    <!-- name = Detail component Do not do cache processing. -->
     <keep-alive>
       <router-view :seller="seller"></router-view>
     </keep-alive>
