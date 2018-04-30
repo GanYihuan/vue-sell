@@ -31,9 +31,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 ## 3-1: introduce vue-cli
+_✨_
 
 
 ## 3-2: begin vue develop
+_✨✨_
 ##### Node > 4
 ```
 node -v
@@ -70,6 +72,7 @@ npm run dev
 
 
 ## 3-3: introduce vue-project structure
+_✨✨_
 ##### build -> webpack config
 ##### config -> webpack config
 ##### node_modules -> npm install
@@ -83,27 +86,34 @@ npm run dev
 
 
 ## 3-4: introduce vue-project structure
+_✨✨_
 
 
 ## 3-5: webpack(1)
+_✨✨✨✨✨_
 ## 3-6: webpack(2)
 ## 3-7: webpack(3)
 
 
 ## 4-1: introduce project
+_✨_
 
 
 ## 4-2: add img
+_✨✨_
 
 
 ## 4-3: IconMoon create SVG
+_✨✨_
 
 
 ## 4-4: Directory structure design
+_✨✨_
 ##### common/fonts : place IconMoon down load icon
 
 
 ## 4-5: mock data
+_✨✨✨_
 ##### 1.add data.json
 _data.json_
 ##### 2.install vue-resource better-scroll sass stylus
@@ -113,7 +123,7 @@ cnpm install stylus stylus-loader --save-dev
 cnpm install node-sass sass-loader --save-dev
 ```
 ##### check data in browser
-[http://localhost:8080/api/goods](data)
+[data](http://localhost:8080/api/goods)
 ##### 3. set alias path
 _build/webapck.base.conf.js_
 ##### 4. modify .eslintrc.js add rules
@@ -128,6 +138,7 @@ _/src/router/index.js_
 
 
 ## 5-1
+_✨✨_
 ##### css reset
 _static/css/reset.css_
 ##### index.html viewport config
@@ -138,46 +149,50 @@ _/.eslintrc.js_
 
 
 ## 5-2: 
+_✨✨_
 ##### intellij ide
 > Editor -> File and code template > add Files, extension 'vue'
 ##### header component
 
 
-## 5-3:  header styles
+## 5-3: header styles
+_✨✨_
 
 
 ## 5-4, 5-5: router config
+_✨✨✨_
 ##### router
 ```
 npm install vue-router
 ```
 
 
-## 5-6:
-## 手机预览,草料二维码
-## 1.查看IP,copy
+## 5-6: css, run in mobile
+_✨✨✨_
+##### Mobile phone preview, 草料二维码
+##### 1.check IP, copy
 ```
 ifconfig
 ```
-## 2.open in browser
+##### 2.open in browser
 ```
 npm run dev
 ```
-## 3.url
-localhost:8080/#/goods
-## 4.url change
-(ip):8080/#/goods
-## 5.草料 [https://cli.im/], copy in  
-(ip):8080/#/goods 
-## 6.微信扫描打开
-## 适配不同dip屏幕
-> base.scss
-## 一像素横线
-> mixin.scss
-## 清除浮动
-> mixin.scss
-## 2x3x图
-> mixin.scss
+##### 3.url
+[url](localhost:8080/#/goods)
+##### 4.url change
+> (ip):8080/#/goods
+##### 5.[草料](https://cli.im/), copy in  
+> (ip):8080/#/goods 
+##### 6.WeChat scan open.
+##### Suitable for different dip screens.
+_base.scss_
+##### One pixel line
+_mixin.scss_
+##### clear fix
+_mixin.scss_
+##### 2x3x image
+_mixin.scss_
 
 
 ## 6-1: --- 6-2:

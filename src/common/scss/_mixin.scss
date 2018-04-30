@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-// 一像素横线：
+// One pixel line：
 @mixin border-1px($color) {
   position: relative;
 
@@ -21,7 +21,7 @@
   }
 }
 
-// 3:2x3x图
+// 3:2x3x image
 @mixin bg-image($url) {
   background-image: url($url + "@2x.png");
 
