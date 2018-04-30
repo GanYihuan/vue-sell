@@ -223,6 +223,7 @@ _✨✨✨_
 ## 7-1: async The incoming data
 _✨✨✨_
 _goods.vue_
+##### goods.vue styles
 
 
 ## 7-2: 
