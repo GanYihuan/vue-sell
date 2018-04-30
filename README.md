@@ -231,9 +231,13 @@ _✨✨✨_
 _goods.vue_
 
 
-## 7-3, 7-4: The right column styles
+## 7-3, 7-4, 7-5: The right column styles
 _✨✨✨_
 _goods.vue_
+
+
+## 7-6, 7-7, 7-8: better-scroll
+_✨✨✨✨_
 
 
 ## 左侧边栏的选择，右侧滚动到指定菜品

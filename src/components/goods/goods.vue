@@ -101,12 +101,14 @@
     computed: {
       currentIndex () {
         for (let i = 0; i < this.listHeight.length; i++) {
-          // 任意一样菜
+          // Current height
           let height1 = this.listHeight[i]
-          // 下一道菜
+          // next height
           let height2 = this.listHeight[i + 1]
-          // 如果没有下一道菜,即当前的菜为最后一道菜
-          // 如果当前这道菜距离父组件的高度位于本来位置至下一道菜位置之间，返回该菜的下标
+          // If there is no next dish, the current dish is the current height of the last dish
+          // If the current dish is located between the original position and the
+          // next dish position from the height of the parent component,
+          // return the subscript of the dish.
           if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
             return i
           }
@@ -147,54 +149,56 @@
         })
     },
     methods: {
-      // 点击事件，滚动事件
+      // Click on events, scroll events.
       _initScroll () {
         this.meunScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
         })
         this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
           click: true,
-          // 3除了实时派发scroll事件，在swipe的情况下仍然能实时派发scroll事件
-          // 实时滚动的位置
+          // In addition to the real-time distribution of scroll events,
+          // scroll events can be distributed in real time in the case of swipe.
+          // The location of the real-time scrolling.
           probeType: 3
         })
         this.foodsScroll.on('scroll', (pos) => {
+          // scrollY: foodsScroll Rolling position
           this.scrollY = Math.abs(Math.round(pos.y))
         })
       },
-      // 每样菜的高度的数组
+      // An array of heights for each dish
       _calculateHeight () {
-        // 目标元素
+        // Target element
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
         let height = 0
-        // listHeight 每样菜的高度的数组
+        // listHeight An array of heights for each dish
         this.listHeight.push(height)
         for (let i = 0; i < foodList.length; i++) {
-          // 单一菜品
+          // Single dish
           let item = foodList[i]
-          // 菜品的高度
+          // The height of the dishes
           height += item.clientHeight
           this.listHeight.push(height)
         }
       },
       selectMenu (index, event) {
-        // 去掉自带click事件的点击
+        // Remove clicks with click events
         if (!event._constructed) {
           return
         }
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
-        // 当前菜品
+        // Target element
         let el = foodList[index]
-        // 300: 持续时间
+        // 300: duration
         this.foodsScroll.scrollToElement(el, 300)
       },
       selectFood (food, event) {
-        // 去掉自带click事件的点击
+        // Remove clicks with click events
         if (!event._constructed) {
           return
         }
         this.selectedFood = food
-        // 调用food的show方法
+        // Call food's show method
         this.$refs.food.show()
       },
       addFood (target) {
