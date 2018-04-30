@@ -195,12 +195,10 @@ _mixin.scss_
 _mixin.scss_
 
 
-## 6-1: --- 6-2:
-## 前后端交互: jsonp, xmlhttprequest
+## 6-1, 6-2: Front end interaction: jsonp, xmlhttprequest
 ```
 npm install vue-resource --save
 ```
-## 发送数据
 
 
 ## 6-3: --- 6-8: 
