@@ -32,7 +32,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 3-1: introduce vue-cli
 _✨_
-
+```
+npm install -g vue-cli
+vue init <template-name> <project-name>
+```
 
 ## 3-2: begin vue develop
 _✨✨_
@@ -238,8 +241,11 @@ _goods.vue_
 
 ## 7-6, 7-7, 7-8: better-scroll
 _✨✨✨✨_
+_goods.vue_
 
 
+## 7-9: shopping cart
+_✨✨✨✨_
 ## 左侧边栏的选择，右侧滚动到指定菜品
 
 
