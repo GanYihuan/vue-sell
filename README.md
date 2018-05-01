@@ -76,16 +76,29 @@ npm run dev
 
 ## 3-3: introduce vue-project structure
 _✨✨_
-##### build -> webpack config
-##### config -> webpack config
-##### node_modules -> npm install
-##### src -> code
-##### static -> Third party static resources.
-##### .gitkeep -> When the directory is empty, it can also be submitted to the repository.
-##### .babelrc -> babel config es6 Compiled into es5
-##### .editorconfig -> Compiler configuration
-##### .eslintignore -> Ignore the directory files for syntax checking.
-##### .eslintrc.js -> eslint Syntax detection configuration
+##### build
+> webpack config
+##### config 
+> webpack config
+##### node_modules 
+> npm install
+##### src 
+> code
+##### static 
+> Third party static resources.
+##### .gitkeep 
+> When the directory is empty, it can also be submitted to the repository.
+##### .babelrc 
+> babel config es6 Compiled into es5
+##### .editorconfig 
+> Compiler configuration
+##### .eslintignore 
+> Ignore the directory files for syntax checking.
+##### .eslintrc.js 
+> eslint Syntax detection configuration
+##### package.json
+> 1. script: config 'npm run dev'
+> 2. devDependencies: develop need, after package, not need
 
 
 ## 3-4: introduce vue-project structure
