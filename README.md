@@ -119,7 +119,7 @@ _✨✨✨✨✨_
 _✨_
 
 
-## 4-2: add img
+## 4-2: Device pixel ratio, add image
 _✨✨_
 
 
