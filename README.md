@@ -129,9 +129,9 @@ _✨✨_
 [IconMoon website](https://icomoon.io/#icons-icomoon)
 
 
-## 4-4: Directory structure design
+## 4-4: placed IconMoon download icon
 _✨✨_
-##### common/fonts: place IconMoon down load icon
+_common/fonts_
 
 
 ## 4-5: mock data
