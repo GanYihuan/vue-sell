@@ -178,6 +178,7 @@ _App.vue_
 
 ## 5-4, 5-5: router config
 _✨✨✨_
+_router/route.js_
 ##### router
 ```
 npm install vue-router
