@@ -37,41 +37,41 @@ npm install -g vue-cli
 vue init <template-name> <project-name>
 ```
 
-## 3-2: begin vue develop
+## 3-2: begin vue develop3-2: begin vue develop
 _✨✨_
-##### Node > 4
+1. Node > 4
 ```
 node -v
 ```
-##### install vue-cli
+2. install vue-cli
 ```
 npm install -g vue-cli
 ```
-##### check project
+3. check project
 ```
 vue list
 ```
-##### init project
+4. init project
 ```
 vue init webpack imooc-sell
 ```
-##### ESLint -> Yes
-##### Standard
-##### karma + mocha -> No
-##### e2e tests -> No
-##### check dialog
+5. ESLint -> Yes
+6. Standard
+7. karma + mocha -> No
+8. e2e tests -> No
+9. check dialog
 ```
 ll -a
 ```
-##### package.json
+10. package.json
 ```
 npm install
 ```
-##### run in browser
+11. run in browser
 ```
 npm run dev
 ```
-##### open in browser (http://localhost:8080/#/)
+12. open in browser (http://localhost:8080/#/)
 
 
 ## 3-3: introduce vue-project structure
