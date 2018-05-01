@@ -160,23 +160,18 @@ _/build/webpack.dev.conf.js_
 _/src/router/index.js_
 
 
-
-## 5-1
+## 5-1, 5-2: skeleton
 _✨✨_
 ##### css reset
 _static/css/reset.css_
 ##### index.html viewport config
+_index.html_
 ##### modify .eslintrc.js add rules
-_/.eslintrc.js_
+_.eslintrc.js_
 ##### skip eslint check
 /* eslint-disable no-new */
-
-
-## 5-2: 
-_✨✨_
 ##### intellij ide
 > Editor -> File and code template > add Files, extension 'vue'
-##### header component
 
 
 ## 5-3: header styles
