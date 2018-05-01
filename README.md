@@ -185,32 +185,33 @@ npm install vue-router
 ```
 
 
-## 5-6: css, run in mobile
+## 5-6: css setting, run in mobile
 _✨✨✨_
 ##### Mobile phone preview, 草料二维码
-##### 1.check IP, copy
+##### 1. check IP, iTerm
 ```
 ifconfig
 ```
-##### 2.open in browser
+##### 2. open in browser
 ```
 npm run dev
 ```
-##### 3.url
+##### 3. url
 [url](localhost:8080/#/goods)
-##### 4.url change
-> (ip):8080/#/goods
-##### 5.[草料](https://cli.im/), copy in  
-> (ip):8080/#/goods 
-##### 6.WeChat scan open.
-##### Suitable for different dip screens.
+##### 4. url replace
+> IP:8080/#/goods
+##### 5. [草料website](https://cli.im/)  
+> IP:8080/#/goods 
+##### 6. WeChat scan then open
+##### css
 _base.scss_
-##### One pixel line
+1. Suitable for different dip screens
+2. clear fix
+
 _mixin.scss_
-##### clear fix
-_mixin.scss_
-##### 2x3x image
-_mixin.scss_
+1. One pixel line
+2. 2x3x image
+
 
 
 ## 6-1, 6-2: Front end interaction: jsonp, xmlhttprequest
