@@ -136,23 +136,25 @@ _common/fonts_
 
 ## 4-5: mock data
 _✨✨✨_
-##### 1.add data.json
+##### browser check data
+1. [seller data](http://localhost:8088/api/seller)
+2. [goods data](http://localhost:8088/api/goods)
+3. [ratings data](http://localhost:8088/api/ratings)
+##### 1. add data.json
 _data.json_
-##### 2.install vue-resource better-scroll sass stylus
+##### 2. install vue-resource better-scroll sass stylus
 ```
-cnpm install vue-resource better-scroll --save
-cnpm install stylus stylus-loader --save-dev
-cnpm install node-sass sass-loader --save-dev
+npm install vue-resource better-scroll --save
+npm install stylus stylus-loader --save-dev
+npm install node-sass sass-loader --save-dev
 ```
-##### check data in browser
-[data](http://localhost:8080/api/goods)
 ##### 3. set alias path
 _build/webapck.base.conf.js_
 ##### 4. modify .eslintrc.js add rules
 _/.eslintrc.js_
-##### 5.modify config dialog index.js files, modify host
+##### 5. modify config index.js files, modify host
 _/config/index.js_
-##### 6. use webpack inside devServer，set before()
+##### 6. use webpack inside devServer，set data source
 _/build/webpack.dev.conf.js_
 ##### 7. router.js
 _/src/router/index.js_
