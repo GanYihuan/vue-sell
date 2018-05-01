@@ -214,8 +214,11 @@ _mixin.scss_
 
 
 
-## 6-1, 6-2: Front end interaction: jsonp, xmlhttprequest
+## 6-1, 6-2: front-end back-end interaction  
 _✨✨✨_
+_main.js_
+_App.vue_
+##### vue-resource: Ajax request, XMLHttpRequest
 ```
 npm install vue-resource --save
 ```
