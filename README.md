@@ -95,6 +95,7 @@ _✨✨_
 ##### .eslintignore 
 > Ignore the directory files for syntax checking.
 ##### .eslintrc.js 
+[ESLint document](http://eslint.cn/docs/rules/)
 > eslint Syntax detection configuration
 ##### package.json
 > 1. script: config 'npm run dev'
@@ -123,13 +124,14 @@ _✨_
 _✨✨_
 
 
-## 4-3: IconMoon create SVG
+## 4-3: IconMoon create SVG image
 _✨✨_
+[IconMoon website](https://icomoon.io/#icons-icomoon)
 
 
 ## 4-4: Directory structure design
 _✨✨_
-##### common/fonts : place IconMoon down load icon
+##### common/fonts: place IconMoon down load icon
 
 
 ## 4-5: mock data
