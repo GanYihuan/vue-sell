@@ -33,6 +33,7 @@
     </div>
     <transition name="fade">
       <div v-show="detailShow" class="detail">
+        <!-- sticky layout: A,B,C,D,E -->
         <!-- A: clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
@@ -46,7 +47,7 @@
               <div class="line"></div>
             </div>
             <ul v-if="seller.supports" class="supports">
-              <li class="support-item" v-for="(item,index) in seller.supports">
+              <li class="support-item" v-for="(item,index) in seller.supports" :key="index">
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -61,6 +62,7 @@
             </div>
           </div>
         </div>
+        <!-- B: two part -->
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>

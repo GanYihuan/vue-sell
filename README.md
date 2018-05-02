@@ -234,8 +234,7 @@ _✨✨_
 _header.vue_
 
 
-## 6-10: Layer thickness styles
-##### sticky layout
+## 6-10: sticky layout styles
 _✨✨✨_
 _header.vue_
 
