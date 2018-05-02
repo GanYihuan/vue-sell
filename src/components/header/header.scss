@@ -1,8 +1,8 @@
-// @charset "UTF-8";
 @import "../../common/scss/mixin";
 
 .header {
-  // 里面的子元素 .background 的position:absolute,所以要加相对定位给父元素.header
+  // for reasons of relative positioning, the following elements have absolute positioning
+  // .background: position:absolute
   position: relative;
   overflow: hidden;
   color: #fff;
@@ -10,17 +10,17 @@
 }
 
 .content-wrapper {
-  // For reasons of relative positioning, the following elements have absolute positioning.
+  // for reasons of relative positioning, the following elements have absolute positioning.
   // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  // Eliminate the gap
+  // eliminate the gap
   font-size: 0;
 
   .avatar {
-    // Row shows
+    // row shows
     display: inline-block;
-    // At the top of the alignment
+    // at the top of the alignment
     vertical-align: top;
 
     img {
@@ -36,11 +36,11 @@
       margin: 2px 0 8px 0;
 
       .brand {
-        // The inner element becomes a block element,
+        // the inner element(span) becomes a block element,
         // otherwise the width and height is invalid,
         // and the element is supported by the content.
         display: inline-block;
-        // Alignment, top alignment.
+        // at the top of the alignment
         vertical-align: top;
         width: 30px;
         height: 18px;
@@ -106,8 +106,8 @@
     height: 24px;
     line-height: 24px;
     border-radius: 14px;
-    background: rgba(0, 0, 0, 0.2);
     text-align: center;
+    background: rgba(0, 0, 0, 0.2);
 
     .count {
       vertical-align: top;
@@ -125,32 +125,31 @@
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  // The vertical direction is centered.
+  // vertical direction is centered.
   height: 28px;
   line-height: 28px;
-  // overdisplay ...
-  // Don't wrap
+  // don't wrap
   white-space: nowrap;
-  // Hiding from the parent element.
+  // hiding from the parent element.
   overflow: hidden;
-  // overdisplay ...
+  // over display: ...
   text-overflow: ellipsis;
   background: rgba(7, 17, 27, 0.2);
 
   .bulletin-title {
     display: inline-block;
-    vertical-align: top;
     margin-top: 8px;
     width: 22px;
     height: 12px;
+    vertical-align: top;
     @include bg-image('bulletin');
     background-size: 22px 12px;
     background-repeat: no-repeat;
   }
 
   .bulletin-text {
-    vertical-align: top;
     margin: 0 4px;
+    vertical-align: top;
     font-size: 10px;
   }
 
@@ -168,9 +167,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // Hide the bottom layer.
+  // hide the bottom layer.
   z-index: -1;
-  // Fuzzy background picture
+  // fuzzy background picture
   filter: blur(10px);
 }
 

@@ -225,7 +225,8 @@ npm install vue-resource --save
 
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
-_✨✨✨_
+_✨✨_
+_header.vue_
 
 
 ## 6-9, 6-10: Layer thickness styles

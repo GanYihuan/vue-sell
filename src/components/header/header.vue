@@ -2,7 +2,7 @@
   <div class="header">
     <div class="content-wrapper">
       <div class="avatar">
-        <img width="64" height="64" :src="seller.avatar">
+        <img width="64" height="64" :src="seller.avatar"/>
       </div>
       <div class="content">
         <div class="title">
@@ -12,8 +12,8 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分支送达
         </div>
-        <!-- v-if : If you have data, you parse it. -->
-        <!-- Because it's an asynchronous process, you need to decide if you want to parse it. -->
+        <!-- v-if: If you have data, you parse it -->
+        <!-- Because it's an asynchronous process -->
         <div v-if="seller.supports" class="support">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
@@ -29,7 +29,7 @@
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
-      <img :src="seller.avatar" width="100%" height="100%">
+      <img width="100%" height="100%" :src="seller.avatar"/>
     </div>
     <transition name="fade">
       <div v-show="detailShow" class="detail">
