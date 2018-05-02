@@ -9,11 +9,13 @@
       :key="itemClass.id"
       :class="itemClass"
     >
-      <!-- :key替代track-by="$index" -->
+      <!-- :key replace track-by="$index" -->
       <!--
-        为了给 Vue 一个提示，以便它能跟踪每个节点的身份，
-        从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。
-        理想的 key 值是每项都有唯一 id。这个特殊的属性相当于 Vue 1.x 的 track-by
+        To give Vue a hint, so that it can track the identity of each node,
+        To reuse and reorder existing elements,
+        you need to provide a unique key attribute for each item.
+        The ideal key value is a unique id for each item.
+        This particular attribute is the equivalent of Vue 1.x track-by.
       -->
     </span>
   </div>
@@ -44,13 +46,13 @@
         // Math.floor: 4.9 -> 4
         // Math.ceil: 4.1 -> 5
         let score = Math.floor(this.score * 2) / 2
-        // Is there a half star, Have a decimal ? true half star
+        // if have a decimal, half star
         let hasDecimal = score % 1 !== 0
-        // All star part
+        // full star
         let integer = Math.floor(score)
 
         for (let i = 0; i < integer; i++) {
-          // All star part
+          // full star
           result.push(CLS_ON)
         }
         if (hasDecimal) {
@@ -58,7 +60,7 @@
           result.push(CLS_HALF)
         }
         while (result.length < LENGTH) {
-          // Empty star
+          // empty star
           result.push(CLS_OFF)
         }
 
