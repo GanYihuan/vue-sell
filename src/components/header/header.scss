@@ -177,15 +177,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  // Placed at the top level
+  // placed at the top level
   z-index: 100;
-  // If the content is pruned, the browser displays the scroll bar to see the rest of the content.
+  // if the content is pruned, the browser displays the scroll bar to see the rest of the content.
   overflow: auto;
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
   transition: all 0.5s;
-  // ios模糊
+  // ios fuzzy
   backdrop-filter: blur(10px);
 
   // animate start

@@ -229,9 +229,15 @@ _✨✨_
 _header.vue_
 
 
-## 6-9, 6-10: Layer thickness styles
+## 6-9: sticky layout show and hide
+_✨✨_
+_header.vue_
+
+
+## 6-10: Layer thickness styles
 ##### sticky layout
 _✨✨✨_
+_header.vue_
 
 
 ## 6-11, 6-12, 6-13: star component
