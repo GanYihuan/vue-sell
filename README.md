@@ -244,8 +244,9 @@ _✨✨✨_
 _star.vue_
 
 
-## 6-14, 6-15, 6-16: flex Implement line + character + line, animate
+## 6-14, 6-15, 6-16: line + character + line styles, animate
 _✨✨✨_
+_header.vue_
 
 
 ## 7-1: async The incoming data
