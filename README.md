@@ -300,15 +300,14 @@ _✨✨✨_
 _shopCart.vue_
 
 
-## 7-22: shopCart list show and hide, styles
-_✨✨_
-_shopCart.vue_
-
-
-## 7-22, 7-23, 7-24:
+## 7-22, 7-23: shopCart list show and hide, styles
 _✨✨✨_
 _shopCart.vue_
-##### mask
+
+
+## 7-24: shopCart list mask
+_✨✨_
+_shopCart.vue_
 
 
 ## cartControl.vue, 数量加减控制
