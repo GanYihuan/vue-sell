@@ -290,6 +290,11 @@ _goods.vue_
 _cartcontrol.vue_
 
 
+## 7-18, 7-19, 7-20: shopping cart ball animate
+_✨✨✨✨_
+_shopCart.vue_
+
+
 ## cartControl.vue, 数量加减控制
 
 

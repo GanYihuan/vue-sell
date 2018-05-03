@@ -185,15 +185,8 @@
       addFood (target) {
         this.drop(target)
       },
-      // 球体运动，选择性放弃
-      // <transition
-      // name="drop"
-      // @before-enter="beforeDrop"
-      // @enter="dropping"
-      // @after-enter="afterDrop"
       drop (el) {
         for (let i = 0; i < this.balls.length; i++) {
-          // single item
           let ball = this.balls[i]
           if (!ball.show) {
             ball.show = true
@@ -203,42 +196,34 @@
           }
         }
       },
-      // <transition
-      // name="drop"
-      // @before-enter="beforeDrop"
-      // @enter="dropping"
-      // @after-enter="afterDrop"
       beforeDrop (el) {
         let count = this.balls.length
         while (count--) {
           let ball = this.balls[count]
           if (ball.show) {
-            // getBoundingClientRect获得元素相当与适口的位置
+            // getBoundingClientRect: Get the element relative viewport location
             let rect = ball.el.getBoundingClientRect()
-            // 偏移
+            // decrease ball width
             let x = rect.left - 32
             let y = -(window.innerHeight - rect.top - 22)
-            // 设置初始位置
+            // Set the initial position
+            // visible
             el.style.display = ''
             el.style.webkitTransform = `translate3d(0,${y}px,0)`
             el.style.transform = `translate3d(0,${y}px,0)`
+            // inner: Used to be selected by js
             let inner = el.getElementsByClassName('inner-hook')[0]
             inner.style.webkitTransform = `translate3d(${x}px,0,0)`
             inner.style.transform = `translate3d(${x}px,0,0)`
           }
         }
       },
-      // <transition
-      // name="drop"
-      // @before-enter="beforeDrop"
-      // @enter="dropping"
-      // @after-enter="afterDrop"
       dropping (el, done) {
-        // 触发浏览器重构
+        // Trigger browser refactoring.
         /* eslint-disable no-unused-vars */
         let rf = el.offsetHeight
         this.$nextTick(() => {
-          // style reset
+          // reset
           el.style.webkitTransform = 'translate3d(0,0,0)'
           el.style.transform = 'translate3d(0,0,0)'
           let inner = el.getElementsByClassName('inner-hook')[0]
@@ -247,11 +232,6 @@
           el.addEventListener('transitionend', done)
         })
       },
-      // <transition
-      // name="drop"
-      // @before-enter="beforeDrop"
-      // @enter="dropping"
-      // @after-enter="afterDrop"
       afterDrop (el) {
         let ball = this.dropBalls.shift()
         if (ball) {
