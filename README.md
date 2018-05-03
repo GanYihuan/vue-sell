@@ -269,9 +269,9 @@ _✨✨✨_
 _goods.vue_
 
 
-## 7-9: shopping cart
-_✨✨✨✨_
-## 左侧边栏的选择，右侧滚动到指定菜品
+## 7-9, 7-10: shopping cart styles
+_✨✨_
+_shopCart.vue_
 
 
 ## cartControl.vue, 数量加减控制

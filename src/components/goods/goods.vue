@@ -68,7 +68,8 @@
         :selectFoods="selectFoods"
         :deliveryPrice="seller.deliveryPrice"
         :minPrice="seller.minPrice"
-      ></shopCart>
+      >
+      </shopCart>
     </div>
     <food
       @add="addFood"

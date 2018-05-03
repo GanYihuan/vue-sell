@@ -71,7 +71,6 @@
   import cartControl from '../cartControl/cartControl.vue'
 
   export default {
-    // 接收外界传入的数据
     props: {
       selectFoods: {
         type: Array,
@@ -96,25 +95,13 @@
     data () {
       return {
         balls: [
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          },
-          {
-            show: false
-          }
+          {show: false},
+          {show: false},
+          {show: false},
+          {show: false},
+          {show: false}
         ],
-        // 正在下落的球体
         dropBalls: [],
-        // 是否折叠
         fold: true
       }
     },

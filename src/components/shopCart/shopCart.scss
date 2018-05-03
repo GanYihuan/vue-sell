@@ -19,16 +19,15 @@
 
       .logo-wrapper {
         display: inline-block;
-        // 超出部分 {
         position: relative;
         top: -10px;
-        // 超出部分 }
         margin: 0 12px;
         padding: 6px;
         width: 56px;
         height: 56px;
         // ie盒模型: 已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
         box-sizing: border-box;
+        // circle
         border-radius: 50%;
         vertical-align: top;
         background: #141d27;
@@ -234,9 +233,9 @@
   background: rgba(7, 17, 27, 0.6);
 
   &.fade-enter-active, &.fade-leave-active {
-    opacity :1;
+    opacity: 1;
     transition: all 0.5s linear;
-    background :rgba(7, 17, 27, 0.6);
+    background: rgba(7, 17, 27, 0.6);
   }
 
   &.fade-enter, &.fade-leave-active {
