@@ -144,11 +144,11 @@
         }
         let show = !this.fold
         if (show) {
-          // $nextTick在下次 DOM 更新循环结束之后执行延迟回调。
-          // 修改数据后立即使用这个方法，获取更新后的 DOM。
+          // experience optimization, asynchronous execution of falling animation.
+          // $nextTick executes the deferred callback after the next DOM update loop.
+          // use this method immediately after modifying the data to get the updated DOM.
           this.$nextTick(() => {
             if (!this.scroll) {
-              // 派发scroll事件
               this.scroll = new BScroll(this.$refs.listContent, {
                 click: true
               })
@@ -171,7 +171,7 @@
         this.fold = true
       },
       empty () {
-        // selectFoods -> 全部单个菜品的集合
+        // selectFoods -> A collection of individual dishes.
         this.selectFoods.forEach((food) => {
           food.count = 0
         })
