@@ -81,18 +81,14 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
   import cartControl from '../cartControl/cartControl.vue'
-  // 灰色间隔
   import split from '../split/split.vue'
-  // 评价组件
   import ratingSelect from '../ratingSelect/ratingSelect.vue'
-  // Vue set()
   import Vue from 'vue'
   import { formatDate } from '../../common/js/date'
 
   const ALL = 2
 
   export default {
-    // 接收外界传入的数据
     props: {
       food: {
         type: Object
@@ -118,9 +114,6 @@
         this.showFlag = true
         this.selectType = ALL
         this.onlyContent = true
-        // async 处理
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           if (!this.scroll) {
             // 实时派发scroll事件
@@ -136,7 +129,6 @@
         this.showFlag = false
       },
       addFirst (event) {
-        // 去掉自带click事件的点击
         if (!event._constructed) {
           return
         }
@@ -159,32 +151,21 @@
         }
       },
       addFood (target) {
-        // 触发当前实例上的事件
-        // 子组件通过$emit触发父组件的方法
-        // <food @add="addFood" :food="selectedFood" ref="food">
         this.$emit('add', target)
       },
       selectRating (type) {
         this.selectType = type
-        // async 处理
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       },
       toggleContent () {
         this.onlyContent = !this.onlyContent
-        // async 处理
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       }
     },
-    // 过滤
-    // {{rating.rateTime | formatDate}}
     filters: {
       formatDate (time) {
         let date = new Date(time)

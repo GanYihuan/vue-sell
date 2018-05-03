@@ -72,8 +72,8 @@
       </shopCart>
     </div>
     <food
-      @add="addFood"
       :food="selectedFood"
+      @add="addFood"
       ref="food"
     >
     </food>

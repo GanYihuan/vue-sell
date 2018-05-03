@@ -310,16 +310,15 @@ _✨✨_
 _shopCart.vue_
 
 
-## cartControl.vue, 数量加减控制
+## 8-1: food styles
+_✨✨_
+_goods.vue_
+_food.vue_
 
 
-## goods 底部的购物车
-
-
-## 球体动画不懂?
-
-
-## 8-1 --- 8-6, food.vue
+## 8-1, 8-2, 8-3, 8-4, 8-5, 8-6: 
+_✨✨_
+_food.vue_
 ## 宽高相等容器
 ```
   .image-header {
