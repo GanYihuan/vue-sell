@@ -249,10 +249,9 @@ _✨✨✨_
 _header.vue_
 
 
-## 7-1: async The incoming data
+## 7-1: Asynchronous transfer data
 _✨✨✨_
 _goods.vue_
-##### goods.vue styles
 
 
 ## 7-2: The left column styles
