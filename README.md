@@ -274,6 +274,11 @@ _✨✨_
 _shopCart.vue_
 
 
+## 7-11, 7-12, 7-13, 7-14: shopping cart data bind
+_✨✨✨_
+_shopCart.vue_
+
+
 ## cartControl.vue, 数量加减控制
 
 

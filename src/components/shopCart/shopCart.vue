@@ -13,7 +13,6 @@
           <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
         </div>
         <div class="content-right" @click.stop.prevent="pay">
-          <!-- payClass methods -->
           <div class="pay" :class="payClass">{{payDesc}}</div>
         </div>
       </div>
@@ -107,9 +106,8 @@
     },
     computed: {
       totalCount () {
-        // 点菜的总价
         let count = 0
-        // selectFoods -> 全部单个菜品的集合
+        // selectFoods -> A collection of all individual dishes.
         this.selectFoods.forEach((food) => {
           count += food.count
         })
