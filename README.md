@@ -260,7 +260,7 @@ _goods.vue_
 
 
 ## 7-3, 7-4, 7-5: The right column styles
-_✨✨✨_
+_✨✨_
 _goods.vue_
 
 
