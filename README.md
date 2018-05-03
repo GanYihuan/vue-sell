@@ -265,7 +265,7 @@ _goods.vue_
 
 
 ## 7-6, 7-7, 7-8: better-scroll
-_✨✨✨✨_
+_✨✨✨_
 _goods.vue_
 
 

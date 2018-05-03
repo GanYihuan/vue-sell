@@ -144,6 +144,7 @@
           response = response.body
           if (response.errno === ERR_OK) {
             this.goods = response.data
+            // async
             // $nextTick The deferred callback is performed after the next DOM update loop.
             // Use this method immediately after modifying the data to get the updated DOM.
             this.$nextTick(() => {
