@@ -127,7 +127,7 @@
         // http://ustbhuangyi.com/sell/api/goods
         // good -> 左侧栏的单个项目
         this.goods.forEach((good) => {
-          // food -> 项目里的单个菜品
+          // food -> Individual dishes in the project.
           good.foods.forEach((food) => {
             if (food.count) {
               foods.push(food)
@@ -212,11 +212,10 @@
         this._drop(target)
       },
       _drop (target) {
-        // 体验优化,异步执行下落动画
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
+        // experience optimization, asynchronous execution of falling animation.
+        // $nextTick executes the deferred callback after the next DOM update loop.
+        // use this method immediately after modifying the data to get the updated DOM.
         this.$nextTick(() => {
-          // 调用shopCart组件里面的drop方法，触发球运动动画
           this.$refs.shopCart.drop(target)
         })
       }

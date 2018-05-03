@@ -279,6 +279,17 @@ _✨✨✨_
 _shopCart.vue_
 
 
+## 7-15, 7-16: + - button
+_✨✨✨_
+_cartControl.vue_
+
+
+## 7-17: shopping cart data
+_✨✨✨_
+_goods.vue_
+_cartcontrol.vue_
+
+
 ## cartControl.vue, 数量加减控制
 
 
