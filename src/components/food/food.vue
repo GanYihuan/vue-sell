@@ -116,7 +116,6 @@
         this.onlyContent = true
         this.$nextTick(() => {
           if (!this.scroll) {
-            // 实时派发scroll事件
             this.scroll = new BScroll(this.$refs.food, {
               click: true
             })

@@ -310,9 +310,14 @@ _✨✨_
 _shopCart.vue_
 
 
-## 8-1: food styles
+## 8-1, 8-2: food styles
 _✨✨_
 _goods.vue_
+_food.vue_
+
+
+## 8-3: food data bind
+_✨✨_
 _food.vue_
 
 

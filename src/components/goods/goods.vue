@@ -205,7 +205,6 @@
           return
         }
         this.selectedFood = food
-        // Call food's show method
         this.$refs.food.show()
       },
       addFood (target) {
