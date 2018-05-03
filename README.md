@@ -256,7 +256,7 @@ _goods.vue_
 
 
 ## 7-2: The left column styles
-_✨✨✨_
+_✨✨_
 _goods.vue_
 
 
