@@ -374,6 +374,6 @@ _✨✨_
 _ratings.vue_
 
  
-## 9-3: 
+## 9-3: styles 
 _✨✨_
 _ratings.vue_
