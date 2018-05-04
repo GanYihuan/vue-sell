@@ -382,3 +382,8 @@ _ratings.vue_
 ## 9-4, 9-5, 9-6: styles, data bind  
 _✨✨_
 _ratings.vue_
+
+ 
+## 10-1: overview data bind  
+_✨✨_
+_seller.vue_

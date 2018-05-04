@@ -87,17 +87,14 @@
         })()
       }
     },
-    // calculate attribute
     computed: {
       favoriteText () {
         return this.favorite ? '已收藏' : '收藏'
       }
     },
-    // Life cycle
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
-    // Listening
     watch: {
       'seller' () {
         this.$nextTick(() => {
@@ -127,7 +124,6 @@
       },
       _initScroll () {
         if (!this.scroll) {
-          // 实时派发scroll事件
           this.scroll = new BScroll(this.$refs.seller, {
             click: true
           })
