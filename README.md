@@ -494,3 +494,6 @@ _✨✨✨✨_
 
 ## 13-3: V2.0 change fix
 _✨✨✨✨_
+
+
+## bug: npm run build ?
