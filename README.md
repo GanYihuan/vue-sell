@@ -327,6 +327,16 @@ _✨✨✨_
 _food.vue_
 
 
+## 8-5: food content
+_✨✨✨_
+_food.vue_
+
+
+## 8-5: split
+_✨✨_
+_split.vue_
+
+
 ## 8-1, 8-2, 8-3, 8-4, 8-5, 8-6: 
 _✨✨_
 _food.vue_
