@@ -1,6 +1,6 @@
 export function formatDate (date, fmt) {
   if (/(y+)/.test(fmt)) {
-    // RegExp.$1匹配括号里的值
+    // RegExp.$1: Match the values in brackets.
     fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
   }
   let o = {

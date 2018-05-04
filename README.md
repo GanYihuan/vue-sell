@@ -342,3 +342,8 @@ _food.vue_
 _✨✨✨_
 _food.vue_
 _ratingSelect.vue_
+
+ 
+## 8-10, 8-11: ratingSelect switch
+_✨✨✨_
+_ratingSelect.vue_
