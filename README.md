@@ -332,25 +332,10 @@ _✨✨✨_
 _food.vue_
 
 
-## 8-5: split
+## 8-6: food layout
 _✨✨_
 _split.vue_
-
-
-## 8-1, 8-2, 8-3, 8-4, 8-5, 8-6: 
-_✨✨_
 _food.vue_
-## 宽高相等容器
-```
-  .image-header {
-    // 子元素 img position: absolute, 父元素position: relative
-    position: relative;
-    // 宽高相等容器
-    padding-top: 100%;
-    width: 100%;
-    height: 0;
-```
-## split 组件
 
 
 ## 8-7 --- 8-11
