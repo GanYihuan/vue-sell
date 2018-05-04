@@ -83,22 +83,15 @@
     },
     methods: {
       select (type, event) {
-        // 去掉自带click事件的点击
         if (!event._constructed) {
           return
         }
-        // 子组件通过$emit触发父组件的方法increment,可传参this.counter
-        // <ratingSelect @select="selectRating" @toggle="toggleContent">
         this.$emit('select', type)
       },
       toggleContent (event) {
-        // 去掉自带click事件的点击
         if (!event._constructed) {
           return
         }
-        // 子组件通过$emit触发父组件的方法increment,可传参this.counter
-        // this.$emit('increment' ,this.counter);
-        // <ratingSelect @select="selectRating" @toggle="toggleContent">
         this.$emit('toggle')
       }
     }

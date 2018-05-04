@@ -44,12 +44,12 @@
         <div class="rating">
           <h1 class="title">商品评价</h1>
           <ratingSelect
-            @select="selectRating"
-            @toggle="toggleContent"
             :selectType="selectType"
             :onlyContent="onlyContent"
             :desc="desc"
             :ratings="food.ratings"
+            @select="selectRating"
+            @toggle="toggleContent"
           >
           </ratingSelect>
           <div class="rating-wrapper">
@@ -97,9 +97,9 @@
     data () {
       return {
         showFlag: false,
-        // Product evaluation initialization.
+        // ratingSelect.vue: Product evaluation initialization
         selectType: ALL,
-        // Whether to open the 'onlyContent'
+        // Whether to open the '只看评论内容'
         onlyContent: true,
         desc: {
           all: '全部',

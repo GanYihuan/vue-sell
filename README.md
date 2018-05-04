@@ -338,19 +338,7 @@ _split.vue_
 _food.vue_
 
 
-## 8-7 --- 8-11
-## ratingSelect 组件
-
-
-## 8-12 --- 8-17
-## 评价列表
-## 时间过滤条件formatDate
-
-
-## ratings 界面
-
-
-## seller 界面
-## saveToLocal ?
-## loadFromLocal ?
-## 滚动轮播图
+## 8-7, 8-8, 8-9: ratingSelect styles, pass data
+_✨✨✨_
+_food.vue_
+_ratingSelect.vue_
