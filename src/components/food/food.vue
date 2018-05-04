@@ -160,6 +160,20 @@
         })
       }
     },
+    watch: {
+      selectRating (type) {
+        this.selectType = type
+        this.$nextTick(() => {
+          this.scroll.refresh()
+        })
+      },
+      toggleContent (onlyContent) {
+        this.onlyContent = onlyContent
+        this.$nextTick(() => {
+          this.scroll.refresh()
+        })
+      }
+    },
     filters: {
       formatDate (time) {
         let date = new Date(time)

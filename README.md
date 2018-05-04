@@ -352,3 +352,8 @@ _ratingSelect.vue_
 ## 8-12, 8-13: food data bind, rating-wrapper, styles
 _✨✨✨_
 _food.vue_
+
+ 
+## 8-14: food watch
+_✨✨✨_
+_food.vue_
