@@ -439,3 +439,9 @@ _store.js_
 ##### save localStorage
 ##### read localStorage
 ##### immediately run function
+
+ 
+## 10-11: optimize
+_✨✨_
+_App.vue_
+##### keep-alive
