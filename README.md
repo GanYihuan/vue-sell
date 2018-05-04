@@ -372,3 +372,8 @@ _ratings.vue_
 ## 9-2: styles, data bind
 _✨✨_
 _ratings.vue_
+
+ 
+## 9-3: 
+_✨✨_
+_ratings.vue_
