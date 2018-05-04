@@ -445,3 +445,19 @@ _store.js_
 _✨✨_
 _App.vue_
 ##### keep-alive
+
+
+## 11-1: package
+_✨✨✨✨✨_
+###### iTerm
+```
+npm run build
+```
+
+
+## 11-2: 
+_✨✨✨✨✨_
+###### iTerm
+```
+npm run build
+```
