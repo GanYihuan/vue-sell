@@ -417,3 +417,8 @@ _seller.vue_
 ## 10-7: info data bind, styles
 _✨✨_
 _seller.vue_
+
+ 
+## 10-8: favorite data bind, styles
+_✨✨_
+_seller.vue_
