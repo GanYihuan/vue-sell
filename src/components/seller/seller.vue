@@ -103,12 +103,7 @@
         })
       }
     },
-    // dom finish
-    // ready() {}  vue1.0
     mounted () {
-      // async 处理
-      // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-      // 修改数据后立即使用这个方法，获取更新后的 DOM
       this.$nextTick(() => {
         this._initScroll()
         this._initPics()
@@ -131,7 +126,6 @@
           this.scroll.refresh()
         }
       },
-      // Rolling Carousel Diagram.
       _initPics () {
         if (this.seller.pics) {
           let picWidth = 120

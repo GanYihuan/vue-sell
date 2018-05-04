@@ -407,3 +407,8 @@ _seller.vue_
 ## 10-5: better-scroll
 _✨✨_
 _seller.vue_
+
+ 
+## 10-6: pics data bind, styles, better-scroll
+_✨✨✨_
+_seller.vue_
