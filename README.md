@@ -347,3 +347,8 @@ _ratingSelect.vue_
 ## 8-10, 8-11: ratingSelect switch
 _✨✨✨_
 _ratingSelect.vue_
+
+ 
+## 8-12, 8-13: food data bind, rating-wrapper, styles
+_✨✨✨_
+_food.vue_
