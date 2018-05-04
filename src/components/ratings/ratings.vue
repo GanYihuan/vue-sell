@@ -48,23 +48,14 @@
             <h1 class="name">{{rating.username}}</h1>
             <div class="star-wrapper">
               <star :size="24" :score="rating.score"></star>
-              <span class="delivery" v-show="rating.deliveryTime">
-                {{rating.deliveryTime}}
-              </span>
+              <span class="delivery" v-show="rating.deliveryTime">{{rating.deliveryTime}}</span>
             </div>
             <p class="text">{{rating.text}}</p>
-            <div
-              class="recommend"
-              v-show="rating.recommend && rating.recommend.length"
-            >
+            <div class="recommend" v-show="rating.recommend && rating.recommend.length">
               <span class="icon-thumb_up"></span>
-              <span class="item" v-for="item in rating.recommend">
-                {{item}}
-              </span>
+              <span class="item" v-for="item in rating.recommend">{{item}}</span>
             </div>
-            <div class="time">
-              {{rating.rateTime | formatDate}}
-            </div>
+            <div class="time">{{rating.rateTime | formatDate}}</div>
           </div>
         </li>
       </ul>
