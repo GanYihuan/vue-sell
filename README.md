@@ -429,10 +429,13 @@ _✨✨✨✨_
 _seller.vue_
 _util.js_
 ##### parse url parameter
+##### immediately run function
 
  
-## 10-10: favorite, save to localStorage
+## 10-10: favorite, localStorage
 _✨✨✨✨_
 _seller.vue_
-_util.js_
-##### save to localStorage
+_store.js_
+##### save localStorage
+##### read localStorage
+##### immediately run function

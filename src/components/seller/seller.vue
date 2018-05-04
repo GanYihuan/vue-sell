@@ -82,6 +82,7 @@
     },
     data () {
       return {
+        // immediately run function
         favorite: (() => {
           return loadFromLocal(this.seller.id, 'favorite', false)
         })()
