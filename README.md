@@ -424,8 +424,15 @@ _✨✨_
 _seller.vue_
 
  
-## 10-9: favorite
+## 10-9: favorite, parse url parameter
 _✨✨✨✨_
 _seller.vue_
 _util.js_
 ##### parse url parameter
+
+ 
+## 10-10: favorite, save to localStorage
+_✨✨✨✨_
+_seller.vue_
+_util.js_
+##### save to localStorage
