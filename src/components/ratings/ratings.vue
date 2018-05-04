@@ -27,11 +27,11 @@
     </div>
     <split></split>
     <ratingSelect
-      @select="selectRating"
-      @toggle="toggleContent"
       :select-type="selectType"
       :only-content="onlyContent"
       :ratings="ratings"
+      @select="selectRating"
+      @toggle="toggleContent"
     >
     </ratingSelect>
     <div class="rating-wrapper border-1px">
@@ -83,38 +83,26 @@
   const ERR_OK = 0
 
   export default {
-    // 接收外界传入的数据
     props: {
       seller: {
         type: Object
       }
     },
-    // 内部数据初始化
     data () {
       return {
-        // 评价数据集合
         ratings: [],
-        // 商品评价初始化
         selectType: ALL,
-        // 是否打开 '只看有内容的评价'
         onlyContent: true
       }
     },
-    // 生命周期
     created () {
-      // 异步数据
       this.$http
         .get('/api/ratings')
         .then((response) => {
           response = response.body
           if (response.errno === ERR_OK) {
-            // 评价数据集合
             this.ratings = response.data
-            // async 处理
-            // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-            // 修改数据后立即使用这个方法，获取更新后的 DOM
             this.$nextTick(() => {
-              // 实时派发scroll事件
               this.scroll = new BScroll(this.$refs.ratings, {
                 click: true
               })
@@ -123,29 +111,22 @@
         })
     },
     methods: {
-      // copy from food.vue -> selectRating()
+      // copy from food.vue/selectRating()
       selectRating (type) {
         this.selectType = type
-        // async 处理
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       },
-      // copy from food.vue -> toggleContent()
+      // copy from food.vue/toggleContent()
       toggleContent () {
         this.onlyContent = !this.onlyContent
-        // async 处理
-        // $nextTick在下次 DOM 更新循环结束之后执行延迟回调
-        // 修改数据后立即使用这个方法，获取更新后的 DOM
         this.$nextTick(() => {
           this.scroll.refresh()
         })
       },
-      // copy from food.vue -> needShow()
+      // copy from food.vue/needShow()
       needShow (type, text) {
-        // text: 评价的内容
         if (this.onlyContent && !text) {
           return false
         }
@@ -157,7 +138,7 @@
       }
     },
     filters: {
-      // copy from food.vue -> formatDate()
+      // copy from food.vue/formatDate()
       formatDate (time) {
         let date = new Date(time)
         return formatDate(date, 'yyyy-MM-dd hh:mm')

@@ -362,3 +362,8 @@ _food.vue_
 ## 8-15, 8-16, 8-17: food matDate
 _✨✨✨✨_
 _food.vue_
+
+ 
+## 9-1: styles
+_✨✨_
+_ratings.vue_
