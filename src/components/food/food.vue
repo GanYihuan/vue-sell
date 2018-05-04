@@ -96,11 +96,10 @@
     },
     data () {
       return {
-        // 是否展示食物界面
         showFlag: false,
-        // 商品评价初始化
+        // Product evaluation initialization.
         selectType: ALL,
-        // 是否打开 '只看有内容的评价'
+        // Whether to open the 'onlyContent'
         onlyContent: true,
         desc: {
           all: '全部',
@@ -131,15 +130,11 @@
         if (!event._constructed) {
           return
         }
-        // 为food创建一个属性count,值为1
         Vue.set(this.food, 'count', 1)
-        // 触发当前实例上的事件
-        // 子组件通过$emit触发父组件的方法
-        // <food @add="addFood" :food="selectedFood" ref="food">
         this.$emit('add', event.target)
       },
       needShow (type, text) {
-        // text: 评价的内容
+        // text: Content of evaluation
         if (this.onlyContent && !text) {
           return false
         }

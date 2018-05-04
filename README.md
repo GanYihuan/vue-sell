@@ -310,7 +310,7 @@ _✨✨_
 _shopCart.vue_
 
 
-## 8-1, 8-2: food styles
+## 8-1, 8-2: food styles, transfer data
 _✨✨_
 _goods.vue_
 _food.vue_
@@ -318,6 +318,12 @@ _food.vue_
 
 ## 8-3: food data bind
 _✨✨_
+_food.vue_
+##### High width equal container
+
+
+## 8-4: food styles, better-scroll
+_✨✨✨_
 _food.vue_
 
 
