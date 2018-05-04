@@ -455,9 +455,6 @@ npm run build
 ```
 
 
-## 11-2: 
+## 11-2: node for build files
 _✨✨✨✨✨_
-###### iTerm
-```
-npm run build
-```
+_prod.server.js_
