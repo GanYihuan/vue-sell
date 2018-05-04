@@ -36,6 +36,7 @@
     data () {
       return {
         seller: {
+          // immediately run function
           id: (() => {
             let queryParam = urlParse()
             return queryParam.id

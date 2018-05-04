@@ -422,3 +422,10 @@ _seller.vue_
 ## 10-8: favorite data bind, styles
 _✨✨_
 _seller.vue_
+
+ 
+## 10-9: favorite
+_✨✨✨✨_
+_seller.vue_
+_util.js_
+##### parse url parameter
