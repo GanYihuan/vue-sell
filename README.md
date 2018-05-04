@@ -397,3 +397,8 @@ _seller.vue_
 ## 10-3: bulletin data bind, styles
 _✨✨_
 _seller.vue_
+
+ 
+## 10-4: bulletin data bind, styles
+_✨✨_
+_seller.vue_

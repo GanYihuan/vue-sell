@@ -40,7 +40,7 @@
           <p class="content">{{seller.bulletin}}</p>
         </div>
         <ul class="supports" v-if="seller.supports">
-          <li class="support-item border-1px" v-for="(item, index) in seller.supports">
+          <li class="support-item border-1px" v-for="(item, index) in seller.supports" :key="index">
             <span class="icon" :class="classMap[seller.supports[index].type]"></span>
             <span class="text">{{seller.supports[index].description}}</span>
           </li>
