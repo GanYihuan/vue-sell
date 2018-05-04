@@ -367,3 +367,8 @@ _food.vue_
 ## 9-1: styles
 _✨✨_
 _ratings.vue_
+
+ 
+## 9-2: styles, data bind
+_✨✨_
+_ratings.vue_
