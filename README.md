@@ -205,53 +205,68 @@ npm install node-sass sass-loader --save-dev
 
 > Editor -> File and code template > add Files, extension 'vue'
 
-## 5-4, 5-5: router config
-_✨✨✨_
-_router/route.js_
-##### router
-```
+## 5-4, 5-5: vue-router config _✨✨✨_
+
+- router/route.js
+
+### router
+
+```shell
 npm install vue-router
 ```
 
+## 5-6: css setting, run in mobile _✨✨✨_
 
-## 5-6: css setting, run in mobile
-_✨✨✨_
-##### Mobile phone preview, 草料二维码
-##### 1. check IP, iTerm
-```
+### Mobile phone preview, 草料二维码
+
+### 1. check IP
+
+```shell
 ifconfig
 ```
-##### 2. open in browser
-```
+
+### 2. open in browser
+
+```shell
 npm run dev
 ```
-##### 3. url
+
+### 3. url
+
 [url](localhost:8080/#/goods)
-##### 4. url replace
+
+### 4. url replace
+
 > IP:8080/#/goods
-##### 5. [草料website](https://cli.im/)  
-> IP:8080/#/goods 
-##### 6. WeChat scan then open
-##### css
-_base.scss_
-1. Suitable for different dip screens
+
+### 5. 草料二维码
+
+[草料website](https://cli.im/)
+
+> IP:8080/#/goods
+
+### 6. WeChat scan then open
+
+### CSS setting
+
+- base.scss
+1. One pixel line suitable for different dip screens
 2. clear fix
 
-_mixin.scss_
+- mixin.scss
 1. One pixel line
 2. 2x3x image
 
+## 6-1, 6-2: front-end back-end interaction _✨✨✨_
 
-
-## 6-1, 6-2: front-end back-end interaction  
-_✨✨✨_
 _main.js_
 _App.vue_
-##### vue-resource: Ajax request, XMLHttpRequest
-```
+
+### vue-resource: Ajax request, XMLHttpRequest
+
+```shell
 npm install vue-resource --save
 ```
-
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
 _✨✨_

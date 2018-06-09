@@ -19,7 +19,7 @@
       and the cache is read when loaded to prevent continuous loading.
     -->
     <!-- <keep-alive exclude="Detail"> -->
-    <!-- name = Detail component Do not do cache processing. -->
+    <!-- name=Detail component Do not cache processing. -->
     <keep-alive>
       <router-view :seller="seller"></router-view>
     </keep-alive>
@@ -27,8 +27,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { urlParse } from './common/js/util'
-  import header from './components/header/header.vue'
+  import { urlParse } from 'common/js/util'
+  import header from 'components/header/header.vue'
 
   const ERR_OK = 0
 
@@ -66,6 +66,6 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  @import "./common/scss/_mixin.scss";
-  @import "./common/scss/app.scss";
+  @import "common/scss/_mixin.scss";
+  @import "common/scss/app.scss";
 </style>

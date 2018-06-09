@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-// One pixel line：
+// One pixel line
 @mixin border-1px($color) {
   position: relative;
-
   &:after {
     display: block;
     position: absolute;
@@ -15,8 +14,8 @@
   }
 }
 
-@mixin border-none(){
-  &:after{
+@mixin border-none() {
+  &:after {
     display: none;
   }
 }
@@ -24,11 +23,9 @@
 // 3:2x3x image
 @mixin bg-image($url) {
   background-image: url($url + "@2x.png");
-
   @media (-webkit-min-device-pixel-ratio: 3) {
     background-image: url($url + "@3x.png");
   }
-
   @media (min-device-pixel-ratio: 3) {
     background-image: url($url + "@3x.png");
   }
