@@ -1,4 +1,5 @@
 import Vue from 'vue'
+// Ajax request, XMLHttpRequest
 import VueResource from 'vue-resource'
 
 import router from './router/route'

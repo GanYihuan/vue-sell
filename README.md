@@ -259,8 +259,8 @@ npm run dev
 
 ## 6-1, 6-2: front-end back-end interaction _✨✨✨_
 
-_main.js_
-_App.vue_
+- main.js
+- App.vue
 
 ### vue-resource: Ajax request, XMLHttpRequest
 
