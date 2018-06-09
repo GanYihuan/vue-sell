@@ -3,10 +3,10 @@
 .tab {
   display: flex;
   width: 100%;
-  // ------ The single-line text is vertical. start ------
+  // The single-line text vertical. start
   height: 40px;
   line-height: 40px;
-  // ------ The single-line text is vertical. end --------
+  // The single-line text vertical. end
   @include border-1px(rgba(7, 17, 27, 0.1));
 
   .tab-item {
