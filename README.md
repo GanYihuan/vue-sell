@@ -131,49 +131,57 @@ npm run dev
 
 ## 3-7: webpack(3) _✨✨✨✨✨_
 
-## 4-1: introduce project
-_✨_
+## 4-1: introduce project demand _✨_
 
+## 4-2: Device pixel ratio, image _✨✨_
 
-## 4-2: Device pixel ratio, add image
-_✨✨_
+## 4-3: IconMoon generate font _✨✨_
 
-
-## 4-3: IconMoon create SVG image
-_✨✨_
 [IconMoon website](https://icomoon.io/#icons-icomoon)
 
+## 4-4: placed IconMoon download icon _✨✨_
 
-## 4-4: placed IconMoon download icon
-_✨✨_
-_common/fonts_
+## 4-5: mock data _✨✨✨_
 
+- build/webpack.dev.conf.js
 
-## 4-5: mock data
-_✨✨✨_
-##### browser check data
+### browser check data
+
 1. [seller data](http://localhost:8088/api/seller)
+
 2. [goods data](http://localhost:8088/api/goods)
+
 3. [ratings data](http://localhost:8088/api/ratings)
-##### 1. add data.json
-_data.json_
-##### 2. install vue-resource better-scroll sass stylus
-```
+
+### 1. add data.json
+
+### 2. install vue-resource better-scroll sass stylus
+
+```shell
 npm install vue-resource better-scroll --save
 npm install stylus stylus-loader --save-dev
 npm install node-sass sass-loader --save-dev
 ```
-##### 3. set alias path
-_build/webapck.base.conf.js_
-##### 4. modify .eslintrc.js add rules
-_/.eslintrc.js_
-##### 5. modify config index.js files, modify host
-_/config/index.js_
-##### 6. use webpack inside devServer，set data source
-_/build/webpack.dev.conf.js_
-##### 7. router.js
-_/src/router/index.js_
 
+### 3. set alias path
+
+- build/webapck.base.conf.js
+
+### 4. modify ESLint add rules
+
+- .eslintrc.js_
+
+### 5. modify host
+
+- config/index.js
+
+### 6. set data source
+
+- build/webpack.dev.conf.js
+
+### 7. router.js
+
+- src/router/index.js
 
 ## 5-1, 5-2, 5-3: skeleton
 _✨✨_
