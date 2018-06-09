@@ -123,20 +123,13 @@ npm run dev
 1. script: config 'npm run dev'
 2. devDependencies: This package is used only in the development phase, which is not needed when it comes online.
 
-## 3-4: vue-project entrance function
+## 3-4: vue-project entrance function _✨✨_
 
-_✨✨_
-_main.js_
-_App.vue_
+## 3-5: webpack(1) _✨✨✨✨✨_
 
+## 3-6: webpack(2) _✨✨✨✨✨_
 
-## 3-5: webpack(1)
-_✨✨✨✨✨_
-## 3-6: webpack(2)
-_✨✨✨✨✨_
-## 3-7: webpack(3)
-_✨✨✨✨✨_
-
+## 3-7: webpack(3) _✨✨✨✨✨_
 
 ## 4-1: introduce project
 _✨_

@@ -27,45 +27,45 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { urlParse } from './common/js/util'
-  import header from './components/header/header.vue'
+import { urlParse } from './common/js/util'
+import header from './components/header/header.vue'
 
-  const ERR_OK = 0
+const ERR_OK = 0
 
-  export default {
-    data () {
-      return {
-        seller: {
-          // immediately run function
-          id: (() => {
-            let queryParam = urlParse()
-            return queryParam.id
-          })()
+export default {
+	data() {
+		return {
+			seller: {
+				// immediately run function
+				id: (() => {
+					let queryParam = urlParse()
+					return queryParam.id
+				})()
+			}
+		}
+	},
+	created() {
+		// vue-resource
+		// ajax request, The request data is inserted into the seller object.
+    this.$http
+      .get('/api/seller?id=' + this.seller.id)
+      .then(response => {
+        // console.log(response)
+        response = response.body
+        if (response.errno === ERR_OK) {
+          // Expand array content: ...
+          // Object.assign -> ...
+          this.seller = Object.assign({}, this.seller, response.data)
         }
-      }
-    },
-    created () {
-      // vue-resource
-      // ajax request, The request data is inserted into the seller object.
-      this.$http
-        .get('/api/seller?id=' + this.seller.id)
-        .then((response) => {
-          // console.log(response)
-          response = response.body
-          if (response.errno === ERR_OK) {
-            // Expand array content: ...
-            // Object.assign -> ...
-            this.seller = Object.assign({}, this.seller, response.data)
-          }
-        })
-    },
-    components: {
-      'v-header': header
-    }
-  }
+		  })
+	},
+	components: {
+		'v-header': header
+	}
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  @import "./common/scss/_mixin.scss";
-  @import "./common/scss/app.scss";
+@import './common/scss/_mixin.scss';
+@import './common/scss/app.scss';
 </style>
