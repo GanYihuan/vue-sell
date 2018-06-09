@@ -26,83 +26,105 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## Vue-高仿饿了么APP
 
-# Vue-高仿饿了么APP
+## 3-1: introduce vue-cli _✨_
 
-
-## 3-1: introduce vue-cli
-_✨_
-```
+```shell
 npm install -g vue-cli
 vue init <template-name> <project-name>
 ```
 
-## 3-2: begin vue develop3-2: begin vue develop
-_✨✨_
-1. Node > 4
-```
-node -v
-```
-2. install vue-cli
-```
-npm install -g vue-cli
-```
-3. check project
+## 3-2: begin vue develop _✨✨_
+
+### Node > 4
+
+### install vue-cli
+
+### check project
+
 ```
 vue list
 ```
-4. init project
-```
+
+### init project
+
+```shell
 vue init webpack imooc-sell
 ```
-5. ESLint -> Yes
-6. Standard
-7. karma + mocha -> No
-8. e2e tests -> No
-9. check dialog
-```
-ll -a
-```
-10. package.json
-```
+
+1. ESLint -> Yes
+2. Standard
+3. karma + mocha -> No
+4. e2e tests -> No
+
+### check dialog
+
+### package.json
+
+```shell
 npm install
 ```
-11. run in browser
-```
+
+### run in browser
+
+```shell
 npm run dev
 ```
-12. open in browser (http://localhost:8080/#/)
 
+### open in browser
 
-## 3-3: introduce vue-project structure
-_✨✨_
-##### build
+## 3-3: introduce vue-project structure _✨✨_
+
+### build
+
 > webpack config
-##### config 
+
+### config
+
 > webpack config
-##### node_modules 
+
+### node_modules
+
 > npm install
-##### src 
-> code
-##### static 
-> Third party static resources.
-##### .gitkeep 
-> When the directory is empty, it can also be submitted to the repository.
-##### .babelrc 
-> babel config es6 Compiled into es5
-##### .editorconfig 
-> Compiler configuration
-##### .eslintignore 
-> Ignore the directory files for syntax checking.
-##### .eslintrc.js 
-[ESLint document](http://eslint.cn/docs/rules/)
-> eslint Syntax detection configuration
-##### package.json
-> 1. script: config 'npm run dev'
-> 2. devDependencies: This package is used only in the development phase, which is not needed when it comes online.
 
+### src
+
+> code
+
+### static
+
+> Third party static resources.
+
+### .gitkeep
+
+> When the directory is empty, it can also be submitted to the repository.
+
+### .babelrc
+
+> babel config es6 Compiled into es5
+
+### .editorconfig
+
+> Compiler configuration
+
+### .eslintignore
+
+> Ignore the directory files for syntax checking.
+
+### .eslintrc.js
+
+[ESLint document](http://eslint.cn/docs/rules/)
+
+> eslint Syntax detection configuration
+
+### file package.json
+
+1. script: config 'npm run dev'
+2. devDependencies: This package is used only in the development phase, which is not needed when it comes online.
 
 ## 3-4: vue-project entrance function
+
 _✨✨_
 _main.js_
 _App.vue_
