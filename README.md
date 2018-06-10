@@ -298,9 +298,7 @@ npm install better-scroll --save
 
 ## 7-9, 7-10: shopping cart styles _✨✨_
 
-## 7-11, 7-12, 7-13, 7-14: shopping cart data bind
-_✨✨✨_
-_shopCart.vue_
+## 7-11, 7-12, 7-13, 7-14: shopping cart data bind _✨✨✨_
 
 ## 7-15, 7-16: + - button
 _✨✨✨_
