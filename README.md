@@ -288,15 +288,10 @@ npm install vue-resource --save
 
 - Multi-line text, vertically centered.
 
-## 7-3, 7-4, 7-5: The right column styles
-_✨✨_
-_goods.vue_
-
+## 7-3, 7-4, 7-5: The right column styles _✨✨_
 
 ## 7-6, 7-7, 7-8: better-scroll
 _✨✨✨_
-_goods.vue_
-
 
 ## 7-9, 7-10: shopping cart styles
 _✨✨_
