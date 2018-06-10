@@ -272,15 +272,9 @@ npm install vue-resource --save
 
 ## 6-9: sticky layout show and hide _✨✨_
 
-## 6-10: sticky layout styles
-_✨✨✨_
-_header.vue_
+## 6-10: sticky layout styles _✨✨✨_
 
-
-## 6-11, 6-12, 6-13: star component
-_✨✨✨_
-_star.vue_
-
+## 6-11, 6-12, 6-13: star component _✨✨✨_
 
 ## 6-14, 6-15, 6-16: line + character + line styles, animate
 _✨✨✨_

@@ -197,13 +197,13 @@
   }
 
   .detail-wrapper {
-    // Fill the space
+    // content will grow
     min-height: 100%;
     width: 100%;
 
     .detail-main {
       margin-top: 64px;
-      // C: the space to close the button
+      // C: the space for close button
       padding-bottom: 64px;
 
       .name {
@@ -306,7 +306,7 @@
     position: relative;
     width: 32px;
     height: 32px;
-    // D: margin embed the padding in main.
+    // D: margin embed the padding of main.
     margin: -64px auto 0;
     font-size: 32px;
     // E: clearfix
