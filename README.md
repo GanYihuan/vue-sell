@@ -276,10 +276,11 @@ npm install vue-resource --save
 
 ## 6-11, 6-12, 6-13: star component _✨✨✨_
 
-## 6-14, 6-15, 6-16: line + character + line styles, animate
-_✨✨✨_
-_header.vue_
+## 6-14: line + character + line, styles _✨✨✨_
 
+## 6-15: center styles _✨✨✨_
+
+## 6-16: animate _✨✨✨_
 
 ## 7-1: Asynchronous transfer data
 _✨✨✨_
