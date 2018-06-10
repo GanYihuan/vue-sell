@@ -97,7 +97,7 @@ export default {
 	data() {
 		return {
 			goods: [],
-			// A highly formed array of dishes
+			// An array of heights for each dish
 			listHeight: [],
 			// foodsScroll Rolling position
 			scrollY: 0,
@@ -111,7 +111,7 @@ export default {
 				let height1 = this.listHeight[i]
 				// next height
 				let height2 = this.listHeight[i + 1]
-				// If there is no next dish, the current dish is the current height of the last dish
+				// If there is no next dish, the current dish is the last dish
 				// If the current dish is located between the original position and the
 				// next dish position from the height of the parent component,
 				// return the subscript of the dish.
@@ -143,7 +143,6 @@ export default {
 			response = response.body
 			if (response.errno === ERR_OK) {
 				this.goods = response.data
-				// console.log(this.goods)
 				// async
 				// $nextTick The deferred callback is performed after the next DOM update loop.
 				// Use this method immediately after modifying the data to get the updated DOM.
@@ -155,7 +154,6 @@ export default {
 		})
 	},
 	methods: {
-		// Click on events, scroll events.
 		_initScroll() {
 			this.meunScroll = new BScroll(this.$refs.menuWrapper, {
 				click: true
@@ -172,34 +170,30 @@ export default {
 				this.scrollY = Math.abs(Math.round(pos.y))
 			})
 		},
-		// An array of heights for each dish
 		_calculateHeight() {
 			// Target element
 			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
 				'food-list-hook'
 			)
 			let height = 0
-			// listHeight An array of heights for each dish
+			// listHeight: An array of heights for each dish
 			this.listHeight.push(height)
 			for (let i = 0; i < foodList.length; i++) {
-				// Single dish
 				let item = foodList[i]
-				// The height of the dishes
 				height += item.clientHeight
 				this.listHeight.push(height)
 			}
 		},
 		selectMenu(index, event) {
-			// Remove clicks with click events
+      // better-scroll
 			if (!event._constructed) {
 				return
 			}
 			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
 				'food-list-hook'
 			)
-			// Target element
 			let el = foodList[index]
-			// 300: duration
+			// target: element, duration: 300ms
 			this.foodsScroll.scrollToElement(el, 300)
 		},
 		selectFood(food, event) {
