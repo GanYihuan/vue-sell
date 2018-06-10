@@ -1,8 +1,5 @@
 <template>
-  <!-- :class bind，computed inside starType -->
-  <!-- starType: Different sizes of stars correspond to different stars. class -->
   <div class="star" :class="starType">
-    <!-- v-for: Traversal, key is necessary. -->
     <span
       class="star-item"
       v-for="itemClass in itemClasses"
@@ -22,54 +19,53 @@
 </template>
 
 <script type="text/ecmascript-6">
-  const LENGTH = 5
-  const CLS_ON = 'on'
-  const CLS_HALF = 'half'
-  const CLS_OFF = 'off'
+// star info
+const LENGTH = 5
+const CLS_ON = 'on'
+const CLS_HALF = 'half'
+const CLS_OFF = 'off'
 
-  export default {
-    props: {
-      size: {
-        type: Number
-      },
-      score: {
-        type: Number
-      }
-    },
-    computed: {
-      starType () {
-        return 'star-' + this.size
-      },
-      itemClasses () {
-        let result = []
-        // 4.2 -> 4;  4.8 -> 4.5
-        // Math.floor: 4.9 -> 4
-        // Math.ceil: 4.1 -> 5
-        let score = Math.floor(this.score * 2) / 2
-        // if have a decimal, half star
-        let hasDecimal = score % 1 !== 0
-        // full star
-        let integer = Math.floor(score)
-
-        for (let i = 0; i < integer; i++) {
-          // full star
-          result.push(CLS_ON)
-        }
-        if (hasDecimal) {
-          // half star
-          result.push(CLS_HALF)
-        }
-        while (result.length < LENGTH) {
-          // empty star
-          result.push(CLS_OFF)
-        }
-
-        return result
-      }
-    }
-  }
+export default {
+	props: {
+		size: {
+			type: Number
+		},
+		score: {
+			type: Number
+		}
+	},
+	computed: {
+		starType() {
+			return 'star-' + this.size
+		},
+		itemClasses() {
+			let result = []
+			// 4.2 -> 4;  4.8 -> 4.5
+			// Math.floor: 4.9 -> 4
+			// Math.ceil: 4.1 -> 5
+			let score = Math.floor(this.score * 2) / 2
+			// if have a decimal, half star
+			let hasDecimal = score % 1 !== 0
+			// full star
+			let integer = Math.floor(score)
+			for (let i = 0; i < integer; i++) {
+				// full star
+				result.push(CLS_ON)
+			}
+			if (hasDecimal) {
+				// half star
+				result.push(CLS_HALF)
+			}
+			while (result.length < LENGTH) {
+				// empty star
+				result.push(CLS_OFF)
+			}
+			return result
+		}
+	}
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  @import "star.scss";
+@import 'star.scss';
 </style>
