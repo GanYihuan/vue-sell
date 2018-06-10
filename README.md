@@ -300,15 +300,9 @@ npm install better-scroll --save
 
 ## 7-11, 7-12, 7-13, 7-14: shopping cart data bind _✨✨✨_
 
-## 7-15, 7-16: + - button
-_✨✨✨_
-_cartControl.vue_
+## 7-15, 7-16: + - button _✨✨✨_
 
-## 7-17: shopping cart data
-_✨✨✨_
-_goods.vue_
-_cartcontrol.vue_
-
+## 7-17: shopping cart data _✨✨✨_
 
 ## 7-18, 7-19, 7-20: shopping cart ball animate
 _✨✨✨✨_

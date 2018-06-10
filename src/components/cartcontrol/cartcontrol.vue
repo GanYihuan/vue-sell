@@ -15,40 +15,40 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import Vue from 'vue'
+import Vue from 'vue'
 
-  export default {
-    props: {
-      food: {
-        type: Object
-      }
-    },
-    methods: {
-      addCart (event) {
-        // Get rid of the click that comes with the click event.
-        if (!event._constructed) {
-          return
-        }
-        if (!this.food.count) {
-          // Add a food attribute count=1.
-          Vue.set(this.food, 'count', 1)
-        } else {
-          this.food.count++
-        }
-        this.$emit('add', event.target)
-      },
-      decreaseCart (event) {
-        if (!event._constructed) {
-          return
-        }
-        if (this.food.count !== 0) {
-          this.food.count--
-        }
-      }
-    }
-  }
+export default {
+	props: {
+		food: {
+			type: Object
+		}
+	},
+	methods: {
+		addCart(event) {
+			// Get rid of the click that comes with the click event.
+			if (!event._constructed) {
+				return
+			}
+			if (!this.food.count) {
+				// Add a food attribute count=1.
+				Vue.set(this.food, 'count', 1)
+			} else {
+				this.food.count++
+			}
+			this.$emit('add', event.target)
+		},
+		decreaseCart(event) {
+			if (!event._constructed) {
+				return
+			}
+			if (this.food.count !== 0) {
+				this.food.count--
+			}
+		}
+	}
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  @import "cartControl.scss";
+@import 'cartControl.scss';
 </style>
