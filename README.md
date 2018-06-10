@@ -268,10 +268,7 @@ npm run dev
 npm install vue-resource --save
 ```
 
-## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles
-_✨✨_
-_header.vue_
-
+## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles _✨✨_
 
 ## 6-9: sticky layout show and hide
 _✨✨_

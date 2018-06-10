@@ -10,7 +10,7 @@
           <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
-          {{seller.description}}/{{seller.deliveryTime}}分支送达
+          {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
         <!-- v-if: If you have data, you parse it -->
         <!-- Because it's an asynchronous process -->
@@ -72,37 +72,37 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import star from '../star/star.vue'
+import star from '../star/star.vue'
 
-  export default {
-    props: {
-      seller: {
-        type: Object
-      }
-    },
-    data () {
-      return {
-        detailShow: false
-      }
-    },
-    created () {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    },
-    methods: {
-      showDetail () {
-        this.detailShow = true
-      },
-      hideDetail () {
-        this.detailShow = false
-      }
-    },
-    components: {
-      star
-    }
-  }
+export default {
+	props: {
+		seller: {
+			type: Object
+		}
+	},
+	data() {
+		return {
+			detailShow: false
+		}
+	},
+	created() {
+		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+	},
+	methods: {
+		showDetail() {
+			this.detailShow = true
+		},
+		hideDetail() {
+			this.detailShow = false
+		}
+	},
+	components: {
+		star
+	}
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  @import "../../common/scss/_mixin.scss";
-  @import "./header.scss";
+@import '../../common/scss/_mixin.scss';
+@import './header.scss';
 </style>

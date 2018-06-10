@@ -52,8 +52,8 @@
 
       .name {
         margin-left: 6px;
-        font-size: 16px;
         line-height: 18px;
+        font-size: 16px;
         font-weight: bold;
       }
     }
@@ -67,10 +67,10 @@
     .support {
       .icon {
         display: inline-block;
-        vertical-align: top;
         width: 12px;
         height: 12px;
         margin-right: 4px;
+        vertical-align: top;
         background-size: 12px 12px;
         background-repeat: no-repeat;
 
@@ -102,10 +102,10 @@
     position: absolute;
     right: 12px;
     bottom: 14px;
+    border-radius: 14px;
     padding: 0 8px;
     height: 24px;
     line-height: 24px;
-    border-radius: 14px;
     text-align: center;
     background: rgba(0, 0, 0, 0.2);
 
@@ -125,16 +125,14 @@
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  // vertical direction is centered.
+  // vertical direction centered.
   height: 28px;
   line-height: 28px;
-  // don't wrap
-  white-space: nowrap;
-  // hiding from the parent element.
-  overflow: hidden;
-  // over display: ...
-  text-overflow: ellipsis;
   background: rgba(7, 17, 27, 0.2);
+  // 下面3个样式, 超出显示...
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   .bulletin-title {
     display: inline-block;
