@@ -274,18 +274,15 @@ npm install vue-resource --save
 
 ## 6-10: sticky layout styles _✨✨✨_
 
-## 6-11, 6-12, 6-13: star component _✨✨✨_
+## 6-11, 6-12, 6-13: sticky layout star component _✨✨✨_
 
-## 6-14: line + character + line, styles _✨✨✨_
+## 6-14: sticky layout line + character + line, styles _✨✨✨_
 
-## 6-15: center styles _✨✨✨_
+## 6-15: sticky layout center styles _✨✨✨_
 
-## 6-16: animate _✨✨✨_
+## 6-16: sticky layout animate _✨✨✨_
 
-## 7-1: Asynchronous transfer data
-_✨✨✨_
-_goods.vue_
-
+## 7-1: Asynchronous get data _✨✨✨_
 
 ## 7-2: The left column styles
 _✨✨_
