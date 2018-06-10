@@ -18,8 +18,7 @@
       </div>
       <div class="ball-container">
         <div v-for="(ball, index) in balls" :key="index">
-          <!-- drop is a methods -->
-          <!-- beforeDrop is a methods -->
+          <!-- drop, beforeDrop, dropping, afterDrop is methods -->
           <transition
             name="drop"
             @before-enter="beforeDrop"
@@ -171,7 +170,6 @@ export default {
 			this.fold = true
 		},
 		empty() {
-			// selectFoods -> A collection of individual dishes.
 			this.selectFoods.forEach(food => {
 				food.count = 0
 			})
@@ -202,16 +200,13 @@ export default {
 				let ball = this.balls[count]
 				if (ball.show) {
 					// getBoundingClientRect: Get the element relative viewport location
-					let rect = ball.el.getBoundingClientRect()
-					// decrease ball width
+          let rect = ball.el.getBoundingClientRect()
+          // ball size = 32
 					let x = rect.left - 32
 					let y = -(window.innerHeight - rect.top - 22)
-					// Set the initial position
-					// visible
 					el.style.display = ''
 					el.style.webkitTransform = `translate3d(0,${y}px,0)`
 					el.style.transform = `translate3d(0,${y}px,0)`
-					// inner: Used to be selected by js
 					let inner = el.getElementsByClassName('inner-hook')[0]
 					inner.style.webkitTransform = `translate3d(${x}px,0,0)`
 					inner.style.transform = `translate3d(${x}px,0,0)`

@@ -209,6 +209,7 @@ export default {
 			this._drop(target)
 		},
 		_drop(target) {
+      // 异步执行抛物小球动画，缓解卡顿
 			// experience optimization, asynchronous execution of falling animation.
 			// $nextTick executes the deferred callback after the next DOM update loop.
 			// use this method immediately after modifying the data to get the updated DOM.
