@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="ball-container">
-        <div v-for="ball in balls">
+        <div v-for="(ball, index) in balls" :key="index">
           <!-- drop is a methods -->
           <!-- beforeDrop is a methods -->
           <transition
@@ -40,7 +40,7 @@
           </div>
           <div class="list-content" ref="listContent">
             <ul>
-              <li class="shopCart-food" v-for="food in selectFoods">
+              <li class="shopCart-food" v-for="(food, index) in selectFoods" :key="index">
                 <span class="name">{{food.name}}</span>
                 <div class="price">
                   <span>￥{{food.price * food.count}}</span>
@@ -66,186 +66,186 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import BScroll from 'better-scroll'
-  import cartControl from '../cartControl/cartControl.vue'
+import BScroll from 'better-scroll'
+import cartControl from '../cartControl/cartControl.vue'
 
-  export default {
-    props: {
-      selectFoods: {
-        type: Array,
-        default () {
-          return [
-            {
-              price: 10,
-              count: 1
-            }
-          ]
-        }
-      },
-      deliveryPrice: {
-        type: Number,
-        default: 0
-      },
-      minPrice: {
-        type: Number,
-        default: 0
-      }
-    },
-    data () {
-      return {
-        balls: [
-          {show: false},
-          {show: false},
-          {show: false},
-          {show: false},
-          {show: false}
-        ],
-        dropBalls: [],
-        fold: true
-      }
-    },
-    computed: {
-      totalCount () {
-        let count = 0
-        // selectFoods -> A collection of all individual dishes.
-        this.selectFoods.forEach((food) => {
-          count += food.count
-        })
-        return count
-      },
-      totalPrice () {
-        let total = 0
-        this.selectFoods.forEach((food) => {
-          total += food.price * food.count
-        })
-        return total
-      },
-      payClass () {
-        if (this.totalPrice < this.minPrice) {
-          return 'not-enough'
-        } else {
-          return 'enough'
-        }
-      },
-      payDesc () {
-        if (this.totalPrice === 0) {
-          return `￥${this.minPrice}元起送`
-        } else if (this.totalPrice < this.minPrice) {
-          let diff = this.minPrice - this.totalPrice
-          return `还差￥${diff}元起送`
-        } else {
-          return '去结算'
-        }
-      },
-      listShow () {
-        if (!this.totalCount) {
-          this.fold = true
-          return false
-        }
-        let show = !this.fold
-        if (show) {
-          // experience optimization, asynchronous execution of falling animation.
-          // $nextTick executes the deferred callback after the next DOM update loop.
-          // use this method immediately after modifying the data to get the updated DOM.
-          this.$nextTick(() => {
-            if (!this.scroll) {
-              this.scroll = new BScroll(this.$refs.listContent, {
-                click: true
-              })
-            } else {
-              this.scroll.refresh()
-            }
-          })
-        }
-        return show
-      }
-    },
-    methods: {
-      toggleList () {
-        if (!this.totalCount) {
-          return
-        }
-        this.fold = !this.fold
-      },
-      hideList () {
-        this.fold = true
-      },
-      empty () {
-        // selectFoods -> A collection of individual dishes.
-        this.selectFoods.forEach((food) => {
-          food.count = 0
-        })
-      },
-      pay () {
-        if (this.totalPrice < this.minPrice) {
-          return
-        }
-        window.alert('支付' + this.totalPrice + '元')
-      },
-      addFood (target) {
-        this.drop(target)
-      },
-      drop (el) {
-        for (let i = 0; i < this.balls.length; i++) {
-          let ball = this.balls[i]
-          if (!ball.show) {
-            ball.show = true
-            ball.el = el
-            this.dropBalls.push(ball)
-            return
-          }
-        }
-      },
-      beforeDrop (el) {
-        let count = this.balls.length
-        while (count--) {
-          let ball = this.balls[count]
-          if (ball.show) {
-            // getBoundingClientRect: Get the element relative viewport location
-            let rect = ball.el.getBoundingClientRect()
-            // decrease ball width
-            let x = rect.left - 32
-            let y = -(window.innerHeight - rect.top - 22)
-            // Set the initial position
-            // visible
-            el.style.display = ''
-            el.style.webkitTransform = `translate3d(0,${y}px,0)`
-            el.style.transform = `translate3d(0,${y}px,0)`
-            // inner: Used to be selected by js
-            let inner = el.getElementsByClassName('inner-hook')[0]
-            inner.style.webkitTransform = `translate3d(${x}px,0,0)`
-            inner.style.transform = `translate3d(${x}px,0,0)`
-          }
-        }
-      },
-      dropping (el, done) {
-        // Trigger browser refactoring.
-        /* eslint-disable no-unused-vars */
-        let rf = el.offsetHeight
-        this.$nextTick(() => {
-          // reset
-          el.style.webkitTransform = 'translate3d(0,0,0)'
-          el.style.transform = 'translate3d(0,0,0)'
-          let inner = el.getElementsByClassName('inner-hook')[0]
-          inner.style.webkitTransform = 'translate3d(0,0,0)'
-          inner.style.transform = 'translate3d(0,0,0)'
-          el.addEventListener('transitionend', done)
-        })
-      },
-      afterDrop (el) {
-        let ball = this.dropBalls.shift()
-        if (ball) {
-          ball.show = false
-          el.style.display = 'none'
-        }
-      }
-    },
-    components: {
-      cartControl
-    }
-  }
+export default {
+	props: {
+		selectFoods: {
+			type: Array,
+			default() {
+				return [
+					{
+						price: 10,
+						count: 1
+					}
+				]
+			}
+		},
+		deliveryPrice: {
+			type: Number,
+			default: 0
+		},
+		minPrice: {
+			type: Number,
+			default: 0
+		}
+	},
+	data() {
+		return {
+			balls: [
+				{ show: false },
+				{ show: false },
+				{ show: false },
+				{ show: false },
+				{ show: false }
+			],
+			dropBalls: [],
+			fold: true
+		}
+	},
+	computed: {
+		totalCount() {
+			let count = 0
+			// selectFoods -> A collection of all individual dishes.
+			this.selectFoods.forEach(food => {
+				count += food.count
+			})
+			return count
+		},
+		totalPrice() {
+			let total = 0
+			this.selectFoods.forEach(food => {
+				total += food.price * food.count
+			})
+			return total
+		},
+		payClass() {
+			if (this.totalPrice < this.minPrice) {
+				return 'not-enough'
+			} else {
+				return 'enough'
+			}
+		},
+		payDesc() {
+			if (this.totalPrice === 0) {
+				return `￥${this.minPrice}元起送`
+			} else if (this.totalPrice < this.minPrice) {
+				let diff = this.minPrice - this.totalPrice
+				return `还差￥${diff}元起送`
+			} else {
+				return '去结算'
+			}
+		},
+		listShow() {
+			if (!this.totalCount) {
+				this.fold = true
+				return false
+			}
+			let show = !this.fold
+			if (show) {
+				// experience optimization, asynchronous execution of falling animation.
+				// $nextTick executes the deferred callback after the next DOM update loop.
+				// use this method immediately after modifying the data to get the updated DOM.
+				this.$nextTick(() => {
+					if (!this.scroll) {
+						this.scroll = new BScroll(this.$refs.listContent, {
+							click: true
+						})
+					} else {
+						this.scroll.refresh()
+					}
+				})
+			}
+			return show
+		}
+	},
+	methods: {
+		toggleList() {
+			if (!this.totalCount) {
+				return
+			}
+			this.fold = !this.fold
+		},
+		hideList() {
+			this.fold = true
+		},
+		empty() {
+			// selectFoods -> A collection of individual dishes.
+			this.selectFoods.forEach(food => {
+				food.count = 0
+			})
+		},
+		pay() {
+			if (this.totalPrice < this.minPrice) {
+				return
+			}
+			window.alert('支付' + this.totalPrice + '元')
+		},
+		addFood(target) {
+			this.drop(target)
+		},
+		drop(el) {
+			for (let i = 0; i < this.balls.length; i++) {
+				let ball = this.balls[i]
+				if (!ball.show) {
+					ball.show = true
+					ball.el = el
+					this.dropBalls.push(ball)
+					return
+				}
+			}
+		},
+		beforeDrop(el) {
+			let count = this.balls.length
+			while (count--) {
+				let ball = this.balls[count]
+				if (ball.show) {
+					// getBoundingClientRect: Get the element relative viewport location
+					let rect = ball.el.getBoundingClientRect()
+					// decrease ball width
+					let x = rect.left - 32
+					let y = -(window.innerHeight - rect.top - 22)
+					// Set the initial position
+					// visible
+					el.style.display = ''
+					el.style.webkitTransform = `translate3d(0,${y}px,0)`
+					el.style.transform = `translate3d(0,${y}px,0)`
+					// inner: Used to be selected by js
+					let inner = el.getElementsByClassName('inner-hook')[0]
+					inner.style.webkitTransform = `translate3d(${x}px,0,0)`
+					inner.style.transform = `translate3d(${x}px,0,0)`
+				}
+			}
+		},
+		dropping(el, done) {
+			// Trigger browser refactoring.
+			/* eslint-disable no-unused-vars */
+			let rf = el.offsetHeight
+			this.$nextTick(() => {
+				// reset
+				el.style.webkitTransform = 'translate3d(0,0,0)'
+				el.style.transform = 'translate3d(0,0,0)'
+				let inner = el.getElementsByClassName('inner-hook')[0]
+				inner.style.webkitTransform = 'translate3d(0,0,0)'
+				inner.style.transform = 'translate3d(0,0,0)'
+				el.addEventListener('transitionend', done)
+			})
+		},
+		afterDrop(el) {
+			let ball = this.dropBalls.shift()
+			if (ball) {
+				ball.show = false
+				el.style.display = 'none'
+			}
+		}
+	},
+	components: {
+		cartControl
+	}
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  @import "shopCart.scss";
+@import 'shopCart.scss';
 </style>

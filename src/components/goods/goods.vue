@@ -89,6 +89,7 @@ import food from '../food/food.vue'
 const ERR_OK = 0
 
 export default {
+  // accpet App.vue pass seller
 	props: {
 		seller: {
 			type: Object

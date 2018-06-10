@@ -296,9 +296,7 @@ npm install vue-resource --save
 npm install better-scroll --save
 ```
 
-## 7-9, 7-10: shopping cart styles
-_✨✨_
-_shopCart.vue_
+## 7-9, 7-10: shopping cart styles _✨✨_
 
 ## 7-11, 7-12, 7-13, 7-14: shopping cart data bind
 _✨✨✨_

@@ -25,9 +25,8 @@
         padding: 6px;
         width: 56px;
         height: 56px;
-        // ie盒模型: 已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+        // border-box: ie盒模型: 已设定的宽度和高度分别减去边框和内边距才是内容的宽度和高度。
         box-sizing: border-box;
-        // circle
         border-radius: 50%;
         vertical-align: top;
         background: #141d27;
