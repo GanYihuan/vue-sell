@@ -284,10 +284,9 @@ npm install vue-resource --save
 
 ## 7-1: Asynchronous get data _✨✨✨_
 
-## 7-2: The left column styles
-_✨✨_
-_goods.vue_
+## 7-2: The left column styles _✨✨_
 
+- Multi-line text, vertically centered.
 
 ## 7-3, 7-4, 7-5: The right column styles
 _✨✨_
