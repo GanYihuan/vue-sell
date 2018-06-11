@@ -382,54 +382,35 @@ npm install better-scroll --save
 
 - keep-alive
 
-## 11-1: package
-_✨✨✨✨✨_
-###### iTerm
-```
+## 11-1: package bug
+
+```shell
 npm run build
 ```
 
+## 11-2: node for build files _✨✨✨✨✨_
 
-## 11-2: node for build files
-_✨✨✨✨✨_
-_prod.server.js_
+> **prod.server.js**
 
+## 12-1: summary _✨_
 
-## 12-1: summary
-_✨_
-##### vue-router
-##### better-scroll
-##### webpack
-##### eslint
-##### es6 入门学习
-##### Stylus
-##### flex
-##### Device pixels
-##### Device pixels
-##### cubic-bezier
+## 13-1: package.json, build change _✨_
 
+## 13-2: V2.0 change _✨✨✨✨_
 
-## 13-1: package.json, build change
-_✨_
+- route
+- v-for
+- v-el
+- v-ref
+- only one route component
+- $dispatch remove
+- events remove
+- cannot directly modify the prop that is passed in to the parent component in the subcomponent.
+- transition
+- keep-alive
 
+## 13-3: V2.0 change fix _✨✨✨✨_
 
-## 13-2: V2.0 change
-_✨✨✨✨_
-##### route
-##### v-for
-##### v-el
-##### v-ref
-##### only one route component
-##### $dispatch remove
-##### events remove
-##### cannot directly modify the prop that is passed in to the parent component in the subcomponent.
-##### transition
-##### keep-alive
+## bug: npm run build
 
-
-## 13-3: V2.0 change fix
-_✨✨✨✨_
-
-
-## bug: npm run build ?
-## bug: node prod.server.js ?
+## bug: node prod.server.js
