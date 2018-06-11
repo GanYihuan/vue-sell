@@ -324,11 +324,10 @@ npm install better-scroll --save
 
 ## 8-6: split _✨✨_
 
-## 8-7, 8-8, 8-9: ratingSelect styles, pass data
-_✨✨✨_
-_food.vue_
-_ratingSelect.vue_
+## 8-7, 8-8, 8-9: ratingSelect styles, pass data _✨✨✨_
 
+**food.vue**
+**ratingSelect.vue**
  
 ## 8-10, 8-11: ratingSelect switch
 _✨✨✨_
