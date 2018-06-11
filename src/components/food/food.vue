@@ -161,7 +161,8 @@ export default {
 	},
 	watch: {
 		selectRating(type) {
-			this.selectType = type
+      this.selectType = 
+      // async, data change, dom need to refresh
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})

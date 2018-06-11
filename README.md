@@ -337,10 +337,9 @@ npm install better-scroll --save
 
 - **food.vue**
 
-## 8-14: food watch
-_✨✨✨_
-_food.vue_
+## 8-14: watch _✨✨✨_
 
+- **food.vue**
  
 ## 8-15, 8-16, 8-17: food matDate
 _✨✨✨✨_
