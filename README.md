@@ -322,11 +322,7 @@ npm install better-scroll --save
 
 ## 8-5: food content _✨✨_
 
-## 8-6: food layout
-_✨✨_
-_split.vue_
-_food.vue_
-
+## 8-6: split _✨✨_
 
 ## 8-7, 8-8, 8-9: ratingSelect styles, pass data
 _✨✨✨_
