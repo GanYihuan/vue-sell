@@ -366,11 +366,11 @@ npm install better-scroll --save
 
 - **seller.vue**
 
-## 10-6: pics data bind, styles, better-scroll
-_✨✨✨_
-_seller.vue_
+## 10-6: pics data bind, styles, better-scroll _✨✨✨_
 
- 
+- **seller.vue**
+- 排列一行的能滚动的图片, (better-scroll)
+
 ## 10-7: info data bind, styles
 _✨✨_
 _seller.vue_
