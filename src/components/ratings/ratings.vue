@@ -38,9 +38,9 @@
       <ul>
         <li
           class="rating-item"
+          v-show="needShow(rating.rateType, rating.text)"
           v-for="(rating, index) in ratings"
           :key="index"
-          v-show="needShow(rating.rateType, rating.text)"
         >
           <div class="avatar">
             <img :src="rating.avatar" alt="avatar" width="28" height="28"/>
