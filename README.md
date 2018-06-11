@@ -37,13 +37,11 @@ vue init <template-name> <project-name>
 
 ## 3-2: begin vue develop _✨✨_
 
-### Node > 4
+- Node > 4
+- install vue-cli
+- check project
 
-### install vue-cli
-
-### check project
-
-```
+```shell
 vue list
 ```
 
@@ -58,67 +56,66 @@ vue init webpack imooc-sell
 3. karma + mocha -> No
 4. e2e tests -> No
 
-### check dialog
-
-### package.json
+- check dialog
+- package.json
 
 ```shell
 npm install
 ```
 
-### run in browser
+- run in browser
 
 ```shell
 npm run dev
 ```
 
-### open in browser
+- open in browser
 
 ## 3-3: introduce vue-project structure _✨✨_
 
-### build
+### build file
 
-> webpack config
+- webpack config
 
-### config
+### config file
 
-> webpack config
+- webpack config
 
-### node_modules
+### node_modules file
 
-> npm install
+- npm install
 
-### src
+### src file
 
-> code
+- code
 
-### static
+### static file
 
-> Third party static resources.
+- Third party static resources.
 
-### .gitkeep
+### .gitkeep file
 
-> When the directory is empty, it can also be submitted to the repository.
+- When the directory is empty, it can also be submitted to the repository.
 
-### .babelrc
+### .babelrc file
 
-> babel config es6 Compiled into es5
+- babel config es6 Compiled into es5
 
-### .editorconfig
+### .editorconfig file
 
-> Compiler configuration
+- Compiler configuration
 
-### .eslintignore
+### .eslintignore file
 
-> Ignore the directory files for syntax checking.
+- Ignore the directory files for syntax checking.
 
-### .eslintrc.js
+### .eslintrc.js file
 
 [ESLint document](http://eslint.cn/docs/rules/)
 
-> eslint Syntax detection configuration
+- eslint Syntax detection configuration
 
-### file package.json
+### package.json file
 
 1. script: config 'npm run dev'
 2. devDependencies: This package is used only in the development phase, which is not needed when it comes online.
@@ -143,19 +140,15 @@ npm run dev
 
 ## 4-5: mock data _✨✨✨_
 
-- build/webpack.dev.conf.js
+> **webpack.dev.conf.js**
 
-### browser check data
-
+- browser check data
 1. [seller data](http://localhost:8088/api/seller)
-
 2. [goods data](http://localhost:8088/api/goods)
-
 3. [ratings data](http://localhost:8088/api/ratings)
 
-### 1. add data.json
-
-### 2. install vue-resource better-scroll sass stylus
+- add data.json
+- install vue-resource better-scroll sass stylus
 
 ```shell
 npm install vue-resource better-scroll --save
@@ -163,53 +156,46 @@ npm install stylus stylus-loader --save-dev
 npm install node-sass sass-loader --save-dev
 ```
 
-### 3. set alias path
+- set alias path
+> **webapck.base.conf.js**
 
-- build/webapck.base.conf.js
+- modify ESLint add rules
+> **eslintrc.js**
 
-### 4. modify ESLint add rules
+- modify host
+> **index.js**
 
-- .eslintrc.js_
+- set data source
+> **webpack.dev.conf.js**
 
-### 5. modify host
-
-- config/index.js
-
-### 6. set data source
-
-- build/webpack.dev.conf.js
-
-### 7. router.js
-
-- src/router/index.js
+- router.js
+> **index.js**
 
 ## 5-1, 5-2, 5-3: skeleton _✨✨_
 
-### css reset
+- css reset
+> **reset.css**
 
-- static/css/reset.css
+- index.html viewport config
+> **index.html**
 
-### index.html viewport config
+- modify ESLint add rules
+> **eslintrc.js**
 
-- index.html
+- skip ESLint check
 
-### modify ESLint add rules
+```js
+/* eslint-disable no-new
+```
 
-- .eslintrc.js
-
-### skip ESLint check
-
-> /* eslint-disable no-new */
-
-### intellij ide
-
+- intellij ide
 > Editor -> File and code template > add Files, extension 'vue'
 
 ## 5-4, 5-5: vue-router config _✨✨✨_
 
-- router/route.js
+> **route.js**
 
-### router
+- router
 
 ```shell
 npm install vue-router
@@ -219,48 +205,45 @@ npm install vue-router
 
 ### Mobile phone preview, 草料二维码
 
-### 1. check IP
+- check IP
 
 ```shell
 ifconfig
 ```
 
-### 2. open in browser
+- open in browser
 
 ```shell
 npm run dev
 ```
 
-### 3. url
+- url
 
 [url](localhost:8080/#/goods)
 
-### 4. url replace
-
+- url replace
 > IP:8080/#/goods
 
-### 5. 草料二维码
+- 草料二维码
 
 [草料website](https://cli.im/)
 
 > IP:8080/#/goods
 
-### 6. WeChat scan then open
+- WeChat scan then open
+- CSS setting
 
-### CSS setting
-
-- base.scss
+> **base.scss**
 1. One pixel line suitable for different dip screens
 2. clear fix
 
-- mixin.scss
+> **mixin.scss**
 1. One pixel line
 2. 2x3x image
 
 ## 6-1, 6-2: front-end back-end interaction _✨✨✨_
 
-- main.js
-- App.vue
+> **main.js** & **App.vue**
 
 ### vue-resource: Ajax request, XMLHttpRequest
 
@@ -316,7 +299,8 @@ npm install better-scroll --save
 
 ## 8-3: food data bind _✨✨_
 
-- food.scss: high width equal container
+> **food.scss**
+- high width equal container
 
 ## 8-4: food styles, better-scroll _✨✨_
 
@@ -326,58 +310,56 @@ npm install better-scroll --save
 
 ## 8-7, 8-8, 8-9: ratingSelect styles, pass data _✨✨✨_
 
-- **food.vue**
-- **ratingSelect.vue**
+> **food.vue** & **ratingSelect.vue**
 
 ## 8-10, 8-11: ratingSelect switch _✨✨✨_
 
-- **ratingSelect.vue**
+> **ratingSelect.vue**
 
 ## 8-12, 8-13: food data bind, rating-wrapper, styles _✨✨✨_
 
-- **food.vue**
+> **food.vue**
 
 ## 8-14: watch _✨✨✨_
 
-- **food.vue**
+> **food.vue**
 
 ## 8-15, 8-16, 8-17: format Date _✨✨✨✨_
 
-- **food.vue**
-- **date.js**
+> **food.vue** & **date.js**
 
 ## 9-1, 9-2, 9-3: ratings-content styles _✨✨_
 
-- **ratings.vue**
+> **ratings.vue**
 
 ## 9-4, 9-5, 9-6: styles, data bind _✨✨_
 
-- **ratings.vue**
+> **ratings.vue**
 
 ## 10-1, 10-2: overview data bind, styles _✨✨_
 
-- **seller.vue**
+> **seller.vue**
 
 ## 10-3, 10-4: bulletin data bind, styles _✨✨_
 
-- **seller.vue**
+> **seller.vue**
 
 ## 10-5: better-scroll _✨✨_
 
-- **seller.vue**
+> **seller.vue**
 
 ## 10-6: pics data bind, styles, better-scroll _✨✨✨_
 
-- **seller.vue**
+> **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
 ## 10-7: info data bind, styles _✨✨_
 
-- **seller.vue**
+> **seller.vue**
 
 ## 10-8: favorite data bind, styles _✨✨_
 
-- **seller.vue**
+> **seller.vue**
 
 ## 10-9: favorite, parse url parameter _✨✨✨✨_
 
@@ -386,20 +368,19 @@ npm install better-scroll --save
 - immediately run function
 - parse url parameter
 
-## 10-10: favorite, localStorage
-_✨✨✨✨_
-_seller.vue_
-_store.js_
-##### save localStorage
-##### read localStorage
-##### immediately run function
+## 10-10: favorite, localStorage _✨✨✨✨_
 
- 
-## 10-11: optimize
-_✨✨_
-_App.vue_
-##### keep-alive
+> **seller.vue** & **store.js**
 
+- save localStorage
+- read localStorage
+- immediately run function
+
+## 10-11: optimize _✨✨_
+
+> **App.vue**
+
+- keep-alive
 
 ## 11-1: package
 _✨✨✨✨✨_
