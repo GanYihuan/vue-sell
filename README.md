@@ -375,11 +375,10 @@ npm install better-scroll --save
 
 - **seller.vue**
 
-## 10-8: favorite data bind, styles
-_✨✨_
-_seller.vue_
+## 10-8: favorite data bind, styles _✨✨_
 
- 
+- **seller.vue**
+
 ## 10-9: favorite, parse url parameter
 _✨✨✨✨_
 _seller.vue_
