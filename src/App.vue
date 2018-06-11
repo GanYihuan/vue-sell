@@ -53,7 +53,9 @@ export default {
 			response = response.body
 			if (response.errno === ERR_OK) {
 				// Expand array content: ...
-				// Object.assign -> ...
+        // Object.assign -> ...
+        // {}: 最终返回的结果
+        // 给对象扩展属性
         this.seller = Object.assign({}, this.seller, response.data)
         // console.log(this.seller)
 			}

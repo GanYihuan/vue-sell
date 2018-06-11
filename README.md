@@ -379,14 +379,15 @@ npm install better-scroll --save
 
 - **seller.vue**
 
-## 10-9: favorite, parse url parameter
-_✨✨✨✨_
-_seller.vue_
-_util.js_
-##### parse url parameter
-##### immediately run function
+## 10-9: favorite, parse url parameter _✨✨✨✨_
 
- 
+- **App.vue**
+- **util.js**
+- **seller.vue**
+
+- immediately run function
+- parse url parameter
+
 ## 10-10: favorite, localStorage
 _✨✨✨✨_
 _seller.vue_
