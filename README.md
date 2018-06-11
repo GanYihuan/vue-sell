@@ -358,20 +358,14 @@ npm install better-scroll --save
 
 - **seller.vue**
 
-## 10-3: bulletin data bind, styles _✨✨_
-_seller.vue_
+## 10-3, 10-4: bulletin data bind, styles _✨✨_
 
- 
-## 10-4: bulletin data bind, styles
-_✨✨_
-_seller.vue_
+- **seller.vue**
 
- 
-## 10-5: better-scroll
-_✨✨_
-_seller.vue_
+## 10-5: better-scroll _✨✨_
 
- 
+- **seller.vue**
+
 ## 10-6: pics data bind, styles, better-scroll
 _✨✨✨_
 _seller.vue_
