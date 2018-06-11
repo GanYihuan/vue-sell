@@ -1,10 +1,6 @@
 <template>
   <transition name="move">
-    <div
-      class="food"
-      ref="food"
-      v-show="showFlag"
-    >
+    <div class="food" ref="food" v-show="showFlag">
       <div class="food-content">
         <div class="image-header">
           <img :src="food.image" alt="food.image"/>
@@ -23,7 +19,7 @@
             <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
           </div>
           <div class="cartControl-wrapper">
-            <cartControl @add="addFood" :food="food"></cartControl>
+            <cartControl :food="food" @add="addFood"></cartControl>
           </div>
           <transition name="fade">
             <div
@@ -113,7 +109,8 @@ export default {
 		show() {
 			this.showFlag = true
 			this.selectType = ALL
-			this.onlyContent = true
+      this.onlyContent = true
+      // 保证dom是渲染的
 			this.$nextTick(() => {
 				if (!this.scroll) {
 					this.scroll = new BScroll(this.$refs.food, {
@@ -130,7 +127,8 @@ export default {
 		addFirst(event) {
 			if (!event._constructed) {
 				return
-			}
+      }
+      // create attribute 'count'
 			Vue.set(this.food, 'count', 1)
 			this.$emit('add', event.target)
 		},

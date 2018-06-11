@@ -314,21 +314,13 @@ npm install better-scroll --save
 
 ## 8-1, 8-2: food styles, transfer data _✨✨_
 
-## 8-3: food data bind
-_✨✨_
-_food.vue_
-##### High width equal container
+## 8-3: food data bind _✨✨_
 
+- food.scss: high width equal container
 
-## 8-4: food styles, better-scroll
-_✨✨✨_
-_food.vue_
+## 8-4: food styles, better-scroll _✨✨_
 
-
-## 8-5: food content
-_✨✨✨_
-_food.vue_
-
+## 8-5: food content _✨✨_
 
 ## 8-6: food layout
 _✨✨_
