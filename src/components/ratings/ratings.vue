@@ -38,7 +38,8 @@
       <ul>
         <li
           class="rating-item"
-          v-for="rating in ratings"
+          v-for="(rating, index) in ratings"
+          :key="index"
           v-show="needShow(rating.rateType, rating.text)"
         >
           <div class="avatar">
@@ -53,7 +54,7 @@
             <p class="text">{{rating.text}}</p>
             <div class="recommend" v-show="rating.recommend && rating.recommend.length">
               <span class="icon-thumb_up"></span>
-              <span class="item" v-for="item in rating.recommend">{{item}}</span>
+              <span class="item" v-for="(item, index) in rating.recommend" :key="index">{{item}}</span>
             </div>
             <div class="time">{{rating.rateTime | formatDate}}</div>
           </div>
@@ -64,85 +65,83 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import BScroll from 'better-scroll'
-  import star from '../star/star.vue'
-  import ratingSelect from '../ratingSelect/ratingSelect.vue'
-  import split from '../split/split.vue'
-  import { formatDate } from '../../common/js/date'
+import BScroll from 'better-scroll'
+import star from '../star/star.vue'
+import ratingSelect from '../ratingSelect/ratingSelect.vue'
+import split from '../split/split.vue'
+import { formatDate } from '../../common/js/date'
 
-  const ALL = 2
-  const ERR_OK = 0
+const ALL = 2
+const ERR_OK = 0
 
-  export default {
-    props: {
-      seller: {
-        type: Object
-      }
-    },
-    data () {
-      return {
-        ratings: [],
-        selectType: ALL,
-        onlyContent: true
-      }
-    },
-    created () {
-      this.$http
-        .get('/api/ratings')
-        .then((response) => {
-          response = response.body
-          if (response.errno === ERR_OK) {
-            this.ratings = response.data
-            this.$nextTick(() => {
-              this.scroll = new BScroll(this.$refs.ratings, {
-                click: true
-              })
-            })
-          }
-        })
-    },
-    methods: {
-      // copy from food.vue/selectRating()
-      selectRating (type) {
-        this.selectType = type
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      },
-      // copy from food.vue/toggleContent()
-      toggleContent () {
-        this.onlyContent = !this.onlyContent
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      },
-      // copy from food.vue/needShow()
-      needShow (type, text) {
-        if (this.onlyContent && !text) {
-          return false
-        }
-        if (this.selectType === ALL) {
-          return true
-        } else {
-          return type === this.selectType
-        }
-      }
-    },
-    filters: {
-      // copy from food.vue/formatDate()
-      formatDate (time) {
-        let date = new Date(time)
-        return formatDate(date, 'yyyy-MM-dd hh:mm')
-      }
-    },
-    components: {
-      star,
-      split,
-      ratingSelect
-    }
-  }
+export default {
+	props: {
+		seller: {
+			type: Object
+		}
+	},
+	data() {
+		return {
+			ratings: [],
+			selectType: ALL,
+			onlyContent: true
+		}
+	},
+	created() {
+		this.$http.get('/api/ratings').then(response => {
+			response = response.body
+			if (response.errno === ERR_OK) {
+				this.ratings = response.data
+				this.$nextTick(() => {
+					this.scroll = new BScroll(this.$refs.ratings, {
+						click: true
+					})
+				})
+			}
+		})
+	},
+	methods: {
+		// copy from food.vue/selectRating()
+		selectRating(type) {
+			this.selectType = type
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		},
+		// copy from food.vue/toggleContent()
+		toggleContent() {
+			this.onlyContent = !this.onlyContent
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		},
+		// copy from food.vue/needShow()
+		needShow(type, text) {
+			if (this.onlyContent && !text) {
+				return false
+			}
+			if (this.selectType === ALL) {
+				return true
+			} else {
+				return type === this.selectType
+			}
+		}
+	},
+	filters: {
+		// copy from food.vue/formatDate()
+		formatDate(time) {
+			let date = new Date(time)
+			return formatDate(date, 'yyyy-MM-dd hh:mm')
+		}
+	},
+	components: {
+		star,
+		split,
+		ratingSelect
+	}
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  @import "ratings.scss";
+@import 'ratings.scss';
 </style>

@@ -345,21 +345,10 @@ npm install better-scroll --save
 
 - **food.vue**
 - **date.js**
- 
-## 9-1: styles
-_✨✨_
-_ratings.vue_
 
- 
-## 9-2: styles, data bind
-_✨✨_
-_ratings.vue_
+## 9-1, 9-2, 9-3: ratings-content styles _✨✨_
 
- 
-## 9-3: styles 
-_✨✨_
-_ratings.vue_
-
+- **ratings.vue**
  
 ## 9-4, 9-5, 9-6: styles, data bind  
 _✨✨_
