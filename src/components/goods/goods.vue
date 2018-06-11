@@ -72,9 +72,9 @@
       </shopCart>
     </div>
     <food
+      ref="food"
       :food="selectedFood"
       @add="addFood"
-      ref="food"
     >
     </food>
   </div>

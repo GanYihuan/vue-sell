@@ -2,8 +2,8 @@
   <transition name="move">
     <div
       class="food"
-      v-show="showFlag"
       ref="food"
+      v-show="showFlag"
     >
       <div class="food-content">
         <div class="image-header">
@@ -57,7 +57,8 @@
               <li
                 class="rating-item border-1px"
                 v-show="needShow(rating.rateType, rating.text)"
-                v-for="rating in food.ratings"
+                v-for="(rating, index) in food.ratings"
+                :key="index"
               >
                 <div class="user">
                   <span class="name">{{rating.username}}</span>
@@ -79,115 +80,115 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import BScroll from 'better-scroll'
-  import cartControl from '../cartControl/cartControl.vue'
-  import split from '../split/split.vue'
-  import ratingSelect from '../ratingSelect/ratingSelect.vue'
-  import Vue from 'vue'
-  import { formatDate } from '../../common/js/date'
+import BScroll from 'better-scroll'
+import cartControl from '../cartControl/cartControl.vue'
+import split from '../split/split.vue'
+import ratingSelect from '../ratingSelect/ratingSelect.vue'
+import Vue from 'vue'
+import { formatDate } from '../../common/js/date'
 
-  const ALL = 2
+const ALL = 2
 
-  export default {
-    props: {
-      food: {
-        type: Object
-      }
-    },
-    data () {
-      return {
-        showFlag: false,
-        // ratingSelect.vue: Product evaluation initialization
-        selectType: ALL,
-        // Whether to open the '只看评论内容'
-        onlyContent: true,
-        desc: {
-          all: '全部',
-          positive: '推荐',
-          negative: '吐槽'
-        }
-      }
-    },
-    methods: {
-      show () {
-        this.showFlag = true
-        this.selectType = ALL
-        this.onlyContent = true
-        this.$nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.food, {
-              click: true
-            })
-          } else {
-            this.scroll.refresh()
-          }
-        })
-      },
-      hide () {
-        this.showFlag = false
-      },
-      addFirst (event) {
-        if (!event._constructed) {
-          return
-        }
-        Vue.set(this.food, 'count', 1)
-        this.$emit('add', event.target)
-      },
-      needShow (type, text) {
-        // text: Content of evaluation
-        if (this.onlyContent && !text) {
-          return false
-        }
-        if (this.selectType === ALL) {
-          return true
-        } else {
-          return type === this.selectType
-        }
-      },
-      addFood (target) {
-        this.$emit('add', target)
-      },
-      selectRating (type) {
-        this.selectType = type
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      },
-      toggleContent () {
-        this.onlyContent = !this.onlyContent
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      }
-    },
-    watch: {
-      selectRating (type) {
-        this.selectType = type
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      },
-      toggleContent (onlyContent) {
-        this.onlyContent = onlyContent
-        this.$nextTick(() => {
-          this.scroll.refresh()
-        })
-      }
-    },
-    filters: {
-      formatDate (time) {
-        let date = new Date(time)
-        return formatDate(date, 'yyyy-MM-dd hh:mm')
-      }
-    },
-    components: {
-      cartControl,
-      ratingSelect,
-      split
-    }
-  }
+export default {
+	props: {
+		food: {
+			type: Object
+		}
+	},
+	data() {
+		return {
+			showFlag: false,
+			// ratingSelect.vue: Product evaluation initialization
+			selectType: ALL,
+			// Whether to open the '只看评论内容'
+			onlyContent: true,
+			desc: {
+				all: '全部',
+				positive: '推荐',
+				negative: '吐槽'
+			}
+		}
+	},
+	methods: {
+		show() {
+			this.showFlag = true
+			this.selectType = ALL
+			this.onlyContent = true
+			this.$nextTick(() => {
+				if (!this.scroll) {
+					this.scroll = new BScroll(this.$refs.food, {
+						click: true
+					})
+				} else {
+					this.scroll.refresh()
+				}
+			})
+		},
+		hide() {
+			this.showFlag = false
+		},
+		addFirst(event) {
+			if (!event._constructed) {
+				return
+			}
+			Vue.set(this.food, 'count', 1)
+			this.$emit('add', event.target)
+		},
+		needShow(type, text) {
+			// text: Content of evaluation
+			if (this.onlyContent && !text) {
+				return false
+			}
+			if (this.selectType === ALL) {
+				return true
+			} else {
+				return type === this.selectType
+			}
+		},
+		addFood(target) {
+			this.$emit('add', target)
+		},
+		selectRating(type) {
+			this.selectType = type
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		},
+		toggleContent() {
+			this.onlyContent = !this.onlyContent
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		}
+	},
+	watch: {
+		selectRating(type) {
+			this.selectType = type
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		},
+		toggleContent(onlyContent) {
+			this.onlyContent = onlyContent
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
+		}
+	},
+	filters: {
+		formatDate(time) {
+			let date = new Date(time)
+			return formatDate(date, 'yyyy-MM-dd hh:mm')
+		}
+	},
+	components: {
+		cartControl,
+		ratingSelect,
+		split
+	}
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  @import "food.scss";
+@import 'food.scss';
 </style>

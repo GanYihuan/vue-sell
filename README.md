@@ -312,11 +312,7 @@ npm install better-scroll --save
 
 ## 7-24: shopCart list mask _✨✨_
 
-## 8-1, 8-2: food styles, transfer data
-_✨✨_
-_goods.vue_
-_food.vue_
-
+## 8-1, 8-2: food styles, transfer data _✨✨_
 
 ## 8-3: food data bind
 _✨✨_
