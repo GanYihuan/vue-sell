@@ -144,11 +144,11 @@ npm install node-sass sass-loader --save-dev
 - set alias path
 > **build/webapck.base.conf.js**
 
-- modify ESLint add rules
-> **eslintrc.js**
-
-- modify host
+- modify port
 > **config/index.js**
+
+- modify ESLint rules
+> **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
 
 - set data source
 > **webpack.dev.conf.js**
@@ -156,25 +156,17 @@ npm install node-sass sass-loader --save-dev
 - router.js
 > **router/route.js**
 
-## 5-1, 5-2, 5-3: skeleton _✨✨_
+## 5-1, 5-2, 5-3: 组件拆分
 
-- css reset
-> **reset.css**
-
-- index.html viewport config
-> **index.html**
-
-- modify ESLint add rules
-> **eslintrc.js**
-
+- ✨✨
+- **index.html** use **static/css/reset.css**, meta setting
 - skip ESLint check
 
 ```js
 /* eslint-disable no-new
 ```
 
-- intellij ide
-> Editor -> File and code template > add Files, extension 'vue'
+- **App.vue**
 
 ## 5-4, 5-5: vue-router config _✨✨✨_
 

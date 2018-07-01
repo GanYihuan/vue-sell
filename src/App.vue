@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- :seller -> v-bind, data binding -->
     <!-- seller Asynchronous data is plugged into the object. -->
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
