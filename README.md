@@ -28,99 +28,69 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## Vue-高仿饿了么APP
 
-## 3-1: introduce vue-cli _✨_
+## 3-1 Vue-cli介绍
+
+- ✨
 
 ```shell
 npm install -g vue-cli
-vue init <template-name> <project-name>
-```
-
-## 3-2: begin vue develop _✨✨_
-
-- Node > 4
-- install vue-cli
-- check project
-
-```shell
-vue list
-```
-
-### init project
-
-```shell
 vue init webpack imooc-sell
 ```
 
-1. ESLint -> Yes
-2. Standard
-3. karma + mocha -> No
-4. e2e tests -> No
+## 3-2 Vue-cli安装
 
-- check dialog
-- package.json
+- ✨✨
+- Node > 4
+- static/3-2
 
 ```shell
 npm install
-```
-
-- run in browser
-
-```shell
 npm run dev
 ```
 
-- open in browser
+## 3-3 项目运行
 
-## 3-3: introduce vue-project structure _✨✨_
+- introduce vue-project structure
 
-### build file
+- build
+> webpack config
 
-- webpack config
+- config file
+> webpack config
 
-### config file
+- node_modules file
+> npm install
 
-- webpack config
+- src file
+> code
 
-### node_modules file
+- static file
+> Third party static resources.
 
-- npm install
+- .gitkeep file
+> When the directory is empty, it can also be submitted to the repository.
 
-### src file
+- .babelrc file
+> babel config es6 Compiled into es5
 
-- code
+- .editorconfig file
+> Compiler configuration
 
-### static file
+- .eslintignore file
+> Ignore the directory files for syntax checking.
 
-- Third party static resources.
+- .eslintrc.js file
+> [ESLint document](http://eslint.cn/docs/rules/)
+> eslint Syntax detection configuration
 
-### .gitkeep file
+- package.json file
+- script: config 'npm run dev'
+- devDependencies: This package is used only in the development phase, which is not needed when it comes online
 
-- When the directory is empty, it can also be submitted to the repository.
+## 3-4 项目文件介绍
 
-### .babelrc file
-
-- babel config es6 Compiled into es5
-
-### .editorconfig file
-
-- Compiler configuration
-
-### .eslintignore file
-
-- Ignore the directory files for syntax checking.
-
-### .eslintrc.js file
-
-[ESLint document](http://eslint.cn/docs/rules/)
-
-- eslint Syntax detection configuration
-
-### package.json file
-
-1. script: config 'npm run dev'
-2. devDependencies: This package is used only in the development phase, which is not needed when it comes online.
-
-## 3-4: vue-project entrance function _✨✨_
+- ✨✨
+- use component
 
 ## 3-5: webpack(1) _✨✨✨✨✨_
 

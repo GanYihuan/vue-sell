@@ -33,10 +33,13 @@ import header from 'components/header/header.vue'
 const ERR_OK = 0
 
 export default {
+	components: {
+		'v-header': header
+	},
 	data() {
 		return {
 			seller: {
-				// immediate run function
+				/* immediate run function */
 				id: (() => {
 					let queryParam = urlParse()
 					return queryParam.id
@@ -48,21 +51,18 @@ export default {
 		// vue-resource
 		// ajax request, The request data is inserted into the seller object.
 		this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
-      // console.log(response)
-      // get json object
+			// console.log(response)
+			// get json object
 			response = response.body
 			if (response.errno === ERR_OK) {
 				// Expand array content: ...
-        // Object.assign -> ...
-        // {}: 最终返回的结果
-        // 给对象扩展属性
-        this.seller = Object.assign({}, this.seller, response.data)
-        // console.log(this.seller)
+				// Object.assign -> ...
+				// {}: 最终返回的结果
+				// 给对象扩展属性
+				this.seller = Object.assign({}, this.seller, response.data)
+				// console.log(this.seller)
 			}
 		})
-	},
-	components: {
-		'v-header': header
 	}
 }
 </script>
