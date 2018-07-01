@@ -165,7 +165,7 @@ npm install node-sass sass-loader --save-dev
 
 - **App.vue**
 
-## 5-4, 5-5: Vue-router
+## 5-4, 5-5: vue-router
 
 - ✨✨
 > **router/route.js**
@@ -174,45 +174,24 @@ npm install node-sass sass-loader --save-dev
 npm install vue-router
 ```
 
-## 5-6: css setting, run in mobile _✨✨✨_
+## 5-6 1像素border实现
 
-### Mobile phone preview, 草料二维码
-
+- ✨✨✨
+- Mobile phone preview
 - check IP
 
 ```shell
 ifconfig
-```
-
-- open in browser
-
-```shell
 npm run dev
 ```
 
-- url
-
-[url](localhost:8080/#/goods)
-
-- url replace
-> IP:8080/#/goods
-
-- 草料二维码
-
-[草料website](https://cli.im/)
-
-> IP:8080/#/goods
-
-- WeChat scan then open
-- CSS setting
-
-> **base.scss**
-1. One pixel line suitable for different dip screens
-2. clear fix
-
-> **mixin.scss**
+- [url](localhost:8088/#/goods)
+- url replace then become IP:8088/#/goods
+- [草料website](https://cli.im/) use IP:8088/#/goods
+- **mixin.scss** **base.scss**
 1. One pixel line
 2. 2x3x image
+3. clear float
 
 ## 6-1, 6-2: front-end back-end interaction _✨✨✨_
 

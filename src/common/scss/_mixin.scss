@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-// One pixel line
+/* One pixel line */
 @mixin border-1px($color) {
   position: relative;
   &:after {
