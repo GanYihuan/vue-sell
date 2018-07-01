@@ -1,26 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+Vue.use(Router)
+
 const goods = resolve => {
-  import('components/goods/goods.vue').then(module => {
+  import ('components/goods/goods.vue').then(module => {
     resolve(module)
   })
 }
 const ratings = resolve => {
-  import('components/ratings/ratings.vue').then(module => {
+  import ('components/ratings/ratings.vue').then(module => {
     resolve(module)
   })
 }
 const seller = resolve => {
-  import('components/seller/seller.vue').then(module => {
+  import ('components/seller/seller.vue').then(module => {
     resolve(module)
   })
 }
-
-Vue.use(Router)
-
-const routes = [
-  {
+const routes = [{
     path: '/',
     redirect: '/goods'
   },

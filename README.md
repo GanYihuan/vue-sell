@@ -153,9 +153,6 @@ npm install node-sass sass-loader --save-dev
 - set data source
 > **webpack.dev.conf.js**
 
-- router.js
-> **router/route.js**
-
 ## 5-1, 5-2, 5-3: 组件拆分
 
 - ✨✨
@@ -168,11 +165,10 @@ npm install node-sass sass-loader --save-dev
 
 - **App.vue**
 
-## 5-4, 5-5: vue-router config _✨✨✨_
+## 5-4, 5-5: Vue-router
 
-> **route.js**
-
-- router
+- ✨✨
+> **router/route.js**
 
 ```shell
 npm install vue-router

@@ -38,6 +38,7 @@ module.exports = {
     'semi': ['error', 'never'],
     'no-tabs': 0,
     'indent': 0,
-    'space-before-function-paren': 0
+    'space-before-function-paren': 0,
+    'func-call-spacing': 0
   }
 }
