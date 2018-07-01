@@ -92,54 +92,69 @@ npm run dev
 - ✨✨
 - use component
 
-## 3-5: webpack(1) _✨✨✨✨✨_
+## 3-5: webpack(1)
 
-## 3-6: webpack(2) _✨✨✨✨✨_
+-✨✨✨✨✨
 
-## 3-7: webpack(3) _✨✨✨✨✨_
+## 3-6: webpack(2)
 
-## 4-1: introduce project demand _✨_
+- ✨✨✨✨✨
 
-## 4-2: Device pixel ratio, image _✨✨_
+## 3-7: webpack(3)
 
-## 4-3: IconMoon generate font _✨✨_
+- ✨✨✨✨✨
 
-[IconMoon website](https://icomoon.io/#icons-icomoon)
+## 4-1 需求分析
 
-## 4-4: placed IconMoon download icon _✨✨_
+- ✨
 
-## 4-5: mock data _✨✨✨_
+## 4-2: 项目资源准备
 
+- ✨✨
+- [Device pixel ratio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
+
+## 4-3 图标字体制作
+
+- ✨✨
+- [IconMoon](https://icomoon.io/#icons-icomoon)
+
+## 4-4 项目目录设计
+
+- ✨✨
+- create IconMoon font file **common/fonts** **common/scss/icon.scss**
+
+## 4-5 mock数据
+
+- ✨✨✨
+- **data.json**
 > **webpack.dev.conf.js**
 
 - browser check data
-1. [seller data](http://localhost:8088/api/seller)
-2. [goods data](http://localhost:8088/api/goods)
-3. [ratings data](http://localhost:8088/api/ratings)
+- [seller data](http://localhost:8088/api/seller)
+- [goods data](http://localhost:8088/api/goods)
+- [ratings data](http://localhost:8088/api/ratings)
 
-- add data.json
-- install vue-resource better-scroll sass stylus
+- install vue-resource better-scroll sass
 
 ```shell
 npm install vue-resource better-scroll --save
-npm install stylus stylus-loader --save-dev
 npm install node-sass sass-loader --save-dev
 ```
 
 - set alias path
-> **webapck.base.conf.js**
+> **build/webapck.base.conf.js**
 
 - modify ESLint add rules
 > **eslintrc.js**
 
 - modify host
-> **index.js**
+> **config/index.js**
 
 - set data source
 > **webpack.dev.conf.js**
 
 - router.js
-> **index.js**
+> **router/route.js**
 
 ## 5-1, 5-2, 5-3: skeleton _✨✨_
 
