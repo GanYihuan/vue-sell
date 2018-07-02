@@ -45,21 +45,23 @@ export default {
 				})()
 			}
 		}
-	},
+  },
+  /* handle data */ 
 	created() {
-		// vue-resource
-		// ajax request, The request data is inserted into the seller object.
+		/* vue-resource */
+		/* ajax request, The request data is inserted into the seller object */
 		this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
 			// console.log(response)
-			// get json object
+			/* get json object */
 			response = response.body
 			if (response.errno === ERR_OK) {
-				// Expand array content: ...
-				// Object.assign -> ...
-				// {}: 最终返回的结果
-				// 给对象扩展属性
+        /*
+        ...: Expand array content
+        Object.assign = ...
+        {}: 最终返回的结果; 给对象扩展的属性
+        */
 				this.seller = Object.assign({}, this.seller, response.data)
-				// console.log(this.seller)
+				console.log(this.seller)
 			}
 		})
 	}

@@ -193,17 +193,21 @@ npm run dev
 2. 2x3x image
 3. clear float
 
-## 6-1, 6-2: front-end back-end interaction _✨✨✨_
+## 6-1, 6-2 Vue-resource应用
 
-> **main.js** & **App.vue**
-
-### vue-resource: Ajax request, XMLHttpRequest
+- ✨✨✨
+- front-end back-end interaction
+- **main.js** **App.vue**
+- vue-resource: Ajax request, XMLHttpRequest
 
 ```shell
 npm install vue-resource --save
 ```
 
-## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8: header styles _✨✨_
+## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
+
+- ✨✨
+- header styles
 
 ## 6-9: sticky layout show and hide _✨✨_
 
