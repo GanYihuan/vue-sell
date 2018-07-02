@@ -1,6 +1,6 @@
 # imooc-sell
 
-> A Vue.js project
+> 慕课网 Vue-高仿饿了么APP
 
 ## Build Setup
 
@@ -25,8 +25,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-## Vue-高仿饿了么APP
 
 ## 3-1 Vue-cli介绍
 
@@ -247,11 +245,15 @@ npm install vue-resource --save
 - ✨✨✨
 - animate
 
-## 7-1: Asynchronous get data _✨✨✨_
+## 7-1 布局编写
 
-## 7-2: The left column styles _✨✨_
+- ✨✨✨
+- Asynchronous get data **goods.vue**
 
-- Multi-line text, vertically centered.
+## 7-2 左侧menu布局
+
+- ✨✨
+- Multi-line text, vertically centered
 
 ## 7-3, 7-4, 7-5: The right column styles _✨✨_
 

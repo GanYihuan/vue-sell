@@ -71,11 +71,7 @@
       >
       </shopCart>
     </div>
-    <food
-      ref="food"
-      :food="selectedFood"
-      @add="addFood"
-    >
+    <food ref="food" :food="selectedFood" @add="addFood">
     </food>
   </div>
 </template>
@@ -89,6 +85,11 @@ import food from '../food/food.vue'
 const ERR_OK = 0
 
 export default {
+  components: {
+		shopCart,
+		food,
+		cartControl
+	},
   // accpet App.vue pass seller
 	props: {
 		seller: {
@@ -98,9 +99,9 @@ export default {
 	data() {
 		return {
 			goods: [],
-			// An array of heights for each dish
-			listHeight: [],
-			// foodsScroll Rolling position
+			/* An array of heights for each dish */
+      listHeight: [],
+      /* foodsScroll Rolling position */
 			scrollY: 0,
 			selectedFood: {}
 		}
@@ -141,12 +142,16 @@ export default {
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 		this.$http.get('/api/goods').then(response => {
+      // console.log(response)
+			/* get json object */
 			response = response.body
 			if (response.errno === ERR_OK) {
-				this.goods = response.data
-				// async
-				// $nextTick The deferred callback is performed after the next DOM update loop.
-				// Use this method immediately after modifying the data to get the updated DOM.
+        this.goods = response.data
+        /*
+        async
+				$nextTick The deferred callback is performed after the next DOM update loop.
+				Use this method immediately after modifying the data to get the updated DOM.
+        */
 				this.$nextTick(() => {
 					this._initScroll()
 					this._calculateHeight()
@@ -217,11 +222,6 @@ export default {
 				this.$refs.shopCart.drop(target)
 			})
 		}
-	},
-	components: {
-		shopCart,
-		food,
-		cartControl
 	}
 }
 </script>
