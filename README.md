@@ -252,8 +252,10 @@ npm install vue-resource --save
 
 ## 7-2 左侧menu布局
 
-- ✨✨
-- Multi-line text, vertically centered
+- ✨✨✨
+- display: table; // multi-line text, vertically centered
+- display: table-cell; // father element: display: table
+- vertical-align: middle; // 多行文字垂直居中
 
 ## 7-3, 7-4, 7-5: The right column styles _✨✨_
 

@@ -20,8 +20,8 @@
         position: relative;
         z-index: 10;
         margin-top: -1px;
-        background: #fff;
         font-weight: 700;
+        background: #fff;
         .text {
           @include border-none()
         }
@@ -30,7 +30,7 @@
         display: inline-block;
         margin-right: 2px;
         width: 12px;
-        height: 12px; // vertical direction center
+        height: 12px;
         vertical-align: top; // at the top of the alignment
         background-size: 12px 12px;
         background-repeat: no-repeat;
@@ -54,7 +54,7 @@
         display: table-cell; // father element: display: table
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
-        vertical-align: middle;
+        vertical-align: middle; // 多行文字垂直居中
         font-size: 12px;
       }
     }

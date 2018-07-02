@@ -10,7 +10,7 @@
           -->
           <li
             class="menu-item"
-            v-for="(item,index) in goods"
+            v-for="(item, index) in goods"
             :key="index"
             :class="{'current':currentIndex===index}"
             @click="selectMenu(index,$event)"
@@ -85,12 +85,12 @@ import food from '../food/food.vue'
 const ERR_OK = 0
 
 export default {
-  components: {
+	components: {
 		shopCart,
 		food,
 		cartControl
 	},
-  // accpet App.vue pass seller
+	// accpet App.vue pass seller
 	props: {
 		seller: {
 			type: Object
@@ -100,8 +100,8 @@ export default {
 		return {
 			goods: [],
 			/* An array of heights for each dish */
-      listHeight: [],
-      /* foodsScroll Rolling position */
+			listHeight: [],
+			/* foodsScroll Rolling position */
 			scrollY: 0,
 			selectedFood: {}
 		}
@@ -142,12 +142,12 @@ export default {
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 		this.$http.get('/api/goods').then(response => {
-      // console.log(response)
+			// console.log(response)
 			/* get json object */
 			response = response.body
 			if (response.errno === ERR_OK) {
-        this.goods = response.data
-        /*
+				this.goods = response.data
+				/*
         async
 				$nextTick The deferred callback is performed after the next DOM update loop.
 				Use this method immediately after modifying the data to get the updated DOM.
@@ -191,7 +191,7 @@ export default {
 			}
 		},
 		selectMenu(index, event) {
-      // better-scroll
+			// better-scroll
 			if (!event._constructed) {
 				return
 			}
@@ -214,7 +214,7 @@ export default {
 			this._drop(target)
 		},
 		_drop(target) {
-      // 异步执行抛物小球动画，缓解卡顿
+			// 异步执行抛物小球动画，缓解卡顿
 			// experience optimization, asynchronous execution of falling animation.
 			// $nextTick executes the deferred callback after the next DOM update loop.
 			// use this method immediately after modifying the data to get the updated DOM.
