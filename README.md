@@ -206,8 +206,8 @@ npm install vue-resource --save
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
 
-- ✨✨
-- header styles
+- ✨✨✨
+- **header.vue** style
 
 ## 6-9: sticky layout show and hide _✨✨_
 

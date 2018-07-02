@@ -12,13 +12,13 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <!-- v-if: If you have data, you parse it -->
-        <!-- Because it's an asynchronous process -->
-        <div v-if="seller.supports" class="support">
+        <!-- v-if: If you have data, parse it -->
+        <!-- because it's an asynchronous process, seller.supports[0].type clould be null -->
+        <div class="support" v-if="seller.supports">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
-        <div v-if="seller.supports" class="support-count" @click="showDetail">
+        <div class="support-count" v-if="seller.supports" @click="showDetail">
           <span class="count">{{seller.supports.length}}个</span>
           <i class="icon-keyboard_arrow_right"></i>
         </div>
@@ -79,16 +79,21 @@
 import star from '../star/star.vue'
 
 export default {
+  components: {
+		star
+	},
 	props: {
 		seller: {
 			type: Object
 		}
-	},
+  },
+  /* define data need to handle */
 	data() {
 		return {
 			detailShow: false
 		}
-	},
+  },
+  /* define data no need to handle */
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 	},
@@ -99,9 +104,6 @@ export default {
 		hideDetail() {
 			this.detailShow = false
 		}
-	},
-	components: {
-		star
 	}
 }
 </script>

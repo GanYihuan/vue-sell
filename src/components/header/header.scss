@@ -1,5 +1,4 @@
 @import "../../common/scss/mixin";
-
 .header {
   // for reasons of relative positioning, the following elements have absolute positioning
   // .background: position:absolute
@@ -14,42 +13,31 @@
   // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  // eliminate the gap
-  font-size: 0;
-
+  font-size: 0; // eliminate the gap
   .avatar {
     // row shows
     display: inline-block;
-    // at the top of the alignment
-    vertical-align: top;
-
+    vertical-align: top; // at the top of the alignment
     img {
       border-radius: 4px;
     }
   }
-
   .content {
     display: inline-block;
     margin-left: 16px;
-
     .title {
       margin: 2px 0 8px 0;
-
       .brand {
         // the inner element(span) becomes a block element,
-        // otherwise the width and height is invalid,
-        // and the element is supported by the content.
+        // otherwise the width and height is invalid
         display: inline-block;
-        // at the top of the alignment
-        vertical-align: top;
         width: 30px;
         height: 18px;
-        // 2x3x image
-        @include bg-image('brand');
+        vertical-align: top; // at the top of the alignment
+        @include bg-image('brand'); // 2x3x image
         background-size: 30px 18px;
         background-repeat: no-repeat;
       }
-
       .name {
         margin-left: 6px;
         line-height: 18px;
@@ -57,23 +45,20 @@
         font-weight: bold;
       }
     }
-
     .description {
       margin-bottom: 10px;
       line-height: 12px;
       font-size: 12px;
     }
-
     .support {
       .icon {
         display: inline-block;
+        margin-right: 4px;
         width: 12px;
         height: 12px;
-        margin-right: 4px;
         vertical-align: top;
         background-size: 12px 12px;
         background-repeat: no-repeat;
-
         &.decrease {
           @include bg-image('decrease_1')
         }
@@ -90,30 +75,26 @@
           @include bg-image('special_1')
         }
       }
-
       .text {
         line-height: 12px;
         font-size: 10px;
       }
     }
   }
-
   .support-count {
     position: absolute;
     right: 12px;
     bottom: 14px;
     border-radius: 14px;
     padding: 0 8px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
+    height: 24px; // vertical direction center
+    line-height: 24px; // vertical direction center
+    text-align: center; // horizontal direction center
     background: rgba(0, 0, 0, 0.2);
-
     .count {
       vertical-align: top;
       font-size: 10px;
     }
-
     .icon-keyboard_arrow_right {
       margin-left: 2px;
       line-height: 24px;
@@ -125,15 +106,12 @@
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  // vertical direction centered.
-  height: 28px;
-  line-height: 28px;
+  height: 28px; // vertical direction center
+  line-height: 28px; // vertical direction center
   background: rgba(7, 17, 27, 0.2);
-  // 下面3个样式, 超出显示...
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
+  overflow: hidden; // 超出显示...
+  text-overflow: ellipsis; // 超出显示...
+  white-space: nowrap; // 超出显示...
   .bulletin-title {
     display: inline-block;
     margin-top: 8px;
@@ -144,13 +122,11 @@
     background-size: 22px 12px;
     background-repeat: no-repeat;
   }
-
   .bulletin-text {
     margin: 0 4px;
     vertical-align: top;
     font-size: 10px;
   }
-
   .icon-keyboard_arrow_right {
     position: absolute;
     right: 12px;
@@ -165,93 +141,73 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // hide the bottom layer.
-  z-index: -1;
-  // fuzzy background picture
-  filter: blur(10px);
+  z-index: -1; // hide at the bottom layer.
+  filter: blur(10px); // fuzzy background picture
 }
 
 .detail {
   position: fixed;
   top: 0;
   left: 0;
-  // placed at the top level
-  z-index: 100;
-  // if the content is pruned, the browser displays the scroll bar to see the rest of the content
-  overflow: auto;
+  z-index: 100; // placed at the top level
+  overflow: auto; // if the content is pruned, the browser displays the scroll bar to see the rest of the content
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
   transition: all 0.5s;
-  // ios fuzzy
-  backdrop-filter: blur(10px);
-
+  backdrop-filter: blur(10px); // ios fuzzy
   &.fade-transition {
     background: rgba(7, 17, 27, 0.8);
     opacity: 1;
   }
-
-  &.fade-enter, &.fade-leave-to {
+  &.fade-enter,
+  &.fade-leave-to {
     background: rgba(7, 17, 27, 0);
     opacity: 0;
   }
-
   .detail-wrapper {
-    // content will grow
-    min-height: 100%;
+    min-height: 100%; // content will grow
     width: 100%;
-
     .detail-main {
       margin-top: 64px;
-      // C: the space for close button
-      padding-bottom: 64px;
-
+      padding-bottom: 64px; // C: the space for close button
       .name {
         line-height: 16px;
         text-align: center;
         font-size: 16px;
         font-weight: 700;
       }
-
       .star-wrapper {
         margin-top: 18px;
         padding: 2px 0;
         text-align: center;
       }
-
       .title {
         display: flex;
-        // horizontal center
-        margin: 28px auto;
+        margin: 28px auto; // horizontal center
         width: 80%;
-
         .line {
           flex: 1;
           position: relative;
           top: -6px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .text {
           padding: 0 12px;
           font-size: 14px;
           font-weight: 700;
         }
       }
-
       .supports {
         margin: 0 auto;
         width: 80%;
-
         .support-item {
           margin-bottom: 12px;
           padding: 0 12px;
           font-size: 0;
-
           &:last-child {
             margin-bottom: 0;
           }
-
           .icon {
             display: inline-block;
             margin-right: 6px;
@@ -260,39 +216,31 @@
             vertical-align: top;
             background-size: 16px 16px;
             background-repeat: no-repeat;
-
             &.decrease {
               @include bg-image('decrease_2')
             }
-
             &.discount {
               @include bg-image('discount_2')
             }
-
             &.guarantee {
               @include bg-image('guarantee_2')
             }
-
             &.invoice {
               @include bg-image('invoice_2')
             }
-
             &.special {
               @include bg-image('special_2')
             }
           }
-
           .text {
             line-height: 16px;
             font-size: 12px;
           }
         }
       }
-
       .bulletin {
         margin: 0 auto;
         width: 80%;
-
         .content {
           padding: 0 12px;
           line-height: 24px;
@@ -301,15 +249,12 @@
       }
     }
   }
-
   .detail-close {
     position: relative;
     width: 32px;
     height: 32px;
-    // D: margin embed the padding of main.
-    margin: -64px auto 0;
+    margin: -64px auto 0; // D: margin embed the padding of main.
     font-size: 32px;
-    // E: clearfix
-    clear: both;
+    clear: both; // E: clearfix
   }
 }

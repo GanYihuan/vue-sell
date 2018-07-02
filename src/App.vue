@@ -60,8 +60,8 @@ export default {
         Object.assign = ...
         {}: 最终返回的结果; 给对象扩展的属性
         */
+        // console.log(this.seller)
 				this.seller = Object.assign({}, this.seller, response.data)
-				console.log(this.seller)
 			}
 		})
 	}
