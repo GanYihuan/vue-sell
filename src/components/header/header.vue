@@ -42,12 +42,13 @@
               <star :size="48" :score="seller.score"></star>
             </div>
             <div class="title">
+              <!-- 不适用span, 适应android -->
               <div class="line"></div>
               <div class="text">优惠信息</div>
               <div class="line"></div>
             </div>
-            <ul v-if="seller.supports" class="supports">
-              <li  class="support-item" v-for="(item,index) in seller.supports" :key="index">
+            <ul class="supports" v-if="seller.supports">
+              <li class="support-item" v-for="(item,index) in seller.supports" :key="index">
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -75,21 +76,21 @@
 import star from '../star/star.vue'
 
 export default {
-  components: {
+	components: {
 		star
 	},
 	props: {
 		seller: {
 			type: Object
 		}
-  },
-  /* define data need to handle */
+	},
+	/* define data need to handle */
 	data() {
 		return {
 			detailShow: false
 		}
-  },
-  /* define data no need to handle */
+	},
+	/* define data no need to handle */
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 	},

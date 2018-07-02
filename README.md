@@ -237,11 +237,15 @@ npm install vue-resource --save
 - ✨✨✨✨
 - star component **start.vue**
 
-## 6-14: sticky layout line + character + line, styles _✨✨✨_
+## 6-14 详情弹层页 - 小标题自适应经典flex布局实现
 
-## 6-15: sticky layout center styles _✨✨✨_
+- ✨✨✨
+- line + character + line, flex layout
 
-## 6-16: sticky layout animate _✨✨✨_
+## 6-15, 6-16 详情弹层页 - header剩余组件实现
+
+- ✨✨✨
+- animate
 
 ## 7-1: Asynchronous get data _✨✨✨_
 

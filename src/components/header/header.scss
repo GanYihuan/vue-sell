@@ -201,7 +201,7 @@
         .support-item {
           margin-bottom: 12px;
           padding: 0 12px;
-          font-size: 0;
+          font-size: 0; // eliminate the gap, father element set font-size: 0
           &:last-child {
             margin-bottom: 0;
           }
