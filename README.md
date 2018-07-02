@@ -234,8 +234,8 @@ npm install vue-resource --save
 
 ## 6-11, 6-12, 6-13 详情弹层页 - star组件抽象
 
-- ✨✨✨
-- star component
+- ✨✨✨✨
+- star component **start.vue**
 
 ## 6-14: sticky layout line + character + line, styles _✨✨✨_
 

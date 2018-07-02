@@ -19,7 +19,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-// star info
 const LENGTH = 5
 const CLS_ON = 'on'
 const CLS_HALF = 'half'
@@ -39,25 +38,27 @@ export default {
 			return 'star-' + this.size
 		},
 		itemClasses() {
-			let result = []
-			// 4.2 -> 4;  4.8 -> 4.5
-			// Math.floor: 4.9 -> 4
-			// Math.ceil: 4.1 -> 5
+      let result = []
+      /*
+      4.2 -> 4;  4.8 -> 4.5
+			Math.floor: 4.9 -> 4
+			Math.ceil: 4.1 -> 5
+      */
 			let score = Math.floor(this.score * 2) / 2
-			// if have a decimal, half star
-			let hasDecimal = score % 1 !== 0
-			// full star
+			/* if have a decimal, half star */
+      let hasDecimal = score % 1 !== 0
+      /* full star */
 			let integer = Math.floor(score)
 			for (let i = 0; i < integer; i++) {
-				// full star
+				/* full star */
 				result.push(CLS_ON)
 			}
 			if (hasDecimal) {
-				// half star
+        /* half star */
 				result.push(CLS_HALF)
 			}
 			while (result.length < LENGTH) {
-				// empty star
+        /* empty star */
 				result.push(CLS_OFF)
 			}
 			return result
