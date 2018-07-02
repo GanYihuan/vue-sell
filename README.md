@@ -261,11 +261,19 @@ npm install vue-resource --save
 
 - ✨✨
 
-## 7-6, 7-7, 7-8: better-scroll _✨✨✨✨_
+## 7-6, 7-7, 7-8: better-scroll运用
+
+- ✨✨✨✨
 
 ```shell
 npm install better-scroll --save
 ```
+
+- /* better-scroll */
+  /* at PC will trigger twice event, stop this */
+  if (!event._constructed) {
+    return
+  }
 
 ## 7-9, 7-10: shopping cart styles _✨✨_
 

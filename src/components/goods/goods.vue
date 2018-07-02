@@ -13,7 +13,7 @@
             v-for="(item, index) in goods"
             :key="index"
             :class="{'current':currentIndex===index}"
-            @click="selectMenu(index,$event)"
+            @click="selectMenu(index, $event)"
           >
             <span class="text border-1px">
               <span
@@ -39,7 +39,7 @@
                 class="food-item border-1px"
                 v-for="(food, index) in item.foods"
                 :key="index"
-                @click="selectFood(food,$event)"
+                @click="selectFood(food, $event)"
               >
                 <div class="icon">
                   <img width="57" height="57" :src="food.icon"/>
@@ -99,9 +99,9 @@ export default {
 	data() {
 		return {
 			goods: [],
-			/* An array of heights for each dish */
+			/* an array of heights for each dish */
 			listHeight: [],
-			/* foodsScroll Rolling position */
+			/* foodsScroll rolling position */
 			scrollY: 0,
 			selectedFood: {}
 		}
@@ -109,21 +109,17 @@ export default {
 	computed: {
 		currentIndex() {
 			for (let i = 0; i < this.listHeight.length; i++) {
-				// Current height
+				/* current height */
 				let height1 = this.listHeight[i]
-				// next height
-				let height2 = this.listHeight[i + 1]
-				// If there is no next dish, the current dish is the last dish
-				// If the current dish is located between the original position and the
-				// next dish position from the height of the parent component,
-				// return the subscript of the dish.
+				/* next height */
+        let height2 = this.listHeight[i + 1]
 				if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
 					return i
 				}
 			}
 			return 0
 		},
-		// A collection of all individual dishes.
+		/* A collection of all individual dishes. */
 		selectFoods() {
 			let foods = []
 			// http://ustbhuangyi.com/sell/api/goods
@@ -166,40 +162,40 @@ export default {
 			})
 			this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
 				click: true,
-				// In addition to the real-time distribution of scroll events,
-				// scroll events can be distributed in real time in the case of swipe.
-				// The location of the real-time scrolling.
+        /*
+        除了滚动事件的实时分配之外，
+        滚动事件可以在滑动的情况下实时分发。
+        实时滚动的位置。
+        */
 				probeType: 3
 			})
 			this.foodsScroll.on('scroll', pos => {
-				// scrollY: foodsScroll Rolling position
+				/* scrollY: foodsScroll rolling position */
 				this.scrollY = Math.abs(Math.round(pos.y))
 			})
 		},
 		_calculateHeight() {
-			// Target element
-			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
-				'food-list-hook'
-			)
+			/* target element */
+			let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
 			let height = 0
-			// listHeight: An array of heights for each dish
+			/* listHeight: an array of heights for each dish */
 			this.listHeight.push(height)
 			for (let i = 0; i < foodList.length; i++) {
 				let item = foodList[i]
+        /* clientHeight: static/clientHeight.png */
 				height += item.clientHeight
 				this.listHeight.push(height)
 			}
 		},
 		selectMenu(index, event) {
-			// better-scroll
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
-			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
-				'food-list-hook'
-			)
+			let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
 			let el = foodList[index]
-			// target: element, duration: 300ms
+			/* target: element, duration: 300ms */
 			this.foodsScroll.scrollToElement(el, 300)
 		},
 		selectFood(food, event) {
