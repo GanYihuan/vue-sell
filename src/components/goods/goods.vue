@@ -30,14 +30,14 @@
         <ul>
           <li
             class="food-list food-list-hook"
-            v-for="(item,index) in goods"
+            v-for="(item, index) in goods"
             :key="index"
           >
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <li
                 class="food-item border-1px"
-                v-for="(food,index) in item.foods"
+                v-for="(food, index) in item.foods"
                 :key="index"
                 @click="selectFood(food,$event)"
               >

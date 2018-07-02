@@ -257,7 +257,9 @@ npm install vue-resource --save
 - display: table-cell; // father element: display: table
 - vertical-align: middle; // 多行文字垂直居中
 
-## 7-3, 7-4, 7-5: The right column styles _✨✨_
+## 7-3, 7-4, 7-5 右侧食品列表布局
+
+- ✨✨
 
 ## 7-6, 7-7, 7-8: better-scroll _✨✨✨✨_
 
