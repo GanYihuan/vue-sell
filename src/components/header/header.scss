@@ -1,6 +1,6 @@
 @import "../../common/scss/mixin";
 .header {
-  // for reasons of relative positioning, the following elements have absolute positioning
+  // the reasons of relative positioning, the following elements have absolute positioning
   // .background: position:absolute
   position: relative;
   overflow: hidden;
@@ -13,10 +13,9 @@
   // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  font-size: 0; // eliminate the gap
+  font-size: 0; // eliminate the gap, father element set font-size:0
   .avatar {
-    // row shows
-    display: inline-block;
+    display: inline-block; // in one row to show
     vertical-align: top; // at the top of the alignment
     img {
       border-radius: 4px;
@@ -28,9 +27,7 @@
     .title {
       margin: 2px 0 8px 0;
       .brand {
-        // the inner element(span) becomes a block element,
-        // otherwise the width and height is invalid
-        display: inline-block;
+        display: inline-block; // the inner element(span) becomes a block element, can set the width and height
         width: 30px;
         height: 18px;
         vertical-align: top; // at the top of the alignment
@@ -166,11 +163,11 @@
     opacity: 0;
   }
   .detail-wrapper {
-    min-height: 100%; // content will grow
+    min-height: 100%; // content will change
     width: 100%;
     .detail-main {
       margin-top: 64px;
-      padding-bottom: 64px; // C: the space for close button
+      padding-bottom: 64px; // C: A part space for B part
       .name {
         line-height: 16px;
         text-align: center;
@@ -251,10 +248,10 @@
   }
   .detail-close {
     position: relative;
+    margin: -64px auto 0; // D: B part margin embed the padding of A part.
     width: 32px;
     height: 32px;
-    margin: -64px auto 0; // D: margin embed the padding of main.
     font-size: 32px;
-    clear: both; // E: clearfix
+    clear: both; // E: B part clearfix
   }
 }

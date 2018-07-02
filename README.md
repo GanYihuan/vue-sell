@@ -208,12 +208,34 @@ npm install vue-resource --save
 
 - ✨✨✨
 - **header.vue** style
+- position: relative; // the reasons of relative positioning, the following elements have absolute positioning
+- eliminate the gap, father element set font-size: 0
+- display: inline-block; // in one row to show
+- vertical-align: top; // at the top of the alignment
+- display: inline-block; // the inner element(span) becomes a block element, can set the width and height
+- overflow: hidden; // 超出显示...
+  text-overflow: ellipsis; // 超出显示...
+  white-space: nowrap; // 超出显示...
+- filter: blur(10px); // fuzzy background picture
+- height: 24px; // vertical direction center
+  line-height: 24px; // vertical direction center
+  text-align: center; // horizontal direction center
 
-## 6-9: sticky layout show and hide _✨✨_
+## 6-9, 6-10 详情弹层页 - 实现弹出层
 
-## 6-10: sticky layout styles _✨✨✨_
+- ✨✨✨
+- sticky layout: A,B,C,D,E
+- min-height: 100%; // content will change
+- A: A part clearfix
+- B: devide A B part
+- padding-bottom: 64px; // C: A part space for B part
+- margin: -64px auto 0; // D: B part margin embed the padding of A part
+- clear: both; // E: B part clearfix
 
-## 6-11, 6-12, 6-13: sticky layout star component _✨✨✨_
+## 6-11, 6-12, 6-13 详情弹层页 - star组件抽象
+
+- ✨✨✨
+- star component
 
 ## 6-14: sticky layout line + character + line, styles _✨✨✨_
 
