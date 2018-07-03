@@ -357,17 +357,12 @@ height: 0;
 - ✨✨✨
 - **food.vue** & **ratingSelect.vue**
 
-## 8-12, 8-13: food data bind, rating-wrapper, styles _✨✨✨_
+## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
-> **food.vue**
-
-## 8-14: watch _✨✨✨_
-
-> **food.vue**
-
-## 8-15, 8-16, 8-17: format Date _✨✨✨✨_
-
-> **food.vue** & **date.js**
+- ✨✨✨✨
+- format Date
+- 8-16, 8-17
+- formatDate(date, 'yyyy-MM-dd hh:mm') **common/js/date.js**
 
 ## 9-1, 9-2, 9-3: ratings-content styles _✨✨_
 
