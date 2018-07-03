@@ -200,9 +200,10 @@ export default {
 				if (ball.show) {
 					/* getBoundingClientRect: Get the element relative viewport location */
 					let rect = ball.el.getBoundingClientRect()
-					// ball size = 32
+					/* ball size = 32 */
 					let x = rect.left - 32
-					let y = -(window.innerHeight - rect.top - 22)
+          let y = -(window.innerHeight - rect.top - 22)
+          /* 让小球显示 */
 					el.style.display = ''
 					el.style.webkitTransform = `translate3d(0,${y}px,0)`
 					el.style.transform = `translate3d(0,${y}px,0)`
@@ -213,11 +214,11 @@ export default {
 			}
 		},
 		dropping(el, done) {
-			// Trigger browser refactoring.
+			/* Trigger browser refactoring. */
 			/* eslint-disable no-unused-vars */
 			let rf = el.offsetHeight
 			this.$nextTick(() => {
-				// reset
+				/* reset */
 				el.style.webkitTransform = 'translate3d(0,0,0)'
 				el.style.transform = 'translate3d(0,0,0)'
 				let inner = el.getElementsByClassName('inner-hook')[0]
