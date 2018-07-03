@@ -303,16 +303,14 @@ npm install better-scroll --save
 
 - ✨✨✨
 
-## 8-1, 8-2: food styles, transfer data _✨✨_
+## 8-1, 8-2, 8-3, 8-4, 8-5: 商品详情页实现
 
-## 8-3: food data bind _✨✨_
-
-> **food.scss**
-- high width equal container
-
-## 8-4: food styles, better-scroll _✨✨_
-
-## 8-5: food content _✨✨_
+- ✨✨✨
+- 8-3:
+  position: relative;
+  padding-top: 100%; // high width equal
+  width: 100%; // high width equal
+  height: 0; // high width equal
 
 ## 8-6: split _✨✨_
 

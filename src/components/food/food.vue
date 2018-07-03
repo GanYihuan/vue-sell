@@ -86,6 +86,11 @@ import { formatDate } from '../../common/js/date'
 const ALL = 2
 
 export default {
+	components: {
+		cartControl,
+		ratingSelect,
+		split
+	},
 	props: {
 		food: {
 			type: Object
@@ -94,9 +99,9 @@ export default {
 	data() {
 		return {
 			showFlag: false,
-			// ratingSelect.vue: Product evaluation initialization
+			/* ratingSelect.vue: Product evaluation init */
 			selectType: ALL,
-			// Whether to open the '只看评论内容'
+			/* Whether to open the '只看评论内容' */
 			onlyContent: true,
 			desc: {
 				all: '全部',
@@ -109,8 +114,13 @@ export default {
 		show() {
 			this.showFlag = true
 			this.selectType = ALL
-      this.onlyContent = true
-      // 保证dom是渲染的
+			this.onlyContent = true
+			/* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
 			this.$nextTick(() => {
 				if (!this.scroll) {
 					this.scroll = new BScroll(this.$refs.food, {
@@ -125,15 +135,17 @@ export default {
 			this.showFlag = false
 		},
 		addFirst(event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
-      }
-      // create attribute 'count'
+			}
+			/* create attribute 'count' */
 			Vue.set(this.food, 'count', 1)
 			this.$emit('add', event.target)
 		},
 		needShow(type, text) {
-			// text: Content of evaluation
+			/* text: Content of evaluation */
 			if (this.onlyContent && !text) {
 				return false
 			}
@@ -147,13 +159,25 @@ export default {
 			this.$emit('add', target)
 		},
 		selectRating(type) {
-			this.selectType = type
+      this.selectType = type
+      /* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
 		toggleContent() {
-			this.onlyContent = !this.onlyContent
+      this.onlyContent = !this.onlyContent
+      /* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
@@ -161,14 +185,24 @@ export default {
 	},
 	watch: {
 		selectRating(type) {
-      this.selectType = 
-      // async, data change, dom need to refresh
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
+			this.selectType =
+				/*
+        async
+        在下次 DOM 更新循环结束之后执行延迟回调。
+        在修改数据之后立即使用这个方法，获取更新后的 DOM。
+        */
+				this.$nextTick(() => {
+					this.scroll.refresh()
+				})
 		},
 		toggleContent(onlyContent) {
-			this.onlyContent = onlyContent
+      this.onlyContent = onlyContent
+      /* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
@@ -179,11 +213,6 @@ export default {
 			let date = new Date(time)
 			return formatDate(date, 'yyyy-MM-dd hh:mm')
 		}
-	},
-	components: {
-		cartControl,
-		ratingSelect,
-		split
 	}
 }
 </script>
