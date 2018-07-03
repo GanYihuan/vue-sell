@@ -206,18 +206,35 @@ npm install vue-resource --save
 
 - ✨✨✨
 - **header.vue** style
-- position: relative; // the reasons of relative positioning, the following elements have absolute positioning
-- eliminate the gap, father element set font-size: 0
-- display: inline-block; // in one row to show
-- vertical-align: top; // at the top of the alignment
-- display: inline-block; // the inner element(span) becomes a block element, can set the width and height
-- overflow: hidden; // 超出显示...
-  text-overflow: ellipsis; // 超出显示...
-  white-space: nowrap; // 超出显示...
-- filter: blur(10px); // fuzzy background picture
-- height: 24px; // vertical direction center
-  line-height: 24px; // vertical direction center
-  text-align: center; // horizontal direction center
+
+```css
+/* the inner element(span) becomes a block element, can set the width and height */
+display: inline-block;
+/* eliminate the gap, father element set font-size: 0 */
+font-size: 0;
+/* the reasons of relative positioning, the following elements have absolute positioning */
+position: relative;
+/* in one row to show */
+display: inline-block;
+/* at the top of the alignment */
+vertical-align: top;
+/* fuzzy background picture */
+filter: blur(10px);
+```
+
+```css
+/* 超出显示... */
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+```
+
+```css
+/* vertical direction center */
+height: 24px;
+line-height: 24px;
+text-align: center;
+```
 
 ## 6-9, 6-10 详情弹层页 - 实现弹出层
 
@@ -269,26 +286,41 @@ npm install vue-resource --save
 npm install better-scroll --save
 ```
 
-- /* better-scroll */
-  /* at PC will trigger twice event, stop this */
-  if (!event._constructed) {
-    return
-  }
+```js
+/* better-scroll */
+/* at PC will trigger twice event, stop this */
+if (!event._constructed) {
+  return
+}
+```
 
 ## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart购物车组件
 
 - ✨✨✨
-- selectFoods: {
-    type: Array,
-    default() {
-      return [
-        {
-          price: 10,
-          count: 1
-        }
-      ]
+
+```js
+selectFoods: {
+  type: Array,
+  default() {
+    return [
+      {
+        price: 10,
+        count: 1
+      }
+    ]
+  }
+},
+desc: {
+  type: Object,
+  default() {
+    return {
+      all: '全部',
+      positive: '满意',
+      negative: '吐槽'
     }
-  },
+  }
+}
+```
 
 ## 7-15, 7-16, 7-17: cartcontrol组件
 
@@ -307,20 +339,23 @@ npm install better-scroll --save
 
 - ✨✨✨
 - 8-3:
-  position: relative;
-  padding-top: 100%; // high width equal
-  width: 100%; // high width equal
-  height: 0; // high width equal
 
-## 8-6: split _✨✨_
+```css
+/* high width equal */
+position: relatie;
+padding-top: 100%;
+width: 100%;
+height: 0;
+```
 
-## 8-7, 8-8, 8-9: ratingSelect styles, pass data _✨✨✨_
+## 8-6: split组件实现
 
-> **food.vue** & **ratingSelect.vue**
+- ✨✨
 
-## 8-10, 8-11: ratingSelect switch _✨✨✨_
+## 8-7, 8-8, 8-9, 8-10, 8-11: ratingselect组件
 
-> **ratingSelect.vue**
+- ✨✨✨
+- **food.vue** & **ratingSelect.vue**
 
 ## 8-12, 8-13: food data bind, rating-wrapper, styles _✨✨✨_
 

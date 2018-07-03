@@ -83,12 +83,16 @@ export default {
 	},
 	methods: {
 		select(type, event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
 			this.$emit('select', type)
 		},
 		toggleContent(event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */      
 			if (!event._constructed) {
 				return
 			}
