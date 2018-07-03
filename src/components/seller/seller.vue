@@ -104,6 +104,12 @@ export default {
 	},
 	/* dom 渲染后 */
 	mounted() {
+    /* 
+    保证dom是渲染的
+    async
+    在下次 DOM 更新循环结束之后执行延迟回调。
+    在修改数据之后立即使用这个方法，获取更新后的 DOM。
+    */    
 		this.$nextTick(() => {
 			this._initScroll()
 			this._initPics()
@@ -111,6 +117,12 @@ export default {
 	},
 	watch: {
 		seller() {
+			/*
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */      
 			this.$nextTick(() => {
 				this._initScroll()
 				this._initPics()
@@ -133,6 +145,7 @@ export default {
 					click: true
 				})
 			} else {
+        /* 防止route切换时不处理 */
 				this.scroll.refresh()
 			}
 		},
@@ -142,7 +155,13 @@ export default {
 				let margin = 6
 				let width = (picWidth + margin) * this.seller.pics.length - margin
 				this.$refs.picList.style.width = width + 'px'
-				this.$nextTick(() => {
+        /* 
+        保证dom是渲染的
+        async
+        在下次 DOM 更新循环结束之后执行延迟回调。
+        在修改数据之后立即使用这个方法，获取更新后的 DOM。
+        */        
+        this.$nextTick(() => {
 					if (!this.picScroll) {
 						this.picScroll = new BScroll(this.$refs.picWrapper, {
 							/* horizontal scroll */

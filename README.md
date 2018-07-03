@@ -389,9 +389,10 @@ height: 0;
 - ✨✨
 - **seller.vue**
 
-## 10-6: pics data bind, styles, better-scroll _✨✨✨_
+## 10-6: seller组件开发-商家实景图
 
-> **seller.vue**
+- ✨✨✨
+- **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
 ## 10-7: info data bind, styles _✨✨_
