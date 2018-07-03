@@ -97,7 +97,7 @@ export default {
 				{ show: false },
 				{ show: false },
 				{ show: false }
-			],
+      ],
 			dropBalls: [],
 			fold: true
 		}
@@ -198,7 +198,7 @@ export default {
 			while (count--) {
 				let ball = this.balls[count]
 				if (ball.show) {
-					// getBoundingClientRect: Get the element relative viewport location
+					/* getBoundingClientRect: Get the element relative viewport location */
 					let rect = ball.el.getBoundingClientRect()
 					// ball size = 32
 					let x = rect.left - 32

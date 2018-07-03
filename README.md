@@ -295,9 +295,9 @@ npm install better-scroll --save
 - ✨✨✨
 - +- button
 
-## 7-17: shopping cart data _✨✨✨_
+## 7-18, 7-19, 7-20: 购物车小球动画实现
 
-## 7-18, 7-19, 7-20: shopping cart ball animate _✨✨✨✨_
+- ✨✨✨✨
 
 ## 7-21: shopCart list data bind _✨✨✨_
 
