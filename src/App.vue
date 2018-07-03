@@ -14,8 +14,8 @@
       </div>
     </div>
     <!--
-      keep-alive: The content is cached after the route is loaded,
-      and the cache is read when loaded to prevent continuous loading.
+      keep-alive: 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们
+      当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
     -->
     <!-- <keep-alive exclude="Detail"> -->
     <!-- name=Detail component Do not cache processing. -->
@@ -41,6 +41,7 @@ export default {
 			seller: {
 				/* immediate run function */
 				id: (() => {
+          /* get id from url */ 
 					let queryParam = urlParse()
 					return queryParam.id
 				})()

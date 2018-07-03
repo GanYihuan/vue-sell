@@ -395,33 +395,25 @@ height: 0;
 - **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
-## 10-7: info data bind, styles _✨✨_
+## 10-7: seller组件开发-商家信息
 
-> **seller.vue**
+- ✨✨
+- **seller.vue**
 
-## 10-8: favorite data bind, styles _✨✨_
+## 10-8, 10-9, 10-10: seller组件开发-收藏商家
 
-> **seller.vue**
-
-## 10-9: favorite, parse url parameter _✨✨✨✨_
-
-> **App.vue** & **util.js** & **seller.vue**
-
+- ✨✨✨✨
+- **seller.vue** **App.vue** **util.js** **seller.vue** **store.js**
 - immediately run function
 - parse url parameter
-
-## 10-10: favorite, localStorage _✨✨✨✨_
-
-> **seller.vue** & **store.js**
-
 - save localStorage
 - read localStorage
 - immediately run function
 
-## 10-11: optimize _✨✨_
+## 10-11 seller组件开发-体验优化
 
-> **App.vue**
-
+- ✨✨
+- **App.vue**
 - keep-alive
 
 ## 11-1: package bug
