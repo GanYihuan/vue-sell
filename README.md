@@ -364,13 +364,15 @@ height: 0;
 - 8-16, 8-17
 - formatDate(date, 'yyyy-MM-dd hh:mm') **common/js/date.js**
 
-## 9-1, 9-2, 9-3: ratings-content styles _✨✨_
+## 9-1, 9-2, 9-3: ratings组件开发-overview开发
 
-> **ratings.vue**
+- ✨✨
+- **ratings.vue**
 
-## 9-4, 9-5, 9-6: styles, data bind _✨✨_
+## 9-4, 9-5, 9-6: ratings组件开发-评价列表
 
-> **ratings.vue**
+- ✨✨
+- **ratings.vue**
 
 ## 10-1, 10-2: overview data bind, styles _✨✨_
 

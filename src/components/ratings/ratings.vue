@@ -75,6 +75,11 @@ const ALL = 2
 const ERR_OK = 0
 
 export default {
+  components: {
+		star,
+		split,
+		ratingSelect
+	},
 	props: {
 		seller: {
 			type: Object
@@ -89,9 +94,17 @@ export default {
 	},
 	created() {
 		this.$http.get('/api/ratings').then(response => {
-			response = response.body
+      // console.log(response)
+			/* get json object */
+      response = response.body
 			if (response.errno === ERR_OK) {
-				this.ratings = response.data
+        this.ratings = response.data
+        /* 
+        保证dom是渲染的
+        async
+        在下次 DOM 更新循环结束之后执行延迟回调。
+        在修改数据之后立即使用这个方法，获取更新后的 DOM。
+        */
 				this.$nextTick(() => {
 					this.scroll = new BScroll(this.$refs.ratings, {
 						click: true
@@ -101,21 +114,33 @@ export default {
 		})
 	},
 	methods: {
-		// copy from food.vue/selectRating()
+		/* copy from food.vue/selectRating() */
 		selectRating(type) {
-			this.selectType = type
+      this.selectType = type
+      /* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */      
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
-		// copy from food.vue/toggleContent()
+		/* copy from food.vue/toggleContent() */
 		toggleContent() {
-			this.onlyContent = !this.onlyContent
+      this.onlyContent = !this.onlyContent
+      /* 
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
-		// copy from food.vue/needShow()
+		/* copy from food.vue/needShow() */
 		needShow(type, text) {
 			if (this.onlyContent && !text) {
 				return false
@@ -128,16 +153,11 @@ export default {
 		}
 	},
 	filters: {
-		// copy from food.vue/formatDate()
+		/* copy from food.vue/formatDate() */
 		formatDate(time) {
 			let date = new Date(time)
 			return formatDate(date, 'yyyy-MM-dd hh:mm')
 		}
-	},
-	components: {
-		star,
-		split,
-		ratingSelect
 	}
 }
 </script>
