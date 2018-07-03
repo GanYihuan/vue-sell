@@ -277,7 +277,7 @@ npm install better-scroll --save
 
 ## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart购物车组件
 
-- ✨✨✨✨
+- ✨✨✨
 - selectFoods: {
     type: Array,
     default() {
@@ -290,7 +290,10 @@ npm install better-scroll --save
     }
   },
 
-## 7-15, 7-16: + - button _✨✨✨_
+## 7-15, 7-16, 7-17: cartcontrol组件
+
+- ✨✨✨
+- +- button
 
 ## 7-17: shopping cart data _✨✨✨_
 

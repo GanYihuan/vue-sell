@@ -25,12 +25,13 @@ export default {
 	},
 	methods: {
 		addCart(event) {
-			// Get rid of the click that comes with the click event.
+			/* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
 			if (!this.food.count) {
-				// Add a food attribute count=1.
+				/* add a food attribute count=1. */
 				Vue.set(this.food, 'count', 1)
 			} else {
 				this.food.count++
@@ -38,6 +39,8 @@ export default {
 			this.$emit('add', event.target)
 		},
 		decreaseCart(event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}

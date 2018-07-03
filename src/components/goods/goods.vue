@@ -127,6 +127,7 @@ export default {
 			this.goods.forEach(good => {
 				/* food -> Individual dishes in the project. */
 				good.foods.forEach(food => {
+          /* food.count: cartcontrol.vue setting */
 					if (food.count) {
 						foods.push(food)
 					}
