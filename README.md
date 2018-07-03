@@ -374,17 +374,20 @@ height: 0;
 - ✨✨
 - **ratings.vue**
 
-## 10-1, 10-2: overview data bind, styles _✨✨_
+## 10-1, 10-2: seller组件开发-overview开发
 
-> **seller.vue**
+- ✨✨
+- **seller.vue**
 
-## 10-3, 10-4: bulletin data bind, styles _✨✨_
+## 10-3, 10-4: seller组件开发-公告与活动开发
 
-> **seller.vue**
+- ✨✨
+- **seller.vue**
 
-## 10-5: better-scroll _✨✨_
+## 10-5: seller组件开发-BScroll应用
 
-> **seller.vue**
+- ✨✨
+- **seller.vue**
 
 ## 10-6: pics data bind, styles, better-scroll _✨✨✨_
 

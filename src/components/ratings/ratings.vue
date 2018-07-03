@@ -91,7 +91,8 @@ export default {
 			selectType: ALL,
 			onlyContent: true
 		}
-	},
+  },
+  /* handle data, data not need to watch */ 
 	created() {
 		this.$http.get('/api/ratings').then(response => {
       // console.log(response)

@@ -34,7 +34,8 @@ const ERR_OK = 0
 export default {
 	components: {
 		'v-header': header
-	},
+  },
+  /* handle data, data need to watch */ 
 	data() {
 		return {
 			seller: {
@@ -46,7 +47,7 @@ export default {
 			}
 		}
   },
-  /* handle data */ 
+  /* handle data, data not need to watch */ 
 	created() {
 		/* vue-resource */
 		/* ajax request, The request data is inserted into the seller object */

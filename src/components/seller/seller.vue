@@ -75,14 +75,19 @@ import split from '../split/split'
 import { saveToLocal, loadFromLocal } from '../../common/js/store'
 
 export default {
+	components: {
+		star,
+		split
+	},
 	props: {
 		seller: {
 			type: Object
 		}
-	},
+  },
+  /* handle data, data need to watch */ 
 	data() {
 		return {
-			// immediately run function
+			/* immediately run function */
 			favorite: (() => {
 				return loadFromLocal(this.seller.id, 'favorite', false)
 			})()
@@ -92,27 +97,30 @@ export default {
 		favoriteText() {
 			return this.favorite ? '已收藏' : '收藏'
 		}
-	},
+  },
+  /* handle data, data not need to watch */ 
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 	},
-  // dom 渲染后
+	/* dom 渲染后 */
 	mounted() {
 		this.$nextTick(() => {
 			this._initScroll()
 			this._initPics()
 		})
-  },
-  watch: {
+	},
+	watch: {
 		seller() {
 			this.$nextTick(() => {
 				this._initScroll()
 				this._initPics()
 			})
 		}
-  },
+	},
 	methods: {
 		toggleFavorite(event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
@@ -137,9 +145,9 @@ export default {
 				this.$nextTick(() => {
 					if (!this.picScroll) {
 						this.picScroll = new BScroll(this.$refs.picWrapper, {
-							// horizontal scroll
+							/* horizontal scroll */
 							scrollX: true,
-							// ignore vertical scroll
+							/* ignore vertical scroll */
 							eventPassthrough: 'vertical'
 						})
 					} else {
@@ -148,10 +156,6 @@ export default {
 				})
 			}
 		}
-	},
-	components: {
-		star,
-		split
 	}
 }
 </script>
