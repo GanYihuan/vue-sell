@@ -55,7 +55,7 @@
                     <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
                   <div class="cartControl-wrapper">
-                    <cartControl @add="addFood" :food="food"></cartControl>
+                    <cartControl :food="food" @add="addFood"></cartControl>
                   </div>
                 </div>
               </li>
@@ -90,7 +90,7 @@ export default {
 		food,
 		cartControl
 	},
-	// accpet App.vue pass seller
+	/* accpet App.vue pass seller */
 	props: {
 		seller: {
 			type: Object
@@ -122,10 +122,10 @@ export default {
 		/* A collection of all individual dishes. */
 		selectFoods() {
 			let foods = []
-			// http://ustbhuangyi.com/sell/api/goods
-			// good -> 左侧栏的单个项目
+			/* http://localhost:8088/api/goods */ 
+			/* good -> 左侧栏的单个项目 */
 			this.goods.forEach(good => {
-				// food -> Individual dishes in the project.
+				/* food -> Individual dishes in the project. */
 				good.foods.forEach(food => {
 					if (food.count) {
 						foods.push(food)
@@ -199,7 +199,8 @@ export default {
 			this.foodsScroll.scrollToElement(el, 300)
 		},
 		selectFood(food, event) {
-			// Remove clicks with click events
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
@@ -210,10 +211,12 @@ export default {
 			this._drop(target)
 		},
 		_drop(target) {
-			// 异步执行抛物小球动画，缓解卡顿
-			// experience optimization, asynchronous execution of falling animation.
-			// $nextTick executes the deferred callback after the next DOM update loop.
-			// use this method immediately after modifying the data to get the updated DOM.
+      /*
+      异步执行抛物小球动画，缓解卡顿
+			experience optimization, asynchronous execution of falling animation.
+			$nextTick executes the deferred callback after the next DOM update loop.
+			use this method immediately after modifying the data to get the updated DOM.
+      */
 			this.$nextTick(() => {
 				this.$refs.shopCart.drop(target)
 			})

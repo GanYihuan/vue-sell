@@ -275,9 +275,20 @@ npm install better-scroll --save
     return
   }
 
-## 7-9, 7-10: shopping cart styles _✨✨_
+## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart购物车组件
 
-## 7-11, 7-12, 7-13, 7-14: shopping cart data bind _✨✨✨_
+- ✨✨✨✨
+- selectFoods: {
+    type: Array,
+    default() {
+      return [
+        {
+          price: 10,
+          count: 1
+        }
+      ]
+    }
+  },
 
 ## 7-15, 7-16: + - button _✨✨✨_
 

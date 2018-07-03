@@ -54,12 +54,7 @@
       </transition>
     </div>
     <transition name="fade">
-      <div
-        class="list-mask"
-        v-show="listShow"
-        @click="hideList"
-      >
-      </div>
+      <div class="list-mask" v-show="listShow" @click="hideList"></div>
     </transition>
   </div>
 </template>
@@ -69,9 +64,13 @@ import BScroll from 'better-scroll'
 import cartControl from '../cartControl/cartControl.vue'
 
 export default {
+	components: {
+		cartControl
+	},
 	props: {
 		selectFoods: {
-			type: Array,
+      type: Array,
+      /* object */
 			default() {
 				return [
 					{
@@ -106,7 +105,7 @@ export default {
 	computed: {
 		totalCount() {
 			let count = 0
-			// selectFoods -> A collection of all individual dishes.
+			/* selectFoods -> a collection of all individual dishes. */
 			this.selectFoods.forEach(food => {
 				count += food.count
 			})
@@ -200,8 +199,8 @@ export default {
 				let ball = this.balls[count]
 				if (ball.show) {
 					// getBoundingClientRect: Get the element relative viewport location
-          let rect = ball.el.getBoundingClientRect()
-          // ball size = 32
+					let rect = ball.el.getBoundingClientRect()
+					// ball size = 32
 					let x = rect.left - 32
 					let y = -(window.innerHeight - rect.top - 22)
 					el.style.display = ''
@@ -234,9 +233,6 @@ export default {
 				el.style.display = 'none'
 			}
 		}
-	},
-	components: {
-		cartControl
 	}
 }
 </script>
