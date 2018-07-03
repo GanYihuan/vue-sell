@@ -146,8 +146,8 @@ export default {
 				this.goods = response.data
 				/*
         async
-				$nextTick The deferred callback is performed after the next DOM update loop.
-				Use this method immediately after modifying the data to get the updated DOM.
+        在下次 DOM 更新循环结束之后执行延迟回调。
+        在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
 				this.$nextTick(() => {
 					this._initScroll()

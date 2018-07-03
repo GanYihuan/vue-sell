@@ -154,15 +154,15 @@
       }
     }
     .list-content {
+      overflow: hidden;
       padding: 0 18px; // content will grow
       max-height: 217px;
-      overflow: hidden;
       background: #fff;
       .shopCart-food {
         position: relative;
-        padding: 12px 0;
         box-sizing: border-box;
         @include border-1px(rgba(7, 17, 27, 0.1));
+        padding: 12px 0;
         .name {
           line-height: 24px;
           font-size: 14px;
