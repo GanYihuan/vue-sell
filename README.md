@@ -102,7 +102,8 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-1, 5-2, 5-3: 组件拆分
 
-- **index.html** use **static/css/reset.css**, meta setting
+- **index.html**
+- **static/css/reset.css**
 - skip ESLint check
 
 ```js

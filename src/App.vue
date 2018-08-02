@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- seller Asynchronous data is plugged into the object. -->
+    <!-- 卖方异步数据被插入到对象中 -->
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
@@ -15,10 +15,11 @@
     </div>
     <!--
       keep-alive: 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们
-      当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
+      当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 
+      这两个生命周期钩子函数将会被对应执行
     -->
     <!-- <keep-alive exclude="Detail"> -->
-    <!-- name=Detail component Do not cache processing. -->
+    <!-- name=Detail 组件不缓存处理 -->
     <keep-alive>
       <router-view :seller="seller"></router-view>
     </keep-alive>
