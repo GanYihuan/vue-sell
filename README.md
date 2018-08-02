@@ -102,6 +102,7 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-1, 5-2, 5-3: 组件拆分
 
+- **App.vue**
 - **index.html**
 - **static/css/reset.css**
 - skip ESLint check
@@ -110,11 +111,9 @@ npm install node-sass sass-loader --save-dev
 /* eslint-disable no-new
 ```
 
-- **App.vue**
-
 ## 5-4, 5-5: vue-router
 
-> **router/route.js**
+- **router/route.js**
 
 ```console
 npm install vue-router
