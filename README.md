@@ -1,10 +1,10 @@
 # imooc-sell
 
-> 慕课网 Vue-高仿饿了么APP
+> 慕课网 Vue-高仿饿了么 APP
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -26,106 +26,64 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## 3-1 Vue-cli介绍
+## 3-1 Vue-cli 介绍
 
-- ✨
-
-```shell
+```console
 npm install -g vue-cli
 vue init webpack imooc-sell
 ```
 
-## 3-2 Vue-cli安装
+## 3-2 Vue-cli 安装
 
-- ✨✨
 - Node > 4
-- static/3-2
 
-```shell
+```console
 npm install
-npm run dev
+npm run start
 ```
 
 ## 3-3 项目运行
 
-- introduce vue-project structure
+- vue-project structure
 
-- build
-> webpack config
+- build: webpack config
+- config: webpack config
+- node_modules: npm install
+- src: code
+- static: Third party static resources.
+- .gitkeep: 当目录为空时，也可以将它提交给存储库。
+- .babelrc: babel 配置 es6 编译成 es5
+- .editorconfig: 编译器配置
+- .eslintignore: 忽略目录文件进行语法检查。
+- .eslintrc.js: [ESLint document](http://eslint.cn/docs/rules/) eslint 语法检测配置
+- package.json
 
-- config file
-> webpack config
-
-- node_modules file
-> npm install
-
-- src file
-> code
-
-- static file
-> Third party static resources.
-
-- .gitkeep file
-> When the directory is empty, it can also be submitted to the repository.
-
-- .babelrc file
-> babel config es6 Compiled into es5
-
-- .editorconfig file
-> Compiler configuration
-
-- .eslintignore file
-> Ignore the directory files for syntax checking.
-
-- .eslintrc.js file
-> [ESLint document](http://eslint.cn/docs/rules/)
-> eslint Syntax detection configuration
-
-- package.json file
-- script: config 'npm run dev'
-- devDependencies: This package is used only in the development phase, which is not needed when it comes online
+1. script: 配置 js 运行命令
+2. devDependencies: 这个包只在开发阶段使用，上线时不需要这个包
 
 ## 3-4 项目文件介绍
 
-- ✨✨
-- use component
-
-## 3-5: webpack(1)
-
--✨✨✨✨✨
-
-## 3-6: webpack(2)
-
-- ✨✨✨✨✨
-
-## 3-7: webpack(3)
-
-- ✨✨✨✨✨
+## 3-5, 3-6, 3-7: webpack
 
 ## 4-1 需求分析
 
-- ✨
-
 ## 4-2: 项目资源准备
 
-- ✨✨
 - [Device pixel ratio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
 
 ## 4-3 图标字体制作
 
-- ✨✨
 - [IconMoon](https://icomoon.io/#icons-icomoon)
 
 ## 4-4 项目目录设计
 
-- ✨✨
 - create IconMoon font file **common/fonts** **common/scss/icon.scss**
 
-## 4-5 mock数据
+## 4-5 mock 数据
 
-- ✨✨✨
 - **data.json**
-> **webpack.dev.conf.js**
+
+  > **webpack.dev.conf.js**
 
 - browser check data
 - [seller data](http://localhost:8088/api/seller)
@@ -134,26 +92,28 @@ npm run dev
 
 - install vue-resource better-scroll sass
 
-```shell
+```console
 npm install vue-resource better-scroll --save
 npm install node-sass sass-loader --save-dev
 ```
 
 - set alias path
-> **build/webapck.base.conf.js**
+
+  > **build/webapck.base.conf.js**
 
 - modify port
-> **config/index.js**
+
+  > **config/index.js**
 
 - modify ESLint rules
-> **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
+
+  > **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
 
 - set data source
-> **webpack.dev.conf.js**
+  > **webpack.dev.conf.js**
 
 ## 5-1, 5-2, 5-3: 组件拆分
 
-- ✨✨
 - **index.html** use **static/css/reset.css**, meta setting
 - skip ESLint check
 
@@ -165,46 +125,43 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-4, 5-5: vue-router
 
-- ✨✨
 > **router/route.js**
 
-```shell
+```console
 npm install vue-router
 ```
 
-## 5-6 1像素border实现
+## 5-6 1 像素 border 实现
 
-- ✨✨✨
 - Mobile phone preview
 - check IP
 
-```shell
+```console
 ifconfig
 npm run dev
 ```
 
 - [url](localhost:8088/#/goods)
 - url replace then become IP:8088/#/goods
-- [草料website](https://cli.im/) use IP:8088/#/goods
+- [草料 website](https://cli.im/) use IP:8088/#/goods
 - **mixin.scss** **base.scss**
-1. One pixel line
-2. 2x3x image
-3. clear float
 
-## 6-1, 6-2 Vue-resource应用
+1.  One pixel line
+2.  2x3x image
+3.  clear float
 
-- ✨✨✨
+## 6-1, 6-2 Vue-resource 应用
+
 - front-end back-end interaction
 - **main.js** **App.vue**
 - vue-resource: Ajax request, XMLHttpRequest
 
-```shell
+```console
 npm install vue-resource --save
 ```
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
 
-- ✨✨✨
 - **header.vue** style
 
 ```css
@@ -238,7 +195,6 @@ text-align: center;
 
 ## 6-9, 6-10 详情弹层页 - 实现弹出层
 
-- ✨✨✨
 - sticky layout: A,B,C,D,E
 - min-height: 100%; // content will change
 - A: A part clearfix
@@ -247,42 +203,33 @@ text-align: center;
 - margin: -64px auto 0; // D: B part margin embed the padding of A part
 - clear: both; // E: B part clearfix
 
-## 6-11, 6-12, 6-13 详情弹层页 - star组件抽象
+## 6-11, 6-12, 6-13 详情弹层页 - star 组件抽象
 
-- ✨✨✨✨
 - star component **start.vue**
 
-## 6-14 详情弹层页 - 小标题自适应经典flex布局实现
+## 6-14 详情弹层页 - 小标题自适应经典 flex 布局实现
 
-- ✨✨✨
 - line + character + line, flex layout
 
-## 6-15, 6-16 详情弹层页 - header剩余组件实现
+## 6-15, 6-16 详情弹层页 - header 剩余组件实现
 
-- ✨✨✨
 - animate
 
 ## 7-1 布局编写
 
-- ✨✨✨
 - Asynchronous get data **goods.vue**
 
-## 7-2 左侧menu布局
+## 7-2 左侧 menu 布局
 
-- ✨✨✨
 - display: table; // multi-line text, vertically centered
 - display: table-cell; // father element: display: table
 - vertical-align: middle; // 多行文字垂直居中
 
 ## 7-3, 7-4, 7-5 右侧食品列表布局
 
-- ✨✨
+## 7-6, 7-7, 7-8: better-scroll 运用
 
-## 7-6, 7-7, 7-8: better-scroll运用
-
-- ✨✨✨✨
-
-```shell
+```console
 npm install better-scroll --save
 ```
 
@@ -294,9 +241,7 @@ if (!event._constructed) {
 }
 ```
 
-## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart购物车组件
-
-- ✨✨✨
+## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart 购物车组件
 
 ```js
 selectFoods: {
@@ -322,23 +267,15 @@ desc: {
 }
 ```
 
-## 7-15, 7-16, 7-17: cartcontrol组件
+## 7-15, 7-16, 7-17: cartcontrol 组件
 
-- ✨✨✨
 - +- button
 
 ## 7-18, 7-19, 7-20: 购物车小球动画实现
 
-- ✨✨✨✨
-
 ## 7-21, 7-22, 7-23, 7-24: 购物车详情页实现
 
-- ✨✨✨
-
 ## 8-1, 8-2, 8-3, 8-4, 8-5: 商品详情页实现
-
-- ✨✨✨
-- 8-3:
 
 ```css
 /* high width equal */
@@ -348,61 +285,49 @@ width: 100%;
 height: 0;
 ```
 
-## 8-6: split组件实现
+## 8-6: split 组件实现
 
-- ✨✨
+## 8-7, 8-8, 8-9, 8-10, 8-11: ratingselect 组件
 
-## 8-7, 8-8, 8-9, 8-10, 8-11: ratingselect组件
-
-- ✨✨✨
 - **food.vue** & **ratingSelect.vue**
 
 ## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
-- ✨✨✨✨
 - format Date
 - 8-16, 8-17
 - formatDate(date, 'yyyy-MM-dd hh:mm') **common/js/date.js**
 
-## 9-1, 9-2, 9-3: ratings组件开发-overview开发
+## 9-1, 9-2, 9-3: ratings 组件开发-overview 开发
 
-- ✨✨
 - **ratings.vue**
 
-## 9-4, 9-5, 9-6: ratings组件开发-评价列表
+## 9-4, 9-5, 9-6: ratings 组件开发-评价列表
 
-- ✨✨
 - **ratings.vue**
 
-## 10-1, 10-2: seller组件开发-overview开发
+## 10-1, 10-2: seller 组件开发-overview 开发
 
-- ✨✨
 - **seller.vue**
 
-## 10-3, 10-4: seller组件开发-公告与活动开发
+## 10-3, 10-4: seller 组件开发-公告与活动开发
 
-- ✨✨
 - **seller.vue**
 
-## 10-5: seller组件开发-BScroll应用
+## 10-5: seller 组件开发-BScroll 应用
 
-- ✨✨
 - **seller.vue**
 
-## 10-6: seller组件开发-商家实景图
+## 10-6: seller 组件开发-商家实景图
 
-- ✨✨✨
 - **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
-## 10-7: seller组件开发-商家信息
+## 10-7: seller 组件开发-商家信息
 
-- ✨✨
 - **seller.vue**
 
-## 10-8, 10-9, 10-10: seller组件开发-收藏商家
+## 10-8, 10-9, 10-10: seller 组件开发-收藏商家
 
-- ✨✨✨✨
 - **seller.vue** **App.vue** **util.js** **seller.vue** **store.js**
 - immediately run function
 - parse url parameter
@@ -410,27 +335,26 @@ height: 0;
 - read localStorage
 - immediately run function
 
-## 10-11 seller组件开发-体验优化
+## 10-11 seller 组件开发-体验优化
 
-- ✨✨
 - **App.vue**
 - keep-alive
 
 ## 11-1: package bug
 
-```shell
+```console
 npm run build
 ```
 
-## 11-2: node for build files _✨✨✨✨✨_
+## 11-2: node for build files
 
 > **prod.server.js**
 
-## 12-1: summary _✨_
+## 12-1: summary
 
-## 13-1: package.json, build change _✨_
+## 13-1: package.json, build change
 
-## 13-2: V2.0 change _✨✨✨✨_
+## 13-2: V2.0 change
 
 - route
 - v-for
@@ -443,7 +367,7 @@ npm run build
 - transition
 - keep-alive
 
-## 13-3: V2.0 change fix _✨✨✨✨_
+## 13-3: V2.0 change fix
 
 ## bug: npm run build
 
