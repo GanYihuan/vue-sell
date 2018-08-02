@@ -67,50 +67,38 @@ npm run start
 
 ## 4-1 需求分析
 
+- [设备像素比](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
+
 ## 4-2: 项目资源准备
 
 - [Device pixel ratio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
 
 ## 4-3 图标字体制作
 
-- [IconMoon](https://icomoon.io/#icons-icomoon)
+- [IconMoon 操作](https://icomoon.io/#icons-icomoon)
 
 ## 4-4 项目目录设计
 
-- create IconMoon font file **common/fonts** **common/scss/icon.scss**
+- **common/fonts**
+- **common/scss/icon.scss**
 
 ## 4-5 mock 数据
 
 - **data.json**
-
-  > **webpack.dev.conf.js**
-
-- browser check data
+- **webpack.dev.conf.js**
 - [seller data](http://localhost:8088/api/seller)
 - [goods data](http://localhost:8088/api/goods)
 - [ratings data](http://localhost:8088/api/ratings)
-
-- install vue-resource better-scroll sass
+- set alias path: **build/webapck.base.conf.js**
+- modify port: **config/index.js**
+- modify ESLint rules: **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
+- set data source: **webpack.dev.conf.js**
 
 ```console
+install vue-resource better-scroll sass
 npm install vue-resource better-scroll --save
 npm install node-sass sass-loader --save-dev
 ```
-
-- set alias path
-
-  > **build/webapck.base.conf.js**
-
-- modify port
-
-  > **config/index.js**
-
-- modify ESLint rules
-
-  > **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
-
-- set data source
-  > **webpack.dev.conf.js**
 
 ## 5-1, 5-2, 5-3: 组件拆分
 
