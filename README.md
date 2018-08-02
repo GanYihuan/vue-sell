@@ -140,8 +140,9 @@ npm run dev
 
 ## 6-1, 6-2 Vue-resource 应用
 
-- front-end back-end interaction
-- **main.js** **App.vue**
+- 前端后端交互
+- **main.js**
+- **App.vue**
 - vue-resource: Ajax request, XMLHttpRequest
 
 ```console

@@ -36,23 +36,23 @@ export default {
 	components: {
 		'v-header': header
   },
-  /* handle data, data need to watch */ 
+  /* 处理数据，数据需要观察。*/
 	data() {
 		return {
 			seller: {
-				/* immediate run function */
+				/* 直接运行函数 */
 				id: (() => {
-          /* get id from url */ 
+          /* 从 url 获取 id */
 					let queryParam = urlParse()
 					return queryParam.id
 				})()
 			}
 		}
   },
-  /* handle data, data not need to watch */ 
+  /* 处理数据，数据不需要监视 */ 
 	created() {
 		/* vue-resource */
-		/* ajax request, The request data is inserted into the seller object */
+		/* ajax 请求，请求数据被插入到卖方对象中 */
 		this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
 			// console.log(response)
 			/* get json object */
