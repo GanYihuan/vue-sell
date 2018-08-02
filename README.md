@@ -132,11 +132,11 @@ npm run dev
 - [url](localhost:8088/#/goods)
 - url replace then become IP:8088/#/goods
 - [草料 website](https://cli.im/) use IP:8088/#/goods
-- **mixin.scss** **base.scss**
-
-1.  One pixel line
-2.  2x3x image
-3.  clear float
+- **mixin.scss**
+- **base.scss**
+- One pixel line
+- 2x3x image
+- clear float
 
 ## 6-1, 6-2 Vue-resource 应用
 

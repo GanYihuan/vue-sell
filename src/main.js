@@ -2,7 +2,7 @@ import Vue from 'vue'
 /* Ajax request, XMLHttpRequest */
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-import createRouter from './router/route'
+import createRouter from './router/router'
 import App from './App.vue'
 import 'common/scss/index.scss'
 
