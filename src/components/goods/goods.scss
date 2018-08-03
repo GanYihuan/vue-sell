@@ -2,16 +2,16 @@
 .goods {
   display: flex;
   position: absolute;
-  overflow: hidden;
   top: 174px;
   bottom: 46px;
   width: 100%;
+  overflow: hidden;
   .menu-wrapper {
-    flex: 0 0 80px; // divide, scale, placeholder.
+    flex: 0 0 80px; // flex-grow flex-shrink flex-basis
     width: 80px;
     background: #f3f5f7;
     .menu-item {
-      display: table; // multi-line text, vertically centered.
+      display: table; // 多行文本, 垂直居中
       padding: 0 12px;
       width: 56px;
       height: 54px;
@@ -31,7 +31,7 @@
         margin-right: 2px;
         width: 12px;
         height: 12px;
-        vertical-align: top; // at the top of the alignment
+        vertical-align: top; // 在顶端对齐
         background-size: 12px 12px;
         background-repeat: no-repeat;
         &.decrease {
@@ -51,7 +51,7 @@
         }
       }
       .text {
-        display: table-cell; // father element: display: table
+        display: table-cell; // 父元素: display: table
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
         vertical-align: middle; // 多行文字垂直居中
@@ -65,8 +65,8 @@
       .title {
         border-left: 2px solid #d9dde1;
         padding-left: 14px;
-        height: 26px; // vertical direction center
-        line-height: 26px; // vertical direction center
+        height: 26px; // 垂直方向居中
+        line-height: 26px; // 垂直方向居中
         font-size: 12px;
         color: rgb(147, 153, 159);
         background: #f3f5f7;
@@ -88,8 +88,8 @@
           flex: 1;
           .name {
             margin: 2px 0 8px;
-            height: 14px;  // vertical direction center
-            line-height: 14px; // vertical direction center
+            height: 14px;  // 垂直方向居中
+            line-height: 14px; // 垂直方向居中
             font-size: 14px;
             color: rgb(7, 17, 27);
           }

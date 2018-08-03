@@ -207,13 +207,34 @@ text-align: center;
 
 ## 7-1 布局编写
 
-- Asynchronous get data **goods.vue**
+- **goods.vue**
 
 ## 7-2 左侧 menu 布局
 
-- display: table; // multi-line text, vertically centered
-- display: table-cell; // father element: display: table
-- vertical-align: middle; // 多行文字垂直居中
+- 多行文本, 垂直居中
+
+```scss
+.menu-item {
+  /* 父元素 */
+  display: table;
+  /* 子元素 */
+  .text {
+    display: table-cell;
+    /* 多行文字垂直居中 */
+    vertical-align: middle;
+  }
+}
+```
+
+- 让其突出显示
+
+```css
+&.current {
+  position: relative;
+  z-index: 10;
+  margin-top: -1px;
+}
+```
 
 ## 7-3, 7-4, 7-5 右侧食品列表布局
 
