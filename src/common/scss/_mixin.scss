@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* One pixel line */
+/* 一像素线 */
 @mixin border-1px($color) {
   position: relative;
   &:after {
@@ -14,13 +14,14 @@
   }
 }
 
+/* 无一像素线 */
 @mixin border-none() {
   &:after {
     display: none;
   }
 }
 
-// 3:2x3x image
+// 2x3x image
 @mixin bg-image($url) {
   background-image: url($url+'@2x.png');
   @media (-webkit-min-device-pixel-ratio: 3) {

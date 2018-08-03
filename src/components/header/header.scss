@@ -1,22 +1,21 @@
-@import "../../common/scss/mixin";
+@import '../../common/scss/mixin';
 .header {
-  // the reasons of relative positioning, the following elements have absolute positioning
+  // 相对定位的原因，以下元素具有绝对定位
   // .background: position:absolute
   position: relative;
-  overflow: hidden;
   color: #fff;
   background: rgba(7, 17, 27, 0.5);
+  overflow: hidden;
 }
-
 .content-wrapper {
-  // for reasons of relative positioning, the following elements have absolute positioning.
+  // 相对定位的原因，以下元素具有绝对定位
   // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  font-size: 0; // eliminate the gap, father element set font-size:0
+  font-size: 0; // 消除间隙，父元素设置 font-size: 0
   .avatar {
-    display: inline-block; // in one row to show
-    vertical-align: top; // at the top of the alignment
+    display: inline-block; // 排成一行
+    vertical-align: top; // 在顶端对齐
     img {
       border-radius: 4px;
     }
@@ -27,10 +26,10 @@
     .title {
       margin: 2px 0 8px 0;
       .brand {
-        display: inline-block; // the inner element(span) becomes a block element, can set the width and height
+        display: inline-block; // span 变成 block 元素, 能设置 width & height
         width: 30px;
         height: 18px;
-        vertical-align: top; // at the top of the alignment
+        vertical-align: top; // 在顶端对齐
         @include bg-image('brand'); // 2x3x image
         background-size: 30px 18px;
         background-repeat: no-repeat;
@@ -57,19 +56,19 @@
         background-size: 12px 12px;
         background-repeat: no-repeat;
         &.decrease {
-          @include bg-image('decrease_1')
+          @include bg-image('decrease_1');
         }
         &.discount {
-          @include bg-image('discount_1')
+          @include bg-image('discount_1');
         }
         &.guarantee {
-          @include bg-image('guarantee_1')
+          @include bg-image('guarantee_1');
         }
         &.invoice {
-          @include bg-image('invoice_1')
+          @include bg-image('invoice_1');
         }
         &.special {
-          @include bg-image('special_1')
+          @include bg-image('special_1');
         }
       }
       .text {
@@ -84,9 +83,9 @@
     bottom: 14px;
     border-radius: 14px;
     padding: 0 8px;
-    height: 24px; // vertical direction center
-    line-height: 24px; // vertical direction center
-    text-align: center; // horizontal direction center
+    height: 24px; // 垂直方向居中
+    line-height: 24px; // 垂直方向居中
+    text-align: center; // 水平方向居中
     background: rgba(0, 0, 0, 0.2);
     .count {
       vertical-align: top;
@@ -99,29 +98,30 @@
     }
   }
 }
-
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  height: 28px; // vertical direction center
-  line-height: 28px; // vertical direction center
+  height: 28px; // 垂直方向居中
+  line-height: 28px; // 垂直方向居中
   background: rgba(7, 17, 27, 0.2);
-  overflow: hidden; // 超出显示...
-  text-overflow: ellipsis; // 超出显示...
-  white-space: nowrap; // 超出显示...
+  // 超出显示...(two)
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  // 超出显示...(two)
   .bulletin-title {
     display: inline-block;
     margin-top: 8px;
     width: 22px;
     height: 12px;
-    vertical-align: top;
+    vertical-align: top; // 在顶端对齐
     @include bg-image('bulletin');
     background-size: 22px 12px;
     background-repeat: no-repeat;
   }
   .bulletin-text {
     margin: 0 4px;
-    vertical-align: top;
+    vertical-align: top; // 在顶端对齐
     font-size: 10px;
   }
   .icon-keyboard_arrow_right {
@@ -131,28 +131,27 @@
     font-size: 10px;
   }
 }
-
 .background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; // hide at the bottom layer.
-  filter: blur(10px); // fuzzy background picture
+  z-index: -1;
+  filter: blur(10px); // 模糊 background img
 }
-
 .detail {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100; // placed at the top level
-  overflow: auto; // if the content is pruned, the browser displays the scroll bar to see the rest of the content
+  z-index: 100;
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
+  // 如果删除了内容，浏览器将显示滚动条以查看其余内容
+  overflow: auto;
   transition: all 0.5s;
-  backdrop-filter: blur(10px); // ios fuzzy
+  backdrop-filter: blur(10px); // ios 模糊
   &.fade-transition {
     background: rgba(7, 17, 27, 0.8);
     opacity: 1;
@@ -163,7 +162,7 @@
     opacity: 0;
   }
   .detail-wrapper {
-    min-height: 100%; // content will change
+    min-height: 100%; // 内容长度会改变
     width: 100%;
     .detail-main {
       margin-top: 64px;
@@ -181,7 +180,8 @@
       }
       .title {
         display: flex;
-        margin: 28px auto; // horizontal center
+        // 水平居中
+        margin: 28px auto; 
         width: 80%;
         .line {
           flex: 1;
@@ -201,7 +201,8 @@
         .support-item {
           margin-bottom: 12px;
           padding: 0 12px;
-          font-size: 0; // eliminate the gap, father element set font-size: 0
+          // 消除间隙，父元素设置字体大小 font-size: 0
+          font-size: 0; 
           &:last-child {
             margin-bottom: 0;
           }
@@ -214,19 +215,19 @@
             background-size: 16px 16px;
             background-repeat: no-repeat;
             &.decrease {
-              @include bg-image('decrease_2')
+              @include bg-image('decrease_2');
             }
             &.discount {
-              @include bg-image('discount_2')
+              @include bg-image('discount_2');
             }
             &.guarantee {
-              @include bg-image('guarantee_2')
+              @include bg-image('guarantee_2');
             }
             &.invoice {
-              @include bg-image('invoice_2')
+              @include bg-image('invoice_2');
             }
             &.special {
-              @include bg-image('special_2')
+              @include bg-image('special_2');
             }
           }
           .text {
@@ -236,6 +237,7 @@
         }
       }
       .bulletin {
+        // 水平居中
         margin: 0 auto;
         width: 80%;
         .content {
@@ -248,10 +250,10 @@
   }
   .detail-close {
     position: relative;
-    margin: -64px auto 0; // D: B part margin embed the padding of A part.
+    margin: -64px auto 0; // D: B零件边距嵌入A零件的内边距.
     width: 32px;
     height: 32px;
     font-size: 32px;
-    clear: both; // E: B part clearfix
+    clear: both; // E: B零件 clearfix
   }
 }

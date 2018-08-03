@@ -151,34 +151,35 @@ npm install vue-resource --save
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
 
-- **header.vue** style
+- **header.vue**
 
 ```css
-/* the inner element(span) becomes a block element, can set the width and height */
+/* span 变成 block, 能设置 width & height */
 display: inline-block;
-/* eliminate the gap, father element set font-size: 0 */
+/* 消除空隙, 父级元素设置: font-size: 0 */
 font-size: 0;
-/* the reasons of relative positioning, the following elements have absolute positioning */
+/* 子级 absolute 定位, 父级应该 relative 定位 */
 position: relative;
-/* in one row to show */
+/* 一行显示 */
 display: inline-block;
-/* at the top of the alignment */
+/* 顶部对齐 */
 vertical-align: top;
-/* fuzzy background picture */
+/* 模糊图片 */
 filter: blur(10px);
 ```
 
 ```css
-/* 超出显示... */
-overflow: hidden;
+/* 超出显示...(two) */
 text-overflow: ellipsis;
 white-space: nowrap;
+overflow: hidden;
 ```
 
 ```css
-/* vertical direction center */
+/* 垂直方向居中 */
 height: 24px;
 line-height: 24px;
+/* 水平方向居中 */
 text-align: center;
 ```
 
@@ -194,7 +195,7 @@ text-align: center;
 
 ## 6-11, 6-12, 6-13 详情弹层页 - star 组件抽象
 
-- star component **start.vue**
+- **start.vue**
 
 ## 6-14 详情弹层页 - 小标题自适应经典 flex 布局实现
 

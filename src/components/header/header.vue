@@ -12,8 +12,8 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <!-- v-if: If you have data, parse it -->
-        <!-- because it's an asynchronous process, seller.supports[0].type clould be null -->
+        <!-- v-if: 有数据才渲染 -->
+        <!-- 异步过程, 防止 seller.supports[0].type 为 null -->
         <div class="support" v-if="seller.supports">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
@@ -34,7 +34,7 @@
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <!-- sticky layout: A,B,C,D,E -->
-        <!-- A: A part clearfix -->
+        <!-- A: clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>
@@ -42,7 +42,7 @@
               <star :size="48" :score="seller.score"></star>
             </div>
             <div class="title">
-              <!-- 不适用span, 适应android -->
+              <!-- 不用 span, 适应 android -->
               <div class="line"></div>
               <div class="text">优惠信息</div>
               <div class="line"></div>
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-        <!-- B: devide A B part -->
+        <!-- B: 切分为 A B 两个部分 -->
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>
@@ -84,13 +84,11 @@ export default {
 			type: Object
 		}
 	},
-	/* define data need to handle */
 	data() {
 		return {
 			detailShow: false
 		}
 	},
-	/* define data no need to handle */
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 	},
