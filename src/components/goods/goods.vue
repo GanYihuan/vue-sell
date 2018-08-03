@@ -108,9 +108,9 @@ export default {
 	computed: {
 		currentIndex() {
 			for (let i = 0; i < this.listHeight.length; i++) {
-				/* current height */
+				/* 当前索引值的高度 */
 				let height1 = this.listHeight[i]
-				/* next height */
+				/* 下一个的高度 */
         let height2 = this.listHeight[i + 1]
 				if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
 					return i
@@ -163,33 +163,37 @@ export default {
 			this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
 				click: true,
         /*
-        除了滚动事件的实时分配之外，
-        滚动事件可以在滑动的情况下实时分发。
-        实时滚动的位置。
+        probeType: 1，会非实时（屏幕滑动超过一定时间后）派发scroll 事件
+        probeType: 2，会在屏幕滑动的过程中实时的派发 scroll 事件
+        probeType: 3，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件(实时滚动位置)
         */
 				probeType: 3
 			})
 			this.foodsScroll.on('scroll', pos => {
-				/* scrollY: foodsScroll rolling position */
+				/* scrollY: foodsScroll 滚动位置(实时滚动位置) */
 				this.scrollY = Math.abs(Math.round(pos.y))
 			})
 		},
 		_calculateHeight() {
-			/* target element */
 			let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
 			let height = 0
-			/* listHeight: an array of heights for each dish */
+			/* listHeight: 每道菜的高度排列 */
 			this.listHeight.push(height)
 			for (let i = 0; i < foodList.length; i++) {
 				let item = foodList[i]
         /* clientHeight: static/clientHeight.png */
+        /*
+        width: 样式宽
+      	clientWidth: 可视区宽 = 样式宽 + padding
+      	offsetWidth: 占位宽 = 样式宽 + padding + border
+        */
 				height += item.clientHeight
 				this.listHeight.push(height)
 			}
 		},
 		selectMenu(index, event) {
       /* better-scroll */
-      /* at PC will trigger twice event, stop this */
+      /* 在 PC 将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}
