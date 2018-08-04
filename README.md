@@ -289,11 +289,13 @@ desc: {
 ## 8-1, 8-2, 8-3, 8-4, 8-5: 商品详情页实现
 
 ```css
-/* high width equal */
-position: relatie;
-padding-top: 100%;
-width: 100%;
-height: 0;
+/* 高宽度相等 */
+div {
+  position: relatie;
+  padding-top: 100%;
+  width: 100%;
+  height: 0;
+}
 ```
 
 ## 8-6: split 组件实现
@@ -304,6 +306,7 @@ height: 0;
 
 ## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
+- **✨**
 - format Date
 - 8-16, 8-17
 - formatDate(date, 'yyyy-MM-dd hh:mm') **common/js/date.js**
@@ -330,6 +333,7 @@ height: 0;
 
 ## 10-6: seller 组件开发-商家实景图
 
+- **✨**
 - **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
@@ -339,6 +343,7 @@ height: 0;
 
 ## 10-8, 10-9, 10-10: seller 组件开发-收藏商家
 
+- **✨**
 - **seller.vue** **App.vue** **util.js** **seller.vue** **store.js**
 - immediately run function
 - parse url parameter
