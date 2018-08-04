@@ -26,12 +26,12 @@ export default {
 	methods: {
 		addCart(event) {
 			/* better-scroll */
-      /* at PC will trigger twice event, stop this */
+      /* 在PC将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}
 			if (!this.food.count) {
-				/* add a food attribute count=1. */
+				/* 添加 food 属性 count=1. */
 				Vue.set(this.food, 'count', 1)
 			} else {
 				this.food.count++
@@ -40,7 +40,7 @@ export default {
 		},
 		decreaseCart(event) {
       /* better-scroll */
-      /* at PC will trigger twice event, stop this */
+      /* 在PC将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}

@@ -118,13 +118,13 @@ export default {
 			}
 			return 0
 		},
-		/* A collection of all individual dishes. */
+		/* 所有单独的菜肴的集合. */
 		selectFoods() {
 			let foods = []
 			/* http://localhost:8088/api/goods */ 
 			/* good -> 左侧栏的单个项目 */
 			this.goods.forEach(good => {
-				/* food -> Individual dishes in the project. */
+				/* food -> 项目中的单个菜品. */
 				good.foods.forEach(food => {
           /* food.count: cartcontrol.vue setting */
 					if (food.count) {
