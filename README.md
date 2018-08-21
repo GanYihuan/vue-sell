@@ -35,16 +35,23 @@ vue init webpack imooc-sell
 
 ## 3-2 Vue-cli 安装
 
-- Node > 4
+> command node>4 version
+
+```console
+npm i nvm
+nvm ls
+nvm install 8.9.1
+nvm use 8.9.1
+```
+
+## 3-3 项目运行
 
 ```console
 npm install
 npm run start
 ```
 
-## 3-3 项目运行
-
-- vue-project structure
+> vue-project structure
 
 - build: webpack config
 - config: webpack config
@@ -52,14 +59,14 @@ npm run start
 - src: code
 - static: Third party static resources.
 - .gitkeep: 当目录为空时，也可以将它提交给存储库。
-- .babelrc: babel 配置 es6 编译成 es5
-- .editorconfig: 编译器配置
-- .eslintignore: 忽略目录文件进行语法检查。
-- .eslintrc.js: [ESLint document](http://eslint.cn/docs/rules/) eslint 语法检测配置
+- .babelrc: babel es6 compile to es5
+- .editorconfig: editor config
+- .eslintignore: ignore eslint rule
+- .eslintrc.js: [ESLint document](http://eslint.cn/docs/rules/) eslint rule config
 - package.json
 
-1. script: 配置 js 运行命令
-2. devDependencies: 这个包只在开发阶段使用，上线时不需要这个包
+1. script: js commend
+2. devDependencies: Used only during the development phase, This package is not required when going online
 
 ## 3-4 项目文件介绍
 
