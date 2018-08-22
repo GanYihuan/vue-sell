@@ -35,7 +35,7 @@ export default {
   components: {
 		'v-header': header
   },
-  /* 处理数据，数据需要观察。*/
+  /* 处理数据, 数据需要观察 */
 	data() {
 		return {
 			seller: {
@@ -55,7 +55,7 @@ export default {
 			/* get json object */
 			res = res.body
 			if (res.errno === ERR_OK) {
-        /* 给对象扩展的属性 */
+        /* 给对象扩展属性 */
 				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})

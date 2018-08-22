@@ -173,10 +173,11 @@
   .detail-wrapper {
     // 内容长度会改变
     width: 100%;
+    /* C: 内容长度会改变 */
     min-height: 100%;
     .detail-main {
       margin-top: 64px;
-      // C: A part space for B part
+      // D: A part space for B part
       padding-bottom: 64px;
       .name {
         line-height: 16px;
@@ -260,13 +261,13 @@
   }
   .detail-close {
     position: relative;
-    // D: B零件边距嵌入A零件的内边距.
+    // E: B零件边距嵌入A零件的内边距.
     margin: -64px auto 0;
     width: 32px;
     height: 32px;
     // 叉号大小
     font-size: 32px;
-    // E: B零件 clearfix
+    // F: B零件 clearfix
     clear: both;
   }
 }

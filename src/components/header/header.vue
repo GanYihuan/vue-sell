@@ -33,8 +33,8 @@
     </div>
     <transition name="fade">
       <div class="detail" v-show="detailShow">
-        <!-- sticky layout: A,B,C,D,E -->
-        <!-- A: clearfix -->
+        <!-- sticky layout: A,B,C,D,E,F -->
+        <!-- A: A零件 clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>

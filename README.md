@@ -145,13 +145,12 @@ npm run dev
 
 ## 6-1, 6-2 Vue-resource 应用
 
-- 前端后端交互
 - **main.js**
 - **App.vue**
 - vue-resource: Ajax request, XMLHttpRequest
 
 ```console
-npm install vue-resource --save
+npm install vue-resource -S
 ```
 
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
