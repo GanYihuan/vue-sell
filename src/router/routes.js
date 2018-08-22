@@ -1,4 +1,5 @@
-﻿const goods = resolve => {
+﻿// dynamic route
+const goods = resolve => {
   import('components/goods/goods.vue').then(module => {
     resolve(module)
   })
@@ -15,6 +16,7 @@ const seller = resolve => {
 }
 
 export default [
+  // default jump
   {
     path: '/',
     redirect: '/goods'

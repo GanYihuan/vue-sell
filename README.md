@@ -115,10 +115,12 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-4, 5-5: vue-router
 
-- **router/route.js**
+- **router/router.js**
+- **router/routes.js**
+- **index.js**
 
 ```console
-npm install vue-router
+npm install vue-router -S
 ```
 
 ## 5-6 1 像素 border 实现
