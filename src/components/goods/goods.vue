@@ -103,14 +103,12 @@ export default {
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 		this.$http.get('/api/goods').then(res => {
-			// console.log(response)
 			/* get json object */
 			res = res.body
 			if (res.errno === ERR_OK) {
 				this.goods = res.data
 				/*
-        async
-        在下次 DOM 更新循环结束之后执行延迟回调。
+        $nextTick: async 在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
 				this.$nextTick(() => {
