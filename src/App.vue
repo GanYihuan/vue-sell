@@ -18,8 +18,7 @@
       当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 
       这两个生命周期钩子函数将会被对应执行
     -->
-    <!-- <keep-alive exclude="Detail"> -->
-    <!-- name=Detail 组件不缓存处理 -->
+    <!-- <keep-alive exclude="Detail"> Detail 组件不缓存处理 -->
     <keep-alive>
       <router-view :seller="seller"></router-view>
     </keep-alive>
@@ -33,6 +32,9 @@ import header from 'components/header/header.vue'
 const ERR_OK = 0
 
 export default {
+  components: {
+		'v-header': header
+  },
   /* 处理数据，数据需要观察。*/
 	data() {
 		return {
@@ -57,9 +59,6 @@ export default {
 				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})
-  },
-  components: {
-		'v-header': header
   }
 }
 </script>
