@@ -89,18 +89,15 @@ npm run start
 
 ## 4-5 mock 数据
 
-- **data.json**
-- **webpack.dev.conf.js**
 - [seller data](http://localhost:8088/api/seller)
 - [goods data](http://localhost:8088/api/goods)
 - [ratings data](http://localhost:8088/api/ratings)
 - set alias path: **build/webapck.base.conf.js**
-- modify port: **config/index.js**
+- run port: **config/index.js**
 - modify ESLint rules: **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
 - set data source: **webpack.dev.conf.js**
 
 ```console
-install vue-resource better-scroll sass
 npm install vue-resource better-scroll --save
 npm install node-sass sass-loader --save-dev
 ```
