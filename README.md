@@ -74,15 +74,13 @@ npm run start
 
 ## 4-1 需求分析
 
-- [设备像素比](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
-
 ## 4-2: 项目资源准备
 
-- [Device pixel ratio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
+- [devicePixelRatio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
 
 ## 4-3 图标字体制作
 
-- [IconMoon 操作](https://icomoon.io/#icons-icomoon)
+- [IconMoon](https://icomoon.io/#icons-icomoon)
 
 ## 4-4 项目目录设计
 

@@ -1,4 +1,4 @@
-@import '../../common/scss/mixin';
+@import '~common/scss/mixin';
 .header {
   // 相对定位的原因，以下元素具有绝对定位
   // .background: position:absolute
@@ -8,14 +8,15 @@
   overflow: hidden;
 }
 .content-wrapper {
-  // 相对定位的原因，以下元素具有绝对定位
-  // .support-count: position: absolute
   position: relative;
   padding: 24px 12px 18px 24px;
-  font-size: 0; // 消除间隙，父元素设置 font-size: 0
+  // 消除间隙，父元素设置 font-size: 0
+  font-size: 0;
   .avatar {
-    display: inline-block; // 排成一行
-    vertical-align: top; // 在顶端对齐
+    // 排成一行
+    display: inline-block;
+    // 在顶端对齐
+    vertical-align: top;
     img {
       border-radius: 4px;
     }
@@ -26,11 +27,13 @@
     .title {
       margin: 2px 0 8px 0;
       .brand {
-        display: inline-block; // span 变成 block 元素, 能设置 width & height
+        // span 变成 block 元素, 能设置 width & height
+        display: inline-block;
         width: 30px;
         height: 18px;
-        vertical-align: top; // 在顶端对齐
-        @include bg-image('brand'); // 2x3x image
+        vertical-align: top;
+        // 2x3x image
+        @include bg-image('brand');
         background-size: 30px 18px;
         background-repeat: no-repeat;
       }
@@ -83,9 +86,11 @@
     bottom: 14px;
     border-radius: 14px;
     padding: 0 8px;
-    height: 24px; // 垂直方向居中
-    line-height: 24px; // 垂直方向居中
-    text-align: center; // 水平方向居中
+    // 垂直方向居中
+    height: 24px;
+    line-height: 24px;
+    // 水平方向居中
+    text-align: center;
     background: rgba(0, 0, 0, 0.2);
     .count {
       vertical-align: top;
@@ -101,8 +106,10 @@
 .bulletin-wrapper {
   position: relative;
   padding: 0 22px 0 12px;
-  height: 28px; // 垂直方向居中
-  line-height: 28px; // 垂直方向居中
+  // 垂直方向居中
+  height: 28px;
+  line-height: 28px;
+  // 垂直方向居中
   background: rgba(7, 17, 27, 0.2);
   // 超出显示...(two)
   text-overflow: ellipsis;
@@ -114,14 +121,14 @@
     margin-top: 8px;
     width: 22px;
     height: 12px;
-    vertical-align: top; // 在顶端对齐
+    vertical-align: top;
     @include bg-image('bulletin');
     background-size: 22px 12px;
     background-repeat: no-repeat;
   }
   .bulletin-text {
     margin: 0 4px;
-    vertical-align: top; // 在顶端对齐
+    vertical-align: top;
     font-size: 10px;
   }
   .icon-keyboard_arrow_right {
@@ -138,20 +145,22 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  filter: blur(10px); // 模糊 background img
+  // 模糊 background img
+  filter: blur(10px);
 }
 .detail {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100%;
   height: 100%;
   background: rgba(7, 17, 27, 0.8);
   // 如果删除了内容，浏览器将显示滚动条以查看其余内容
   overflow: auto;
   transition: all 0.5s;
-  backdrop-filter: blur(10px); // ios 模糊
+  // ios 模糊
+  backdrop-filter: blur(10px);
   &.fade-transition {
     background: rgba(7, 17, 27, 0.8);
     opacity: 1;
@@ -162,11 +171,13 @@
     opacity: 0;
   }
   .detail-wrapper {
-    min-height: 100%; // 内容长度会改变
+    // 内容长度会改变
     width: 100%;
+    min-height: 100%;
     .detail-main {
       margin-top: 64px;
-      padding-bottom: 64px; // C: A part space for B part
+      // C: A part space for B part
+      padding-bottom: 64px;
       .name {
         line-height: 16px;
         text-align: center;
@@ -181,7 +192,7 @@
       .title {
         display: flex;
         // 水平居中
-        margin: 28px auto; 
+        margin: 28px auto;
         width: 80%;
         .line {
           flex: 1;
@@ -201,8 +212,7 @@
         .support-item {
           margin-bottom: 12px;
           padding: 0 12px;
-          // 消除间隙，父元素设置字体大小 font-size: 0
-          font-size: 0; 
+          font-size: 0;
           &:last-child {
             margin-bottom: 0;
           }
@@ -250,10 +260,13 @@
   }
   .detail-close {
     position: relative;
-    margin: -64px auto 0; // D: B零件边距嵌入A零件的内边距.
+    // D: B零件边距嵌入A零件的内边距.
+    margin: -64px auto 0;
     width: 32px;
     height: 32px;
-    font-size: 32px; // 叉号大小
-    clear: both; // E: B零件 clearfix
+    // 叉号大小
+    font-size: 32px;
+    // E: B零件 clearfix
+    clear: both;
   }
 }

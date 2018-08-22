@@ -33,9 +33,6 @@ import header from 'components/header/header.vue'
 const ERR_OK = 0
 
 export default {
-	components: {
-		'v-header': header
-  },
   /* 处理数据，数据需要观察。*/
 	data() {
 		return {
@@ -51,23 +48,19 @@ export default {
   },
   /* 处理数据，数据不需要监视 */ 
 	created() {
-		/* vue-resource */
-		/* ajax 请求，请求数据被插入到卖方对象中 */
-		this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
-			// console.log(response)
+		/* vue-resource ajax request */
+		this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
 			/* get json object */
-			response = response.body
-			if (response.errno === ERR_OK) {
-        /*
-        ...: Expand array content
-        Object.assign = ...
-        {}: 最终返回的结果; 给对象扩展的属性
-        */
-        // console.log(this.seller)
-				this.seller = Object.assign({}, this.seller, response.data)
+			res = res.body
+			if (res.errno === ERR_OK) {
+        /* 给对象扩展的属性 */
+				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})
-	}
+  },
+  components: {
+		'v-header': header
+  }
 }
 </script>
 
