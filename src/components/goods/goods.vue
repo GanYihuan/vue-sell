@@ -93,7 +93,7 @@ export default {
 	data() {
 		return {
 			goods: [],
-			/* an array of heights for each dish */
+			/* heights for each dish */
 			listHeight: [],
 			/* foodsScroll rolling position */
 			scrollY: 0,
