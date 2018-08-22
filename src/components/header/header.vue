@@ -47,7 +47,7 @@
               <div class="line"></div>
             </div>
             <ul class="supports" v-if="seller.supports">
-              <li class="support-item" v-for="(item,index) in seller.supports" :key="index">
+              <li class="support-item" v-for="(item,index) in seller.supports" :key="item.type">
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -72,7 +72,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import star from '../star/star.vue'
+import star from 'components/star/star'
 
 export default {
 	components: {
