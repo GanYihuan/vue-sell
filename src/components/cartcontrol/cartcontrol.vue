@@ -26,7 +26,7 @@ export default {
 	methods: {
 		addCart(event) {
 			/* better-scroll */
-      /* 在PC将触发两次事件，停止这个 */
+			/* 在PC将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}
@@ -39,8 +39,8 @@ export default {
 			this.$emit('add', event.target)
 		},
 		decreaseCart(event) {
-      /* better-scroll */
-      /* 在PC将触发两次事件，停止这个 */
+			/* better-scroll */
+			/* 在PC将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}
