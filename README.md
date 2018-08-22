@@ -160,13 +160,36 @@ npm install vue-resource -S
 
 ## 6-9, 6-10 详情弹层页 - 实现弹出层
 
-- sticky layout: A,B,C,D,E
-- min-height: 100%; // content will change
-- A: A part clearfix
-- B: devide A B part
-- padding-bottom: 64px; // C: A part space for B part
-- margin: -64px auto 0; // D: B part margin embed the padding of A part
-- clear: both; // E: B part clearfix
+> sticky layout: A,B,C,D,E,F
+
+```html
+<div class="detail">
+  <!-- A: A零件 clearfix -->
+  <div class="detail-wrapper clearfix"></div>
+  <!-- B: 切分为 A B 两个部分 -->
+  <div class="detail-close"></div>
+</div>
+```
+
+```css
+.detail-wrapper {
+  /* 内容长度会改变 */
+  width: 100%;
+  /* C: 内容长度会改变 */
+  min-height: 100%;
+  .detail-main {
+    /* D: A part space for B part */
+    padding-bottom: 64px;
+  }
+  .detail-close {
+    position: relative;
+    /* E: B零件边距嵌入A零件的内边距 */
+    margin: -64px auto 0;
+    /* F: B零件 clearfix */
+    clear: both;
+  }
+}
+```
 
 ## 6-11, 6-12, 6-13 详情弹层页 - star 组件抽象
 
