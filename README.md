@@ -247,30 +247,6 @@ if (!event._constructed) {
 
 ## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart 购物车组件
 
-```js
-selectFoods: {
-  type: Array,
-  default() {
-    return [
-      {
-        price: 10,
-        count: 1
-      }
-    ]
-  }
-},
-desc: {
-  type: Object,
-  default() {
-    return {
-      all: '全部',
-      positive: '满意',
-      negative: '吐槽'
-    }
-  }
-}
-```
-
 ## 7-15, 7-16, 7-17: cartcontrol 组件
 
 - +- button

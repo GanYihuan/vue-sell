@@ -69,8 +69,8 @@ export default {
 	},
 	props: {
 		selectFoods: {
-      type: Array,
-      /* object */
+			type: Array,
+			/* object */
 			default() {
 				return [
 					{
@@ -97,7 +97,7 @@ export default {
 				{ show: false },
 				{ show: false },
 				{ show: false }
-      ],
+			],
 			dropBalls: [],
 			fold: true
 		}
@@ -142,7 +142,7 @@ export default {
 			}
 			let show = !this.fold
 			if (show) {
-        /*
+				/*
         async
         在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
@@ -204,8 +204,8 @@ export default {
 					let rect = ball.el.getBoundingClientRect()
 					/* ball size = 32 */
 					let x = rect.left - 32
-          let y = -(window.innerHeight - rect.top - 22)
-          /* 让小球显示 */
+					let y = -(window.innerHeight - rect.top - 22)
+					/* 让小球显示 */
 					el.style.display = ''
 					el.style.webkitTransform = `translate3d(0,${y}px,0)`
 					el.style.transform = `translate3d(0,${y}px,0)`
