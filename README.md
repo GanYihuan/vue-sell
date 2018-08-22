@@ -70,11 +70,11 @@ npm run start
 
 ## 3-4 项目文件介绍
 
-## 3-5, 3-6, 3-7: webpack
+## 3-5, 3-6, 3-7 webpack
 
 ## 4-1 需求分析
 
-## 4-2: 项目资源准备
+## 4-2 项目资源准备
 
 - [devicePixelRatio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
 
@@ -102,7 +102,7 @@ npm install vue-resource better-scroll --save
 npm install node-sass sass-loader --save-dev
 ```
 
-## 5-1, 5-2, 5-3: 组件拆分
+## 5-1, 5-2, 5-3 组件拆分
 
 - **App.vue**
 - **index.html**
@@ -129,13 +129,14 @@ npm install vue-router -S
 - check IP
 
 ```console
-ifconfig
+ifconfig(mac)
+ipconfig(win)
 npm run dev
 ```
 
 - [url](localhost:8088/#/goods)
-- url replace then become IP:8088/#/goods
-- [草料 website](https://cli.im/) use IP:8088/#/goods
+- url become IP:8088/#/goods
+- [草料](https://cli.im/) edit IP:8088/#/goods
 - **mixin.scss**
 - **base.scss**
 - One pixel line
