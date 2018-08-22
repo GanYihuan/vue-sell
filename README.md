@@ -213,24 +213,19 @@ npm install vue-resource -S
 
 ```scss
 .menu-item {
-  /* 父元素 */
+  /* 多行文本, 垂直居中 */
   display: table;
-  /* 子元素 */
+  /* 让其突出显示 */
+  &.current {
+    z-index: 10;
+    position: relative;
+    margin-top: -1px;
+  }
   .text {
     display: table-cell;
     /* 多行文字垂直居中 */
     vertical-align: middle;
   }
-}
-```
-
-- 让其突出显示
-
-```css
-&.current {
-  position: relative;
-  z-index: 10;
-  margin-top: -1px;
 }
 ```
 

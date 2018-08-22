@@ -19,6 +19,7 @@
       width: 56px;
       height: 54px;
       line-height: 14px;
+      /* 让其突出显示 */
       &.current {
         z-index: 10;
         position: relative;
