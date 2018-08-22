@@ -12,8 +12,7 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <!-- v-if: 有数据才渲染 -->
-        <!-- 异步过程, 防止 seller.supports[0].type 为 null -->
+        <!-- v-if: 有数据才渲染, 异步过程, 防止 seller.supports[0].type 为 null -->
         <div class="support" v-if="seller.supports">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>

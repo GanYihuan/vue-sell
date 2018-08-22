@@ -156,36 +156,7 @@ npm install vue-resource -S
 ## 6-3, 6-4, 6-5, 6-6, 6-7, 6-8 外部组件
 
 - **header.vue**
-
-```css
-/* span 变成 block, 能设置 width & height */
-display: inline-block;
-/* 消除空隙, 父级元素设置: font-size: 0 */
-font-size: 0;
-/* 子级 absolute 定位, 父级应该 relative 定位 */
-position: relative;
-/* 一行显示 */
-display: inline-block;
-/* 顶部对齐 */
-vertical-align: top;
-/* 模糊图片 */
-filter: blur(10px);
-```
-
-```css
-/* 超出显示...(two) */
-text-overflow: ellipsis;
-white-space: nowrap;
-overflow: hidden;
-```
-
-```css
-/* 垂直方向居中 */
-height: 24px;
-line-height: 24px;
-/* 水平方向居中 */
-text-align: center;
-```
+- **header.scss**
 
 ## 6-9, 6-10 详情弹层页 - 实现弹出层
 

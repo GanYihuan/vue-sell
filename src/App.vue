@@ -32,34 +32,34 @@ import header from 'components/header/header.vue'
 const ERR_OK = 0
 
 export default {
-  components: {
+	components: {
 		'v-header': header
-  },
-  /* 处理数据, 数据需要观察 */
+	},
+	/* 处理数据, 数据需要观察 */
 	data() {
 		return {
 			seller: {
 				/* 直接运行函数 */
 				id: (() => {
-          /* 从 url 获取 id */
+					/* 从 url 获取 id */
 					let queryParam = urlParse()
 					return queryParam.id
 				})()
 			}
 		}
-  },
-  /* 处理数据，数据不需要监视 */ 
+	},
+	/* 处理数据，数据不需要监视 */
 	created() {
 		/* vue-resource ajax request */
 		this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
 			/* get json object */
 			res = res.body
 			if (res.errno === ERR_OK) {
-        /* 给对象扩展属性 */
+				/* 给对象扩展属性 */
 				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})
-  }
+	}
 }
 </script>
 
