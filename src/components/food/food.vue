@@ -1,6 +1,6 @@
 <template>
   <transition name="move">
-    <div class="food" ref="food" v-show="showFlag">
+    <div class="food" v-show="showFlag" ref="food">
       <div class="food-content">
         <div class="image-header">
           <img :src="food.image" alt="food.image"/>
@@ -135,8 +135,8 @@ export default {
 			this.showFlag = false
 		},
 		addFirst(event) {
-      /* better-scroll */
-      /* at PC will trigger twice event, stop this */
+			/* better-scroll */
+			/* at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
@@ -159,8 +159,8 @@ export default {
 			this.$emit('add', target)
 		},
 		selectRating(type) {
-      this.selectType = type
-      /* 
+			this.selectType = type
+			/* 
       保证dom是渲染的
       async
       在下次 DOM 更新循环结束之后执行延迟回调。
@@ -171,8 +171,8 @@ export default {
 			})
 		},
 		toggleContent() {
-      this.onlyContent = !this.onlyContent
-      /* 
+			this.onlyContent = !this.onlyContent
+			/* 
       保证dom是渲染的
       async
       在下次 DOM 更新循环结束之后执行延迟回调。
@@ -196,8 +196,8 @@ export default {
 				})
 		},
 		toggleContent(onlyContent) {
-      this.onlyContent = onlyContent
-      /* 
+			this.onlyContent = onlyContent
+			/* 
       保证dom是渲染的
       async
       在下次 DOM 更新循环结束之后执行延迟回调。
