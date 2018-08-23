@@ -269,8 +269,6 @@ div {
 
 ## 8-7, 8-8, 8-9, 8-10, 8-11: ratingselect 组件
 
-- **food.vue** & **ratingSelect.vue**
-
 ## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
 - format Date
