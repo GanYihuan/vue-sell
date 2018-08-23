@@ -75,7 +75,7 @@ const ALL = 2
 const ERR_OK = 0
 
 export default {
-  components: {
+	components: {
 		star,
 		split,
 		ratingSelect
@@ -91,16 +91,14 @@ export default {
 			selectType: ALL,
 			onlyContent: true
 		}
-  },
-  /* handle data, data not need to watch */ 
+	},
 	created() {
-		this.$http.get('/api/ratings').then(response => {
-      // console.log(response)
+		this.$http.get('/api/ratings').then(res => {
 			/* get json object */
-      response = response.body
-			if (response.errno === ERR_OK) {
-        this.ratings = response.data
-        /* 
+			res = res.body
+			if (res.errno === ERR_OK) {
+				this.ratings = res.data
+				/* 
         保证dom是渲染的
         async
         在下次 DOM 更新循环结束之后执行延迟回调。
@@ -117,21 +115,21 @@ export default {
 	methods: {
 		/* copy from food.vue/selectRating() */
 		selectRating(type) {
-      this.selectType = type
-      /* 
+			this.selectType = type
+			/* 
       保证dom是渲染的
       async
       在下次 DOM 更新循环结束之后执行延迟回调。
       在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */      
+      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
 		/* copy from food.vue/toggleContent() */
 		toggleContent() {
-      this.onlyContent = !this.onlyContent
-      /* 
+			this.onlyContent = !this.onlyContent
+			/* 
       保证dom是渲染的
       async
       在下次 DOM 更新循环结束之后执行延迟回调。

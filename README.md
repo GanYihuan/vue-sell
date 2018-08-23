@@ -271,17 +271,11 @@ div {
 
 ## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
-- format Date
-- 8-16, 8-17
-- formatDate(date, 'yyyy-MM-dd hh:mm') **common/js/date.js**
+- formatDate(date, 'yyyy-MM-dd hh:mm')
 
 ## 9-1, 9-2, 9-3: ratings 组件开发-overview 开发
 
-- **ratings.vue**
-
 ## 9-4, 9-5, 9-6: ratings 组件开发-评价列表
-
-- **ratings.vue**
 
 ## 10-1, 10-2: seller 组件开发-overview 开发
 
