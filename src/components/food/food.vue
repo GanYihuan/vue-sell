@@ -52,9 +52,9 @@
             <ul v-show="food.ratings && food.ratings.length">
               <li
                 class="rating-item border-1px"
-                v-show="needShow(rating.rateType, rating.text)"
                 v-for="(rating, index) in food.ratings"
                 :key="index"
+                v-show="needShow(rating.rateType, rating.text)"
               >
                 <div class="user">
                   <span class="name">{{rating.username}}</span>
@@ -77,11 +77,11 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import cartControl from '../cartControl/cartControl.vue'
-import split from '../split/split.vue'
-import ratingSelect from '../ratingSelect/ratingSelect.vue'
+import cartControl from 'components/cartControl/cartControl.vue'
+import split from 'components/split/split.vue'
+import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import Vue from 'vue'
-import { formatDate } from '../../common/js/date'
+import { formatDate } from 'common/js/date'
 
 const ALL = 2
 

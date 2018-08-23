@@ -72,9 +72,9 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import shopCart from '../shopCart/shopCart.vue'
-import cartControl from '../cartControl/cartControl.vue'
-import food from '../food/food.vue'
+import shopCart from 'components/shopCart/shopCart.vue'
+import cartControl from 'components/cartControl/cartControl.vue'
+import food from 'components/food/food.vue'
 
 const ERR_OK = 0
 

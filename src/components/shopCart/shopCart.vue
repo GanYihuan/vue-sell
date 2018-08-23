@@ -60,7 +60,7 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import cartControl from '../cartControl/cartControl.vue'
+import cartControl from 'components/cartControl/cartControl.vue'
 
 export default {
 	components: {
