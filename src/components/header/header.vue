@@ -32,8 +32,8 @@
     </div>
     <transition name="fade">
       <div class="detail" v-show="detailShow">
-        <!-- sticky layout: A,B,C,D,E,F -->
-        <!-- A: A零件 clearfix -->
+        <!-- sticky layout: 1,2,3,4,5,6 -->
+        <!-- 1: clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>
@@ -47,7 +47,11 @@
               <div class="line"></div>
             </div>
             <ul class="supports" v-if="seller.supports">
-              <li class="support-item" v-for="(item,index) in seller.supports" :key="item.type">
+              <li 
+                class="support-item" 
+                v-for="(item,index) in seller.supports" 
+                :key="item.type"
+              >
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
                 <span class="text">{{seller.supports[index].description}}</span>
               </li>
@@ -62,9 +66,9 @@
             </div>
           </div>
         </div>
-        <!-- B: 切分为 A B 两个部分 -->
+        <!-- 2: 切分为 A B 两个部分 -->
         <div class="detail-close" @click="hideDetail">
-          <i class="icon-close"></i>
+          <i class="icon-close"></i> 
         </div>
       </div>
     </transition>
@@ -103,6 +107,5 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-@import '../../common/scss/_mixin.scss';
 @import './header.scss';
 </style>

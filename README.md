@@ -160,36 +160,33 @@ npm install vue-resource -S
 
 ```html
 <div class="detail">
-  <!-- A: A零件 clearfix -->
+  <!-- 1: A零件 clearfix -->
   <div class="detail-wrapper clearfix"></div>
-  <!-- B: 切分为 A B 两个部分 -->
+  <!-- 2: 切分为 A B 两个部分 -->
   <div class="detail-close"></div>
 </div>
 ```
 
 ```css
 .detail-wrapper {
-  /* 内容长度会改变 */
   width: 100%;
-  /* C: 内容长度会改变 */
+  /* 3: 内容长度会改变 */
   min-height: 100%;
   .detail-main {
-    /* D: A part space for B part */
+    /* 4: A part space for B part */
     padding-bottom: 64px;
   }
   .detail-close {
     position: relative;
-    /* E: B零件边距嵌入A零件的内边距 */
+    /* 5: B零件边距嵌入A零件的内边距 */
     margin: -64px auto 0;
-    /* F: B零件 clearfix */
+    /* 6: B零件 clearfix */
     clear: both;
   }
 }
 ```
 
 ## 6-11, 6-12, 6-13 详情弹层页 - star 组件抽象
-
-- **start.vue**
 
 ## 6-14 详情弹层页 - 小标题自适应经典 flex 布局实现
 

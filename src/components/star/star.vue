@@ -70,5 +70,5 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-@import 'star.scss';
+@import './star.scss';
 </style>

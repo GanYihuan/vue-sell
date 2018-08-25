@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- 卖方异步数据被插入到对象中 -->
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
@@ -33,9 +32,10 @@ const ERR_OK = 0
 
 export default {
 	components: {
+    /* v-header: prevent conflict */
 		'v-header': header
 	},
-	/* 处理数据, 数据需要观察 */
+	/* handle data, data need watch */
 	data() {
 		return {
 			seller: {
@@ -48,14 +48,15 @@ export default {
 			}
 		}
 	},
-	/* 处理数据，数据不需要监视 */
+	/* handle data, data not need watch */
 	created() {
 		/* vue-resource ajax request */
 		this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
-			/* get json object */
+			/* get res.body(json object) */
 			res = res.body
 			if (res.errno === ERR_OK) {
-				/* 给对象扩展属性 */
+        /* res.data: <http://localhost:8088/api/seller> */
+        /* Object.assign: extend attributes to an object */
 				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})
