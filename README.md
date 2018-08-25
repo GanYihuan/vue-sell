@@ -30,6 +30,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ```console
 npm install -g vue-cli
+vue list
 vue init webpack imooc-sell
 ```
 
@@ -38,6 +39,7 @@ vue init webpack imooc-sell
 > command node>4 version
 
 ```console
+node -v
 npm i nvm
 nvm ls
 nvm install 8.9.1
@@ -48,7 +50,7 @@ nvm use 8.9.1
 
 ```console
 npm install
-npm run start
+npm run dev
 ```
 
 > vue-project structure
@@ -92,10 +94,10 @@ npm run start
 - [seller data](http://localhost:8088/api/seller)
 - [goods data](http://localhost:8088/api/goods)
 - [ratings data](http://localhost:8088/api/ratings)
+- set data source: **webpack.dev.conf.js**
 - set alias path: **build/webapck.base.conf.js**
 - run port: **config/index.js**
 - modify ESLint rules: **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
-- set data source: **webpack.dev.conf.js**
 
 ```console
 npm install vue-resource better-scroll --save
@@ -279,25 +281,15 @@ div {
 
 ## 10-1, 10-2: seller 组件开发-overview 开发
 
-- **seller.vue**
-
 ## 10-3, 10-4: seller 组件开发-公告与活动开发
-
-- **seller.vue**
 
 ## 10-5: seller 组件开发-BScroll 应用
 
-- **seller.vue**
-
 ## 10-6: seller 组件开发-商家实景图
 
-- **✨**
-- **seller.vue**
 - 排列一行的能滚动的图片, (better-scroll)
 
 ## 10-7: seller 组件开发-商家信息
-
-- **seller.vue**
 
 ## 10-8, 10-9, 10-10: seller 组件开发-收藏商家
 
