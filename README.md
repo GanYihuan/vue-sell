@@ -106,9 +106,7 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-1, 5-2, 5-3 组件拆分
 
-- **App.vue**
-- **index.html**
-- **static/css/reset.css**
+- vue-loader 合并了小图片; 搞定 css 兼容问题
 - skip ESLint check
 
 ```js
@@ -116,10 +114,6 @@ npm install node-sass sass-loader --save-dev
 ```
 
 ## 5-4, 5-5: vue-router
-
-- **router/router.js**
-- **router/routes.js**
-- **index.js**
 
 ```console
 npm install vue-router -S
