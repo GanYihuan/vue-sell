@@ -103,7 +103,7 @@ export default {
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 		this.$http.get('/api/goods').then(res => {
-			/* get json object */
+			/* get res.body(json object) */
 			res = res.body
 			if (res.errno === ERR_OK) {
 				this.goods = res.data
