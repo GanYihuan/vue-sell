@@ -38,7 +38,11 @@
           </div>
           <div class="list-content" ref="listContent">
             <ul>
-              <li class="shopCart-food" v-for="(food, index) in selectFoods" :key="index">
+              <li 
+                class="shopCart-food"
+                v-for="(food, index) in selectFoods"
+                :key="index"
+              >
                 <span class="name">{{food.name}}</span>
                 <div class="price">
                   <span>￥{{food.price * food.count}}</span>
@@ -53,7 +57,12 @@
       </transition>
     </div>
     <transition name="fade">
-      <div class="list-mask" v-show="listShow" @click="hideList"></div>
+      <div 
+        class="list-mask"
+        v-show="listShow"
+        @click="hideList"
+      >
+      </div>
     </transition>
   </div>
 </template>
