@@ -1,11 +1,11 @@
 @import '~common/scss/mixin';
 
 .food {
+  z-index: 30;
   position: fixed;
   left: 0;
   top: 0;
   bottom: 48px;
-  z-index: 30;
   width: 100%;
   background: #fff;
   &.fade-enter-active,

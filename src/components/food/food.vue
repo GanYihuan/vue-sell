@@ -185,15 +185,15 @@ export default {
 	},
 	watch: {
 		selectRating(type) {
-			this.selectType =
-				/*
-        async
-        在下次 DOM 更新循环结束之后执行延迟回调。
-        在修改数据之后立即使用这个方法，获取更新后的 DOM。
-        */
-				this.$nextTick(() => {
-					this.scroll.refresh()
-				})
+			this.selectType = type
+			/*
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
+			this.$nextTick(() => {
+				this.scroll.refresh()
+			})
 		},
 		toggleContent(onlyContent) {
 			this.onlyContent = onlyContent
