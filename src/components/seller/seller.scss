@@ -1,11 +1,12 @@
-@import '../../common/scss/mixin';
+@import '~common/scss/mixin';
+
 .seller {
   position: absolute;
   top: 174px;
   bottom: 0;
   left: 0;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
   .overview {
     position: relative;
     padding: 18px;
@@ -157,9 +158,9 @@
     }
     .pic-item {
       display: inline-block;
+      margin-right: 6px;
       width: 120px;
       height: 90px;
-      margin-right: 6px;
     }
     &:last-child {
       margin: 0;

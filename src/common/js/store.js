@@ -1,5 +1,5 @@
 // save localStorage
-export function saveToLocal (id, key, value) {
+export function saveToLocal(id, key, value) {
   let seller = window.localStorage.__seller__
   if (!seller) {
     seller = {}
@@ -17,7 +17,7 @@ export function saveToLocal (id, key, value) {
 }
 
 // read localStorage
-export function loadFromLocal (id, key, def) {
+export function loadFromLocal(id, key, def) {
   let seller = window.localStorage.__seller__
   if (!seller) {
     return def

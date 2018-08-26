@@ -85,7 +85,6 @@ export default {
 		}
 	},
 	/* handle data, data need to watch */
-
 	data() {
 		return {
 			/* immediately run function */
@@ -94,13 +93,7 @@ export default {
 			})()
 		}
 	},
-	computed: {
-		favoriteText() {
-			return this.favorite ? '已收藏' : '收藏'
-		}
-	},
 	/* handle data, data not need to watch */
-
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 	},
@@ -112,24 +105,14 @@ export default {
     在下次 DOM 更新循环结束之后执行延迟回调。
     在修改数据之后立即使用这个方法，获取更新后的 DOM。
     */
-
 		this.$nextTick(() => {
 			this._initScroll()
 			this._initPics()
 		})
-	},
-	watch: {
-		seller() {
-			/*
-      保证dom是渲染的
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
-			this.$nextTick(() => {
-				this._initScroll()
-				this._initPics()
-			})
+  },
+  computed: {
+		favoriteText() {
+			return this.favorite ? '已收藏' : '收藏'
 		}
 	},
 	methods: {
@@ -177,6 +160,20 @@ export default {
 					}
 				})
 			}
+		}
+  },
+  watch: {
+		seller() {
+			/*
+      保证dom是渲染的
+      async
+      在下次 DOM 更新循环结束之后执行延迟回调。
+      在修改数据之后立即使用这个方法，获取更新后的 DOM。
+      */
+			this.$nextTick(() => {
+				this._initScroll()
+				this._initPics()
+			})
 		}
 	}
 }

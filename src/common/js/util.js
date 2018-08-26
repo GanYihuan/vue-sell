@@ -3,7 +3,7 @@
  * @example ?id=12345&a=b
  * @return Object {id:12345,a:b}
  */
-export function urlParse () {
+export function urlParse() {
   // get url
   // window.location.search: ?id=12345&a=b
   let url = window.location.search
@@ -22,7 +22,7 @@ export function urlParse () {
   // ['?id=12345', '&a=b']
   let arr = url.match(reg)
   if (arr) {
-    arr.forEach((item) => {
+    arr.forEach(item => {
       // item.substring(1)
       // part1: id=12345
       // part2: a=b
