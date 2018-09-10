@@ -29,7 +29,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 3-1 Vue-cli 介绍
 
 ```console
-npm install -g vue-cli
+npm install vue-cli -g
 vue list
 vue init webpack imooc-sell
 ```
@@ -46,7 +46,7 @@ nvm install 8.9.1
 nvm use 8.9.1
 ```
 
-## 3-3 项目运行
+## 3-3 项目文件介绍
 
 ```console
 npm install
@@ -64,13 +64,14 @@ npm run dev
 - .babelrc: babel es6 compile to es5
 - .editorconfig: editor config
 - .eslintignore: ignore eslint rule
-- .eslintrc.js: [ESLint document](http://eslint.cn/docs/rules/) eslint rule config
+- .eslintrc.js: [ESLint document](http://eslint.cn/docs/rules/)
 - package.json
+- package.json: script: js commend
+- package.json: devDependencies: Used only during the development phase, This package is not required when going online
 
-1. script: js commend
-2. devDependencies: Used only during the development phase, This package is not required when going online
+## 3-4 项目运行
 
-## 3-4 项目文件介绍
+- vue hello world
 
 ## 3-5, 3-6, 3-7 webpack
 
@@ -97,7 +98,7 @@ npm run dev
 - set data source: **webpack.dev.conf.js**
 - set alias path: **build/webapck.base.conf.js**
 - run port: **config/index.js**
-- modify ESLint rules: **eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
+- modify ESLint rules: **.eslintrc.js** [eslint](http://eslint.cn/docs/4.0.0/rules/semi-style)
 
 ```console
 npm install vue-resource better-scroll --save
@@ -108,6 +109,7 @@ npm install node-sass sass-loader --save-dev
 
 - vue-loader 合并了小图片; 搞定 css 兼容问题
 - skip ESLint check
+- 设计稿两倍标的尺寸(iPhone6: dpi=2), style.css 里面写一半的数值
 
 ```js
 /* eslint-disable no-new
@@ -116,7 +118,7 @@ npm install node-sass sass-loader --save-dev
 ## 5-4, 5-5: vue-router
 
 ```console
-npm install vue-router -S
+npm i vue-router -S
 ```
 
 ## 5-6 1 像素 border 实现

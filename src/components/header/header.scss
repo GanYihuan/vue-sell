@@ -171,13 +171,12 @@
     opacity: 0;
   }
   .detail-wrapper {
-    /* 内容长度会改变 */
     width: 100%;
     /* 3: 内容长度会改变 */
     min-height: 100%;
     .detail-main {
       margin-top: 64px;
-      // 4: A part space for B part
+      /* 4: A 给 B 放置空间 */
       padding-bottom: 64px;
       .name {
         line-height: 16px;
@@ -261,13 +260,13 @@
   }
   .detail-close {
     position: relative;
-    // 5: B 零件边距嵌入 A 零件的内边距.
+    /* 5: B 嵌入 A 给 B 的放置空间中 */
     margin: -64px auto 0;
     width: 32px;
     height: 32px;
     // 叉号大小
     font-size: 32px;
-    // 6: B 零件 clearfix
+    // 6: B clearfix
     clear: both;
   }
 }

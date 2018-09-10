@@ -26,7 +26,7 @@ export default {
 	methods: {
 		addCart(event) {
 			/* better-scroll */
-			/* 在PC将触发两次事件，停止这个 */
+			/* 在 PC 将触发两次事件，停止这个 */
 			if (!event._constructed) {
 				return
 			}

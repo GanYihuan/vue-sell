@@ -8,9 +8,9 @@ html {
     sans-serif;
 }
 
+/* 清浮动 */
 .clearfix {
   display: inline-block;
-
   &:after {
     display: block;
     height: 0;
@@ -21,6 +21,7 @@ html {
   }
 }
 
+/* 不同分辨率下的一像素线缩放情况 */
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
   .border-1px {
     &::after {
@@ -29,7 +30,6 @@ html {
     }
   }
 }
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
   .border-1px {
     &::after {

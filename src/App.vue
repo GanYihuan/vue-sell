@@ -32,7 +32,7 @@ const ERR_OK = 0
 
 export default {
 	components: {
-    /* v-header: prevent conflict */
+		/* v-header: prevent conflict */
 		'v-header': header
 	},
 	/* handle data, data need watch */
@@ -55,8 +55,8 @@ export default {
 			/* get res.body(json object) */
 			res = res.body
 			if (res.errno === ERR_OK) {
-        /* res.data: <http://localhost:8088/api/seller> */
-        /* Object.assign: extend attributes to an object */
+				/* [res.data](http://localhost:8088/api/seller) */
+				/* Object.assign: extend attributes to object */
 				this.seller = Object.assign({}, this.seller, res.data)
 			}
 		})

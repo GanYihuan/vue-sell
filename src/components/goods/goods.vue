@@ -107,8 +107,9 @@ export default {
 			res = res.body
 			if (res.errno === ERR_OK) {
 				this.goods = res.data
-				/*
-        $nextTick: async 在下次 DOM 更新循环结束之后执行延迟回调。
+        /*
+        async
+        $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
 				this.$nextTick(() => {
@@ -161,12 +162,12 @@ export default {
         probeType: 3，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件(实时滚动位置)
         */
 				probeType: 3
-			})
+      })
+      /* foodsScroll 实时滚动位置 scrollY */
 			this.foodsScroll.on('scroll', pos => {
-				/* scrollY: foodsScroll 滚动位置(实时滚动位置) */
 				this.scrollY = Math.abs(Math.round(pos.y))
 			})
-		},
+    },
 		_calculateHeight() {
 			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
 				'food-list-hook'

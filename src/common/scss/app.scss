@@ -3,11 +3,10 @@
 .tab {
   display: flex;
   width: 100%;
-  /* 垂直方向居中 */
-  // dpi=2
+  /* vertial center, dpi=2 */
   height: 40px;
   line-height: 40px;
-  /* 垂直方向居中 */
+  /* vertial center */
   @include border-1px(rgba(7, 17, 27, 0.1));
 
   .tab-item {
@@ -18,7 +17,6 @@
       display: block;
       font-size: 14px;
       color: rgb(77, 85, 93);
-
       &.active {
         color: rgb(240, 20, 20);
       }

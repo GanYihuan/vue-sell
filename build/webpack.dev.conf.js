@@ -11,12 +11,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-/* self */
+/* set data source */
 const appData = require('../data.json')
 const seller = appData.seller
 const goods = appData.goods
 const ratings = appData.ratings
-/* self */
+/* set data source */
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -33,7 +33,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
-    /* self */
+    /* set data source */
     before(app) {
       app.get('/api/seller', function (req, res) {
         res.json({
@@ -54,7 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         })
       });
     },
-    /* self */
+    /* set data source */
 
     clientLogLevel: 'warning',
     historyApiFallback: {

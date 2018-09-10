@@ -3,8 +3,8 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 
-import createRouter from './router/router'
 import App from './App.vue'
+import createRouter from './router/router'
 import 'common/scss/index.scss'
 
 Vue.use(VueResource)
