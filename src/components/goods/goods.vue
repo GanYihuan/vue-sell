@@ -37,7 +37,7 @@
                 @click="selectFood(food, $event)"
               >
                 <div class="icon">
-                  <img :src="food.icon" width="57" height="57"/>
+                  <img :src="food.icon"/>
                 </div>
                 <div class="content">
                   <h2 class="name">{{food.name}}</h2>
@@ -93,7 +93,7 @@ export default {
 	data() {
 		return {
 			goods: [],
-			/* heights for each dish */
+			/* 右侧每个元素的高度组成的一个数组 */
 			listHeight: [],
 			/* foodsScroll rolling position */
 			scrollY: 0,
@@ -103,11 +103,13 @@ export default {
 	created() {
 		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 		this.$http.get('/api/goods').then(res => {
-			/* get res.body(json object) */
+			/* get res.body (json object) */
 			res = res.body
 			if (res.errno === ERR_OK) {
-				this.goods = res.data
+        this.goods = res.data
+        /* better-scroll 改变了数据, dom 要映射则要手动调用 $nextTick() */
         /*
+        dom 更新
         async
         $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
@@ -120,6 +122,7 @@ export default {
 		})
 	},
 	computed: {
+    /* 3. 当前索引 */
 		currentIndex() {
 			for (let i = 0; i < this.listHeight.length; i++) {
 				/* 当前索引值的高度 */
@@ -161,19 +164,22 @@ export default {
         probeType: 2，会在屏幕滑动的过程中实时的派发 scroll 事件
         probeType: 3，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件(实时滚动位置)
         */
+       /* 3: 能获得实时滚动位置 */
 				probeType: 3
       })
-      /* foodsScroll 实时滚动位置 scrollY */
+      /* 2. 实时滚动位置 */
+			/* foodsScroll 实时滚动位置 scrollY */
 			this.foodsScroll.on('scroll', pos => {
 				this.scrollY = Math.abs(Math.round(pos.y))
 			})
-    },
+		},
 		_calculateHeight() {
 			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
 				'food-list-hook'
 			)
-			let height = 0
-			/* listHeight: 每道菜的高度排列 */
+      let height = 0
+      /* 1. 右侧每个元素的高度组成的一个数组 */
+			/* listHeight: 右侧每个元素的高度组成的一个数组 */
 			this.listHeight.push(height)
 			for (let i = 0; i < foodList.length; i++) {
 				let item = foodList[i]
