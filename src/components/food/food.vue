@@ -115,12 +115,6 @@ export default {
 			this.showFlag = true
 			this.selectType = ALL
 			this.onlyContent = true
-			/* 
-      保证dom是渲染的
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
 			this.$nextTick(() => {
 				if (!this.scroll) {
 					this.scroll = new BScroll(this.$refs.food, {
@@ -135,8 +129,7 @@ export default {
 			this.showFlag = false
 		},
 		addFirst(event) {
-			/* better-scroll */
-			/* at PC will trigger twice event, stop this */
+			/* better-scroll at PC will trigger twice event, stop this */
 			if (!event._constructed) {
 				return
 			}
@@ -160,24 +153,12 @@ export default {
 		},
 		selectRating(type) {
 			this.selectType = type
-			/* 
-      保证dom是渲染的
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
 		toggleContent() {
 			this.onlyContent = !this.onlyContent
-			/* 
-      保证dom是渲染的
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
@@ -186,23 +167,12 @@ export default {
 	watch: {
 		selectRating(type) {
 			this.selectType = type
-			/*
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
 		},
 		toggleContent(onlyContent) {
 			this.onlyContent = onlyContent
-			/* 
-      保证dom是渲染的
-      async
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
 			this.$nextTick(() => {
 				this.scroll.refresh()
 			})
