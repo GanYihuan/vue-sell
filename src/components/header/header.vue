@@ -2,7 +2,7 @@
   <div class="header">
     <div class="content-wrapper">
       <div class="avatar">
-        <img width="64" height="64" :src="seller.avatar"/>
+        <img :src="seller.avatar"/>
       </div>
       <div class="content">
         <div class="title">
@@ -28,7 +28,7 @@
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
-      <img width="100%" height="100%" :src="seller.avatar"/>
+      <img :src="seller.avatar"/>
     </div>
     <transition name="fade">
       <div class="detail" v-show="detailShow">
@@ -47,9 +47,9 @@
               <div class="line"></div>
             </div>
             <ul class="supports" v-if="seller.supports">
-              <li 
-                class="support-item" 
-                v-for="(item,index) in seller.supports" 
+              <li
+                class="support-item"
+                v-for="(item,index) in seller.supports"
                 :key="item.type"
               >
                 <span class="icon" :class="classMap[seller.supports[index].type]"></span>
@@ -68,7 +68,7 @@
         </div>
         <!-- 2: 切分为 A B 两个部分 -->
         <div class="detail-close" @click="hideDetail">
-          <i class="icon-close"></i> 
+          <i class="icon-close"></i>
         </div>
       </div>
     </transition>

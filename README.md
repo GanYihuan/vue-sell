@@ -24,8 +24,6 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
 ## 3-1 Vue-cli 介绍
 
 ```console
@@ -107,6 +105,7 @@ npm install node-sass sass-loader --save-dev
 
 ## 5-1, 5-2, 5-3 组件拆分
 
+- html viewport
 - vue-loader 合并了小图片; 搞定 css 兼容问题
 - skip ESLint check
 - 设计稿两倍标的尺寸(iPhone6: dpi=2), style.css 里面写一半的数值

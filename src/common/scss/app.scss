@@ -3,7 +3,7 @@
 .tab {
   display: flex;
   width: 100%;
-  /* vertial center, dpi=2 */
+  /* vertial center */
   height: 40px;
   line-height: 40px;
   /* vertial center */
@@ -17,6 +17,7 @@
       display: block;
       font-size: 14px;
       color: rgb(77, 85, 93);
+
       &.active {
         color: rgb(240, 20, 20);
       }

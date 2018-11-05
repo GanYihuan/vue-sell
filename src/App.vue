@@ -14,7 +14,7 @@
     </div>
     <!--
       keep-alive: 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们
-      当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 
+      当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated
       这两个生命周期钩子函数将会被对应执行
     -->
     <!-- <keep-alive exclude="Detail"> Detail 组件不缓存处理 -->
@@ -57,7 +57,8 @@ export default {
 			if (res.errno === ERR_OK) {
 				/* [res.data](http://localhost:8088/api/seller) */
 				/* Object.assign: extend attributes to object */
-				this.seller = Object.assign({}, this.seller, res.data)
+        this.seller = Object.assign({}, this.seller, res.data)
+        console.log(this.seller)
 			}
 		})
 	}
