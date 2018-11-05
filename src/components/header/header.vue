@@ -33,7 +33,8 @@
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <!-- sticky layout: 1,2,3,4,5,6 -->
-        <!-- 1: clearfix -->
+        <!-- 1: 切分为 A B 两个部分, A 部分包装起来 -->
+        <!-- 2: A 包装 clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>
@@ -66,7 +67,6 @@
             </div>
           </div>
         </div>
-        <!-- 2: 切分为 A B 两个部分 -->
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>
