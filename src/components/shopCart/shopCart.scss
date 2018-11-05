@@ -17,9 +17,8 @@
       .logo-wrapper {
         display: inline-block;
         position: relative;
-        // 突出显示条件
         top: -10px;
-        // border-box: ie盒模型: 已设定的宽度和高度分别减去边框和内边距才是内容的宽度和高度。
+        // border-box: ie 盒模型: 已设定的宽度和高度分别减去边框和内边距才是内容的宽度和高度。
         box-sizing: border-box;
         border-radius: 50%;
         margin: 0 12px;
@@ -33,12 +32,10 @@
           top: 0;
           right: 0;
           border-radius: 16px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); // box-shadow: h-shadow v-shadow blur spread color inset;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
           width: 24px;
-          // 垂直方向居中
           height: 24px;
           line-height: 24px;
-          // 水平方向居中
           text-align: center;
           font-size: 9px;
           font-weight: 700;
@@ -116,7 +113,7 @@
       position: fixed;
       left: 32px;
       bottom: 22px;
-      transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41); // http://cubic-bezier.com/#.17,.67,.83,.67
+      transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41);
       .inner {
         border-radius: 50%;
         width: 16px;
@@ -160,7 +157,6 @@
     }
     .list-content {
       padding: 0 18px;
-      // height will change
       max-height: 217px;
       background: #fff;
       overflow: hidden;
@@ -200,7 +196,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // 模糊效果
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background: rgba(7, 17, 27, 0.6);

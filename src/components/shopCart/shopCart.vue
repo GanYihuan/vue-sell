@@ -38,7 +38,7 @@
           </div>
           <div class="list-content" ref="listContent">
             <ul>
-              <li 
+              <li
                 class="shopCart-food"
                 v-for="(food, index) in selectFoods"
                 :key="index"
@@ -57,7 +57,7 @@
       </transition>
     </div>
     <transition name="fade">
-      <div 
+      <div
         class="list-mask"
         v-show="listShow"
         @click="hideList"
@@ -78,7 +78,6 @@ export default {
 	props: {
 		selectFoods: {
 			type: Array,
-			/* object */
 			default() {
 				return [
 					{
@@ -113,7 +112,6 @@ export default {
 	computed: {
 		totalCount() {
 			let count = 0
-			/* selectFoods -> a collection of all individual dishes. */
 			this.selectFoods.forEach(food => {
 				count += food.count
 			})
