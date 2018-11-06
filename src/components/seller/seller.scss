@@ -150,8 +150,8 @@
     }
     .pic-wrapper {
       width: 100%;
-      overflow: hidden;
       white-space: nowrap;
+      overflow: hidden;
     }
     .pic-list {
       font-size: 0;
@@ -161,6 +161,10 @@
       margin-right: 6px;
       width: 120px;
       height: 90px;
+      img {
+        width: 120px;
+        height: 90px;
+      }
     }
     &:last-child {
       margin: 0;

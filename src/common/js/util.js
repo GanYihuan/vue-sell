@@ -1,7 +1,8 @@
 /**
- * parse url parameter
- * @example ?id=12345&a=b
- * @return Object {id:12345,a:b}
+ * @name: 解析 url 参数
+ * @msg: ?id=123&a=b
+ * @param {type}
+ * @return: Object {id: 123, a:b}
  */
 export function urlParse() {
   // get url
