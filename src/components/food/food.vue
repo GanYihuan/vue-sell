@@ -58,7 +58,7 @@
               >
                 <div class="user">
                   <span class="name">{{rating.username}}</span>
-                  <img class="avatar" width="12" height="12" :src="rating.avatar" alt="avatar"/>
+                  <img class="avatar" :src="rating.avatar" alt="avatar"/>
                 </div>
                 <div class="time">{{rating.rateTime | formatDate}}</div>
                 <p class="text">
@@ -67,7 +67,7 @@
                 </p>
               </li>
             </ul>
-            <div class="no-rating" v-show="!food.ratings || food.ratings.length === 0"></div>
+            <div class="no-rating" v-show="!food.ratings || food.ratings.length === 0">暂无评价</div>
           </div>
         </div>
       </div>
@@ -138,7 +138,6 @@ export default {
 			this.$emit('add', event.target)
 		},
 		needShow(type, text) {
-			/* text: Content of evaluation */
 			if (this.onlyContent && !text) {
 				return false
 			}

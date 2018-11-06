@@ -9,8 +9,8 @@
     .block {
       display: inline-block;
       margin-right: 8px;
-      border-radius: 1px;
       padding: 8px 12px;
+      border-radius: 1px;
       font-size: 12px;
       color: rgb(77, 85, 93);
       &.positive {
@@ -35,8 +35,8 @@
     }
   }
   .switch {
-    border: 1px solid rgba(1, 17, 27, 0.1);
     padding: 12px 18px;
+    border: 1px solid rgba(1, 17, 27, 0.1);
     line-height: 24px;
     font-size: 0;
     color: rgb(147, 153, 159);

@@ -1,3 +1,9 @@
+/**
+ * @name: 时间格式化
+ * @msg:
+ * @param {时间(new Date()), 格式化(yyyy-MM-dd hh:mm)}
+ * @return: 0000-00-00 00:00
+ */
 export function formatDate(date, fmt) {
   if (/(y+)/.test(fmt)) {
     // RegExp.$1: Match the values in brackets.
