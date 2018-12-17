@@ -43,60 +43,60 @@ const NEGATIVE = 1
 const ALL = 2
 
 export default {
-	props: {
-		ratings: {
-			type: Array,
-			default() {
-				return []
-			}
-		},
-		selectType: {
-			type: Number,
-			default: ALL
-		},
-		onlyContent: {
-			type: Boolean,
-			default: false
-		},
-		desc: {
-			type: Object,
-			default() {
-				return {
-					all: '全部',
-					positive: '满意',
-					negative: '吐槽'
-				}
-			}
-		}
-	},
-	computed: {
-		positives() {
-			return this.ratings.filter(rating => {
-				return rating.rateType === POSITIVE
-			})
-		},
-		negatives() {
-			return this.ratings.filter(rating => {
-				return rating.rateType === NEGATIVE
-			})
-		}
-	},
-	methods: {
-		select(type, event) {
+  props: {
+    ratings: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    selectType: {
+      type: Number,
+      default: ALL
+    },
+    onlyContent: {
+      type: Boolean,
+      default: false
+    },
+    desc: {
+      type: Object,
+      default() {
+        return {
+          all: '全部',
+          positive: '满意',
+          negative: '吐槽'
+        }
+      }
+    }
+  },
+  computed: {
+    positives() {
+      return this.ratings.filter(rating => {
+        return rating.rateType === POSITIVE
+      })
+    },
+    negatives() {
+      return this.ratings.filter(rating => {
+        return rating.rateType === NEGATIVE
+      })
+    }
+  },
+  methods: {
+    select(type, event) {
       /* better-scroll, at PC will trigger twice event, stop this */
-			if (!event._constructed) {
-				return
-			}
-			this.$emit('select', type)
-		},
-		toggleContent(event) {
+      if (!event._constructed) {
+        return
+      }
+      this.$emit('select', type)
+    },
+    toggleContent(event) {
       /* better-scroll, at PC will trigger twice event, stop this */
-			if (!event._constructed) {
-				return
-			}
-			this.$emit('toggle')
-		}
-	}
+      if (!event._constructed) {
+        return
+      }
+      this.$emit('toggle')
+    }
+  }
 }
 </script>
 

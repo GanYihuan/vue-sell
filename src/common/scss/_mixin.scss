@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 一像素线 */
+/* One pixel line */
 @mixin border-1px($color) {
   position: relative;
   &:after {
@@ -14,7 +14,7 @@
   }
 }
 
-/* 无一像素线 */
+/* none One pixel line */
 @mixin border-none() {
   &:after {
     display: none;

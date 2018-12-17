@@ -86,103 +86,103 @@ import { formatDate } from 'common/js/date'
 const ALL = 2
 
 export default {
-	components: {
-		cartControl,
-		ratingSelect,
-		split
-	},
-	props: {
-		food: {
-			type: Object
-		}
-	},
-	data() {
-		return {
-			showFlag: false,
-			/* ratingSelect.vue: Product evaluation init */
-			selectType: ALL,
-			/* Whether to open the '只看评论内容' */
-			onlyContent: true,
-			desc: {
-				all: '全部',
-				positive: '推荐',
-				negative: '吐槽'
-			}
-		}
-	},
-	methods: {
-		show() {
-			this.showFlag = true
-			this.selectType = ALL
-			this.onlyContent = true
-			this.$nextTick(() => {
-				if (!this.scroll) {
-					this.scroll = new BScroll(this.$refs.food, {
-						click: true
-					})
-				} else {
-					this.scroll.refresh()
-				}
-			})
-		},
-		hide() {
-			this.showFlag = false
-		},
-		addFirst(event) {
-			/* better-scroll at PC will trigger twice event, stop this */
-			if (!event._constructed) {
-				return
-			}
-			/* create attribute 'count' */
-			Vue.set(this.food, 'count', 1)
-			this.$emit('add', event.target)
-		},
-		needShow(type, text) {
-			if (this.onlyContent && !text) {
-				return false
-			}
-			if (this.selectType === ALL) {
-				return true
-			} else {
-				return type === this.selectType
-			}
-		},
-		addFood(target) {
-			this.$emit('add', target)
-		},
-		selectRating(type) {
-			this.selectType = type
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		},
-		toggleContent() {
-			this.onlyContent = !this.onlyContent
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		}
-	},
-	watch: {
-		selectRating(type) {
-			this.selectType = type
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		},
-		toggleContent(onlyContent) {
-			this.onlyContent = onlyContent
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		}
-	},
-	filters: {
-		formatDate(time) {
-			let date = new Date(time)
-			return formatDate(date, 'yyyy-MM-dd hh:mm')
-		}
-	}
+  components: {
+    cartControl,
+    ratingSelect,
+    split
+  },
+  props: {
+    food: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+      showFlag: false,
+      /* ratingSelect.vue: Product evaluation init */
+      selectType: ALL,
+      /* Whether to open the '只看评论内容' */
+      onlyContent: true,
+      desc: {
+        all: '全部',
+        positive: '推荐',
+        negative: '吐槽'
+      }
+    }
+  },
+  methods: {
+    show() {
+      this.showFlag = true
+      this.selectType = ALL
+      this.onlyContent = true
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.food, {
+            click: true
+          })
+        } else {
+          this.scroll.refresh()
+        }
+      })
+    },
+    hide() {
+      this.showFlag = false
+    },
+    addFirst(event) {
+      /* better-scroll at PC will trigger twice event, stop this */
+      if (!event._constructed) {
+        return
+      }
+      /* create attribute 'count' */
+      Vue.set(this.food, 'count', 1)
+      this.$emit('add', event.target)
+    },
+    needShow(type, text) {
+      if (this.onlyContent && !text) {
+        return false
+      }
+      if (this.selectType === ALL) {
+        return true
+      } else {
+        return type === this.selectType
+      }
+    },
+    addFood(target) {
+      this.$emit('add', target)
+    },
+    selectRating(type) {
+      this.selectType = type
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    toggleContent() {
+      this.onlyContent = !this.onlyContent
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    }
+  },
+  watch: {
+    selectRating(type) {
+      this.selectType = type
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    toggleContent(onlyContent) {
+      this.onlyContent = onlyContent
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    }
+  },
+  filters: {
+    formatDate(time) {
+      const date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm')
+    }
+  }
 }
 </script>
 

@@ -3,6 +3,7 @@
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
+        <!-- jump to 'goods' path -->
         <router-link to="/goods">商品</router-link>
       </div>
       <div class="tab-item">
@@ -19,6 +20,7 @@
     -->
     <!-- <keep-alive exclude="Detail"> Detail 组件不缓存处理 -->
     <keep-alive>
+      <!-- url match 'seller' will render here -->
       <router-view :seller="seller"></router-view>
     </keep-alive>
   </div>
@@ -31,37 +33,37 @@ import header from 'components/header/header.vue'
 const ERR_OK = 0
 
 export default {
-	components: {
-		/* v-header: prevent conflict */
-		'v-header': header
-	},
-	/* handle data, data need watch */
-	data() {
-		return {
-			seller: {
-				/* 直接运行函数 */
-				id: (() => {
-					/* 从 url 获取 id */
-					let queryParam = urlParse()
-					return queryParam.id
-				})()
-			}
-		}
-	},
-	/* handle data, data not need watch */
-	created() {
-		/* vue-resource ajax request */
-		this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
-			/* get res.body(json object) */
-			res = res.body
-			if (res.errno === ERR_OK) {
-				/* [res.data](http://localhost:8088/api/seller) */
-				/* Object.assign: extend attributes to object */
+  components: {
+    /* v-header: prevent conflict */
+    'v-header': header
+  },
+  /* handle data, data need watch */
+  data() {
+    return {
+      seller: {
+        /* 直接运行函数 */
+        id: (() => {
+          /* 从 url 获取 id */
+          const queryParam = urlParse()
+          return queryParam.id
+        })()
+      }
+    }
+  },
+  /* handle data, data not need watch */
+  created() {
+    /* vue-resource ajax request */
+    this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
+      /* get res.body(json object) */
+      res = res.body
+      if (res.errno === ERR_OK) {
+        /* [res.data](http://localhost:8088/api/seller) */
+        /* Object.assign: extend attributes to object */
         this.seller = Object.assign({}, this.seller, res.data)
         console.log(this.seller)
-			}
-		})
-	}
+      }
+    })
+  }
 }
 </script>
 

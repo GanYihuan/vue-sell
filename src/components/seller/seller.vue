@@ -75,88 +75,88 @@ import split from 'components/split/split'
 import { saveToLocal, loadFromLocal } from 'common/js/store'
 
 export default {
-	components: {
-		star,
-		split
-	},
-	props: {
-		seller: {
-			type: Object
-		}
-	},
-	/* handle data, data need to watch */
-	data() {
-		return {
-			/* immediately run function */
-			favorite: (() => {
-				return loadFromLocal(this.seller.id, 'favorite', false)
-			})()
-		}
-	},
-	/* handle data, data not need to watch */
-	created() {
-		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-	},
-	/* dom 渲染后 */
-	mounted() {
-		this.$nextTick(() => {
-			this._initScroll()
-			this._initPics()
-		})
+  components: {
+    star,
+    split
+  },
+  props: {
+    seller: {
+      type: Object
+    }
+  },
+  /* handle data, data need to watch */
+  data() {
+    return {
+      /* immediately run function */
+      favorite: (() => {
+        return loadFromLocal(this.seller.id, 'favorite', false)
+      })()
+    }
+  },
+  /* handle data, data not need to watch */
+  created() {
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+  },
+  /* dom 渲染后 */
+  mounted() {
+    this.$nextTick(() => {
+      this._initScroll()
+      this._initPics()
+    })
   },
   computed: {
-		favoriteText() {
-			return this.favorite ? '已收藏' : '收藏'
-		}
-	},
-	methods: {
-		toggleFavorite(event) {
-			/* better-scroll, at PC will trigger twice event, stop this */
-			if (!event._constructed) {
-				return
-			}
-			this.favorite = !this.favorite
-			saveToLocal(this.seller.id, 'favorite', this.favorite)
-		},
-		_initScroll() {
-			if (!this.scroll) {
-				this.scroll = new BScroll(this.$refs.seller, {
-					click: true
-				})
-			} else {
-				/* 防止 route 切换时不处理 */
-				this.scroll.refresh()
-			}
-		},
-		_initPics() {
-			if (this.seller.pics) {
-				let picWidth = 120
-				let margin = 6
-				let width = (picWidth + margin) * this.seller.pics.length - margin
-				this.$refs.picList.style.width = width + 'px'
-				this.$nextTick(() => {
-					if (!this.picScroll) {
-						this.picScroll = new BScroll(this.$refs.picWrapper, {
-							/* horizontal scroll */
-							scrollX: true,
-							/* ignore vertical scroll */
-							eventPassthrough: 'vertical'
-						})
-					} else {
-						this.picScroll.refresh()
-					}
-				})
-			}
-		}
+    favoriteText() {
+      return this.favorite ? '已收藏' : '收藏'
+    }
+  },
+  methods: {
+    toggleFavorite(event) {
+      /* better-scroll, at PC will trigger twice event, stop this */
+      if (!event._constructed) {
+        return
+      }
+      this.favorite = !this.favorite
+      saveToLocal(this.seller.id, 'favorite', this.favorite)
+    },
+    _initScroll() {
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.seller, {
+          click: true
+        })
+      } else {
+        /* 防止 route 切换时不处理 */
+        this.scroll.refresh()
+      }
+    },
+    _initPics() {
+      if (this.seller.pics) {
+        const picWidth = 120
+        const margin = 6
+        const width = (picWidth + margin) * this.seller.pics.length - margin
+        this.$refs.picList.style.width = width + 'px'
+        this.$nextTick(() => {
+          if (!this.picScroll) {
+            this.picScroll = new BScroll(this.$refs.picWrapper, {
+              /* horizontal scroll */
+              scrollX: true,
+              /* ignore vertical scroll */
+              eventPassthrough: 'vertical'
+            })
+          } else {
+            this.picScroll.refresh()
+          }
+        })
+      }
+    }
   },
   watch: {
-		seller() {
-			this.$nextTick(() => {
-				this._initScroll()
-				this._initPics()
-			})
-		}
-	}
+    seller() {
+      this.$nextTick(() => {
+        this._initScroll()
+        this._initPics()
+      })
+    }
+  }
 }
 </script>
 

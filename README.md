@@ -24,7 +24,7 @@ npm run unit
 npm test
 ```
 
-## 3-1 Vue-cli 介绍
+## 3-1 Vue-cli Introduction
 
 ```console
 npm install vue-cli -g
@@ -32,7 +32,7 @@ vue list
 vue init webpack imooc-sell
 ```
 
-## 3-2 Vue-cli 安装
+## 3-2 Vue-cli installation
 
 > command node>4 version
 
@@ -40,11 +40,11 @@ vue init webpack imooc-sell
 node -v
 npm i nvm
 nvm ls
-nvm install 8.9.1
-nvm use 8.9.1
+nvm install 10.0.0
+nvm use 10.0.0
 ```
 
-## 3-3 项目文件介绍
+## 3-3 Project document introduction
 
 ```console
 npm install
@@ -58,7 +58,7 @@ npm run dev
 - node_modules: npm install
 - src: code
 - static: Third party static resources.
-- .gitkeep: 当目录为空时，也可以将它提交给存储库。
+- .gitkeep: When the directory is empty, it can also be submitted to the repository.
 - .babelrc: babel es6 compile to es5
 - .editorconfig: editor config
 - .eslintignore: ignore eslint rule
@@ -67,28 +67,26 @@ npm run dev
 - package.json: script: js commend
 - package.json: devDependencies: Used only during the development phase, This package is not required when going online
 
-## 3-4 项目运行
-
-- vue hello world
+## 3-4 Project operation
 
 ## 3-5, 3-6, 3-7 webpack
 
-## 4-1 需求分析
+## 4-1 demand analysis
 
-## 4-2 项目资源准备
+## 4-2 Project resource preparation
 
 - [devicePixelRatio](https://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/)
 
-## 4-3 图标字体制作
+## 4-3 Icon font production
 
 - [IconMoon](https://icomoon.io/#icons-icomoon)
 
-## 4-4 项目目录设计
+## 4-4 Project catalog design
 
 - **common/fonts**
 - **common/scss/icon.scss**
 
-## 4-5 mock 数据
+## 4-5 mock data
 
 - [seller data](http://localhost:8088/api/seller)
 - [goods data](http://localhost:8088/api/goods)
@@ -103,15 +101,15 @@ npm install vue-resource better-scroll --save
 npm install node-sass sass-loader --save-dev
 ```
 
-## 5-1, 5-2, 5-3 组件拆分
+## 5-1, 5-2, 5-3 Component split
 
 - html viewport
-- vue-loader 合并了小图片; 搞定 css 兼容问题
+- vue-loader inside has postcss, Merge small pictures; fix css compatibility issues
 - skip ESLint check
-- 设计稿两倍标的尺寸(iPhone6: dpi=2), style.css 里面写一半的数值
+- Design depend on iPhone6(dpi=2), style.css Write half of the value
 
 ```js
-/* eslint-disable no-new
+/* eslint-disable no-new */
 ```
 
 ## 5-4, 5-5: vue-router
@@ -123,6 +121,9 @@ npm i vue-router -S
 ## 5-6 1 像素 border 实现
 
 - Mobile phone preview
+- [url](localhost:8088/#/goods)
+- url become IP:8088/#/goods
+- [草料](https://cli.im/) edit IP:8088/#/goods
 - check IP
 
 ```console
@@ -131,9 +132,6 @@ ipconfig(win)
 npm run dev
 ```
 
-- [url](localhost:8088/#/goods)
-- url become IP:8088/#/goods
-- [草料](https://cli.im/) edit IP:8088/#/goods
 - **mixin.scss**
 - **base.scss**
 - One pixel line

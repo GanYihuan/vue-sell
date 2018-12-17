@@ -79,33 +79,33 @@ import food from 'components/food/food.vue'
 const ERR_OK = 0
 
 export default {
-	components: {
-		shopCart,
-		food,
-		cartControl
-	},
-	/* accpet App.vue pass seller */
-	props: {
-		seller: {
-			type: Object
-		}
-	},
-	data() {
-		return {
-			goods: [],
-			/* 右侧每个元素的高度组成的一个数组 */
-			listHeight: [],
-			/* foodsScroll rolling position */
-			scrollY: 0,
-			selectedFood: {}
-		}
-	},
-	created() {
-		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-		this.$http.get('/api/goods').then(res => {
-			/* get res.body (json object) */
-			res = res.body
-			if (res.errno === ERR_OK) {
+  components: {
+    shopCart,
+    food,
+    cartControl
+  },
+  /* accpet App.vue pass seller */
+  props: {
+    seller: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+      goods: [],
+      /* 右侧每个元素的高度组成的一个数组 */
+      listHeight: [],
+      /* foodsScroll rolling position */
+      scrollY: 0,
+      selectedFood: {}
+    }
+  },
+  created() {
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+    this.$http.get('/api/goods').then(res => {
+      /* get res.body (json object) */
+      res = res.body
+      if (res.errno === ERR_OK) {
         this.goods = res.data
         /* better-scroll 改变了数据, dom 要映射则要手动调用 $nextTick() */
         /*
@@ -114,121 +114,121 @@ export default {
         $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
-				this.$nextTick(() => {
-					this._initScroll()
-					this._calculateHeight()
-				})
-			}
-		})
-	},
-	computed: {
+        this.$nextTick(() => {
+          this._initScroll()
+          this._calculateHeight()
+        })
+      }
+    })
+  },
+  computed: {
     /* 3. 当前索引 */
-		currentIndex() {
-			for (let i = 0; i < this.listHeight.length; i++) {
-				/* 当前索引值的高度 */
-				let height1 = this.listHeight[i]
-				/* 下一个的高度 */
-				let height2 = this.listHeight[i + 1]
-				if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
-					return i
-				}
-			}
-			return 0
-		},
-		/* 所有单独的菜肴的集合. */
-		selectFoods() {
-			let foods = []
-			/* http://localhost:8088/api/goods */
-			/* good -> 左侧栏的单个项目 */
-			this.goods.forEach(good => {
-				/* food -> 项目中的单个菜品. */
-				good.foods.forEach(food => {
-					/* food.count: cartcontrol.vue setting */
-					if (food.count) {
-						foods.push(food)
-					}
-				})
-			})
-			return foods
-		}
-	},
-	methods: {
-		_initScroll() {
-			this.meunScroll = new BScroll(this.$refs.menuWrapper, {
-				click: true
-			})
-			this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
-				click: true,
-				/*
+    currentIndex() {
+      for (let i = 0; i < this.listHeight.length; i++) {
+        /* 当前索引值的高度 */
+        const height1 = this.listHeight[i]
+        /* 下一个的高度 */
+        const height2 = this.listHeight[i + 1]
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          return i
+        }
+      }
+      return 0
+    },
+    /* 所有单独的菜肴的集合. */
+    selectFoods() {
+      const foods = []
+      /* http://localhost:8088/api/goods */
+      /* good -> 左侧栏的单个项目 */
+      this.goods.forEach(good => {
+        /* food -> 项目中的单个菜品. */
+        good.foods.forEach(food => {
+          /* food.count: cartcontrol.vue setting */
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
+    }
+  },
+  methods: {
+    _initScroll() {
+      this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+        click: true
+      })
+      this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
+        click: true,
+        /*
         probeType: 1，会非实时（屏幕滑动超过一定时间后）派发scroll 事件
         probeType: 2，会在屏幕滑动的过程中实时的派发 scroll 事件
         probeType: 3，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件(实时滚动位置)
         */
-       /* 3: 能获得实时滚动位置 */
-				probeType: 3
+        /* 3: 能获得实时滚动位置 */
+        probeType: 3
       })
       /* 2. 实时滚动位置 */
-			/* foodsScroll 实时滚动位置 scrollY */
-			this.foodsScroll.on('scroll', pos => {
-				this.scrollY = Math.abs(Math.round(pos.y))
-			})
-		},
-		_calculateHeight() {
-			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
-				'food-list-hook'
-			)
+      /* foodsScroll 实时滚动位置 scrollY */
+      this.foodsScroll.on('scroll', pos => {
+        this.scrollY = Math.abs(Math.round(pos.y))
+      })
+    },
+    _calculateHeight() {
+      const foodList = this.$refs.foodsWrapper.getElementsByClassName(
+        'food-list-hook'
+      )
       let height = 0
       /* 1. 右侧每个元素的高度组成的一个数组 */
-			/* listHeight: 右侧每个元素的高度组成的一个数组 */
-			this.listHeight.push(height)
-			for (let i = 0; i < foodList.length; i++) {
-				let item = foodList[i]
-				/* clientHeight: static/clientHeight.png */
-				/*
+      /* listHeight: 右侧每个元素的高度组成的一个数组 */
+      this.listHeight.push(height)
+      for (let i = 0; i < foodList.length; i++) {
+        const item = foodList[i]
+        /* clientHeight: static/clientHeight.png */
+        /*
         width: 样式宽
-      	clientWidth: 可视区宽 = 样式宽 + padding
-      	offsetWidth: 占位宽 = 样式宽 + padding + border
+        clientWidth: 可视区宽 = 样式宽 + padding
+        offsetWidth: 占位宽 = 样式宽 + padding + border
         */
-				height += item.clientHeight
-				this.listHeight.push(height)
-			}
-		},
-		selectMenu(index, event) {
-			/* better-scroll */
-			/* 在 PC 将触发两次事件，停止这个 */
-			if (!event._constructed) {
-				return
-			}
-			let foodList = this.$refs.foodsWrapper.getElementsByClassName(
-				'food-list-hook'
-			)
-			let el = foodList[index]
-			/* target: element, duration: 300ms */
-			this.foodsScroll.scrollToElement(el, 300)
-		},
-		selectFood(food, event) {
-			/* better-scroll */
-			/* at PC will trigger twice event, stop this */
-			if (!event._constructed) {
-				return
-			}
-			this.selectedFood = food
-			this.$refs.food.show()
-		},
-		addFood(target) {
-			this._drop(target)
-		},
-		_drop(target) {
-			/*
+        height += item.clientHeight
+        this.listHeight.push(height)
+      }
+    },
+    selectMenu(index, event) {
+      /* better-scroll */
+      /* 在 PC 将触发两次事件，停止这个 */
+      if (!event._constructed) {
+        return
+      }
+      const foodList = this.$refs.foodsWrapper.getElementsByClassName(
+        'food-list-hook'
+      )
+      const el = foodList[index]
+      /* target: element, duration: 300ms */
+      this.foodsScroll.scrollToElement(el, 300)
+    },
+    selectFood(food, event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
+      if (!event._constructed) {
+        return
+      }
+      this.selectedFood = food
+      this.$refs.food.show()
+    },
+    addFood(target) {
+      this._drop(target)
+    },
+    _drop(target) {
+      /*
       异步执行抛物小球动画，缓解卡顿
       在下次 DOM 更新循环结束之后执行延迟回调。
       在修改数据之后立即使用这个方法，获取更新后的 DOM。
       */
-			this.$nextTick(() => {
-				this.$refs.shopCart.drop(target)
-			})
-		}
-	}
+      this.$nextTick(() => {
+        this.$refs.shopCart.drop(target)
+      })
+    }
+  }
 }
 </script>
 

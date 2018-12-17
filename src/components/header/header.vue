@@ -77,32 +77,31 @@
 
 <script type="text/ecmascript-6">
 import star from 'components/star/star'
-
 export default {
-	components: {
-		star
-	},
-	props: {
-		seller: {
-			type: Object
-		}
-	},
-	data() {
-		return {
-			detailShow: false
-		}
-	},
-	created() {
-		this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-	},
-	methods: {
-		showDetail() {
-			this.detailShow = true
-		},
-		hideDetail() {
-			this.detailShow = false
-		}
-	}
+  components: {
+    star
+  },
+  props: {
+    seller: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+      detailShow: false
+    }
+  },
+  created() {
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+  },
+  methods: {
+    showDetail() {
+      this.detailShow = true
+    },
+    hideDetail() {
+      this.detailShow = false
+    }
+  }
 }
 </script>
 

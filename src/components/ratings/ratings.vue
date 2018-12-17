@@ -75,67 +75,67 @@ const ALL = 2
 const ERR_OK = 0
 
 export default {
-	components: {
-		star,
-		split,
-		ratingSelect
-	},
-	props: {
-		seller: {
-			type: Object
-		}
-	},
-	data() {
-		return {
-			ratings: [],
-			selectType: ALL,
-			onlyContent: true
-		}
-	},
-	created() {
-		this.$http.get('/api/ratings').then(res => {
-			/* get json object */
-			res = res.body
-			if (res.errno === ERR_OK) {
-				this.ratings = res.data
-				this.$nextTick(() => {
-					this.scroll = new BScroll(this.$refs.ratings, {
-						click: true
-					})
-				})
-			}
-		})
-	},
-	methods: {
-		selectRating(type) {
-			this.selectType = type
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		},
-		toggleContent() {
-			this.onlyContent = !this.onlyContent
-			this.$nextTick(() => {
-				this.scroll.refresh()
-			})
-		},
-		needShow(type, text) {
-			if (this.onlyContent && !text) {
-				return false
-			}
-			if (this.selectType === ALL) {
-				return true
-			} else {
-				return type === this.selectType
-			}
-		}
-	},
-	filters: {
-		formatDate(time) {
-			let date = new Date(time)
-			return formatDate(date, 'yyyy-MM-dd hh:mm')
-		}
-	}
+  components: {
+    star,
+    split,
+    ratingSelect
+  },
+  props: {
+    seller: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+      ratings: [],
+      selectType: ALL,
+      onlyContent: true
+    }
+  },
+  created() {
+    this.$http.get('/api/ratings').then(res => {
+      /* get json object */
+      res = res.body
+      if (res.errno === ERR_OK) {
+        this.ratings = res.data
+        this.$nextTick(() => {
+          this.scroll = new BScroll(this.$refs.ratings, {
+            click: true
+          })
+        })
+      }
+    })
+  },
+  methods: {
+    selectRating(type) {
+      this.selectType = type
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    toggleContent() {
+      this.onlyContent = !this.onlyContent
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    needShow(type, text) {
+      if (this.onlyContent && !text) {
+        return false
+      }
+      if (this.selectType === ALL) {
+        return true
+      } else {
+        return type === this.selectType
+      }
+    }
+  },
+  filters: {
+    formatDate(time) {
+      const date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm')
+    }
+  }
 }
 </script>
 
