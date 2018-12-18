@@ -1,7 +1,7 @@
 @import '~common/scss/mixin';
 
 .header {
-  // 相对定位的原因: .background: position:absolute
+  // .background: position:absolute
   position: relative;
   color: #fff;
   background: rgba(7, 17, 27, 0.5);
@@ -10,12 +10,10 @@
 .content-wrapper {
   position: relative;
   padding: 24px 12px 18px 24px;
-  // 消除间隙，父元素设置 font-size: 0
+  // Eliminate gaps, parent element settings font-size: 0
   font-size: 0;
   .avatar {
-    // 排成一行
     display: inline-block;
-    // 在顶端对齐
     vertical-align: top;
     img {
       width: 64px;
@@ -29,7 +27,7 @@
     .title {
       margin: 2px 0 8px 0;
       .brand {
-        // span 变成 block 元素, 能设置 width & height
+        // span become block element, can set width & height
         display: inline-block;
         width: 30px;
         height: 18px;
@@ -109,11 +107,10 @@
   height: 28px;
   line-height: 28px;
   background: rgba(7, 17, 27, 0.2);
-  // 超出显示...(two)
+  // Exceeded display...(two)
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  // 超出显示...(two)
   .bulletin-title {
     display: inline-block;
     margin: 8px 0 0 0;
@@ -143,7 +140,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // 模糊 background img
+  // blurry background img
   filter: blur(10px);
   img {
     width: 100%;
@@ -160,7 +157,7 @@
   background: rgba(7, 17, 27, 0.8);
   overflow: auto;
   transition: all 0.5s;
-  // ios 模糊
+  // ios blurry
   backdrop-filter: blur(10px);
   &.fade-transition {
     background: rgba(7, 17, 27, 0.8);
@@ -173,11 +170,11 @@
   }
   .detail-wrapper {
     width: 100%;
-    /* 3: A 包装内容长度会改变 */
+    /* 3: A The length of the package content will change */
     min-height: 100%;
     .detail-main {
       margin-top: 64px;
-      /* 4: A 给 B 预留空间 */
+      /* 4: A give B Reserved space */
       padding-bottom: 64px;
       .name {
         line-height: 16px;
@@ -192,7 +189,7 @@
       }
       .title {
         display: flex;
-        // 水平居中
+        // Horizontally centered
         margin: 28px auto;
         width: 80%;
         .line {
@@ -248,7 +245,7 @@
         }
       }
       .bulletin {
-        // 水平居中
+        // Horizontally centered
         margin: 0 auto;
         width: 80%;
         .content {
@@ -261,11 +258,11 @@
   }
   .detail-close {
     position: relative;
-    /* 5: B 嵌入 A 给 B 的预留空间中 */
+    /* 5: B Embed A give B reserved space */
     margin: -64px auto 0;
     width: 32px;
     height: 32px;
-    // 叉号大小
+    // Fork size
     font-size: 32px;
     /* 6: B clear: both */
     clear: both;

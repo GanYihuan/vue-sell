@@ -12,7 +12,7 @@
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <!-- v-if: 有数据才渲染, 异步过程, 防止 seller.supports[0].type 为 null -->
+        <!-- async pass seller data to header, prevent seller.supports[0].type is null -->
         <div class="support" v-if="seller.supports">
           <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
@@ -33,8 +33,8 @@
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <!-- sticky layout: 1,2,3,4,5,6 -->
-        <!-- 1: 切分为 A B 两个部分, A 部分包装起来 -->
-        <!-- 2: A 包装 clearfix -->
+        <!-- 1: Divided into A B, A package -->
+        <!-- 2: A clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}</h1>
@@ -42,7 +42,7 @@
               <star :size="48" :score="seller.score"></star>
             </div>
             <div class="title">
-              <!-- 不用 span, 适应 android -->
+              <!-- don't use span, adapt to android -->
               <div class="line"></div>
               <div class="text">优惠信息</div>
               <div class="line"></div>

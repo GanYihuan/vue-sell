@@ -34,10 +34,9 @@ const ERR_OK = 0
 
 export default {
   components: {
-    /* v-header: prevent conflict */
     'v-header': header
   },
-  /* handle data, data need watch */
+  /* data need watch */
   data() {
     return {
       seller: {
@@ -50,12 +49,13 @@ export default {
       }
     }
   },
-  /* handle data, data not need watch */
+  /* data no need watch */
   created() {
     /* vue-resource ajax request */
     this.$http.get('/api/seller?id=' + this.seller.id).then(res => {
-      /* get res.body(json object) */
+      /* transform to json object */
       res = res.body
+      /* res.errno, res.data come from build/webpack.dev.conf.js */
       if (res.errno === ERR_OK) {
         /* [res.data](http://localhost:8088/api/seller) */
         /* Object.assign: extend attributes to object */
