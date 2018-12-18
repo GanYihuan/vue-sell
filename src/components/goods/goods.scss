@@ -8,18 +8,17 @@
   width: 100%;
   overflow: hidden;
   .menu-wrapper {
-    // flex-grow flex-shrink flex-basis
     flex: 0 0 80px;
     width: 80px;
     background: #f3f5f7;
     .menu-item {
-      // 多行文本, 垂直居中
+      // Multi-line text Vertical centering
       display: table;
       padding: 0 12px;
       width: 56px;
       height: 54px;
       line-height: 14px;
-      /* 让其突出显示 */
+      /* Let it be highlighted */
       &.current {
         z-index: 10;
         position: relative;
@@ -55,11 +54,11 @@
         }
       }
       .text {
-        // 父元素: display: table
+        // father element: display: table
         display: table-cell;
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
-        // 多行文字, 垂直居中
+        // Multi-line text Vertical centering
         vertical-align: middle;
         font-size: 12px;
       }

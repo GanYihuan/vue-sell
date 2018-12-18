@@ -31,8 +31,8 @@
           position: absolute;
           top: 0;
           right: 0;
-          border-radius: 16px;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+          border-radius: 16px;
           width: 24px;
           height: 24px;
           line-height: 24px;
@@ -188,7 +188,6 @@
     }
   }
 }
-
 .list-mask {
   z-index: 40;
   position: fixed;

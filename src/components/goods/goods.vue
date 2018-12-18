@@ -75,16 +75,13 @@ import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart.vue'
 import cartControl from 'components/cartControl/cartControl.vue'
 import food from 'components/food/food.vue'
-
 const ERR_OK = 0
-
 export default {
   components: {
     shopCart,
     food,
     cartControl
   },
-  /* accpet App.vue pass seller */
   props: {
     seller: {
       type: Object
@@ -93,7 +90,7 @@ export default {
   data() {
     return {
       goods: [],
-      /* 右侧每个元素的高度组成的一个数组 */
+      /* An array of the heights of each element on the right side */
       listHeight: [],
       /* foodsScroll rolling position */
       scrollY: 0,
@@ -103,11 +100,11 @@ export default {
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     this.$http.get('/api/goods').then(res => {
-      /* get res.body (json object) */
+      /* res.body (json object) */
       res = res.body
       if (res.errno === ERR_OK) {
         this.goods = res.data
-        /* better-scroll 改变了数据, dom 要映射则要手动调用 $nextTick() */
+        /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
         /*
         dom 更新
         async
@@ -122,12 +119,11 @@ export default {
     })
   },
   computed: {
-    /* 3. 当前索引 */
     currentIndex() {
       for (let i = 0; i < this.listHeight.length; i++) {
-        /* 当前索引值的高度 */
+        /* The height of the current index value */
         const height1 = this.listHeight[i]
-        /* 下一个的高度 */
+        /* Next height */
         const height2 = this.listHeight[i + 1]
         if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
           return i
@@ -167,19 +163,15 @@ export default {
         /* 3: 能获得实时滚动位置 */
         probeType: 3
       })
-      /* 2. 实时滚动位置 */
-      /* foodsScroll 实时滚动位置 scrollY */
+      /* 2. Real-time scroll position */
+      /* foodsScroll Real-time scroll position scrollY */
       this.foodsScroll.on('scroll', pos => {
         this.scrollY = Math.abs(Math.round(pos.y))
       })
     },
     _calculateHeight() {
-      const foodList = this.$refs.foodsWrapper.getElementsByClassName(
-        'food-list-hook'
-      )
+      const foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
       let height = 0
-      /* 1. 右侧每个元素的高度组成的一个数组 */
-      /* listHeight: 右侧每个元素的高度组成的一个数组 */
       this.listHeight.push(height)
       for (let i = 0; i < foodList.length; i++) {
         const item = foodList[i]
@@ -195,15 +187,13 @@ export default {
     },
     selectMenu(index, event) {
       /* better-scroll */
-      /* 在 PC 将触发两次事件，停止这个 */
+      /* On the PC will trigger two events, stop this */
       if (!event._constructed) {
         return
       }
-      const foodList = this.$refs.foodsWrapper.getElementsByClassName(
-        'food-list-hook'
-      )
+      const foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
       const el = foodList[index]
-      /* target: element, duration: 300ms */
+      /* better-scroll: target: element, duration: 300ms */
       this.foodsScroll.scrollToElement(el, 300)
     },
     selectFood(food, event) {

@@ -155,35 +155,7 @@ npm install vue-resource -S
 
 ## 6-9, 6-10 详情弹层页 - 实现弹出层
 
-> sticky layout: A,B,C,D,E,F
-
-```html
-<div class="detail">
-  <!-- 1: A零件 clearfix -->
-  <div class="detail-wrapper clearfix"></div>
-  <!-- 2: 切分为 A B 两个部分 -->
-  <div class="detail-close"></div>
-</div>
-```
-
-```css
-.detail-wrapper {
-  width: 100%;
-  /* 3: 内容长度会改变 */
-  min-height: 100%;
-  .detail-main {
-    /* 4: A part space for B part */
-    padding-bottom: 64px;
-  }
-  .detail-close {
-    position: relative;
-    /* 5: B零件边距嵌入A零件的内边距 */
-    margin: -64px auto 0;
-    /* 6: B零件 clearfix */
-    clear: both;
-  }
-}
-```
+> sticky layout
 
 ## 6-11, 6-12, 6-13 详情弹层页 - star 组件抽象
 
@@ -201,41 +173,11 @@ npm install vue-resource -S
 
 ## 7-2 左侧 menu 布局
 
-- 多行文本, 垂直居中
-
-```scss
-.menu-item {
-  /* 多行文本, 垂直居中 */
-  display: table;
-  /* 让其突出显示 */
-  &.current {
-    z-index: 10;
-    position: relative;
-    margin-top: -1px;
-  }
-  .text {
-    display: table-cell;
-    /* 多行文字垂直居中 */
-    vertical-align: middle;
-  }
-}
-```
+- Multi-line text Vertical centering
 
 ## 7-3, 7-4, 7-5 右侧食品列表布局
 
 ## 7-6, 7-7, 7-8: better-scroll 运用
-
-```console
-npm install better-scroll --save
-```
-
-```js
-/* better-scroll */
-/* at PC will trigger twice event, stop this */
-if (!event._constructed) {
-  return
-}
-```
 
 ## 7-9, 7-10, 7-11, 7-12, 7-13, 7-14: shopcart 购物车组件
 

@@ -16,7 +16,6 @@
 
 <script type="text/ecmascript-6">
 import Vue from 'vue'
-
 export default {
   props: {
     food: {
@@ -25,12 +24,11 @@ export default {
   },
   methods: {
     addCart(event) {
-      /* better-scroll 在 PC 将触发两次事件，停止这个 */
       if (!event._constructed) {
         return
       }
       if (!this.food.count) {
-        /* 添加 food 属性 count=1. */
+        /* add food attribute count=1 */
         Vue.set(this.food, 'count', 1)
       } else {
         this.food.count++
@@ -38,7 +36,6 @@ export default {
       this.$emit('add', event.target)
     },
     decreaseCart(event) {
-      /* better-scroll 在 PC 将触发两次事件，停止这个 */
       if (!event._constructed) {
         return
       }
