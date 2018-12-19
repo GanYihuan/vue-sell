@@ -18,7 +18,8 @@ module.exports = {
 		port: 9000
 	},
 	dev: {
-		env: require('./dev.env'),
+    env: require('./dev.env'),
+    host: 'localhost',
 		port: 8088,
 		assetsSubDirectory: 'static',
 		assetsPublicPath: '/',

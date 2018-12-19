@@ -82,9 +82,7 @@ import split from 'components/split/split.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import Vue from 'vue'
 import { formatDate } from 'common/js/date'
-
 const ALL = 2
-
 export default {
   components: {
     cartControl,

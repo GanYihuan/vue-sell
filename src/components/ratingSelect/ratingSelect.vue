@@ -41,7 +41,6 @@
 const POSITIVE = 0
 const NEGATIVE = 1
 const ALL = 2
-
 export default {
   props: {
     ratings: {
@@ -90,7 +89,6 @@ export default {
       this.$emit('select', type)
     },
     toggleContent(event) {
-      /* better-scroll, at PC will trigger twice event, stop this */
       if (!event._constructed) {
         return
       }

@@ -189,16 +189,6 @@ npm install vue-resource -S
 
 ## 8-1, 8-2, 8-3, 8-4, 8-5: 商品详情页实现
 
-```css
-/* 高宽度相等 */
-div {
-  position: relatie;
-  padding-top: 100%;
-  width: 100%;
-  height: 0;
-}
-```
-
 ## 8-6: split 组件实现
 
 ## 8-7, 8-8, 8-9, 8-10, 8-11: ratingselect 组件
@@ -270,3 +260,6 @@ npm run build
 ## bug: npm run build
 
 ## bug: node prod.server.js
+
+https://seesaawiki.jp/av_neme/d/%a1%da%bd%e9%bb%a3%a4%ea%a1%db%a5%cd%a5%c3%a5%c8%a4%c7AV%b1%fe%ca%e7%a2%aaAV%c2%ce%b8%b3%bb%a3%b1%c6
+
