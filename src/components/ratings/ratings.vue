@@ -70,10 +70,8 @@ import star from 'components/star/star.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import split from 'components/split/split.vue'
 import { formatDate } from 'common/js/date'
-
 const ALL = 2
 const ERR_OK = 0
-
 export default {
   components: {
     star,

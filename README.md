@@ -195,7 +195,7 @@ npm install vue-resource -S
 
 ## 8-12, 8-13, 8-14, 8-15, 8-16, 18-17: 评价列表
 
-- formatDate(date, 'yyyy-MM-dd hh:mm')
+formatDate
 
 ## 9-1, 9-2, 9-3: ratings 组件开发-overview 开发
 
@@ -203,25 +203,46 @@ npm install vue-resource -S
 
 ## 10-1, 10-2: seller 组件开发-overview 开发
 
+**seller.vue** .overview html & style
+
 ## 10-3, 10-4: seller 组件开发-公告与活动开发
+
+**seller.vue**
+.bulletin html, style
 
 ## 10-5: seller 组件开发-BScroll 应用
 
+**seller.vue**
+seller async data
+prevent route switch scroll no work
+
 ## 10-6: seller 组件开发-商家实景图
 
-- 排列一行的能滚动的图片, (better-scroll)
+**seller.vue**
+.pics Arrange a row of scrollable images(better-scroll)
 
 ## 10-7: seller 组件开发-商家信息
 
-## 10-8, 10-9, 10-10: seller 组件开发-收藏商家
+**seller.vue** .info html & style
 
-- **✨**
-- **seller.vue** **App.vue** **util.js** **seller.vue** **store.js**
-- immediately run function
-- parse url parameter
-- save localStorage
-- read localStorage
-- immediately run function
+## 10-8: seller 组件开发-收藏商家
+
+**seller.vue**
+.favorite html & style
+
+## 10-9, 10-10: seller 组件开发-收藏商家
+
+**seller.vue**
+**App.vue**
+**util.js**
+**seller.vue**
+**store.js**
+get id from url
+immediately run function
+parse url parameter
+save localStorage
+read localStorage
+immediately run function
 
 ## 10-11 seller 组件开发-体验优化
 
@@ -260,6 +281,4 @@ npm run build
 ## bug: npm run build
 
 ## bug: node prod.server.js
-
-https://seesaawiki.jp/av_neme/d/%a1%da%bd%e9%bb%a3%a4%ea%a1%db%a5%cd%a5%c3%a5%c8%a4%c7AV%b1%fe%ca%e7%a2%aaAV%c2%ce%b8%b3%bb%a3%b1%c6
 

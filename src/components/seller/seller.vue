@@ -73,7 +73,6 @@ import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
 import { saveToLocal, loadFromLocal } from 'common/js/store'
-
 export default {
   components: {
     star,
@@ -84,7 +83,6 @@ export default {
       type: Object
     }
   },
-  /* handle data, data need to watch */
   data() {
     return {
       /* immediately run function */
@@ -93,11 +91,9 @@ export default {
       })()
     }
   },
-  /* handle data, data not need to watch */
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
   },
-  /* dom 渲染后 */
   mounted() {
     this.$nextTick(() => {
       this._initScroll()
@@ -111,7 +107,6 @@ export default {
   },
   methods: {
     toggleFavorite(event) {
-      /* better-scroll, at PC will trigger twice event, stop this */
       if (!event._constructed) {
         return
       }
@@ -124,7 +119,7 @@ export default {
           click: true
         })
       } else {
-        /* 防止 route 切换时不处理 */
+        /* prevent route switch scroll no work */
         this.scroll.refresh()
       }
     },
@@ -150,6 +145,7 @@ export default {
     }
   },
   watch: {
+    /* seller async data, at first is null */
     seller() {
       this.$nextTick(() => {
         this._initScroll()

@@ -29,9 +29,7 @@
 <script type="text/ecmascript-6">
 import { urlParse } from 'common/js/util'
 import header from 'components/header/header.vue'
-
 const ERR_OK = 0
-
 export default {
   components: {
     'v-header': header
@@ -40,9 +38,9 @@ export default {
   data() {
     return {
       seller: {
-        /* 直接运行函数 */
+        /* immediately run function */
         id: (() => {
-          /* 从 url 获取 id */
+          /* get id from url */
           const queryParam = urlParse()
           return queryParam.id
         })()
@@ -58,9 +56,8 @@ export default {
       /* res.errno, res.data come from build/webpack.dev.conf.js */
       if (res.errno === ERR_OK) {
         /* [res.data](http://localhost:8088/api/seller) */
-        /* Object.assign: extend attributes to object */
+        /* Object.assign(): object extend attributes */
         this.seller = Object.assign({}, this.seller, res.data)
-        console.log(this.seller)
       }
     })
   }
