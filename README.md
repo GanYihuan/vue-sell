@@ -213,7 +213,7 @@ formatDate
 ## 10-5: seller 组件开发-BScroll 应用
 
 **seller.vue**
-seller async data
+seller async data, at first is null
 prevent route switch scroll no work
 
 ## 10-6: seller 组件开发-商家实景图
@@ -223,7 +223,8 @@ prevent route switch scroll no work
 
 ## 10-7: seller 组件开发-商家信息
 
-**seller.vue** .info html & style
+**seller.vue**
+.info html & style
 
 ## 10-8: seller 组件开发-收藏商家
 
@@ -237,17 +238,15 @@ prevent route switch scroll no work
 **util.js**
 **seller.vue**
 **store.js**
+immediately run function
 get id from url
-immediately run function
-parse url parameter
-save localStorage
-read localStorage
-immediately run function
+saveToLocal()
+loadFromLocal()
 
 ## 10-11 seller 组件开发-体验优化
 
-- **App.vue**
-- keep-alive
+**App.vue**
+keep-alive
 
 ## 11-1: package bug
 
@@ -270,7 +269,7 @@ npm run build
 - v-el
 - v-ref
 - only one route component
-- $dispatch remove
+- dispatch remove
 - events remove
 - cannot directly modify the prop that is passed in to the parent component in the subcomponent.
 - transition
@@ -281,4 +280,3 @@ npm run build
 ## bug: npm run build
 
 ## bug: node prod.server.js
-

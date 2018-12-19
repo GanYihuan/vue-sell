@@ -42,6 +42,7 @@ export default {
         id: (() => {
           /* get id from url */
           const queryParam = urlParse()
+          // console.log(queryParam)
           return queryParam.id
         })()
       }
