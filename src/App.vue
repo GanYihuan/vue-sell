@@ -3,7 +3,6 @@
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
-        <!-- jump to 'goods' path -->
         <router-link to="/goods">商品</router-link>
       </div>
       <div class="tab-item">
@@ -30,25 +29,22 @@
 import { urlParse } from 'common/js/util'
 import header from 'components/header/header.vue'
 const ERR_OK = 0
+
 export default {
   components: {
     'v-header': header
   },
-  /* data need watch */
   data() {
     return {
       seller: {
-        /* immediately run function */
-        id: (() => {
-          /* get id from url */
-          const queryParam = urlParse()
+        id: (() => { /* immediately run function */
+          const queryParam = urlParse() /* get id from url */
           // console.log(queryParam)
           return queryParam.id
         })()
       }
     }
   },
-  /* data no need watch */
   created() {
     /* vue-resource ajax request */
     this.$http.get('/api/seller?id=' + this.seller.id).then(res => {

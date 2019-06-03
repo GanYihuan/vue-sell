@@ -1,6 +1,5 @@
 import Vue from 'vue'
-/* Ajax request, XMLHttpRequest */
-import VueResource from 'vue-resource'
+import VueResource from 'vue-resource' /* Ajax request, XMLHttpRequest */
 import VueRouter from 'vue-router'
 
 import App from './App.vue'
