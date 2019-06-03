@@ -33,7 +33,7 @@
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <!-- sticky layout: 1,2,3,4,5,6 -->
-        <!-- 1: Divided into A B, A package -->
+        <!-- 1: Divided into A B package -->
         <!-- 2: A clearfix -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
@@ -67,6 +67,7 @@
             </div>
           </div>
         </div>
+        <!-- B package -->
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>
@@ -83,7 +84,7 @@ export default {
     star
   },
   props: {
-    seller: {
+    seller: { /* [res.data](http://localhost:8088/api/seller) */
       type: Object
     }
   },

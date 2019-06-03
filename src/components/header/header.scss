@@ -1,8 +1,7 @@
 @import '~common/scss/mixin';
 
 .header {
-  // .background: position:absolute
-  position: relative;
+  position: relative; // .background: position:absolute
   color: #fff;
   background: rgba(7, 17, 27, 0.5);
   overflow: hidden;
@@ -27,13 +26,11 @@
     .title {
       margin: 2px 0 8px 0;
       .brand {
-        // span become block element, can set width & height
-        display: inline-block;
+        display: inline-block; // span become block element, can set width & height
         width: 30px;
         height: 18px;
         vertical-align: top;
-        // 2x3x image
-        @include bg-image('brand');
+        @include bg-image('brand'); // 2x3x image
         background-size: 30px 18px;
         background-repeat: no-repeat;
       }
@@ -84,8 +81,8 @@
     position: absolute;
     right: 12px;
     bottom: 14px;
-    border-radius: 14px;
     padding: 0 8px;
+    border-radius: 14px;
     height: 24px;
     line-height: 24px;
     text-align: center;
@@ -107,10 +104,11 @@
   height: 28px;
   line-height: 28px;
   background: rgba(7, 17, 27, 0.2);
-  // Exceeded display...(two)
+  // ...
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  // ...
   .bulletin-title {
     display: inline-block;
     margin: 8px 0 0 0;
@@ -170,12 +168,10 @@
   }
   .detail-wrapper {
     width: 100%;
-    /* 3: A The length of the package content will change */
-    min-height: 100%;
+    min-height: 100%; /* 3: A The length of the package content will change */
     .detail-main {
       margin-top: 64px;
-      /* 4: A give B Reserved space */
-      padding-bottom: 64px;
+      padding-bottom: 64px; /* 4: A give B Reserved space */
       .name {
         line-height: 16px;
         text-align: center;
@@ -189,8 +185,7 @@
       }
       .title {
         display: flex;
-        // Horizontally centered
-        margin: 28px auto;
+        margin: 28px auto; // block elment, Horizontally centered
         width: 80%;
         .line {
           flex: 1;
@@ -245,8 +240,7 @@
         }
       }
       .bulletin {
-        // Horizontally centered
-        margin: 0 auto;
+        margin: 0 auto; // Horizontally centered
         width: 80%;
         .content {
           padding: 0 12px;
@@ -258,13 +252,10 @@
   }
   .detail-close {
     position: relative;
-    /* 5: B Embed A give B reserved space */
-    margin: -64px auto 0;
+    margin: -64px auto 0; /* 5: B Embed A give B reserved space */
     width: 32px;
     height: 32px;
-    // Fork size
-    font-size: 32px;
-    /* 6: B clear: both */
-    clear: both;
+    font-size: 32px; // Fork size
+    clear: both; /* 6: B clear: both */
   }
 }
