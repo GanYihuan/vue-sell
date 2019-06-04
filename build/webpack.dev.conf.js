@@ -36,10 +36,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     /* set data source */
     before(app) {
       app.get('/api/seller', function (req, res) {
-        const id = req.query.id
         res.json({
           errno: 0,
-          data: Object.assign({}, seller, {id})
+          data: seller
         })
       });
       app.get('/api/goods', function (req, res) {
