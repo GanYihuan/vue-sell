@@ -26,9 +26,9 @@
 </template>
 
 <script type="text/ecmascript-6">
+// import qs from 'query-string'
 import { urlParse } from 'common/js/util'
 import header from 'components/header/header.vue'
-// import qs from 'qs'
 const ERR_OK = 0
 
 export default {
@@ -55,7 +55,6 @@ export default {
         /* [res.data](http://localhost:8088/api/seller) */
         this.seller = Object.assign({}, this.seller, res.data) /* Object.assign(): object extend attributes */
       }
-      // console.log(this.seller.id, '---id')
     })
   }
 }
