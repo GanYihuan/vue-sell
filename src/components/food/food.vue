@@ -60,7 +60,8 @@
                   <span class="name">{{rating.username}}</span>
                   <img class="avatar" :src="rating.avatar" alt="avatar"/>
                 </div>
-                <div class="time">{{rating.rateTime | formatDate}}</div>
+                <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
+                <div class="time">{{formatDate(rating.rateTime)}}</div>
                 <p class="text">
                   <i :class="{'icon-thumb_up':rating.rateType===0,'icon-thumb_down':rating.rateType===1}"></i>
                   {{rating.text}}
@@ -76,13 +77,15 @@
 </template>
 
 <script type="text/ecmascript-6">
+import moment from 'moment'
 import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartControl.vue'
 import split from 'components/split/split.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import Vue from 'vue'
-import { formatDate } from 'common/js/date'
+// import { formatDate } from 'common/js/date'
 const ALL = 2
+
 export default {
   components: {
     cartControl,
@@ -97,10 +100,8 @@ export default {
   data() {
     return {
       showFlag: false,
-      /* ratingSelect.vue: Product evaluation init */
-      selectType: ALL,
-      /* Whether to open the '只看评论内容' */
-      onlyContent: true,
+      selectType: ALL, /* ratingSelect.vue: Product evaluation init */
+      onlyContent: true, /* Whether to open the '只看评论内容' */
       desc: {
         all: '全部',
         positive: '推荐',
@@ -159,6 +160,9 @@ export default {
       this.$nextTick(() => {
         this.scroll.refresh()
       })
+    },
+    formatDate(time) {
+      return moment(time).format('YYYY-MM-DD hh:mm:ss')
     }
   },
   watch: {
@@ -174,13 +178,13 @@ export default {
         this.scroll.refresh()
       })
     }
-  },
-  filters: {
-    formatDate(time) {
-      const date = new Date(time)
-      return formatDate(date, 'yyyy-MM-dd hh:mm')
-    }
   }
+  // filters: {
+  //   formatDate(time) {
+  //     const date = new Date(time)
+  //     return formatDate(date, 'yyyy-MM-dd hh:mm')
+  //   }
+  // }
 }
 </script>
 

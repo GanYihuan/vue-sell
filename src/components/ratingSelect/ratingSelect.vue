@@ -41,6 +41,7 @@
 const POSITIVE = 0
 const NEGATIVE = 1
 const ALL = 2
+
 export default {
   props: {
     ratings: {

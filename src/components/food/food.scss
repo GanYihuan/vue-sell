@@ -110,13 +110,13 @@
       bottom: 12px;
     }
     .buy {
+      box-sizing: border-box;
       z-index: 10;
       position: absolute;
       right: 18px;
       bottom: 18px;
-      box-sizing: border-box;
-      border-radius: 12px;
       padding: 0 12px;
+      border-radius: 12px;
       // vertical direction center
       height: 24px;
       line-height: 24px;
@@ -163,8 +163,8 @@
       padding: 0 18px;
       .rating-item {
         position: relative;
-        @include border-1px(rgba(1, 17, 27, 0.1));
         padding: 16px 0;
+        @include border-1px(rgba(1, 17, 27, 0.1));
         .user {
           position: absolute;
           right: 0;
