@@ -73,6 +73,7 @@ import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
 import { saveToLocal, loadFromLocal } from 'common/js/store'
+
 export default {
   components: {
     star,
@@ -119,8 +120,7 @@ export default {
           click: true
         })
       } else {
-        /* prevent route switch scroll no work */
-        this.scroll.refresh()
+        this.scroll.refresh() /* prevent route switch scroll no work */
       }
     },
     _initPics() {
@@ -132,10 +132,8 @@ export default {
         this.$nextTick(() => {
           if (!this.picScroll) {
             this.picScroll = new BScroll(this.$refs.picWrapper, {
-              /* horizontal scroll */
-              scrollX: true,
-              /* ignore vertical scroll */
-              eventPassthrough: 'vertical'
+              scrollX: true, /* horizontal scroll */
+              eventPassthrough: 'vertical' /* ignore vertical scroll */
             })
           } else {
             this.picScroll.refresh()
@@ -145,8 +143,7 @@ export default {
     }
   },
   watch: {
-    /* seller async data, at first is null */
-    seller() {
+    seller() { /* seller async data, at first is null */
       this.$nextTick(() => {
         this._initScroll()
         this._initPics()
