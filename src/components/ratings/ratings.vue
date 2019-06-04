@@ -56,7 +56,8 @@
               <span class="icon-thumb_up"></span>
               <span class="item" v-for="(item, index) in rating.recommend" :key="index">{{item}}</span>
             </div>
-            <div class="time">{{rating.rateTime | formatDate}}</div>
+            <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
+            <div class="time">{{formatDate(rating.rateTime)}}</div>
           </div>
         </li>
       </ul>
@@ -65,6 +66,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import moment from 'moment'
 import BScroll from 'better-scroll'
 import star from 'components/star/star.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
@@ -72,6 +74,7 @@ import split from 'components/split/split.vue'
 import { formatDate } from 'common/js/date'
 const ALL = 2
 const ERR_OK = 0
+
 export default {
   components: {
     star,
@@ -92,8 +95,7 @@ export default {
   },
   created() {
     this.$http.get('/api/ratings').then(res => {
-      /* get json object */
-      res = res.body
+      res = res.body /* get json object */
       if (res.errno === ERR_OK) {
         this.ratings = res.data
         this.$nextTick(() => {
@@ -126,14 +128,17 @@ export default {
       } else {
         return type === this.selectType
       }
-    }
-  },
-  filters: {
+    },
     formatDate(time) {
-      const date = new Date(time)
-      return formatDate(date, 'yyyy-MM-dd hh:mm')
+      return moment(time).format('YYYY-MM-DD hh:mm:ss')
     }
   }
+  // filters: {
+  //   formatDate(time) {
+  //     const date = new Date(time)
+  //     return formatDate(date, 'yyyy-MM-dd hh:mm')
+  //   }
+  // }
 }
 </script>
 
