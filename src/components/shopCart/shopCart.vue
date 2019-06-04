@@ -70,6 +70,7 @@
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartControl.vue'
+
 export default {
   components: {
     cartControl
@@ -149,7 +150,7 @@ export default {
       const show = !this.fold
       if (show) {
         /*
-        async
+        async 更新数据
         在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
@@ -206,13 +207,10 @@ export default {
       while (count--) {
         const ball = this.balls[count]
         if (ball.show) {
-          /* getBoundingClientRect: Get the element relative viewport location */
-          const rect = ball.el.getBoundingClientRect()
-          /* ball size = 32 */
-          const x = rect.left - 32
+          const rect = ball.el.getBoundingClientRect() /* getBoundingClientRect: Get the element relative viewport location */
+          const x = rect.left - 32 /* ball size = 32 */
           const y = -(window.innerHeight - rect.top - 22)
-          /* 让小球显示 */
-          el.style.display = ''
+          el.style.display = '' /* 让小球显示 */
           el.style.webkitTransform = `translate3d(0,${y}px,0)`
           el.style.transform = `translate3d(0,${y}px,0)`
           const inner = el.getElementsByClassName('inner-hook')[0]

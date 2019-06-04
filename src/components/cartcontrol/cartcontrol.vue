@@ -16,6 +16,7 @@
 
 <script type="text/ecmascript-6">
 import Vue from 'vue'
+
 export default {
   props: {
     food: {
@@ -28,8 +29,7 @@ export default {
         return
       }
       if (!this.food.count) {
-        /* add food attribute count=1 */
-        Vue.set(this.food, 'count', 1)
+        Vue.set(this.food, 'count', 1) /* add food attribute count=1 */
       } else {
         this.food.count++
       }

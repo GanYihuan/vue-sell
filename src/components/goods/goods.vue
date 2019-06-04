@@ -76,6 +76,7 @@ import shopCart from 'components/shopCart/shopCart.vue'
 import cartControl from 'components/cartControl/cartControl.vue'
 import food from 'components/food/food.vue'
 const ERR_OK = 0
+
 export default {
   components: {
     shopCart,
@@ -90,24 +91,21 @@ export default {
   data() {
     return {
       goods: [],
-      /* An array of the heights of each element on the right side */
-      listHeight: [],
-      /* foodsScroll rolling position */
-      scrollY: 0,
+      listHeight: [], /* An array of the heights of each element on the right side */
+      scrollY: 0, /* foodsScroll rolling position */
       selectedFood: {}
     }
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     this.$http.get('/api/goods').then(res => {
-      /* res.body (json object) */
-      res = res.body
+      res = res.body /* res.body (json object) */
       if (res.errno === ERR_OK) {
         this.goods = res.data
         /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
         /*
         dom 更新
-        async
+        async 更新数据
         $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
         在修改数据之后立即使用这个方法，获取更新后的 DOM。
         */
@@ -121,10 +119,8 @@ export default {
   computed: {
     currentIndex() {
       for (let i = 0; i < this.listHeight.length; i++) {
-        /* The height of the current index value */
-        const height1 = this.listHeight[i]
-        /* Next height */
-        const height2 = this.listHeight[i + 1]
+        const height1 = this.listHeight[i] /* The height of the current index value */
+        const height2 = this.listHeight[i + 1] /* Next height */
         if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
           return i
         }
@@ -175,12 +171,6 @@ export default {
       this.listHeight.push(height)
       for (let i = 0; i < foodList.length; i++) {
         const item = foodList[i]
-        /* clientHeight: static/clientHeight.png */
-        /*
-        width: 样式宽
-        clientWidth: 可视区宽 = 样式宽 + padding
-        offsetWidth: 占位宽 = 样式宽 + padding + border
-        */
         height += item.clientHeight
         this.listHeight.push(height)
       }

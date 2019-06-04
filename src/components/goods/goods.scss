@@ -54,12 +54,10 @@
         }
       }
       .text {
-        // father element: display: table
-        display: table-cell;
+        display: table-cell; // father element: display: table
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
-        // Multi-line text Vertical centering
-        vertical-align: middle;
+        vertical-align: middle; // Multi-line text Vertical centering
         font-size: 12px;
       }
     }
@@ -68,8 +66,8 @@
     flex: 1;
     .food-list {
       .title {
-        border-left: 2px solid #d9dde1;
         padding-left: 14px;
+        border-left: 2px solid #d9dde1;
         height: 26px;
         line-height: 26px;
         font-size: 12px;
@@ -78,12 +76,12 @@
       }
       .food-item {
         display: flex;
-        @include border-1px(rgba(7, 17, 27, 0.1));
         margin: 18px;
         padding-bottom: 18px;
+        @include border-1px(rgba(7, 17, 27, 0.1));
         &:last-child {
-          @include border-none();
           margin-bottom: 0;
+          @include border-none();
         }
         .icon {
           flex: 0 0 57px;
