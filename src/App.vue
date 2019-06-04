@@ -28,6 +28,7 @@
 <script type="text/ecmascript-6">
 import { urlParse } from 'common/js/util'
 import header from 'components/header/header.vue'
+// import qs from 'qs'
 const ERR_OK = 0
 
 export default {
@@ -37,6 +38,7 @@ export default {
   data() {
     return {
       seller: {
+        // id: qs.parse(location.search.slice(1)).id
         id: (() => { /* immediately run function */
           const queryParam = urlParse() /* get id from url */
           // console.log(queryParam)
@@ -53,6 +55,7 @@ export default {
         /* [res.data](http://localhost:8088/api/seller) */
         this.seller = Object.assign({}, this.seller, res.data) /* Object.assign(): object extend attributes */
       }
+      // console.log(this.seller.id, '---id')
     })
   }
 }
