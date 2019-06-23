@@ -48,14 +48,16 @@ export default {
     }
   },
   created() {
-    this.$http.get('/api/seller?id=' + this.seller.id).then(res => { /* vue-resource ajax request */
-      res = res.body /* transform to json object */
-      /* res.errno, res.data come from build/webpack.dev.conf.js */
-      if (res.errno === ERR_OK) {
-        /* [res.data](http://localhost:8088/api/seller) */
-        this.seller = Object.assign({}, this.seller, res.data) /* Object.assign(): object extend attributes */
-      }
-    })
+    this.$http
+      .get('/api/seller?id=' + this.seller.id)
+      .then(res => { /* vue-resource ajax request */
+        res = res.body /* transform to json object */
+        /* res.errno, res.data come from build/webpack.dev.conf.js */
+        if (res.errno === ERR_OK) {
+          /* [res.data](http://localhost:8088/api/seller) */
+          this.seller = Object.assign({}, this.seller, res.data) /* Object.assign(): object extend attributes */
+        }
+      })
   }
 }
 </script>

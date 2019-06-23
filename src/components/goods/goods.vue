@@ -98,22 +98,24 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    this.$http.get('/api/goods').then(res => {
-      res = res.body /* res.body (json object) */
-      if (res.errno === ERR_OK) {
-        this.goods = res.data
-        /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
-        /*
-        dom 更新
-        async 更新数据
-        $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
-        在修改数据之后立即使用这个方法，获取更新后的 DOM。
-        */
-        this.$nextTick(() => {
-          this._initScroll()
-          this._calculateHeight()
-        })
-      }
+    this.$http
+      .get('/api/goods')
+      .then(res => {
+        res = res.body /* res.body (json object) */
+        if (res.errno === ERR_OK) {
+          this.goods = res.data
+          /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
+          /*
+          dom 更新
+          async 更新数据
+          $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
+          在修改数据之后立即使用这个方法，获取更新后的 DOM。
+          */
+          this.$nextTick(() => {
+            this._initScroll()
+            this._calculateHeight()
+          })
+        }
     })
   },
   computed: {

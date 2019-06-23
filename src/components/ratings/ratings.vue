@@ -94,16 +94,18 @@ export default {
     }
   },
   created() {
-    this.$http.get('/api/ratings').then(res => {
-      res = res.body /* get json object */
-      if (res.errno === ERR_OK) {
-        this.ratings = res.data
-        this.$nextTick(() => {
-          this.scroll = new BScroll(this.$refs.ratings, {
-            click: true
+    this.$http
+      .get('/api/ratings')
+      .then(res => {
+        res = res.body /* get json object */
+        if (res.errno === ERR_OK) {
+          this.ratings = res.data
+          this.$nextTick(() => {
+            this.scroll = new BScroll(this.$refs.ratings, {
+              click: true
+            })
           })
-        })
-      }
+        }
     })
   },
   methods: {
@@ -133,12 +135,6 @@ export default {
       return moment(time).format('YYYY-MM-DD hh:mm:ss')
     }
   }
-  // filters: {
-  //   formatDate(time) {
-  //     const date = new Date(time)
-  //     return formatDate(date, 'yyyy-MM-dd hh:mm')
-  //   }
-  // }
 }
 </script>
 

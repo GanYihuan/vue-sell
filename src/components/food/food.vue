@@ -77,13 +77,12 @@
 </template>
 
 <script type="text/ecmascript-6">
+import Vue from 'vue'
 import moment from 'moment'
 import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartControl.vue'
 import split from 'components/split/split.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
-import Vue from 'vue'
-// import { formatDate } from 'common/js/date'
 const ALL = 2
 
 export default {
@@ -179,12 +178,6 @@ export default {
       })
     }
   }
-  // filters: {
-  //   formatDate(time) {
-  //     const date = new Date(time)
-  //     return formatDate(date, 'yyyy-MM-dd hh:mm')
-  //   }
-  // }
 }
 </script>
 

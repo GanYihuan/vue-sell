@@ -4,6 +4,10 @@
 
 ## Build Setup
 
+987BV6C5V6B78N9M9N8B7V6V6B
+78N9MN8B7V6C5V67B8N9M0M9N
+8B7V6C59M8N7BV65CV6B7N8MM8
+
 ```bash
 # install dependencies
 npm install

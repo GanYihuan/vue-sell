@@ -12,13 +12,11 @@
     width: 80px;
     background: #f3f5f7;
     .menu-item {
-      // Multi-line text Vertical centering
-      display: table;
+      display: table; // Multi-line text Vertical centering
       padding: 0 12px;
       width: 56px;
       height: 54px;
       line-height: 14px;
-      /* Let it be highlighted */
       &.current {
         z-index: 10;
         position: relative;
@@ -54,7 +52,7 @@
         }
       }
       .text {
-        display: table-cell; // father element: display: table
+        display: table-cell; // Multi-line text Vertical centering
         @include border-1px(rgba(7, 17, 27, 0.1));
         width: 56px;
         vertical-align: middle; // Multi-line text Vertical centering
