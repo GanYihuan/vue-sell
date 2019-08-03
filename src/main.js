@@ -11,9 +11,7 @@ Vue.use(VueRouter)
 
 const router = createRouter()
 
-/* eslint-disable no-new */
 new Vue({
-  // el: '#app',
   router,
   render: h => h(App)
 }).$mount('#app')
