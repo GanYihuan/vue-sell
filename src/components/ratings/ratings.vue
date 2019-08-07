@@ -100,12 +100,12 @@ export default {
         res = res.body /* get json object */
         if (res.errno === ERR_OK) {
           this.ratings = res.data
-          this.$nextTick(() => {
-            this.scroll = new BScroll(this.$refs.ratings, {
-              click: true
-            })
-          })
         }
+    })
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this._initScroll()
     })
   },
   methods: {
@@ -133,6 +133,15 @@ export default {
     },
     formatDate(time) {
       return moment(time).format('YYYY-MM-DD hh:mm:ss')
+    },
+    _initScroll() {
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.ratings, {
+          click: true
+        })
+      } else {
+        this.scroll.refresh()
+      }
     }
   }
 }

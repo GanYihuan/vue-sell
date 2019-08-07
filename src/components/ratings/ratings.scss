@@ -2,8 +2,9 @@
 
 .ratings {
   position: absolute;
-  top: 174px;
   left: 0;
+  top: 174px;
+  bottom: 0;
   width: 100%;
   overflow: hidden;
   .overview {
